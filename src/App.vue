@@ -1,17 +1,11 @@
 <script setup>
 
 import {useStore} from '@/vuex/store'
-import {computed, onMounted, reactive} from 'vue'
+import {computed, reactive} from 'vue'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import en from 'element-plus/dist/locale/en.mjs'
-import {setResponsiveLayout} from '@/assets/js/responsive'
 
 const store = useStore()
-
-onMounted(()=>{
-  setResponsiveLayout()
-})
-
 
 const html = document.querySelector('html')
 if (store.state.dark) {

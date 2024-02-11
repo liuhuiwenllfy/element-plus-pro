@@ -8,7 +8,6 @@ import Layout6 from '@/view/index/layout/layout-6/index.vue'
 import Layout7 from '@/view/index/layout/layout-7/index.vue'
 
 import DrawerSetting from '@/components/ve-management-framework/header/global-setting/drawer-setting/index.vue'
-import DrawerNews from '@/components/ve-management-framework/header/news/drawer-news/index.vue'
 import ShortcutButton from '@/view/index/shortcut-button/index.vue'
 
 
@@ -30,7 +29,6 @@ const {t} = useI18n()
     <Layout6 v-if="store.state.layout === 6"/>
     <Layout7 v-if="store.state.layout === 7"/>
     <DrawerSetting/>
-    <DrawerNews/>
     <div v-if="store.state.layout === 3" class="shortcut-button">
       <el-divider/>
       <ShortcutButton/>

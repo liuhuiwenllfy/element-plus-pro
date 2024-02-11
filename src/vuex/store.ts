@@ -1,6 +1,5 @@
 import {InjectionKey} from 'vue'
 import {createStore, Store, useStore as baseUseStore} from 'vuex'
-import {MenuInfoShowVo} from '@/entity/vo/system/MenuInfoShowVo'
 import createPersistedState from 'vuex-persistedstate';
 
 // 为 store state 声明类型
@@ -18,7 +17,7 @@ export interface State {
     internationalization: String, //国际化
     defaultActive: String, //默认选中菜单
     tabList: Array<any>, //快速导航集合
-    menuData: Array<MenuInfoShowVo>, //菜单数据
+    menuData: Array<any>, //菜单数据
     encrypt: boolean, //信息是否已经AES加密
     fullscreenLoading: boolean, //全屏加载样式
     loading: boolean, //按钮加载样式

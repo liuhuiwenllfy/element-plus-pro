@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import RecursiveMenu from '@/components/ve-management-framework/recursive-menu/index.vue'
 import {useStore} from '@/vuex/store'
-import {MenuInfoShowVo} from '@/entity/vo/system/MenuInfoShowVo'
+import {MenuInfoShowVo} from '@/entity/vo/MenuInfoShowVo'
 
 const store = useStore()
 

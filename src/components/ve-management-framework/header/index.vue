@@ -4,8 +4,6 @@ import {useStore} from '@/vuex/store'
 import FullScreen from '@/components/ve-management-framework/header/fullScreen/index.vue'
 import Logo from '@/components/ve-management-framework/header/logo/index.vue'
 import Collapse from '@/components/ve-management-framework/header/collapse/index.vue'
-import News from '@/components/ve-management-framework/header/news/index.vue'
-import Tenant from '@/components/ve-management-framework/header/tenant/index.vue'
 import GlobalSize from '@/components/ve-management-framework/header/global-size/index.vue'
 import Internationalization from '@/components/ve-management-framework/header/internationalization/index.vue'
 import User from '@/components/ve-management-framework/header/user/index.vue'
@@ -30,12 +28,6 @@ const store = useStore()
     <Breadcrumb v-show="[4,5,6,7].includes(store.state.layout)"/>
     <Menu v-show="[1,2].includes(store.state.layout)"/>
     <ul class="is-custom" style="float: right">
-      <li class="not-btn">
-        <Tenant/>
-      </li>
-      <li>
-        <News/>
-      </li>
       <li>
         <FullScreen/>
       </li>

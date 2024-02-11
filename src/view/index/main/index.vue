@@ -12,7 +12,7 @@ const store = useStore()
       <div class="scrollbar">
         <router-view v-slot="{ Component }" class="item">
           <transition name="el-fade-in">
-            <component :is="Component" />
+            <component :is="Component"/>
           </transition>
         </router-view>
       </div>
@@ -37,7 +37,7 @@ const store = useStore()
 
     .item {
       min-height: 700px;
-      padding: 10px;
+      padding: 10px 20px;
       height: calc(100% - 20px)
     }
   }
