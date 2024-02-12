@@ -28,7 +28,8 @@ const store = useStore()
   background-color: @light-fill;
 
   .pages {
-    height: calc(100% - 41px);
+    height: calc(100% - 61px);
+    padding: 10px;
     border: 1px solid @light-border;
     border-top: none;
     border-bottom-left-radius: 4px;
@@ -36,8 +37,7 @@ const store = useStore()
     background-color: @base-background;
 
     .item {
-      min-height: 700px;
-      padding: 10px 20px;
+      padding: 10px;
       height: calc(100% - 20px)
     }
   }

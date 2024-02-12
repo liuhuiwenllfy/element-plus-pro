@@ -81,6 +81,8 @@ declare module '@vue/runtime-core' {
     VeCodeHighlighter: typeof import('./src/components/ve-code-highlighter/index.vue')['default']
     VeCron: typeof import('./src/components/ve-cron/index.vue')['default']
     VeEmoji: typeof import('./src/components/ve-emoji/index.vue')['default']
+    VeIncident: typeof import('./src/components/ve-incident/index.vue')['default']
+    VeStats: typeof import('./src/components/ve-stats/index.vue')['default']
     Weeks: typeof import('./src/components/ve-cron/weeks/index.vue')['default']
     Years: typeof import('./src/components/ve-cron/years/index.vue')['default']
   }

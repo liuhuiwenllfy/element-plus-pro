@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 
 import {ref} from "vue";
+import VeIncident from "@/components/ve-incident/index.vue";
 
 const _cron = ref("* * * * * ? *")
 const handleChangeCron = (cron: string) => {
@@ -46,27 +47,18 @@ const incident = [
       </template>
     </el-input>
     <el-divider/>
-    <h4>属性</h4>
-    <el-table :data="stats" style="width: 100%">
-      <el-table-column label="属性名" prop="name" width="180"/>
-      <el-table-column label="说明" prop="instructions" width="180"/>
-      <el-table-column label="类型" prop="type"/>
-      <el-table-column label="可选值" prop="optional"/>
-      <el-table-column label="默认值" prop="default"/>
-    </el-table>
-    <h4>事件</h4>
-    <el-table :data="incident" style="width: 100%">
-      <el-table-column label="事件名" prop="name" width="180"/>
-      <el-table-column label="说明" prop="instructions" width="180"/>
-      <el-table-column label="回调参数" prop="callback"/>
-    </el-table>
-    <h4>注意</h4>
+    <h2>API</h2>
+    <ve-stats :stats="stats"/>
+    <ve-incident :incident="incident"/>
+    <h3>源代码</h3>
+    <el-link href="https://github.com/liuhuiwenllfy/element-plus-pro" type="primary">GitHub</el-link>
+    <h3>注意</h3>
     <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
   </div>
 </template>
 
 <style lang="less" scoped>
 .ve-cron {
-  padding: 20px;
+
 }
 </style>
