@@ -52,8 +52,8 @@
       {
         "id": "cd45f8431a1544518337ed33245a431b",
         "menuCode": "ve-emoji",
-        "menuName": "Ve-emoji emoji表情",
-        "menuNameEn": "Ve-cron cron Time selector",
+        "menuName": "Ve-emoji emoji选择器",
+        "menuNameEn": "Ve-cron emoji selector",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
