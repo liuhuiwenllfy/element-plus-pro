@@ -50,8 +50,6 @@ const incident = [
     <h2>API</h2>
     <ve-stats :stats="stats"/>
     <ve-incident :incident="incident"/>
-    <h3>源代码</h3>
-    <el-link href="https://github.com/liuhuiwenllfy/element-plus-pro" type="primary">GitHub</el-link>
     <h3>注意</h3>
     <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
   </div>
