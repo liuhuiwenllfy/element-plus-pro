@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import VeIncident from '@/components/ve-incident/index.vue'
 import {ref} from "vue";
+import VePage from '@/components/ve-page/index.vue'
 
 const emoteDialogVisible = ref(false)
 
@@ -22,32 +23,31 @@ const incident = [
 </script>
 
 <template>
-  <div class="ve-cron">
-    <h2>cron时间选择器</h2>
-    <el-divider/>
-    <h3>示例</h3>
-    <div style="margin-bottom: 10px">
-      <el-input v-model="_comment" style="width: 300px" type="textarea"></el-input>
-    </div>
-    <el-popover
-        :width="476"
-        placement="bottom"
-        trigger="click">
-      <ve-emoji @change="handleEmoteClick"/>
-      <template #reference>
-        <el-image src="/img/emote.png" style="cursor: pointer" @click="handleEmoteOpen"/>
+  <div class="ve-emoji">
+    <ve-page pm-id="d92e9a85704872b0ab3a08a13b9a9eb0" title="emoji选择器">
+      <template #default>
+        <el-space alignment="end" direction="vertical">
+          <el-input v-model="_comment" placeholder="请输入内容" style="width: 300px" type="textarea"></el-input>
+          <el-popover
+              :width="476"
+              placement="bottom"
+              trigger="click">
+            <ve-emoji @change="handleEmoteClick"/>
+            <template #reference>
+              <el-image src="/img/emote.png" style="cursor: pointer" @click="handleEmoteOpen"/>
+            </template>
+          </el-popover>
+        </el-space>
       </template>
-    </el-popover>
-    <el-divider/>
-    <h2>API</h2>
-    <ve-incident :incident="incident"/>
-    <h3>注意</h3>
-    <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+      <template #api>
+        <ve-incident :incident="incident"/>
+      </template>
+      <template #warn>
+        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+      </template>
+    </ve-page>
   </div>
 </template>
 
 <style lang="less" scoped>
-.ve-cron {
-  padding: 20px;
-}
 </style>

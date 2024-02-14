@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import MaterialSymbolsSunny from '~icons/material-symbols/sunny'
 import IonMdCloudyNight from '~icons/ion/md-cloudy-night'
-import { useStore } from '@/vuex/store'
-import { watch } from 'vue'
+import {useStore} from '@/vuex/store'
+import {watch} from 'vue'
 
 const store = useStore()
 
 watch(() => store.state.dark, () => {
   const html = document.querySelector('html')
+  store.commit('dark', store.state.dark)
   if (store.state.dark) {
     html.classList.add('dark')
   } else {

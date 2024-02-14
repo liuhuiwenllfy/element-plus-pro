@@ -2,6 +2,7 @@
 
 import {ref} from "vue";
 import VeIncident from "@/components/ve-incident/index.vue";
+import VePage from '@/components/ve-page/index.vue'
 
 const _cron = ref("* * * * * ? *")
 const handleChangeCron = (cron: string) => {
@@ -28,30 +29,32 @@ const incident = [
 
 <template>
   <div class="ve-cron">
-    <h2>cron时间选择器</h2>
-    <el-divider/>
-    <h3>示例</h3>
-    <el-input v-model="_cron" :placeholder="$t('message.enterParameter', {parameter: $t('message.cron')})"
-              clearable
-              style="width: 300px;">
-      <template #append>
-        <el-popover
-            :width="476"
-            placement="bottom"
-            trigger="click">
-          <ve-cron :value="_cron" @change="handleChangeCron"/>
-          <template #reference>
-            <div style="cursor: pointer">选择</div>
+    <ve-page pm-id="c701a06b4a3661de4de69f5954df435b" title="cron时间选择器">
+      <template #default>
+        <el-input v-model="_cron" clearable
+                  placeholder="请输入cron"
+                  style="width: 300px;">
+          <template #append>
+            <el-popover
+                :width="476"
+                placement="bottom"
+                trigger="click">
+              <ve-cron :value="_cron" @change="handleChangeCron"/>
+              <template #reference>
+                <div style="cursor: pointer">选择</div>
+              </template>
+            </el-popover>
           </template>
-        </el-popover>
+        </el-input>
       </template>
-    </el-input>
-    <el-divider/>
-    <h2>API</h2>
-    <ve-stats :stats="stats"/>
-    <ve-incident :incident="incident"/>
-    <h3>注意</h3>
-    <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+      <template #api>
+        <ve-stats :stats="stats"/>
+        <ve-incident :incident="incident"/>
+      </template>
+      <template #warn>
+        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+      </template>
+    </ve-page>
   </div>
 </template>
 
