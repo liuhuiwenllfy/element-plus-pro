@@ -24,7 +24,7 @@ const incident = [
 
 <template>
   <div class="ve-emoji">
-    <ve-page pm-id="d92e9a85704872b0ab3a08a13b9a9eb0" title="emoji选择器">
+    <ve-page id="ve-emoji" pm-id="d92e9a85704872b0ab3a08a13b9a9eb0" title="emoji选择器">
       <template #default>
         <el-space alignment="end" direction="vertical">
           <el-input v-model="_comment" placeholder="请输入内容" style="width: 300px" type="textarea"></el-input>

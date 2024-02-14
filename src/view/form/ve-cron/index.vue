@@ -29,7 +29,7 @@ const incident = [
 
 <template>
   <div class="ve-cron">
-    <ve-page pm-id="c701a06b4a3661de4de69f5954df435b" title="cron时间选择器">
+    <ve-page id="ve-cron" pm-id="c701a06b4a3661de4de69f5954df435b" title="cron时间选择器">
       <template #default>
         <el-input v-model="_cron" clearable
                   placeholder="请输入cron"
