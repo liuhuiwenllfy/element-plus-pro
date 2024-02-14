@@ -32,7 +32,7 @@ export const key: InjectionKey<Store<State>> = Symbol()
 export const store = createStore<State>({
     plugins: [createPersistedState({storage: window.localStorage})],
     state: {//仓库
-        name: 'CodeEase',
+        name: 'Element Plus Pro',
         layout: 7,
         drawer: false,
         drawerNews: false,
