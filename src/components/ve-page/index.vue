@@ -27,7 +27,7 @@ const props = defineProps({
     <h3>Example</h3>
     <slot></slot>
     <el-divider/>
-    <h2>API</h2>
+    <h2>Api</h2>
     <slot name="api"></slot>
     <h2>Assets</h2>
     <el-space size="large">

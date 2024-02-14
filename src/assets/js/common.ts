@@ -2,6 +2,7 @@
 
 import router from '@/router'
 import {removeSession} from "@/assets/js/sessionStorageUtils";
+import default_png from '@/assets/img/default.png'
 
 export const setPageInfo = (form: any, e: any) => {
     if (e) {
@@ -109,7 +110,7 @@ export const spliceMongodbUrl = (url: string) => {
         //@ts-ignore
         return `${import.meta.env.VITE_CLIENT_URL}${import.meta.env.VITE_GRIDFSFILE_URL}${url}`
     } else {
-        return '/img/default.png'
+        return default_png
     }
 }
 

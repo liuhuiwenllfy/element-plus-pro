@@ -39,8 +39,8 @@
       {
         "id": "424b71015cdd48abb4f38f8ec0c5b4a0",
         "menuCode": "ve-cron",
-        "menuName": "Ve-cron cron时间选择器",
-        "menuNameEn": "Ve-cron cron Time selector",
+        "menuName": "ve-cron cron时间选择器",
+        "menuNameEn": "ve-cron cron Time selector",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
@@ -52,8 +52,8 @@
       {
         "id": "cd45f8431a1544518337ed33245a431b",
         "menuCode": "ve-emoji",
-        "menuName": "Ve-emoji emoji选择器",
-        "menuNameEn": "Ve-cron emoji selector",
+        "menuName": "ve-emoji emoji选择器",
+        "menuNameEn": "ve-cron emoji selector",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,

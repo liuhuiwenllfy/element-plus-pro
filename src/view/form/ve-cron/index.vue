@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
 import {ref} from "vue";
-import VeIncident from "@/components/ve-incident/index.vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VePage from '@/components/ve-page/index.vue'
 
 const _cron = ref("* * * * * ? *")
@@ -48,7 +48,6 @@ const incident = [
         </el-input>
       </template>
       <template #api>
-        <ve-stats :stats="stats"/>
         <ve-incident :incident="incident"/>
       </template>
       <template #warn>

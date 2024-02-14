@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import VeIncident from '@/components/ve-incident/index.vue'
+import VeIncident from '@/components/ve-page/ve-incident/index.vue'
 import {ref} from "vue";
 import VePage from '@/components/ve-page/index.vue'
+import emote_png from '@/assets/img/emote.png'
 
 const emoteDialogVisible = ref(false)
 
@@ -34,7 +35,7 @@ const incident = [
               trigger="click">
             <ve-emoji @change="handleEmoteClick"/>
             <template #reference>
-              <el-image src="/img/emote.png" style="cursor: pointer" @click="handleEmoteOpen"/>
+              <el-image :src="emote_png" style="cursor: pointer" @click="handleEmoteOpen"/>
             </template>
           </el-popover>
         </el-space>

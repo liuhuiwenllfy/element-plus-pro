@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import {CaretBottom, Promotion} from '@element-plus/icons-vue'
 import {openUrl} from '@/assets/js/common'
+import default_png from '@/assets/img/default.png'
 </script>
 
 <template>
   <div class="user">
     <el-dropdown trigger="hover">
       <span class="el-dropdown-link">
-        <el-avatar :size="37" src="/img/default.png"/>
+        <el-avatar :size="37" :src="default_png"/>
         <el-icon class="el-icon--right">
           <CaretBottom/>
         </el-icon>

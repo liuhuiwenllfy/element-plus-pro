@@ -10,7 +10,7 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/', //指定相对路径
+    base: '/preview', //指定相对路径
     build: {
         outDir: 'vite' //指定输出路径
     },
@@ -38,58 +38,5 @@ export default defineConfig({
                 javascriptEnabled: true,
             }
         }
-    },
-
-    server: {
-        proxy: {
-            "/admin": {
-                target: "http://localhost:8000",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/admin/, ""),
-            },
-            "/advertise": {
-                target: "http://localhost:8001",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/advertise/, ""),
-            },
-            "/log": {
-                target: "http://localhost:8002",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/log/, ""),
-            },
-            "/operations": {
-                target: "http://localhost:8003",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/operations/, ""),
-            },
-            "/pluginMarket": {
-                target: "http://localhost:8004",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/pluginMarket/, ""),
-            },
-            "/scheduledTask": {
-                target: "http://localhost:8006",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/scheduledTask/, ""),
-            },
-            "/thirdParty": {
-                target: "http://localhost:8007",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/thirdParty/, ""),
-            },
-            "/upload": {
-                target: "http://localhost:8008",
-                // target: "https://www.liulingfengyu.cn",
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/upload/, ""),
-            },
-        },
     }
 })
