@@ -8,16 +8,6 @@ const _cron = ref("* * * * * ? *")
 const handleChangeCron = (cron: string) => {
   _cron.value = cron
 }
-
-const stats = [
-  {
-    name: 'value',
-    instructions: 'cron字符串',
-    type: 'string',
-    optional: '-',
-    default: '* * * * * ? *',
-  },
-]
 const incident = [
   {
     name: 'change',

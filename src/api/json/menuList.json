@@ -26,6 +26,32 @@
     ]
   },
   {
+    "id": "f04c179ddfe64e7085c7c872a4f395a4",
+    "menuCode": "basic",
+    "menuName": "Basic 基础组件",
+    "menuNameEn": "Basic",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 1,
+    "menuIcon": "Menu",
+    "menuPath": "/basic",
+    "children": [
+      {
+        "id": "3de1af745ffd474cb503eba1d13f88c3",
+        "menuCode": "ve-float-button",
+        "menuName": "ve-float-button 悬浮按钮",
+        "menuNameEn": "ve-float-button Hover button",
+        "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-float-button",
+        "menuComponent": "basic/ve-float-button",
+        "children": []
+      }
+    ]
+  },
+  {
     "id": "b1a47b93238243838856929a6b2ea711",
     "menuCode": "from",
     "menuName": "Form 表单组件",

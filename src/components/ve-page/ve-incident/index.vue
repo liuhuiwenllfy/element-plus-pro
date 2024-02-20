@@ -11,8 +11,8 @@ const props = defineProps({
 <template>
   <h4>事件</h4>
   <el-table :data="incident">
-    <el-table-column label="事件名" prop="name" width="180"/>
-    <el-table-column label="说明" prop="instructions" width="180"/>
+    <el-table-column label="事件名" prop="name"/>
+    <el-table-column label="说明" prop="instructions"/>
     <el-table-column label="回调参数" prop="callback"/>
   </el-table>
 </template>
