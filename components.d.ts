@@ -13,7 +13,6 @@ declare module 'vue' {
     Collapse: typeof import('./src/components/ve-management-framework/header/collapse/index.vue')['default']
     Day: typeof import('./src/components/ve-cron/day/index.vue')['default']
     DrawerSetting: typeof import('./src/components/ve-management-framework/header/global-setting/drawer-setting/index.vue')['default']
-    ElAffix: typeof import('element-plus/es')['ElAffix']
     ElAlert: typeof import('element-plus/es')['ElAlert']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
