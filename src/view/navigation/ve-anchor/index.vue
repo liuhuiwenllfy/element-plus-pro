@@ -69,7 +69,7 @@ const stats = [
 
 <template>
   <div class="ve-emoji">
-    <ve-page id="ve-anchor" pm-id="" title="锚点">
+    <ve-page id="ve-anchor" pm-id="b63e7d3bb2a44b386742c033d4947f04" title="锚点">
       <template #default>
         <el-card shadow="never">
           <el-row id="parent-scroll" style="height: 300px; overflow: auto">
