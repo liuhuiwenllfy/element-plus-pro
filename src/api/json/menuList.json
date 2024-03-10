@@ -58,7 +58,7 @@
     "menuNameEn": "Form",
     "parentId": "0",
     "menuLevel": 0,
-    "menuSort": 1,
+    "menuSort": 2,
     "menuIcon": "Menu",
     "menuPath": "/from",
     "children": [
@@ -86,6 +86,32 @@
         "menuIcon": "Management",
         "menuPath": "/ve-emoji",
         "menuComponent": "form/ve-emoji",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "83994ed054e84686a634ff56676eed4b",
+    "menuCode": "navigation",
+    "menuName": "Navigation 导航",
+    "menuNameEn": "Navigation",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 3,
+    "menuIcon": "Menu",
+    "menuPath": "/navigation",
+    "children": [
+      {
+        "id": "ef87af0da2944fdabecc1f70581ae3f8",
+        "menuCode": "ve-anchor",
+        "menuName": "ve-anchor 锚点",
+        "menuNameEn": "ve-anchor Anchor",
+        "parentId": "83994ed054e84686a634ff56676eed4b",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-anchor",
+        "menuComponent": "navigation/ve-anchor",
         "children": []
       }
     ]

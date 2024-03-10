@@ -138,7 +138,7 @@ const stats = [
 
 <template>
   <div class="ve-float-button">
-    <ve-page id="ve-float-button" pm-id="" title="悬浮按钮">
+    <ve-page id="ve-float-button" pm-id="4d869c714dfd15edba5b0695a7b7c733" title="悬浮按钮">
       <template #default>
         <el-row :gutter="20">
           <el-col :span="12">
