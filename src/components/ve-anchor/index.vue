@@ -16,7 +16,7 @@ const props = defineProps({
     default: () => 'group'
   },
   items: {
-    type: Array as () => Anchor[],
+    type: Array<Anchor>,
     required: false,
     default: () => []
   }

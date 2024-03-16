@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const props = defineProps({
   stats: {
-    type: [],
+    type: Array,
     required: false,
     default: () => []
   }

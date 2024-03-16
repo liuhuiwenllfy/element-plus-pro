@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const props = defineProps({
   incident: {
-    type: [],
+    type: Array,
     required: false,
     default: () => []
   }

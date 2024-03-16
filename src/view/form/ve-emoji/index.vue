@@ -35,7 +35,7 @@ const incident = [
               trigger="click">
             <ve-emoji @change="handleEmoteClick"/>
             <template #reference>
-              <el-image :src="emote_png" style="cursor: pointer" @click="handleEmoteOpen"/>
+              <el-image :src="<string>emote_png" style="cursor: pointer" @click="handleEmoteOpen"/>
             </template>
           </el-popover>
         </el-space>
