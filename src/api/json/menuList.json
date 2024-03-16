@@ -115,5 +115,31 @@
         "children": []
       }
     ]
+  },
+  {
+    "id": "86a7513788374cdb86566769170b5550",
+    "menuCode": "data",
+    "menuName": "Data 数据展示",
+    "menuNameEn": "Data",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 4,
+    "menuIcon": "Menu",
+    "menuPath": "/data",
+    "children": [
+      {
+        "id": "37cbd1c5ea3742dfa18b07aa9ecb44e6",
+        "menuCode": "ve-list",
+        "menuName": "ve-list 列表",
+        "menuNameEn": "ve-list List",
+        "parentId": "86a7513788374cdb86566769170b5550",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-list",
+        "menuComponent": "data/ve-list",
+        "children": []
+      }
+    ]
   }
 ]
