@@ -1,0 +1,184 @@
+[
+  {
+    "id": "e9ffbd2bb49d540d5544ce735522b190",
+    "menuCode": "home",
+    "menuName": "首页",
+    "menuNameEn": "Home",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 0,
+    "menuIcon": "HomeFilled",
+    "menuPath": "/home",
+    "children": [
+      {
+        "id": "a4f34cc62d2a4680b602531b5c5a0126",
+        "menuCode": "workbench",
+        "menuName": "工作台",
+        "menuNameEn": "Workbench",
+        "parentId": "e9ffbd2bb49d540d5544ce735522b190",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Odometer",
+        "menuPath": "/workbench",
+        "menuComponent": "home/workbench",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "f04c179ddfe64e7085c7c872a4f395a4",
+    "menuCode": "basic",
+    "menuName": "Basic 基础组件",
+    "menuNameEn": "Basic",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 1,
+    "menuIcon": "Menu",
+    "menuPath": "/basic",
+    "children": [
+      {
+        "id": "3de1af745ffd474cb503eba1d13f88c3",
+        "menuCode": "ve-float-button",
+        "menuName": "ve-float-button 悬浮按钮",
+        "menuNameEn": "ve-float-button Hover button",
+        "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-float-button",
+        "menuComponent": "basic/ve-float-button",
+        "children": []
+      },
+      {
+        "id": "78544f6cbd9449718e37ff3c538e81e3",
+        "menuCode": "ve-icon",
+        "menuName": "ve-icon Icon 图标",
+        "menuNameEn": "ve-icon Icon 图标",
+        "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-icon",
+        "menuComponent": "basic/ve-icon",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "b1a47b93238243838856929a6b2ea711",
+    "menuCode": "from",
+    "menuName": "Form 表单组件",
+    "menuNameEn": "Form",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 2,
+    "menuIcon": "Menu",
+    "menuPath": "/from",
+    "children": [
+      {
+        "id": "424b71015cdd48abb4f38f8ec0c5b4a0",
+        "menuCode": "ve-cron",
+        "menuName": "ve-cron cron时间选择器",
+        "menuNameEn": "ve-cron cron Time selector",
+        "parentId": "b1a47b93238243838856929a6b2ea711",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-cron",
+        "menuComponent": "form/ve-cron",
+        "children": []
+      },
+      {
+        "id": "cd45f8431a1544518337ed33245a431b",
+        "menuCode": "ve-emoji",
+        "menuName": "ve-emoji emoji选择器",
+        "menuNameEn": "ve-cron emoji selector",
+        "parentId": "b1a47b93238243838856929a6b2ea711",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-emoji",
+        "menuComponent": "form/ve-emoji",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "83994ed054e84686a634ff56676eed4b",
+    "menuCode": "navigation",
+    "menuName": "Navigation 导航",
+    "menuNameEn": "Navigation",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 3,
+    "menuIcon": "Menu",
+    "menuPath": "/navigation",
+    "children": [
+      {
+        "id": "ef87af0da2944fdabecc1f70581ae3f8",
+        "menuCode": "ve-anchor",
+        "menuName": "ve-anchor 锚点",
+        "menuNameEn": "ve-anchor Anchor",
+        "parentId": "83994ed054e84686a634ff56676eed4b",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-anchor",
+        "menuComponent": "navigation/ve-anchor",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "86a7513788374cdb86566769170b5550",
+    "menuCode": "data",
+    "menuName": "Data 数据展示",
+    "menuNameEn": "Data",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 4,
+    "menuIcon": "Menu",
+    "menuPath": "/data",
+    "children": [
+      {
+        "id": "37cbd1c5ea3742dfa18b07aa9ecb44e6",
+        "menuCode": "ve-list",
+        "menuName": "ve-list 列表",
+        "menuNameEn": "ve-list List",
+        "parentId": "86a7513788374cdb86566769170b5550",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/ve-list",
+        "menuComponent": "data/ve-list",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "220df5ac105e4022885185e201f7b6a1",
+    "menuCode": "echarts",
+    "menuName": "Echarts",
+    "menuNameEn": "Echarts",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 5,
+    "menuIcon": "Menu",
+    "menuPath": "/echarts",
+    "children": [
+      {
+        "id": "13e8d16dd54342e4a273d4f249449fc7",
+        "menuCode": "basic-line-chart",
+        "menuName": "基础折线图",
+        "menuNameEn": "Basic Line Chart",
+        "parentId": "220df5ac105e4022885185e201f7b6a1",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Management",
+        "menuPath": "/basic-line-chart",
+        "menuComponent": "echarts/basic-line-chart",
+        "children": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,76 @@
+//主色
+$brand: var(--el-color-primary);
+$brand1: var(--el-color-primary-dark-2);
+$brand2: var(--el-color-primary-light-3);
+$brand3: var(--el-color-primary-light-5);
+$brand4: var(--el-color-primary-light-7);
+$brand5: var(--el-color-primary-light-8);
+$brand6: var(--el-color-primary-light-9);
+
+//成功
+$success: var(--el-color-success);
+$success1: var(--el-color-success-dark-2);
+$success2: var(--el-color-success-light-3);
+$success3: var(--el-color-success-light-5);
+$success4: var(--el-color-success-light-7);
+$success5: var(--el-color-success-light-8);
+$success6: var(--el-color-success-light-9);
+
+//警告
+$warning: var(--el-color-warning);
+$warning1: var(--el-color-warning-dark-2);
+$warning2: var(--el-color-warning-light-3);
+$warning3: var(--el-color-warning-light-5);
+$warning4: var(--el-color-warning-light-7);
+$warning5: var(--el-color-warning-light-8);
+$warning6: var(--el-color-warning-light-9);
+
+//错误
+$danger: var(--el-color-danger);
+$danger1: var(--el-color-danger-dark-2);
+$danger2: var(--el-color-danger-light-3);
+$danger3: var(--el-color-danger-light-5);
+$danger4: var(--el-color-danger-light-7);
+$danger5: var(--el-color-danger-light-8);
+$danger6: var(--el-color-danger-light-9);
+
+//默认
+$info: var(--el-color-info);
+$info1: var(--el-color-info-dark-2);
+$info2: var(--el-color-info-light-3);
+$info3: var(--el-color-info-light-5);
+$info4: var(--el-color-info-light-7);
+$info5: var(--el-color-info-light-8);
+$info6: var(--el-color-info-light-9);
+
+//文本颜色
+$primary-text: var(--el-text-color-primary);
+$regular-text: var(--el-text-color-regular);
+$secondary-text: var(--el-text-color-secondary);
+$placeholder-text: var(--el-text-color-placeholder);
+$disabled-text: var(--el-text-color-disabled);
+
+//边框颜色
+$darker-border: var(--el-border-color-darker);
+$dark-border: var(--el-border-color-dark);
+$base-border: var(--el-border-color);
+$light-border: var(--el-border-color-light);
+$lighter-border: var(--el-border-color-lighter);
+$extra-light-border: var(--el-border-color-extra-light);
+
+//填充颜色
+$darker-fill: var(--el-fill-color-darker);
+$dark-fill: var(--el-fill-color-dark);
+$base-fill: var(--el-fill-color);
+$light-fill: var(--el-fill-color-light);
+$lighter-fill: var(--el-fill-color-lighter);
+$extra-light-fill: var(--el-fill-color-extra-light);
+$blank-fill: var(--el-fill-color-blank);
+
+//基本色
+$basic-black: var(--el-color-black);
+$basic-white: var(--el-color-white);
+$transparent: Transparent;
+$page-background: var(--el-bg-color-page);
+$base-background: var(--el-bg-color);
+$overlay-background: var(--el-bg-color-overlay);
