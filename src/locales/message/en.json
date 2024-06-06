@@ -1,0 +1,9 @@
+{
+  "200": "Successful operation",
+  "401": "No right to restrict access, please log in again",
+  "403": "No right to restrict access, please contact the administrator",
+  "404": "The resource does not exist, please contact the administrator",
+  "500": "Program exception, please contact the administrator",
+  "in-full-development": "In full development",
+  "back": "Back"
+}

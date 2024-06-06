@@ -1,5 +1,5 @@
 import {defineStore} from 'pinia'
-import {MenuInfoShowVo} from "../entity/vo/MenuInfoShowVo.ts";
+import {MenuInfoShowVo} from "@/entity/vo/MenuInfoShowVo.ts";
 
 export const useCommonStore = defineStore('common', {
     state: () => {
@@ -64,31 +64,31 @@ export const useCommonStore = defineStore('common', {
         }
     },
     actions: {
-        changName(param) {
+        changName(param: string) {
             this.name = param
         },
-        changLayout(param) {
+        changLayout(param: number) {
             this.layout = param
         },
-        changDark(param) {
+        changDark(param: boolean) {
             this.dark = param
         },
-        changeSidebar(param) {
+        changeSidebar(param: boolean) {
             this.sidebar = param
         },
-        changeFullScreen(param) {
+        changeFullScreen(param: boolean) {
             this.fullScreen = param
         },
-        changeGlobalSize(param) {
+        changeGlobalSize(param: string) {
             this.globalSize = param
         },
-        changeLocale(param) {
+        changeLocale(param: string) {
             this.locale = param
         },
-        changeDefaultActive(param) {
+        changeDefaultActive(param: string) {
             this.defaultActive = param
         },
-        changeTabList(param) {
+        changeTabList(param: any) {
             const tabList = this.tabList
             if (tabList.findIndex(item => item.name === param.name) === -1) {
                 const item = {
@@ -100,13 +100,13 @@ export const useCommonStore = defineStore('common', {
                 tabList.push(item);
             }
         },
-        changeMenuData(param) {
+        changeMenuData(param: MenuInfoShowVo[]) {
             this.menuData = param
         },
-        changeFullscreenLoading(param) {
+        changeFullscreenLoading(param: boolean) {
             this.fullscreenLoading = param
         },
-        changeLoading(param) {
+        changeLoading(param: boolean) {
             this.loading = param
         }
     }

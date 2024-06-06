@@ -10,14 +10,17 @@
   },
   "dependencies": {
     "element-plus": "^2.7.4",
+    "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.2",
-    "nprogress": "^0.2.0"
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
+    "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.77.4",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.0",
