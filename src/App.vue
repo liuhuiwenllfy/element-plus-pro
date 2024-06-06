@@ -26,7 +26,7 @@ const locale = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.page{
+.page {
   width: 100%;
   height: 100%;
 }
