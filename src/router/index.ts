@@ -3,6 +3,9 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import menuList from '@/api/json/menuList.json'
 import {MenuInfoShowVo} from "@/entity/vo/MenuInfoShowVo.ts";
+import {createPinia} from "pinia";
+import {useCommonStore} from "@/pinia/common.ts";
+
 const modules = import.meta.glob('/src/view/*/*/index.vue')
 const routes: Array<any> = [
     {
@@ -14,7 +17,7 @@ const routes: Array<any> = [
         path: '/index',
         name: 'index',
         redirect: 'workbench',
-        component: ()=> import('@/view/index/index.vue'),
+        component: () => import('@/view/index/index.vue'),
         children: []
     },
     {
@@ -59,33 +62,37 @@ const router = createRouter({
     routes,
 })
 
+const pinia = createPinia()
 
+const commonStore = useCommonStore(pinia);
 router.beforeEach(async (to, _from) => {
     NProgress.start()
-    if (!router.hasRoute(<string>to.path.replace("/",""))){
+    if (!router.hasRoute(<string>to.path.replace("/", ""))) {
         console.log(to.fullPath)
-        addRoute(<any[]> menuList, <string>to.path)
-        if (!router.hasRoute(<string>to.path.replace("/",""))){
+        addRoute(<any[]>menuList, <string>to.path)
+        if (!router.hasRoute(<string>to.path.replace("/", ""))) {
             return {name: '404'}
         }
         return to.fullPath
     }
+    commonStore.changeTabList(to.meta)
 })
 
 router.afterEach(() => {
     NProgress.done()
 })
 
-const addRoute = (list:MenuInfoShowVo[], path: string)=>{
+const addRoute = (list: MenuInfoShowVo[], path: string) => {
     for (const item of list) {
-        if (item.children.length > 0){
+        if (item.children.length > 0) {
             addRoute(item.children, path)
-        }else if (item.menuPath === path){
-            router.addRoute('index',{
+        } else if (item.menuPath === path) {
+            router.addRoute('index', {
                 path: item.menuPath,
                 name: item.menuCode,
                 component: modules[`/src/view/${item.menuComponent}/index.vue`],
                 meta: {
+                    code: item.menuCode,
                     name: item.menuName,
                     nameEn: item.menuNameEn,
                     icon: item.menuIcon,

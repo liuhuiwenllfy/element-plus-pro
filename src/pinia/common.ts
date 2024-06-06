@@ -23,6 +23,9 @@ export const useCommonStore = defineStore('common', {
             menuData: [] as MenuInfoShowVo[],
             fullscreenLoading: false,
             loading: false,
+            drawer: false,
+            drawerNews: false,
+            newsNum: 0
         }
     },
     getters: {
@@ -61,6 +64,15 @@ export const useCommonStore = defineStore('common', {
         },
         getLoading(state) {
             return state.loading
+        },
+        getDrawer(state) {
+            return state.drawer
+        },
+        getDrawerNews(state) {
+            return state.drawerNews
+        },
+        getNewsNum(state) {
+            return state.newsNum
         }
     },
     actions: {
@@ -90,12 +102,12 @@ export const useCommonStore = defineStore('common', {
         },
         changeTabList(param: any) {
             const tabList = this.tabList
-            if (tabList.findIndex(item => item.name === param.name) === -1) {
+            if (tabList.findIndex(item => item.name === param.code) === -1) {
                 const item = {
-                    title: param.meta.name,
-                    titleEn: param.meta.nameEn,
-                    name: param.name,
-                    menuIcon: param.meta.icon
+                    title: param.name,
+                    titleEn: param.nameEn,
+                    name: param.code,
+                    menuIcon: param.icon
                 }
                 tabList.push(item);
             }
@@ -108,6 +120,15 @@ export const useCommonStore = defineStore('common', {
         },
         changeLoading(param: boolean) {
             this.loading = param
+        },
+        changeDrawer(param: boolean) {
+            this.drawer = param
+        },
+        changeDrawerNews(param: boolean) {
+            this.drawerNews = param
+        },
+        changeNewsNum(param: number) {
+            this.newsNum = param
         }
     }
 })

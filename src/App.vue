@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {computed, reactive} from 'vue'
+import {computed, reactive, watch} from 'vue'
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // @ts-ignore
@@ -14,11 +14,21 @@ const commonStore = useCommonStore()
 const locale = computed(() => {
   return commonStore.locale === 'zhCn' ? zhCn : en
 })
+
+const html = document.querySelector('html')
+watch(() => commonStore.dark, () => {
+  if (commonStore.dark) {
+    html.classList.add('dark')
+  } else {
+    html.classList.remove('dark')
+  }
+}, {immediate: true})
+
 </script>
 
 <template>
   <el-config-provider :button="config" :locale="locale" :size="commonStore.globalSize">
-    <div class="page" v-loading.fullscreen.lock="commonStore.fullscreenLoading">
+    <div v-loading.fullscreen.lock="commonStore.fullscreenLoading" class="page">
       <router-view/>
     </div>
     <el-backtop :bottom="100" :right="50"/>
