@@ -1,13 +1,16 @@
-import {createI18n} from 'vue-i18n' //引入vue-i18n组件
-import zhCn from './zhCn'  // 中文语言包
-import en from './en'  // 英文语言包
+import {createI18n} from 'vue-i18n'
+import zhCn from './zhCn'
+import en from './en'
 import {useCommonStore} from '@/pinia/common.ts'
-const commonStore= useCommonStore()
+import {createPinia} from "pinia";
 
-// 实例化I18n
+const pinia = createPinia()
+
+const commonStore = useCommonStore(pinia);
+
 const i18n = createI18n({
     legacy: false,
-    locale: commonStore.locale, // 初始化配置语言
+    locale: commonStore.locale,
     messages: {
         zhCn,
         en
