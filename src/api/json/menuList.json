@@ -154,31 +154,5 @@
         "children": []
       }
     ]
-  },
-  {
-    "id": "220df5ac105e4022885185e201f7b6a1",
-    "menuCode": "echarts",
-    "menuName": "Echarts",
-    "menuNameEn": "Echarts",
-    "parentId": "0",
-    "menuLevel": 0,
-    "menuSort": 5,
-    "menuIcon": "Menu",
-    "menuPath": "/echarts",
-    "children": [
-      {
-        "id": "13e8d16dd54342e4a273d4f249449fc7",
-        "menuCode": "basic-line-chart",
-        "menuName": "基础折线图",
-        "menuNameEn": "Basic Line Chart",
-        "parentId": "220df5ac105e4022885185e201f7b6a1",
-        "menuLevel": 1,
-        "menuSort": 0,
-        "menuIcon": "Management",
-        "menuPath": "/basic-line-chart",
-        "menuComponent": "echarts/basic-line-chart",
-        "children": []
-      }
-    ]
   }
 ]
