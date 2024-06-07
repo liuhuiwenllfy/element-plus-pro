@@ -7,7 +7,7 @@ import {createPinia} from "pinia";
 import {useCommonStore} from "@/pinia/common.ts";
 
 const modules = import.meta.glob('/src/view/*/*/index.vue')
-const routes: Array<any> = [
+const routes: any[] = [
     {
         path: '/',
         name: '',
@@ -68,7 +68,6 @@ const commonStore = useCommonStore(pinia);
 router.beforeEach(async (to, _from) => {
     NProgress.start()
     if (!router.hasRoute(<string>to.path.replace("/", ""))) {
-        console.log(to.fullPath)
         addRoute(<any[]>menuList, <string>to.path)
         if (!router.hasRoute(<string>to.path.replace("/", ""))) {
             return {name: '404'}
