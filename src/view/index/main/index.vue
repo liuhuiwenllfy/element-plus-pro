@@ -8,7 +8,8 @@ const commonStore = useCommonStore()
 
 <template>
   <div class="main">
-    <ve-fast-nav :activeName="commonStore.getDefaultActive" :tab-list="commonStore.tabList"/>
+    <ve-fast-nav :activeName="commonStore.getDefaultActive" :language="commonStore.getLocale"
+                 :tab-list="commonStore.tabList"/>
     <div class="pages">
       <div class="scrollbar">
         <router-view v-slot="{ Component, route }">
