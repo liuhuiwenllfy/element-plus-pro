@@ -6,6 +6,6 @@
   <div>this is ve-float-button</div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 
 </style>

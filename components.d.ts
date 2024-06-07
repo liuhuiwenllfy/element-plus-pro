@@ -8,12 +8,16 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
-    ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElResult: typeof import('element-plus/es')['ElResult']
+    ElImage: typeof import('element-plus/es')['ElImage']
     ElSpace: typeof import('element-plus/es')['ElSpace']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VeIncident: typeof import('./src/components/ve-page/ve-incident/index.vue')['default']
+    VePage: typeof import('./src/components/ve-page/index.vue')['default']
+    VeSlots: typeof import('./src/components/ve-page/ve-slots/index.vue')['default']
+    VeStats: typeof import('./src/components/ve-page/ve-stats/index.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
