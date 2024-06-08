@@ -9,9 +9,9 @@ const commonStore = useCommonStore()
 
 const userInfo = [
   {
-    code: 'userInfo',
-    name: '个人中心',
-    icon: 'User'
+    code: 'officialWebsite',
+    name: '官方网站',
+    icon: 'Promotion'
   }
 ]
 
@@ -21,8 +21,8 @@ const handleSignOutClick = () => {
 
 const handleUserClick = (code) => {
   switch (code) {
-    case 'userInfo':
-      console.log(userInfo)
+    case 'officialWebsite':
+      window.open('https://www.liulingfengyu.cn')
       break
   }
 }
@@ -34,7 +34,7 @@ const getNavigation = computed(() => {
 <template>
   <ve-header
       :dark="commonStore.getDark"
-      :defaultActive="commonStore.getDefaultActive"
+      :defaultActive="router.currentRoute.value.name"
       :drawerNews="commonStore.getDrawerNews"
       :fullScreen="commonStore.getFullScreen"
       :globalSize="commonStore.getGlobalSize"
@@ -49,8 +49,7 @@ const getNavigation = computed(() => {
       avatar="default.png"
       logo="logo.png"
       tenantName="刘凌枫羽工作室" username="element-plus-pro"
-      @handle-default-active-change="commonStore.changeDefaultActive($event)"
-      @handle-night-change="commonStore.changDark($event)"
+      @handle-night-change="commonStore.changeDark($event)"
       @handle-collapse-change="commonStore.changeSidebar($event)"
       @handle-full-screen-change="commonStore.changeFullScreen($event)"
       @handle-global-size-change="commonStore.changeGlobalSize($event)"
@@ -58,7 +57,7 @@ const getNavigation = computed(() => {
       @handle-news-change="commonStore.changeDrawerNews($event)"
       @handle-sign-out="handleSignOutClick"
       @handle-user-click="handleUserClick"
-      @handle-global-setting-click="commonStore.changeDrawer($event)"
+      @handle-global-setting-click="commonStore.changeDrawer(true)"
   />
 </template>
 

@@ -66,14 +66,14 @@
   },
   {
     "id": "b1a47b93238243838856929a6b2ea711",
-    "menuCode": "from",
+    "menuCode": "form",
     "menuName": "Form 表单组件",
     "menuNameEn": "Form",
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 2,
     "menuIcon": "Menu",
-    "menuPath": "/from",
+    "menuPath": "/form",
     "children": [
       {
         "id": "424b71015cdd48abb4f38f8ec0c5b4a0",

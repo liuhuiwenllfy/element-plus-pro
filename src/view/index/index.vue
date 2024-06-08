@@ -6,6 +6,7 @@ import Layout4 from '@/view/index/layout/layout4/index.vue'
 import Layout5 from '@/view/index/layout/layout5/index.vue'
 import Layout6 from '@/view/index/layout/layout6/index.vue'
 import Layout7 from '@/view/index/layout/layout7/index.vue'
+import DrawerSetting from '@/view/index/drawer-setting/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 
 const commonStore = useCommonStore()
@@ -20,6 +21,8 @@ const commonStore = useCommonStore()
   <Layout5 v-if="commonStore.layout === 5"/>
   <Layout6 v-if="commonStore.layout === 6"/>
   <Layout7 v-if="commonStore.layout === 7"/>
+
+  <drawer-setting/>
 </template>
 
 <style lang="scss" scoped>

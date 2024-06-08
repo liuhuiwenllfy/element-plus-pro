@@ -11,8 +11,10 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "element-plus": "^2.7.4",
+    "js-cookie": "^3.0.5",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "screenfull": "^6.0.2",
     "ve-aside": "^1.0.0",
     "ve-fast-nav": "^1.0.0",

@@ -6,6 +6,7 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import en from 'element-plus/dist/locale/en.mjs'
 
 import {useCommonStore} from "@/pinia/common.js";
+import router from "@/router";
 
 const config = reactive({
   autoInsertSpace: true
@@ -24,6 +25,10 @@ watch(() => commonStore.dark, () => {
   }
 }, {immediate: true})
 
+
+watch(()=> router.currentRoute.value.name, ()=>{
+  commonStore.changeTabList(router.currentRoute.value.meta)
+})
 </script>
 
 <template>

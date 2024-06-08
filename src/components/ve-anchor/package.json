@@ -1,0 +1,19 @@
+{
+  "name": "ve-anchor",
+  "version": "1.0.0",
+  "author": {
+    "email": "1305156911@qq.com",
+    "name": "liuhuiwen",
+    "url": "https://blog.csdn.net/qq_38036909?type=blog"
+  },
+  "description": "锚点",
+  "keywords": [
+    "ve-anchor",
+    "anchor",
+    "ve"
+  ],
+  "homepage": "https://epp.liulingfengyu.cn/",
+  "bugs": {
+    "url": "https://github.com/liuhuiwenllfy/element-plus-pro/issues"
+  }
+}

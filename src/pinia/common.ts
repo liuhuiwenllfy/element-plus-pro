@@ -28,6 +28,7 @@ export const useCommonStore = defineStore('common', {
             newsNum: 0
         }
     },
+    persist: true,
     getters: {
         getName(state) {
             return state.name
@@ -76,13 +77,13 @@ export const useCommonStore = defineStore('common', {
         }
     },
     actions: {
-        changName(param: string) {
+        changeName(param: string) {
             this.name = param
         },
-        changLayout(param: number) {
+        changeLayout(param: number) {
             this.layout = param
         },
-        changDark(param: boolean) {
+        changeDark(param: boolean) {
             this.dark = param
         },
         changeSidebar(param: boolean) {
@@ -101,15 +102,14 @@ export const useCommonStore = defineStore('common', {
             this.defaultActive = param
         },
         changeTabList(param: any) {
-            const tabList = this.tabList
-            if (tabList.findIndex(item => item.name === param.code) === -1) {
+            if (this.tabList.findIndex(item => item.name === param.code) === -1) {
                 const item = {
                     title: param.name,
                     titleEn: param.nameEn,
                     name: param.code,
                     menuIcon: param.icon
                 }
-                tabList.push(item);
+                this.tabList.push(item);
             }
         },
         changeMenuData(param: MenuInfoShowVo[]) {

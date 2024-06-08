@@ -6,5 +6,21 @@
   "500": "Program exception, please contact the administrator",
   "in-full-development": "In full development",
   "back": "Back",
-  "welcomeCodeEase": "Welcome CodeEase"
+  "welcomeCodeEase": "Welcome CodeEase",
+  "setting": "Setting",
+  "layout": "Layout",
+  "darkMode": "Dark mode",
+  "whetherToTurnOnNightMode": "Whether to turn on night mode",
+  "whetherToCloseTheSidebar": "Whether to close the sidebar",
+  "globalSize": "global size",
+  "selectGlobalSize": "select global size",
+  "globalization": "globalization",
+  "large": "Large",
+  "default": "Default",
+  "small": "Small",
+  "light": "Light",
+  "dark": "Dark",
+  "chooseLanguage": "Choose a language",
+  "chinese": "chinese",
+  "english": "english"
 }

@@ -10,7 +10,7 @@ const commonStore = useCommonStore()
 
 <template>
   <ve-aside
-      :default-active="commonStore.getDefaultActive"
+      :default-active="router.currentRoute.value.name"
       :language="commonStore.getLocale"
       :layout="commonStore.getLayout"
       :menu="menuList"
