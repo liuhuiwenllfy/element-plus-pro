@@ -22,5 +22,10 @@
   "dark": "黑夜",
   "chooseLanguage": "选择语言",
   "chinese": "汉语",
-  "english": "英语"
+  "english": "英语",
+  "logout": "退出登录",
+  "personalCenter": "个人中心",
+  "modifyThePassword": "修改密码",
+  "toTenant": "切换租户",
+  "informationCenter": "信息中心"
 }

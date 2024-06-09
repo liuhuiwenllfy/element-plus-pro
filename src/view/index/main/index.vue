@@ -22,7 +22,7 @@ const handleRouter = (name) => {
     <el-scrollbar>
       <div class="pages">
         <router-view v-slot="{ Component, route }">
-          <transition>
+          <transition name="el-fade-in">
             <component :is="Component" :key="route.path"/>
           </transition>
         </router-view>

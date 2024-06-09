@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeAside from 've-aside/index.vue'
+import VeAside from '@/components/ve-aside/index.vue'
 import menuList from '@/api/json/menuList.json'
 import {useCommonStore} from "@/pinia/common.ts";
 import router from "@/router";
@@ -24,5 +24,7 @@ const commonStore = useCommonStore()
 </template>
 
 <style lang="scss" scoped>
-
+.el-icon {
+  font-size: 20px;
+}
 </style>

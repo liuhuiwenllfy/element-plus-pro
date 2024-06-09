@@ -1,0 +1,91 @@
+<script lang="ts" setup>
+import VePage from '@/components/ve-page/index.vue'
+import VeBatchUploadFile from '@/components/ve-upload/ve-batch-upload-file/index.vue'
+import VeBatchUploadPicture from '@/components/ve-upload/ve-batch-upload-picture/index.vue'
+import VeUploadAvatar from '@/components/ve-upload/ve-upload-avatar/index.vue'
+import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+
+const stats = [
+  {
+    name: 'api',
+    instructions: '上传接口',
+    type: 'string',
+    optional: '-',
+    default: '-',
+  },
+  {
+    name: 'authorization',
+    instructions: '上传token',
+    type: 'string',
+    optional: '-',
+    default: '-',
+  },
+  {
+    name: 'language',
+    instructions: '国际化',
+    type: 'string',
+    optional: 'zhCN | en',
+    default: 'zhCN',
+  },
+  {
+    name: 'uploadSize',
+    instructions: '上传大小',
+    type: 'number',
+    optional: '-',
+    default: '100',
+  },
+  {
+    name: 'fileList',
+    instructions: '文件集合',
+    type: 'array<UploadFile>',
+    optional: '-',
+    default: '[]',
+  },
+  {
+    name: 'file',
+    instructions: '文件',
+    type: 'string',
+    optional: '-',
+    default: '-',
+  },
+]
+
+const incident = [
+  {
+    name: 'handle-success',
+    instructions: '上传成功回调',
+    callback: 'uploadFile, uploadFiles, response',
+  },
+  {
+    name: 'handle-remove',
+    instructions: '删除成功回调',
+    callback: 'file',
+  },
+]
+</script>
+
+<template>
+  <ve-page id="ve-upload" title="ve-upload 上传">
+    <template #default>
+      <h3>批量上传文件</h3>
+      <ve-batch-upload-file/>
+      <h3>批量上传图片</h3>
+      <ve-batch-upload-picture/>
+      <h3>上传头像</h3>
+      <ve-upload-avatar/>
+      <h3>上传图片</h3>
+      <ve-upload-picture/>
+    </template>
+    <template #api>
+      <ve-stats :stats="stats"/>
+      <ve-incident :incident="incident"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
+</template>
+
+<style lang="scss" scoped>
+</style>

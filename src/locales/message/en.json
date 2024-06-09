@@ -22,5 +22,10 @@
   "dark": "Dark",
   "chooseLanguage": "Choose a language",
   "chinese": "chinese",
-  "english": "english"
+  "english": "english",
+  "logout": "Logout",
+  "personalCenter": "Personal center",
+  "modifyThePassword": "Modify the password",
+  "toTenant": "Switch tenant",
+  "informationCenter": "information Center"
 }

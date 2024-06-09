@@ -4,20 +4,20 @@ import {MenuInfoShowVo} from "@/entity/vo/MenuInfoShowVo.ts";
 export const useCommonStore = defineStore('common', {
     state: () => {
         return {
-            name: 'CodeEase',
+            name: 'Element plus pro',
             layout: 7,
             dark: true,
             sidebar: false,
             fullScreen: false,
             globalSize: 'default',
             locale: 'zhCn',
-            defaultActive: 'workbench',
+            defaultActive: 'overview',
             tabList: [
                 {
-                    title: '工作台',
-                    titleEn: 'Workbench',
-                    name: 'workbench',
-                    menuIcon: 'Odometer'
+                    title: 'Overview 组件总览',
+                    titleEn: 'Overview 组件总览',
+                    name: 'overview',
+                    menuIcon: 'Shop'
                 }
             ],
             menuData: [] as MenuInfoShowVo[],

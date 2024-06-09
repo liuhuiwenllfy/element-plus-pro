@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {RefreshLeft} from '@element-plus/icons-vue'
 import {ElLink, ElText} from 'element-plus'
-import {PropType, reactive, ref, watch} from 'vue'
+import {PropType, reactive} from 'vue'
 import 'element-plus/es/components/link/style/css'
 import 'element-plus/es/components/text/style/css'
 
@@ -16,12 +16,6 @@ const props = defineProps({
     required: false,
     default: () => 'zhCn'
   }
-})
-
-const _loading = ref(props.loading)
-
-watch(()=>props.loading, ()=>{
-  _loading.value = props.loading
 })
 
 const emits = defineEmits(['handleClick'])
@@ -43,10 +37,10 @@ const content = reactive({
 
 <template>
   <div class="load-more">
-    <el-link v-show="_loading" :icon="RefreshLeft" :underline="false" type="primary" @click="loadMore">
+    <el-link v-show="loading" :icon="RefreshLeft" :underline="false" type="primary" @click="loadMore">
       {{ content.loadMore[language] }}
     </el-link>
-    <el-text v-show="!_loading" type="info">{{ content.end[language] }}</el-text>
+    <el-text v-show="!loading" type="info">{{ content.end[language] }}</el-text>
   </div>
 </template>
 

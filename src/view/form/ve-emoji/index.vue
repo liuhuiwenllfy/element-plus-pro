@@ -19,19 +19,17 @@ const incident = [
 </script>
 
 <template>
-  <div class="ve-emoji">
-    <ve-page id="ve-emoji" pm-id="d92e9a85704872b0ab3a08a13b9a9eb0" title="emoji选择器">
-      <template #default>
-        <ve-emoji-select @change="handleEmoteClick"/>
-      </template>
-      <template #api>
-        <ve-incident :incident="incident"/>
-      </template>
-      <template #warn>
-        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-emoji" title="ve-emoji emoji选择器">
+    <template #default>
+      <ve-emoji-select @change="handleEmoteClick"/>
+    </template>
+    <template #api>
+      <ve-incident :incident="incident"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>

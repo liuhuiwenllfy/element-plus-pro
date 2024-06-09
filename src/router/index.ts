@@ -14,7 +14,7 @@ const routes: any[] = [
     {
         path: '/index',
         name: 'index',
-        redirect: 'workbench',
+        redirect: 'overview',
         component: () => import('@/view/index/index.vue'),
         children: []
     },

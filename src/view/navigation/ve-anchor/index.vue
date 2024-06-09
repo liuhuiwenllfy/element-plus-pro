@@ -68,32 +68,30 @@ const stats = [
 </script>
 
 <template>
-  <div class="ve-emoji">
-    <ve-page id="ve-anchor" pm-id="b63e7d3bb2a44b386742c033d4947f04" title="锚点">
-      <template #default>
-        <el-card shadow="never">
-          <el-row id="parent-scroll" style="height: 300px; overflow: auto">
-            <el-col :span="18">
-              <div id="part-1" class="group" style="height: 300px; background: #C6E2FF"/>
-              <div id="part-2" class="group" style="height: 300px; background: #F8E3C5"/>
-              <div id="part-3" class="group" style="height: 300px; background: #FCD3D3"/>
-              <div id="part-3-1" class="group" style="height: 300px; background: #C6E2FF"/>
-              <div id="part-3-2" class="group" style="height: 300px; background: #F8E3C5"/>
-            </el-col>
-            <el-col :span="6">
-              <ve-anchor :items="items" group="group" parent-scroll="parent-scroll"/>
-            </el-col>
-          </el-row>
-        </el-card>
-      </template>
-      <template #api>
-        <ve-stats :stats="stats"/>
-      </template>
-      <template #warn>
-        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-anchor" title="ve-anchor 锚点">
+    <template #default>
+      <el-card shadow="never">
+        <el-row id="parent-scroll" style="height: 300px; overflow: auto">
+          <el-col :span="18">
+            <div id="part-1" class="group" style="height: 300px; background: #C6E2FF"/>
+            <div id="part-2" class="group" style="height: 300px; background: #F8E3C5"/>
+            <div id="part-3" class="group" style="height: 300px; background: #FCD3D3"/>
+            <div id="part-3-1" class="group" style="height: 300px; background: #C6E2FF"/>
+            <div id="part-3-2" class="group" style="height: 300px; background: #F8E3C5"/>
+          </el-col>
+          <el-col :span="6">
+            <ve-anchor :items="items" group="group" parent-scroll="parent-scroll"/>
+          </el-col>
+        </el-row>
+      </el-card>
+    </template>
+    <template #api>
+      <ve-stats :stats="stats"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>

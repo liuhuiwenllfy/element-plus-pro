@@ -4,10 +4,24 @@ import {reactive} from "vue";
 import {ElMessage} from "element-plus";
 import {
   VeBell,
-  VeBoxLarge, VeBoxSmall,
-  VeFullscreenAlt, VeHouse,
+  VeBoxLarge,
+  VeBoxSmall,
+  VeFullscreenAlt,
+  VeHouse,
+  VeIconAnchor,
+  VeIconBasic,
+  VeIconCard,
+  VeIconData,
+  VeIconHeader,
+  VeIconIcon,
+  VeIconLayout,
+  VeIconLogin,
+  VeIconPreview,
   VeLetterChineseA,
-  VeLogOut, VePerson, VeSearchLocate, VeSettings16Filled,
+  VeLogOut,
+  VePerson,
+  VeSearchLocate,
+  VeSettings16Filled,
   VeSunny,
   VeThemeLightDark
 } from "@/components/ve-icon/components.ts";
@@ -63,6 +77,26 @@ const _data = reactive([
   'VePassword',
   'VeHouse',
   'VeIosNotifications',
+  'VeIconBasic',
+  'VeIconButton',
+  'VeIconIcon',
+  'VeIconForm',
+  'VeIconCron',
+  'VeIconEmoji',
+  'VeIconNavigation',
+  'VeIconAnchor',
+  'VeIconData',
+  'VeIconList',
+  'VeIconAside',
+  'VeIconCard',
+  'veIconEditor',
+  'VeIconFastNav',
+  'VeIconHeader',
+  'VeIconJustify',
+  'VeIconLayout',
+  'VeIconLogin',
+  'VeIconPagination',
+  'VeIconPreview',
 ])
 
 const handleClick = (item: any) => {
@@ -115,47 +149,43 @@ const stats = [
 </script>
 
 <template>
-  <div class="ve-icon">
-    <ve-page id="ve-icon" pm-id="" title="图标">
-      <template #default>
-        <ul class="icon-list">
-          <li v-for="(item, index1) of _data" :key="index1" class="icon-item" @click="handleClick(item)">
-            <el-space direction="vertical">
-              <component :is="item" class="el-icon"/>
-              <el-text>{{ item }}</el-text>
-            </el-space>
-          </li>
-        </ul>
-      </template>
-      <template #api>
-        <ve-stats :stats="stats"/>
-      </template>
-      <template #warn>
-        <p>上面是我们收集的一些好看的图标。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-icon" title="ve-icon Icon 图标">
+    <template #default>
+      <ul class="icon-list">
+        <li v-for="(item, index1) of _data" :key="index1" class="icon-item" @click="handleClick(item)">
+          <el-space direction="vertical">
+            <component :is="item" class="el-icon"/>
+            <el-text>{{ item }}</el-text>
+          </el-space>
+        </li>
+      </ul>
+    </template>
+    <template #api>
+      <ve-stats :stats="stats"/>
+    </template>
+    <template #warn>
+      <p>上面是我们收集的一些好看的图标。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>
-.ve-icon {
-  .icon-list {
-    list-style: none;
-    padding: 0;
+.icon-list {
+  list-style: none;
+  padding: 0;
 
-    .icon-item {
-      display: inline-block;
-      border: 1px solid var(--el-border-color);
-      padding: 20px 0;
-      text-align: center;
-      width: 180px;
-      cursor: pointer;
+  .icon-item {
+    display: inline-block;
+    border: 1px solid var(--el-border-color);
+    padding: 20px 0;
+    text-align: center;
+    width: 180px;
+    cursor: pointer;
 
-      &:hover {
-        background-color: var(--el-color-primary-light-8);
-      }
+    &:hover {
+      color: $brand;
+      background-color: var(--el-color-primary-light-8);
     }
   }
 }
-
 </style>

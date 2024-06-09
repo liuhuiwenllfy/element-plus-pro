@@ -137,121 +137,117 @@ const stats = [
 </script>
 
 <template>
-  <div class="ve-float-button">
-    <ve-page id="ve-float-button" pm-id="4d869c714dfd15edba5b0695a7b7c733" title="悬浮按钮">
-      <template #default>
-        <el-row :gutter="20">
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">最简单的用法。</el-divider>
-              <ve-float-button :open-btn="{shape:'circle', size: 'large'}" @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">通过 type 改变悬浮按钮的类型。</el-divider>
-              <ve-float-button
-                  :open-btn="{type:'primary',shape:'circle', size: 'large'}"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{shape:'circle', size: 'large'}"
-                  style="right: 94px"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">通过 shape 设置不同的形状。</el-divider>
-              <ve-float-button
-                  :open-btn="{type:'primary', size:'large'}"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{type:'primary', shape: 'round', size:'large'}"
-                  style="right: 94px"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{type:'primary', shape: 'circle', size:'large'}"
-                  style="right: 164px"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">可以通过 description 设置文字内容。</el-divider>
-              <el-alert :closable="false"
-                        description="仅当 shape 属性为 default 和 round 时支持。由于空间较小，推荐使用比较精简的双数文字。"
-                        show-icon
-                        type="warning"></el-alert>
-              <ve-float-button
-                  :open-btn="{type:'primary', size:'large', description:'描述'}"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{type:'primary', shape: 'round', size:'large', description:'描述'}"
-                  style="right: 164px"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">设置 tooltip 属性，即可开启气泡卡片。</el-divider>
-              <ve-float-button
-                  :open-btn="{shape:'circle', size: 'large', tooltip: '描述信息'}"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">浮动按钮组。</el-divider>
-              <ve-float-button
-                  :fold-btn="foldBtn" :open-btn="{shape:'circle', size: 'large', show: true}"
-                  @handle-fold-click="handleFoldClick"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">菜单模式，提供 click 触发方式。</el-divider>
-              <ve-float-button
-                  :fold-btn="foldBtn" :open-btn="{shape:'circle', size: 'large'}"
-                  @handle-fold-click="handleFoldClick"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="my-page">
-              <el-divider content-position="left">徽标数，右上角附带圆形徽标数字的悬浮按钮。</el-divider>
-              <ve-float-button
-                  :open-btn="{shape:'circle', size: 'large', badge: '12'}"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{shape:'circle', size: 'large', isDot: true}"
-                  style="right: 94px"
-                  @handle-open-click="handleOpenClick"/>
-              <ve-float-button
-                  :open-btn="{shape:'circle', size: 'large', badge: 'new'}"
-                  style="right: 164px"
-                  @handle-open-click="handleOpenClick"/>
-            </el-card>
-          </el-col>
-        </el-row>
-      </template>
-      <template #api>
-        <ve-stats :stats="stats"/>
-        <ve-incident :incident="incident"/>
-      </template>
-      <template #warn>
-        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-float-button" title="ve-float-button 悬浮按钮">
+    <template #default>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">最简单的用法。</el-divider>
+            <ve-float-button :open-btn="{shape:'circle', size: 'large'}" @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">通过 type 改变悬浮按钮的类型。</el-divider>
+            <ve-float-button
+                :open-btn="{type:'primary',shape:'circle', size: 'large'}"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{shape:'circle', size: 'large'}"
+                style="right: 94px"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">通过 shape 设置不同的形状。</el-divider>
+            <ve-float-button
+                :open-btn="{type:'primary', size:'large'}"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{type:'primary', shape: 'round', size:'large'}"
+                style="right: 94px"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{type:'primary', shape: 'circle', size:'large'}"
+                style="right: 164px"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">可以通过 description 设置文字内容。</el-divider>
+            <el-alert :closable="false"
+                      description="仅当 shape 属性为 default 和 round 时支持。由于空间较小，推荐使用比较精简的双数文字。"
+                      show-icon
+                      type="warning"></el-alert>
+            <ve-float-button
+                :open-btn="{type:'primary', size:'large', description:'描述'}"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{type:'primary', shape: 'round', size:'large', description:'描述'}"
+                style="right: 164px"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">设置 tooltip 属性，即可开启气泡卡片。</el-divider>
+            <ve-float-button
+                :open-btn="{shape:'circle', size: 'large', tooltip: '描述信息'}"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">浮动按钮组。</el-divider>
+            <ve-float-button
+                :fold-btn="foldBtn" :open-btn="{shape:'circle', size: 'large', show: true}"
+                @handle-fold-click="handleFoldClick"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">菜单模式，提供 click 触发方式。</el-divider>
+            <ve-float-button
+                :fold-btn="foldBtn" :open-btn="{shape:'circle', size: 'large'}"
+                @handle-fold-click="handleFoldClick"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+        <el-col :span="12">
+          <el-card class="my-page">
+            <el-divider content-position="left">徽标数，右上角附带圆形徽标数字的悬浮按钮。</el-divider>
+            <ve-float-button
+                :open-btn="{shape:'circle', size: 'large', badge: '12'}"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{shape:'circle', size: 'large', isDot: true}"
+                style="right: 94px"
+                @handle-open-click="handleOpenClick"/>
+            <ve-float-button
+                :open-btn="{shape:'circle', size: 'large', badge: 'new'}"
+                style="right: 164px"
+                @handle-open-click="handleOpenClick"/>
+          </el-card>
+        </el-col>
+      </el-row>
+    </template>
+    <template #api>
+      <ve-stats :stats="stats"/>
+      <ve-incident :incident="incident"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>
-.ve-float-button {
-  .my-page {
-    position: relative;
-    height: 300px;
-    margin-bottom: 20px;
-  }
+.my-page {
+  position: relative;
+  height: 300px;
+  margin-bottom: 20px;
 }
 </style>

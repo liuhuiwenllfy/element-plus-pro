@@ -17,23 +17,19 @@ const incident = [
 </script>
 
 <template>
-  <div class="ve-cron">
-    <ve-page id="ve-cron" title="cron时间选择器">
-      <template #default>
-          <ve-cron-select :cron="_cron" style="margin: 20px" @change="(e)=> {console.log(e)}"/>
-      </template>
-      <template #api>
-        <ve-incident :incident="incident"/>
-      </template>
-      <template #warn>
-        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-cron" title="ve-cron cron时间选择器">
+    <template #default>
+      <ve-cron-select :cron="_cron" style="margin: 20px" @change="(e)=> {console.log(e)}"/>
+    </template>
+    <template #api>
+      <ve-incident :incident="incident"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>
-.ve-cron {
 
-}
 </style>

@@ -19,7 +19,6 @@ const loadMore = async () => {
   _list.value = [..._list.value, _list.value[0]]
   if (_list.value.length >= 5) {
     loadMoreShow.value = false
-    console.log(1111)
   }
 }
 
@@ -81,46 +80,44 @@ const slots = [
 </script>
 
 <template>
-  <div class="ve-list">
-    <ve-page id="ve-list" pm-id="5f0001fd6e4da3205fd4cd9f255eaa9c" title="列表">
-      <template #default>
-        <el-divider content-position="left">list1</el-divider>
-        <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list1">
-          <template #operation>
-            <el-link :underline="false" size="mini" type="primary">修改</el-link>
-            <el-link :underline="false" size="mini" type="primary">更多</el-link>
-          </template>
-        </ve-list>
-        <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
-        <el-divider content-position="left">list2</el-divider>
-        <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list2">
-          <template #operation>
-            <el-link :underline="false" size="mini" type="primary">修改</el-link>
-            <el-link :underline="false" size="mini" type="primary">更多</el-link>
-          </template>
-        </ve-list>
-        <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
-        <el-divider content-position="left">list3</el-divider>
-        <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list3">
-          <template #operation>
-            <el-link :underline="false" size="mini" type="primary">修改</el-link>
-            <el-link :underline="false" size="mini" type="primary">更多</el-link>
-          </template>
-          <template #image>
-            <el-image :src="item.image || 'default.png'" class="custom-image" fit="cover"></el-image>
-          </template>
-        </ve-list>
-        <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
-      </template>
-      <template #api>
-        <ve-stats :stats="stats"/>
-        <ve-slots :slots="slots"/>
-      </template>
-      <template #warn>
-        <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
-      </template>
-    </ve-page>
-  </div>
+  <ve-page id="ve-list" title="ve-list 列表">
+    <template #default>
+      <el-divider content-position="left">list1</el-divider>
+      <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list1">
+        <template #operation>
+          <el-link :underline="false" size="mini" type="primary">修改</el-link>
+          <el-link :underline="false" size="mini" type="primary">更多</el-link>
+        </template>
+      </ve-list>
+      <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
+      <el-divider content-position="left">list2</el-divider>
+      <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list2">
+        <template #operation>
+          <el-link :underline="false" size="mini" type="primary">修改</el-link>
+          <el-link :underline="false" size="mini" type="primary">更多</el-link>
+        </template>
+      </ve-list>
+      <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
+      <el-divider content-position="left">list3</el-divider>
+      <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list3">
+        <template #operation>
+          <el-link :underline="false" size="mini" type="primary">修改</el-link>
+          <el-link :underline="false" size="mini" type="primary">更多</el-link>
+        </template>
+        <template #image>
+          <el-image :src="item.image || 'default.png'" class="custom-image" fit="cover"></el-image>
+        </template>
+      </ve-list>
+      <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
+    </template>
+    <template #api>
+      <ve-stats :stats="stats"/>
+      <ve-slots :slots="slots"/>
+    </template>
+    <template #warn>
+      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
+    </template>
+  </ve-page>
 </template>
 
 <style lang="scss" scoped>
