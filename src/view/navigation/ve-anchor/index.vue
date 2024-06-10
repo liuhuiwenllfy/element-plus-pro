@@ -2,8 +2,9 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeAnchor from '@/components/ve-anchor/index.vue'
 import {ref} from "vue";
+import {Anchor} from "@/components/ve-anchor/Anchor.ts";
 
-const items = ref([
+const items = ref<Anchor[]>([
   {
     id: 'part-1',
     title: 'part-1',

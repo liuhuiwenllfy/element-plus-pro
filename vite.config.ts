@@ -7,6 +7,10 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: '/', //指定相对路径
+    build: {
+        outDir: 'dist' //指定输出路径
+    },
     plugins: [
         vue(),
         AutoImport({

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 
-import {Anchor} from "@/components/ve-anchor/Anchor";
-import VeAnchor from '@/components/ve-anchor/node/index.vue'
+import {Anchor} from "./Anchor";
+import VeAnchor from './node/index.vue'
 import {onMounted, ref} from "vue";
 
 const props = defineProps({

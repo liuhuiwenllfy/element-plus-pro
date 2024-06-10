@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeDefaultFooter from 've-footer/ve-default-footer/index.vue'
+import VeDefaultFooter from '@/components/ve-footer/ve-default-footer/index.vue'
 </script>
 
 <template>

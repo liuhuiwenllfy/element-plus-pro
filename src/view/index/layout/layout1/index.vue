@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Main from '@/view/index/main/index.vue'
 import Header from '@/view/index/header/index.vue'
-import Layout1 from 've-layout/layout-1/index.vue'
+import Layout1 from '@/components/ve-layout/layout-1/index.vue'
 </script>
 
 <template>

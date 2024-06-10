@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 
-import {useRouter} from 'vue-router'
 import {useCommonStore} from "@/pinia/common.ts";
-
-const router = useRouter()
-
 
 const commonStore = useCommonStore();
 </script>

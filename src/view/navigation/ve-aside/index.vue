@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import VeAside from 've-aside/index.vue'
-import menuList from '/src/api/json/menuList.json'
+import VeAside from '@/components/ve-aside/index.vue'
+import menuList from '@/api/json/menuList.json'
+import {ref} from "vue";
+import {MenuInfoShowVo} from "@/components/ve-header/MenuInfoShowVo.ts";
+
+const _menuList = ref<MenuInfoShowVo[]>(menuList)
 
 const stats = [
   {
@@ -154,7 +158,7 @@ const incident = [
       <div class="aside-body">
         <ve-aside
             :layout="7"
-            :menu="menuList"
+            :menu="_menuList"
             :sidebar="false"
             default-active="workbench"
             language="zhCn"

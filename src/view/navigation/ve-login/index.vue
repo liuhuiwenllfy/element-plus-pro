@@ -98,6 +98,7 @@ const incident = [
     </template>
     <template #api>
       <ve-stats :stats="stats"/>
+      <ve-incident :incident="incident"/>
     </template>
     <template #warn>
       <p>该组件是基于element-plus开发，需要在此基础上使用。</p>

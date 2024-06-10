@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeFastNav from 've-fast-nav/index.vue'
+import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import {useRouter} from "vue-router";
 

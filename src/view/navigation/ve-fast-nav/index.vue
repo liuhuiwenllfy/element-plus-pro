@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import VeFastNav from 've-fast-nav/index.vue'
+import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 
 const stats = [

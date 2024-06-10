@@ -1,15 +1,16 @@
 <script lang="ts" setup>
-import Layout from 've-layout/mini/index.vue'
+import Layout from '@/components/ve-layout/mini/index.vue'
 import {Setting} from '@element-plus/icons-vue'
 import {useI18n} from 'vue-i18n'
 import {useCommonStore} from "@/pinia/common.ts";
 import {ref, watch} from "vue";
-import {VeMdCloudyNight, VeSunny} from 've-icon/components'
+import {VeMdCloudyNight, VeSunny} from '@/components/ve-icon/components'
+
 const commonStore = useCommonStore();
 
 const _drawer = ref(commonStore.getDrawer)
 
-watch(()=>commonStore.getDrawer, ()=>{
+watch(() => commonStore.getDrawer, () => {
   _drawer.value = commonStore.getDrawer
 })
 

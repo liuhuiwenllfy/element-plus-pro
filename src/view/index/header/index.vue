@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeHeader from 've-header/index.vue'
+import VeHeader from '@/components/ve-header/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import menuList from '@/api/json/menuList.json'
 import router from "@/router";

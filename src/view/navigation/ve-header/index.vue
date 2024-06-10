@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import VeHeader from 've-header/index.vue'
-import menuList from '/src/api/json/menuList.json'
+import VeHeader from '@/components/ve-header/index.vue'
+import menuList from '@/api/json/menuList.json'
 
 const stats = [
 

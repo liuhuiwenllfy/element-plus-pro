@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 
 import {ref} from "vue";
-import {Btn} from "@/components/ve-float-button/Btn";
-import {ElTooltip, ElBadge, ElButton} from 'element-plus';
+import {Btn} from "./Btn";
+import {ElBadge, ElButton, ElTooltip} from 'element-plus';
 import 'element-plus/es/components/tooltip/style/css'
 import 'element-plus/es/components/badge/style/css'
 import 'element-plus/es/components/button/style/css'

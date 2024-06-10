@@ -2,7 +2,7 @@
 import Main from '@/view/index/main/index.vue'
 import Header from '@/view/index/header/index.vue'
 import Aside from '@/view/index/aside/index.vue'
-import Layout4 from 've-layout/layout-4/index.vue'
+import Layout4 from '@/components/ve-layout/layout-4/index.vue'
 </script>
 
 <template>
