@@ -5,7 +5,7 @@ import {computed, ref} from 'vue'
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import VeSlots from "@/components/ve-page/ve-slots/index.vue";
-import {Delete, Edit} from "@element-plus/icons-vue";
+import {Delete, Document, Edit} from "@element-plus/icons-vue";
 
 const stats = [
   {
@@ -210,7 +210,7 @@ const _data = ref([
     <template #default>
       <el-table ref="ve-table" :data="_data">
         <ve-table-column :column-list="columnList">
-          <template #default="scope">
+          <template #default>
             <el-button
                 :icon="Document"
                 plain
