@@ -62,7 +62,7 @@ const router = createRouter({
 router.beforeEach((to, _from) => {
     NProgress.start()
     if (!router.hasRoute(<string>to.path.replace("/", ""))) {
-        addRoute(<any[]>menuList)
+        addRoute(<any>menuList)
         if (!router.hasRoute(<string>to.path.replace("/", ""))) {
             return {name: '404'}
         }

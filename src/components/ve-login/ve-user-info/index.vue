@@ -21,7 +21,7 @@ defineProps({
     required: true,
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -43,7 +43,7 @@ const signOut = async () => {
   emits('handleSignOut')
 }
 
-const content = reactive({
+const content = reactive<any>({
   logout: {
     zhCn: '登出',
     en: 'logout'

@@ -19,7 +19,7 @@ const handleSignOutClick = () => {
   console.log("登出")
 }
 
-const handleUserClick = (code) => {
+const handleUserClick = (code: string) => {
   switch (code) {
     case 'officialWebsite':
       window.open('https://www.liulingfengyu.cn')
@@ -34,19 +34,19 @@ const getNavigation = computed(() => {
 <template>
   <ve-header
       :dark="commonStore.getDark"
-      :defaultActive="router.currentRoute.value.name"
+      :defaultActive="<string>router.currentRoute.value.name"
       :drawerNews="commonStore.getDrawerNews"
       :fullScreen="commonStore.getFullScreen"
       :globalSize="commonStore.getGlobalSize"
       :language="commonStore.getLocale"
       :layout="commonStore.getLayout"
       :list="userInfo"
-      :menu="menuList"
+      :menu="<any>menuList"
       :name="commonStore.getName"
-      :navigation="getNavigation"
+      :navigation="<string>getNavigation"
       :newsNum="commonStore.getNewsNum"
       :sidebar="commonStore.getSidebar"
-      avatar="default.png"
+      avatar="avatar.png"
       logo="logo.png"
       tenantName="刘凌枫羽工作室" username="element-plus-pro"
       @handle-night-change="commonStore.changeDark($event)"

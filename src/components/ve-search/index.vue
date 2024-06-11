@@ -12,10 +12,10 @@ const props = defineProps({
     default: () => ''
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const _val = ref(props.val)
@@ -26,7 +26,7 @@ const handleClick = () => {
   emits('handleClick', _val.value)
 }
 
-const content = reactive({
+const content = reactive<any>({
   siteSearch: {
     zhCn: '全站搜索',
     en: 'Full site search'

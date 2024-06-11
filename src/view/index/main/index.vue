@@ -7,7 +7,7 @@ const commonStore = useCommonStore()
 
 const router = useRouter()
 
-const handleRouter = (name) => {
+const handleRouter = (name: string) => {
   router.push({name: `${name}`})
 }
 
@@ -15,7 +15,7 @@ const handleRouter = (name) => {
 
 <template>
   <div class="main">
-    <ve-fast-nav :activeName="router.currentRoute.value.name"
+    <ve-fast-nav :activeName="<string>router.currentRoute.value.name"
                  :language="commonStore.getLocale"
                  :tab-list="commonStore.tabList"
                  @handle-router="handleRouter"/>

@@ -2,6 +2,8 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 
 const stats = [
   {

@@ -11,10 +11,10 @@ import {PropType, reactive} from 'vue'
 defineProps({
   // 语言 'zhCn'|'en'
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const content = reactive<any>([

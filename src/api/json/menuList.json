@@ -37,19 +37,6 @@
     "menuPath": "/basic",
     "children": [
       {
-        "id": "3de1af745ffd474cb503eba1d13f88c3",
-        "menuCode": "ve-float-button",
-        "menuName": "ve-float-button 悬浮按钮",
-        "menuNameEn": "ve-float-button Hover button",
-        "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
-        "menuLevel": 1,
-        "menuSort": 0,
-        "menuIcon": "VeIconButton",
-        "menuPath": "/ve-float-button",
-        "menuComponent": "basic/ve-float-button",
-        "children": []
-      },
-      {
         "id": "78544f6cbd9449718e37ff3c538e81e3",
         "menuCode": "ve-icon",
         "menuName": "ve-icon Icon 图标",

@@ -20,7 +20,7 @@ const props = defineProps({
     default: () => ''
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -45,7 +45,7 @@ const handleShow = () => {
   emits('handleShow')
 }
 
-const content = reactive({
+const content = reactive<any>({
   select: {
     zhCn: '请选择',
     en: 'Please select',

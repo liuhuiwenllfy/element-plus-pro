@@ -2,6 +2,7 @@
 import VeIncident from '@/components/ve-page/ve-incident/index.vue'
 import VePage from '@/components/ve-page/index.vue'
 import VeSearchArea from '@/components/ve-search-area/index.vue'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const stats = [
   {

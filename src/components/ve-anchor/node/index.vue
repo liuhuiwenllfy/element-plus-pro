@@ -47,11 +47,13 @@ const handleClick = (id: string, roll: boolean) => {
   // 获取当前点击锚点dom，并设置选中状态
   const key = document.getElementById(`${id}-link`);
   // 设置锚点选中状态
-  key.classList.add("is-active")
+  key?.classList.add("is-active")
   // 获取锚点标记dom
   const markers = document.getElementById('markers');
   // 设置锚点标记位置
-  markers.style.top = `${key.offsetTop}px`
+  if (markers) {
+    markers.style.top = `${key?.offsetTop}px`
+  }
 
   function changeScrollTop() {
     //获取滚动区域dom
@@ -62,7 +64,7 @@ const handleClick = (id: string, roll: boolean) => {
     let scrollTop = 0
     for (let i = 0; i < groupClassList.length; i++) {
       //找到高度差匹配的块
-      if (id === groupClassList[i].id) {
+      if (id === groupClassList[i].id && parentScroll) {
         parentScroll.scrollTop = scrollTop
         break
       }

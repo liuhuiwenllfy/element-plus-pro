@@ -2,6 +2,7 @@
 import VeIncident from '@/components/ve-page/ve-incident/index.vue'
 import VePage from '@/components/ve-page/index.vue'
 import VeSearch from '@/components/ve-search/index.vue'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const stats = [
   {
@@ -35,6 +36,7 @@ const incident = [
       <ve-search language="zhCn" val="标题党" @handle-click="console.log($event)"/>
     </template>
     <template #api>
+      <ve-stats :stats="stats"/>
       <ve-incident :incident="incident"/>
     </template>
     <template #warn>

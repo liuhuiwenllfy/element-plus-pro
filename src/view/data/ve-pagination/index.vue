@@ -2,6 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VePagination from '@/components/ve-pagination/index.vue'
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const stats = [
   {

@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Day: typeof import('./src/components/ve-cron-select/day/index.vue')['default']
-    ElAlert: typeof import('element-plus/es')['ElAlert']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElBadge: typeof import('element-plus/es')['ElBadge']
@@ -62,7 +61,6 @@ declare module 'vue' {
     VeDefaultLogin: typeof import('./src/components/ve-login/ve-default-login/index.vue')['default']
     VeEmojiSelect: typeof import('./src/components/ve-emoji-select/index.vue')['default']
     VeFastNav: typeof import('./src/components/ve-fast-nav/index.vue')['default']
-    VeFloatButton: typeof import('./src/components/ve-float-button/index.vue')['default']
     VeFullScreen: typeof import('./src/components/ve-header/ve-full-screen/index.vue')['default']
     VeHeader: typeof import('./src/components/ve-header/index.vue')['default']
     VeIconAdd: typeof import('./src/components/ve-icon/ve-icon-add/index.vue')['default']

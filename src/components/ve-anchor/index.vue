@@ -27,24 +27,28 @@ onMounted(() => {
   const parentScrollElement = document.getElementById(props.parentScroll);
   // 固定锚点区域位置
   const veAnchor = document.getElementById('ve-anchor');
-  parentScrollElement.addEventListener('scroll', () => {
-    veAnchor.style.top = `${parentScrollElement.scrollTop}px`
-  })
+  if (parentScrollElement && veAnchor) {
+    parentScrollElement.addEventListener('scroll', () => {
+      veAnchor.style.top = `${parentScrollElement.scrollTop}px`
+    })
+  }
   //获取区域中所有部分
   const groupClassList = document.getElementsByClassName(props.group)
   checked.value = groupClassList[0].id
   //监听区域滚动
-  parentScrollElement.addEventListener('scrollend', () => {
-    //高度差（初始为第一项高度差）
-    let poor = -groupClassList[0].clientHeight
-    for (let i = 0; i < groupClassList.length; i++) {
-      //找到高度差匹配的块
-      if (parentScrollElement.scrollTop - groupClassList[i].clientHeight >= poor) {
-        checked.value = groupClassList[i].id
+  if (parentScrollElement) {
+    parentScrollElement.addEventListener('scrollend', () => {
+      //高度差（初始为第一项高度差）
+      let poor = -groupClassList[0].clientHeight
+      for (let i = 0; i < groupClassList.length; i++) {
+        //找到高度差匹配的块
+        if (parentScrollElement.scrollTop - groupClassList[i].clientHeight >= poor) {
+          checked.value = groupClassList[i].id
+        }
+        poor += groupClassList[i].clientHeight
       }
-      poor += groupClassList[i].clientHeight
-    }
-  })
+    })
+  }
 })
 
 </script>

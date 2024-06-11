@@ -2,7 +2,7 @@
 import {PropType, reactive, ref, watch} from 'vue'
 import {Delete, Plus, ZoomIn} from '@element-plus/icons-vue'
 
-import type {UploadFile, UploadFiles} from 'element-plus'
+import type {UploadFile, UploadFiles, UploadRawFile} from 'element-plus'
 import {ElDialog, ElIcon, ElMessage, ElUpload} from "element-plus";
 import 'element-plus/es/components/upload/style/css'
 import 'element-plus/es/components/message/style/css'
@@ -23,7 +23,7 @@ const props = defineProps({
   },
   // 国际化 'zhCn'|'en'
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -35,7 +35,7 @@ const props = defineProps({
   },
   fileList: {
     type: Array as () => Array<UploadFile>,
-    required: true,
+    required: false,
     default: () => []
   }
 })
@@ -68,7 +68,7 @@ const handlePictureCardPreview = (file: UploadFile) => {
   dialogVisible.value = true
 }
 
-const beforeUpload = (file: UploadFile) => {
+const beforeUpload = (file: UploadRawFile) => {
   //@ts-ignore
   if (file.size > 1024 * 1024 * props.uploadSize) {
     ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
@@ -76,7 +76,7 @@ const beforeUpload = (file: UploadFile) => {
   }
 }
 
-const content = reactive({
+const content = reactive<any>({
   onlyFilesSmallerThanNumMbCanBeUploaded: {
     zhCn: `只能上传小于 ${props.uploadSize}MB 的文件`,
     en: `Only files smaller than ${props.uploadSize}mb can be uploaded`

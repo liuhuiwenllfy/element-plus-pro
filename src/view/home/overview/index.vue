@@ -9,8 +9,6 @@ import router from "@/router";
 
 const search = ref()
 
-const menu = ref<MenuInfoShowVo[]>(menuList)
-
 const commonStore = useCommonStore()
 
 const getMenuName = (item: MenuInfoShowVo) => {
@@ -34,7 +32,7 @@ const getMenuName = (item: MenuInfoShowVo) => {
     />
   </div>
   <el-divider/>
-  <div v-for="(item, index) in menu" :key="index">
+  <div v-for="(item, index) in <any>menuList" :key="index">
     <div v-if="index > 0">
       <el-space>
         <component :is="item.menuIcon" class="el-icon"/>

@@ -5,17 +5,17 @@ import {PropType, reactive} from 'vue'
 import 'element-plus/es/components/link/style/css'
 import 'element-plus/es/components/text/style/css'
 
-const props = defineProps({
+defineProps({
   loading: {
     type: Boolean,
     required: false,
     default: () => true
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const emits = defineEmits(['handleClick'])
@@ -23,7 +23,7 @@ const loadMore = () => {
   emits('handleClick')
 }
 
-const content = reactive({
+const content = reactive<any>({
   loadMore: {
     zhCn: '加载更多',
     en: 'Load more',

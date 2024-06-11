@@ -13,10 +13,10 @@ const props = defineProps({
     default: () => []
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const emits = defineEmits(['defaultActive'])

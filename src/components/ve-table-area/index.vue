@@ -8,13 +8,13 @@ import {PropType, reactive} from 'vue'
 
 defineProps({
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
-const content = reactive({
+const content = reactive<any>({
   tableDataArea: {
     zhCn: '表格数据区域',
     en: 'Table entity area',

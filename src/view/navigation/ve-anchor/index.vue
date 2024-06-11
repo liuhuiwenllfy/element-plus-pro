@@ -3,6 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeAnchor from '@/components/ve-anchor/index.vue'
 import {ref} from "vue";
 import {Anchor} from "@/components/ve-anchor/Anchor.ts";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const items = ref<Anchor[]>([
   {
@@ -27,7 +28,7 @@ const items = ref<Anchor[]>([
       },
     ],
   }
-])
+] as Anchor[])
 const stats = [
   {
     name: 'items',

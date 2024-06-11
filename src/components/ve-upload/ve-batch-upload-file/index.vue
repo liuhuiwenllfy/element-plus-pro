@@ -22,7 +22,7 @@ const props = defineProps({
   },
   // 国际化 'zhCn'|'en'
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -34,7 +34,7 @@ const props = defineProps({
   },
   fileList: {
     type: Array as () => Array<UploadFile>,
-    required: true,
+    required: false,
     default: () => []
   }
 })
@@ -64,7 +64,7 @@ const handleRemove = (file: UploadFile) => {
 }
 
 
-const content = reactive({
+const content = reactive<any>({
   onlyFilesSmallerThanNumMbCanBeUploaded: {
     zhCn: `只能上传小于 ${props.uploadSize}MB 的文件`,
     en: `Only files smaller than ${props.uploadSize}mb can be uploaded`

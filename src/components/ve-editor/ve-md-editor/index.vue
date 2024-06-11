@@ -93,7 +93,7 @@ const props = defineProps({
   },
   // 国际化  'zh-CN'|'en-US'
   language: {
-    type: String as PropType<'zh-CN' | 'en-US'>,
+    type: String as PropType<'zh-CN' | 'en-US' | string>,
     required: false,
     default: () => 'zh-CN'
   },

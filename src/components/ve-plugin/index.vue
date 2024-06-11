@@ -11,10 +11,10 @@ const props = defineProps({
     required: true
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const emits = defineEmits(['handleClick'])
@@ -23,7 +23,7 @@ const handleClick = () => {
   emits('handleClick', props.id)
 }
 
-const content = reactive({
+const content = reactive<any>({
   author: {
     zhCn: '作者',
     en: 'Author'

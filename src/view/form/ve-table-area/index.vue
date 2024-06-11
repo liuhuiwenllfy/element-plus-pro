@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
 import VeTableArea from '@/components/ve-table-area/index.vue'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 
 const stats = [
   {

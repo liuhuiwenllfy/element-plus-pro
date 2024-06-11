@@ -18,15 +18,17 @@ const locale = computed(() => {
 
 const html = document.querySelector('html')
 watch(() => commonStore.dark, () => {
-  if (commonStore.dark) {
-    html.classList.add('dark')
-  } else {
-    html.classList.remove('dark')
+  if (html) {
+    if (commonStore.dark) {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
   }
 }, {immediate: true})
 
 
-watch(()=> router.currentRoute.value.name, ()=>{
+watch(() => router.currentRoute.value.name, () => {
   commonStore.changeTabList(router.currentRoute.value.meta)
 })
 </script>

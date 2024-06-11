@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeLogo from '@/components/ve-logo/index.vue'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const stats = [
   {

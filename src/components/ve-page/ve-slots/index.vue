@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 defineProps({
   slots: {
-    type: [],
+    type: Array<any>,
     required: false,
     default: () => []
   }

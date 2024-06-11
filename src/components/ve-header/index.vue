@@ -65,12 +65,12 @@ const props = defineProps({
     default: () => ''
   },
   layout: {
-    type: Number as PropType<1 | 2 | 3 | 4 | 5 | 6 | 7>,
+    type: Number as PropType<1 | 2 | 3 | 4 | 5 | 6 | 7 | number>,
     required: false,
     default: () => 7
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -215,7 +215,7 @@ const handleGlobalSettingClick = async () => {
   emits('handleGlobalSettingClick')
 }
 
-const content = reactive({
+const content = reactive<any>({
   home: {
     zhCn: '首页',
     en: 'Home'

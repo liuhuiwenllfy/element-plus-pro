@@ -22,10 +22,10 @@ const props = defineProps({
     required: true
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const _activeName = ref(props.activeName)
@@ -153,7 +153,7 @@ const handleCommand = (command: string | number | object) => {
   }
 }
 
-const content = reactive({
+const content = reactive<any>({
   closeWarn: {
     zhCn: '工作台不能关闭',
     en: 'Table cannot be closed',

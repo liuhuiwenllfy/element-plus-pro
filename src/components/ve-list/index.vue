@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import {h} from 'vue'
-import {ElDivider, ElSpace, ElAvatar, ElText} from 'element-plus'
+import {ElAvatar, ElDivider, ElSpace, ElText} from 'element-plus'
 import 'element-plus/es/components/divider/style/css'
 import 'element-plus/es/components/space/style/css'
 import 'element-plus/es/components/avatar/style/css'
 import 'element-plus/es/components/text/style/css'
 
-const props = defineProps({
+defineProps({
   type: {
     type: String,
     required: false,

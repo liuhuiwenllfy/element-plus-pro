@@ -12,7 +12,7 @@ defineProps({
     required: true,
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -27,7 +27,7 @@ const toRegister = () => {
   emits('handleRegister')
 }
 
-const content = reactive({
+const content = reactive<any>({
   login: {
     zhCn: '登录',
     en: 'login'

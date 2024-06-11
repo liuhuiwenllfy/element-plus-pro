@@ -5,6 +5,7 @@ import VeBatchUploadPicture from '@/components/ve-upload/ve-batch-upload-picture
 import VeUploadAvatar from '@/components/ve-upload/ve-upload-avatar/index.vue'
 import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const stats = [
   {
@@ -69,13 +70,13 @@ const incident = [
   <ve-page id="ve-upload" title="ve-upload 上传">
     <template #default>
       <h3>批量上传文件</h3>
-      <ve-batch-upload-file/>
+      <ve-batch-upload-file api="#"/>
       <h3>批量上传图片</h3>
-      <ve-batch-upload-picture/>
+      <ve-batch-upload-picture api="#"/>
       <h3>上传头像</h3>
-      <ve-upload-avatar/>
+      <ve-upload-avatar api="#"/>
       <h3>上传图片</h3>
-      <ve-upload-picture/>
+      <ve-upload-picture api="#"/>
     </template>
     <template #api>
       <ve-stats :stats="stats"/>

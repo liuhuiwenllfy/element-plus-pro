@@ -2,6 +2,8 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeDefaultLogin from '@/components/ve-login/ve-default-login/index.vue'
 import VeUserInfo from '@/components/ve-login/ve-user-info/index.vue'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 
 const stats = [
   {
@@ -82,7 +84,7 @@ const incident = [
 <template>
   <ve-page id="ve-login" title="ve-login 登录">
     <template #default>
-      <ve-default-login avatar="logo.png" @handle-login="console.log('登录')"
+      <ve-default-login avatar="avatar.png" @handle-login="console.log('登录')"
                         @handle-register="console.log('注册')"></ve-default-login>
       <el-divider/>
       <ve-user-info
@@ -91,7 +93,7 @@ const incident = [
                     name:'个人中心',
                     icon:'User'
                   }]"
-          avatar="logo.png"
+          avatar="avatar.png"
           username="sysadmin"
           @handle-click="console.log($event)"
           @handle-sign-out="console.log('登出')"></ve-user-info>

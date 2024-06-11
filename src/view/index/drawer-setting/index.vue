@@ -16,7 +16,7 @@ watch(() => commonStore.getDrawer, () => {
 
 const _globalSizeChange = ref(commonStore.getGlobalSize)
 
-const handleGlobalSizeChange = (val: String) => {
+const handleGlobalSizeChange = (val: string) => {
   commonStore.changeGlobalSize(val)
 }
 

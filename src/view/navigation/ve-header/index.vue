@@ -2,6 +2,8 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeHeader from '@/components/ve-header/index.vue'
 import menuList from '@/api/json/menuList.json'
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 
 const stats = [
 
@@ -299,14 +301,14 @@ const incident = [
               name:'个人中心',
               icon:'User'
             }]"
-          :menu="menuList"
+          :menu="<any>menuList"
           :newsNum="1"
           :sidebar="false"
-          avatar="/logo.png"
+          avatar="avatar.png"
           defaultActive="home"
           globalSize="default"
           language="en"
-          logo="/logo.png"
+          logo="logo.png"
           name="CodeEase"
           navigation="工作台"
           tenantName="刘凌枫羽工作室" username="sysadmin"

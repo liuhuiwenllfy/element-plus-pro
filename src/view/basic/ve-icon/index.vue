@@ -2,29 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import {reactive} from "vue";
 import {ElMessage} from "element-plus";
-import {
-  VeBell,
-  VeBoxLarge,
-  VeBoxSmall,
-  VeFullscreenAlt,
-  VeHouse,
-  VeIconAnchor,
-  VeIconBasic,
-  VeIconCard,
-  VeIconData,
-  VeIconHeader,
-  VeIconIcon,
-  VeIconLayout,
-  VeIconLogin,
-  VeIconPreview,
-  VeLetterChineseA,
-  VeLogOut,
-  VePerson,
-  VeSearchLocate,
-  VeSettings16Filled,
-  VeSunny,
-  VeThemeLightDark
-} from "@/components/ve-icon/components.ts";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const _data = reactive([
   'VeLove',

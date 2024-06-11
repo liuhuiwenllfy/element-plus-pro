@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,12 +19,7 @@
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "screenfull": "^6.0.2",
-    "ve-aside": "^1.0.0",
-    "ve-fast-nav": "^1.0.0",
-    "ve-footer": "^1.0.0",
-    "ve-header": "^1.0.0",
     "ve-icon": "^1.0.0",
-    "ve-layout": "^1.0.0",
     "ve-recursive-menu": "^1.0.0",
     "vue": "^3.4.21",
     "vue-i18n": "^9.13.1",

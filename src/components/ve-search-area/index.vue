@@ -20,10 +20,10 @@ const props = defineProps({
     default: () => false
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const _open = ref(props.open)
@@ -34,7 +34,7 @@ const handleClick = () => {
   emits('handleClick', _open.value)
 }
 
-const content = reactive({
+const content = reactive<any>({
   searchArea: {
     zhCn: '搜索区域',
     en: 'Search area'

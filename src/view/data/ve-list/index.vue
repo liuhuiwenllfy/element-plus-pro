@@ -3,6 +3,8 @@ import VeLoadMore from '@/components/ve-load-more/index.vue'
 import VePage from "@/components/ve-page/index.vue";
 import VeList from "@/components/ve-list/index.vue";
 import {ref} from "vue";
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const _list = ref([
   {

@@ -3,6 +3,8 @@ import VePage from "@/components/ve-page/index.vue";
 import VeTableColumn from '@/components/ve-table-column/index.vue'
 import {computed} from 'vue'
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 
 const stats = [
   {

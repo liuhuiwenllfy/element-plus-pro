@@ -49,10 +49,10 @@ const props = defineProps({
     default: () => []
   },
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
-  }
+  },
 })
 
 const _tableHeight = ref(props.tableHeight)
@@ -99,7 +99,7 @@ const handleFullScreen = () => {
   tableFullScreen.value = !tableFullScreen.value
 }
 
-const content = reactive({
+const content = reactive<any>({
   operation: {
     zhCn: '操作',
     en: 'Operation',

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeBusinessCard from '@/components/ve-business-card/index.vue'
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 
 const slots = [
   {
@@ -23,7 +24,7 @@ const slots = [
     <template #default>
       <ve-business-card style="width: 400px">
         <template #avatar>
-          <el-image src="/logo.png" style="width: 40px; height: 40px"/>
+          <el-image src="avatar.png" style="width: 40px; height: 40px"/>
         </template>
         <template #title>Demo</template>
         <template #operate>

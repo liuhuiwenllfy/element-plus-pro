@@ -17,7 +17,7 @@ const props = defineProps({
   },
   // 国际化 'zhCn'|'en'
   language: {
-    type: String as PropType<'zhCn' | 'en'>,
+    type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
     default: () => 'zhCn'
   },
@@ -70,7 +70,7 @@ const beforeAvatarUpload = (rawFile: UploadRawFile) => {
   return true
 }
 
-const content = reactive({
+const content = reactive<any>({
   imageMax2MB: {
     zhCn: `图片大小不能超过 ${props.uploadSize}MB`,
     en: `Image size cannot exceed ${props.uploadSize}mb`

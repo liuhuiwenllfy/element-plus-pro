@@ -2,10 +2,8 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeAside from '@/components/ve-aside/index.vue'
 import menuList from '@/api/json/menuList.json'
-import {ref} from "vue";
-import {MenuInfoShowVo} from "@/components/ve-header/MenuInfoShowVo.ts";
-
-const _menuList = ref<MenuInfoShowVo[]>(menuList)
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 
 const stats = [
   {
@@ -158,11 +156,11 @@ const incident = [
       <div class="aside-body">
         <ve-aside
             :layout="7"
-            :menu="_menuList"
+            :menu="<any>menuList"
             :sidebar="false"
             default-active="workbench"
             language="zhCn"
-            logo="/logo.png"
+            logo="logo.png"
             name="Demo"
             @handle-active-change="(index)=>{console.log(index)}"
         >

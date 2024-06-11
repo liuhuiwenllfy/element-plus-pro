@@ -6,6 +6,7 @@ import VeMdEditor from '@/components/ve-editor/ve-md-editor/index.vue'
 import VeMdPreview from '@/components/ve-editor/ve-md-preview/index.vue'
 import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
 
 const _value = ref('CodeEase是一个致力于为用户提供便捷、高效、有趣的在线平台，它是一个标准化的低代码平台')
 const stats = [

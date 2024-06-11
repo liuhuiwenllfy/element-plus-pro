@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import LayoutMini from '@/components/ve-layout/mini/index.vue'
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 
 const slots = [
   {
