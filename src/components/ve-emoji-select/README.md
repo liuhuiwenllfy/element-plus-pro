@@ -2,13 +2,9 @@
 
 ## 功能描述
 
-表情在留言功能上是必不可少的功能，该组件可以实现表情的选择，可以满足大多数功能。
-
 ---
 
 ## 使用说明
-
-> 该组件依赖[element plus](https://element-plus.org/zh-CN/guide/installation.html)组件库
 
 ### 安装
 
@@ -21,35 +17,6 @@ npm install ve-emoji-select
 ```shell
 npm uninstall ve-emoji-select
 ```
-
----
-
-## Api
-
-在需要使用该组件的 Vue 文件中，引入组件：
-
-```vue
-
-<ve-emoji @change="handleEmoteClick"/>
-```
-
-### 事件
-
-| 事件名    | 说明            | 类型   |
-|--------|---------------|------|
-| change | 在组件中选项表情变化时触发 | 表情字符 |
-
-## Assets
-
-[源码：Github](https://github.com/liuhuiwenllfy/element-plus-pro/tree/master/src/components/ve-emoji)
-
-[源码：Gitee](https://gitee.com/liu-ling-feng-yu/element-plus-pro/tree/master/src/components/ve-emoji)
-
-[组件库演示地址](https://epp.liulingfengyu.cn/preview/#/ve-emoji)
-
-## Warn
-
-1. 该组件是基于element-plus开发，需要在此基础上使用。
 
 ---
 

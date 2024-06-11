@@ -9,13 +9,13 @@
 ### 安装
 
 ```shell
-npm install ve-recursive-ve-aside
+npm install ve-recursive-menu
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-recursive-ve-aside
+npm uninstall ve-recursive-menu
 ```
 
 ---

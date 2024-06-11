@@ -6,19 +6,17 @@
 
 ## 使用说明
 
-https://imzbf.github.io/md-editor-v3/en-US/index
-
 ### 安装
 
 ```shell
-npm install ve-recursive-ve-aside
+npm install ve-recursive-menu
 npm install ve-header
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-recursive-ve-aside
+npm uninstall ve-recursive-menu
 npm uninstall ve-header
 ```
 

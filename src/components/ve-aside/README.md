@@ -9,14 +9,14 @@
 ### 安装
 
 ```shell
-npm install ve-recursive-ve-aside
+npm install ve-recursive-menu
 npm install ve-aside
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-recursive-ve-aside
+npm uninstall ve-recursive-menu
 npm uninstall ve-aside
 ```
 

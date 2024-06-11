@@ -1,8 +1,6 @@
-# ve-upload 上传
+# ve-business-card 名片
 
 ## 功能描述
-
-1. 名片
 
 ---
 
