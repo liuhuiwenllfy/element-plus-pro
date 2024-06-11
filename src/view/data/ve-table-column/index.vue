@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeTableColumn from '@/components/ve-table-column/index.vue'
-import {computed} from 'vue'
+import {computed, ref} from 'vue'
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import {Delete, Edit} from "@element-plus/icons-vue";
 
 const stats = [
   {
@@ -164,13 +165,74 @@ const columnList = computed(() => [
     label: '列5'
   },
 ])
+
+const _data = ref([
+  {
+    column1: 'column1',
+    column2: 'column2',
+    column3: 'column3',
+    column4: 'column4',
+    column5: 'column5',
+  },
+  {
+    column1: 'column1',
+    column2: 'column2',
+    column3: 'column3',
+    column4: 'column4',
+    column5: 'column5',
+  },
+  {
+    column1: 'column1',
+    column2: 'column2',
+    column3: 'column3',
+    column4: 'column4',
+    column5: 'column5',
+  },
+  {
+    column1: 'column1',
+    column2: 'column2',
+    column3: 'column3',
+    column4: 'column4',
+    column5: 'column5',
+  },
+  {
+    column1: 'column1',
+    column2: 'column2',
+    column3: 'column3',
+    column4: 'column4',
+    column5: 'column5',
+  },
+])
 </script>
 
 <template>
   <ve-page id="ve-table-column" title="ve-table-column 表格区域">
     <template #default>
-      <el-table ref="ve-table">
-        <ve-table-column :column-list="columnList"></ve-table-column>
+      <el-table ref="ve-table" :data="_data">
+        <ve-table-column :column-list="columnList">
+          <template #default="scope">
+            <el-button
+                :icon="Document"
+                plain
+                size="small">
+              详情
+            </el-button>
+            <el-button
+                :icon="Edit"
+                plain
+                size="small"
+                type="primary">
+              编辑
+            </el-button>
+            <el-button
+                :icon="Delete"
+                plain
+                size="small"
+                type="danger">
+              删除
+            </el-button>
+          </template>
+        </ve-table-column>
       </el-table>
     </template>
     <template #api>

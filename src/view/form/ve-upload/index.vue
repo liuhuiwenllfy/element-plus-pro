@@ -70,13 +70,13 @@ const incident = [
   <ve-page id="ve-upload" title="ve-upload 上传">
     <template #default>
       <h3>批量上传文件</h3>
-      <ve-batch-upload-file api="#"/>
+      <ve-batch-upload-file api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
       <h3>批量上传图片</h3>
-      <ve-batch-upload-picture api="#"/>
+      <ve-batch-upload-picture api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
       <h3>上传头像</h3>
-      <ve-upload-avatar api="#"/>
+      <ve-upload-avatar api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
       <h3>上传图片</h3>
-      <ve-upload-picture api="#"/>
+      <ve-upload-picture api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
     </template>
     <template #api>
       <ve-stats :stats="stats"/>

@@ -3,6 +3,9 @@ import VeIncident from '@/components/ve-page/ve-incident/index.vue'
 import VePage from '@/components/ve-page/index.vue'
 import VeSearchArea from '@/components/ve-search-area/index.vue'
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import {ref} from "vue";
+
+const _open = ref(true)
 
 const stats = [
   {
@@ -41,10 +44,40 @@ const incident = [
   <ve-page id="ve-search-area" title="ve-search-area 搜索区域">
     <template #default>
       <ve-search-area
-          :open="false"
+          :open="_open"
           :show="true"
           language="zhCn"
-          @handle-click="console.log($event)"/>
+          @handle-click="_open = $event">
+        <el-form inline>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item>
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item v-if="_open">
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+          <el-form-item v-if="_open">
+            <el-input placeholder="请输入"/>
+          </el-form-item>
+        </el-form>
+      </ve-search-area>
     </template>
     <template #api>
       <ve-stats :stats="stats"/>

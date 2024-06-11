@@ -4,6 +4,29 @@ import VeTableArea from '@/components/ve-table-area/index.vue'
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+]
+
 const stats = [
   {
     name: 'language',
@@ -34,8 +57,10 @@ const slots = [
           <el-button>新增</el-button>
         </template>
         <template #main>
-          <el-table>
-
+          <el-table :data="tableData" style="width: 100%">
+            <el-table-column label="Date" prop="date" width="180"/>
+            <el-table-column label="Name" prop="name" width="180"/>
+            <el-table-column label="Address" prop="address"/>
           </el-table>
         </template>
       </ve-table-area>
