@@ -6,6 +6,7 @@ import router from '@/router/index'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import i18n from "@/locales";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+import * as SvgList from '@/components/ve-icon/components'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
@@ -18,7 +19,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
 
-import * as SvgList from '@/components/ve-icon/components'
 // 注册全局 ve-icon 组件
 Object.keys(SvgList).forEach((key) => {
     app.component(key, SvgList[key as keyof typeof SvgList])
@@ -26,3 +26,4 @@ Object.keys(SvgList).forEach((key) => {
 
 app.use(i18n)
 app.mount('#app')
+
