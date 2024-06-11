@@ -1,6 +1,6 @@
 # element-plus-pro
 
-v1.0.0 | 2024-02-02
+v1.0.0 | 2024-6-11
 
 ## 项目概述
 
@@ -8,20 +8,7 @@ v1.0.0 | 2024-02-02
 
 ---
 
-## 使用说明
-
-1. 安装
-    ```shell
-    npm install
-    ```
-2. 运行
-    ```shell
-    npm run dev
-    ```
-3. 打包
-    ```shell
-    npm run build
-    ```
+![img.png](img.png)
 
 ---
 

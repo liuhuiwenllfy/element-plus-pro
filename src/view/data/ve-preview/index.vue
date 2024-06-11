@@ -18,7 +18,7 @@ const stats = [
   <ve-page id="ve-preview" title="ve-preview 预览">
     <template #default>
       <ve-preview
-          :list="['https://inews.gtimg.com/om_bt/OHyQqgC_5oi4Vm0tlH49XvJzqNBHo2Zryxx5F_be5N2cIAA/1000']"></ve-preview>
+          :list="['avatar.png']"></ve-preview>
     </template>
     <template #api>
       <ve-stats :stats="stats"/>
