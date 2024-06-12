@@ -136,7 +136,7 @@ const commonStore = useCommonStore();
 </script>
 
 <template>
-  <ve-page id="ve-editor" title="ve-editor md文档">
+  <ve-page id="ve-md-editor" title="ve-md-editor md文档">
     <template #default>
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>

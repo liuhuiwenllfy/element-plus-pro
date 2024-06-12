@@ -1,4 +1,4 @@
-# ve-editor 锚点
+# ve-md-editor 锚点
 
 ## 功能描述
 
@@ -15,7 +15,7 @@ npm install axios
 
 npm install md-editor-v3 --save
 
-npm install ve-editor
+npm install ve-md-editor
 ```
 
 ### 卸载
@@ -25,7 +25,7 @@ npm uninstall axios
 
 npm uninstall md-editor-v3 --save
 
-npm uninstall ve-anchor
+npm uninstall ve-md-editor
 ```
 
 ---

@@ -1,5 +1,5 @@
 {
-  "name": "ve-editor",
+  "name": "ve-md-editor",
   "version": "1.0.0",
   "author": {
     "email": "1305156911@qq.com",
@@ -8,7 +8,8 @@
   },
   "description": "富文本编辑器",
   "keywords": [
-    "ve-editor",
+    "ve-md-editor",
+    "md-editor",
     "editor",
     "ve"
   ],

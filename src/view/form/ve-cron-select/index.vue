@@ -1,27 +1,25 @@
 <script lang="ts" setup>
-import VeIncident from '@/components/ve-page/ve-incident/index.vue'
-import {ref} from "vue";
-import VePage from '@/components/ve-page/index.vue'
-import VeEmojiSelect from '@/components/ve-emoji-select/index.vue'
 
-const _comment = ref('')
-const handleEmoteClick = (val: string) => {
-  _comment.value = _comment.value + val
-}
+import {ref} from "vue";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import VePage from '@/components/ve-page/index.vue'
+import VeCronSelect from '@/components/ve-cron-select/index.vue'
+
+const _cron = ref("* * * * * ? *")
 
 const incident = [
   {
     name: 'change',
-    instructions: '表情选择回调事件',
-    callback: '表情字符串',
+    instructions: 'cron变更回调事件',
+    callback: 'cron字符串',
   },
 ]
 </script>
 
 <template>
-  <ve-page id="ve-emoji" title="ve-emoji emoji选择器">
+  <ve-page id="ve-cron-select" title="ve-cron-select cron时间选择器">
     <template #default>
-      <ve-emoji-select @change="handleEmoteClick"/>
+      <ve-cron-select :cron="_cron" style="margin: 20px" @change="(e)=> {console.log(e)}"/>
     </template>
     <template #api>
       <ve-incident :incident="incident"/>
@@ -33,4 +31,5 @@ const incident = [
 </template>
 
 <style lang="scss" scoped>
+
 </style>
