@@ -24,7 +24,7 @@ const data = ref<LatestNewsVo[]>([
   }
 ])
 
-const onDelete = (id: string) => {
+const onDelete = () => {
   ElMessageBox.confirm(
       t('message.isDelete'),
       t('message.warning'),
@@ -90,7 +90,7 @@ const handleClose = () => {
         <el-card v-for="(item, index) in data" :key="index" :body-style="{padding:'15px'}" class="news-card"
                  shadow="hover">
           <el-link :icon="Close" :underline="false" class="close-news" type="primary"
-                   @click="onDelete(item.receiverId)"></el-link>
+                   @click="onDelete"></el-link>
           <div style="margin-bottom: 5px">
             <el-space>
               <el-avatar :size="20" src="avatar.png"/>
