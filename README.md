@@ -8,7 +8,7 @@ v1.0.0 | 2024-6-11
 
 ---
 
-![img.png](img.png)
+![element-plus-pro-cover.png](https://resource.liulingfengyu.cn/img/element-plus-pro-cover.png)
 
 ---
 
