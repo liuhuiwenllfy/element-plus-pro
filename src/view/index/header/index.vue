@@ -35,7 +35,6 @@ const getNavigation = computed(() => {
   <ve-header
       :dark="commonStore.getDark"
       :defaultActive="<string>router.currentRoute.value.name"
-      :drawerNews="commonStore.getDrawerNews"
       :fullScreen="commonStore.getFullScreen"
       :globalSize="commonStore.getGlobalSize"
       :language="commonStore.getLocale"
@@ -54,7 +53,7 @@ const getNavigation = computed(() => {
       @handle-full-screen-change="commonStore.changeFullScreen($event)"
       @handle-global-size-change="commonStore.changeGlobalSize($event)"
       @handle-language-change="commonStore.changeLocale($event)"
-      @handle-news-change="commonStore.changeDrawerNews($event)"
+      @handle-news-change="commonStore.changeDrawerNews(true)"
       @handle-sign-out="handleSignOutClick"
       @handle-user-click="handleUserClick"
       @handle-global-setting-click="commonStore.changeDrawer(true)"

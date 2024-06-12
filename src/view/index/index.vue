@@ -7,6 +7,7 @@ import Layout5 from '@/view/index/layout/layout5/index.vue'
 import Layout6 from '@/view/index/layout/layout6/index.vue'
 import Layout7 from '@/view/index/layout/layout7/index.vue'
 import DrawerSetting from '@/view/index/drawer-setting/index.vue'
+import DrawerNews from '@/view/index/drawer-news/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import ShortcutButton from '@/view/index/shortcut-button/index.vue'
 
@@ -27,6 +28,7 @@ const commonStore = useCommonStore()
     <ShortcutButton/>
   </div>
   <drawer-setting/>
+  <drawer-news/>
 </template>
 
 <style lang="scss" scoped>

@@ -27,5 +27,14 @@
   "personalCenter": "Personal center",
   "modifyThePassword": "Modify the password",
   "toTenant": "Switch tenant",
-  "informationCenter": "information Center"
+  "informationCenter": "information Center",
+  "message": "Message",
+  "reset": "Reset",
+  "noData": "No data",
+  "haveRead": "read",
+  "unread": "unread",
+  "warning": "Warning",
+  "isDelete": "Are you sure you want to delete ?",
+  "cancel": "Cancel",
+  "confirm": "Confirm"
 }

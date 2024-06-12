@@ -35,12 +35,10 @@ const setFullScreen = () => {
 </script>
 
 <template>
-  <div @click="setFullScreen">
-    <el-icon>
-      <VeFullscreenAlt v-show="!fullScreen"/>
-      <VeFullscreenExitAlt v-show="fullScreen"/>
-    </el-icon>
-  </div>
+  <el-icon size="20" style="padding: 20px" @click="setFullScreen">
+    <VeFullscreenAlt v-show="!fullScreen"/>
+    <VeFullscreenExitAlt v-show="fullScreen"/>
+  </el-icon>
 </template>
 
 <style lang="scss" scoped>

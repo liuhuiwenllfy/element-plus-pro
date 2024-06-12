@@ -7,6 +7,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import i18n from "@/locales";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import * as SvgList from '@/components/ve-icon/components'
+import 'element-plus/theme-chalk/el-message.css'
+import 'element-plus/theme-chalk/el-message-box.css'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)

@@ -303,14 +303,14 @@ const content = reactive<any>({
           </el-icon>
         </el-badge>
       </li>
-      <li>
+      <li style="padding: 0">
         <FullScreen :full-screen="_fullScreen" @handle-full-screen="handleFullScreenChange"/>
       </li>
-      <li>
+      <li style="padding: 0">
         <el-dropdown trigger="hover" @command="handleGlobalSizeChange">
-        <span>
-          <el-icon size="20"><VeOutlineFormatSize/></el-icon>
-        </span>
+          <el-icon size="20" style="padding: 20px">
+            <VeOutlineFormatSize/>
+          </el-icon>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item :disabled="_globalSize === 'large'" command="large">
@@ -335,13 +335,11 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li>
+      <li style="padding: 0">
         <el-dropdown trigger="hover" @command="handleLanguageChange">
-        <span>
-          <el-icon style="font-size: 20px">
+          <el-icon class="dropdown-icon" size="20" style="padding: 20px">
             <VeEnglishToChinese/>
           </el-icon>
-        </span>
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item :disabled="_language === 'zhCn'" command="zhCn">
@@ -360,7 +358,7 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li>
+      <li class="text">
         <div class="night">
           <el-switch
               v-model="_dark"
@@ -372,9 +370,9 @@ const content = reactive<any>({
           />
         </div>
       </li>
-      <li>
+      <li class="text" style="padding: 0">
         <el-dropdown trigger="hover">
-          <el-text class="el-dropdown-link" truncated>
+          <el-text style="padding: 10px 20px" truncated>
             <el-space>
               <el-avatar :src="avatar"/>
               <el-text type="info">{{ username }}</el-text>
@@ -398,12 +396,10 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li>
-        <div class="global-setting" @click="handleGlobalSettingClick">
-          <el-icon>
-            <MoreFilled/>
-          </el-icon>
-        </div>
+      <li @click="handleGlobalSettingClick">
+        <el-icon>
+          <MoreFilled/>
+        </el-icon>
       </li>
     </ul>
   </div>
@@ -445,6 +441,7 @@ const content = reactive<any>({
     li {
       .el-icon {
         font-size: 20px;
+        color: var(--el-text-color-primary);
       }
 
       padding: 0 20px;
