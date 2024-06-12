@@ -2,8 +2,8 @@
 
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VePage from '@/components/ve-page/index.vue'
-import VeMdEditor from '@/components/ve-editor/ve-md-editor/index.vue'
-import VeMdPreview from '@/components/ve-editor/ve-md-preview/index.vue'
+import VeMdEditor from '@/components/ve-md-editor/ve-md-editor/index.vue'
+import VeMdPreview from '@/components/ve-md-editor/ve-md-preview/index.vue'
 import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
