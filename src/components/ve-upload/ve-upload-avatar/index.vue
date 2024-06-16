@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 import {onMounted, PropType, reactive, ref, watch} from 'vue'
-import {ElMessage, UploadRawFile} from 'element-plus'
+import {ElAvatar, ElIcon, ElMessage, ElUpload, UploadRawFile} from 'element-plus'
 import {Plus} from '@element-plus/icons-vue'
+import 'element-plus/es/components/message/style/css'
+import 'element-plus/es/components/upload/style/css'
+import 'element-plus/es/components/avatar/style/css'
+import 'element-plus/es/components/icon/style/css'
 
 const props = defineProps({
   // 服务器地址
