@@ -4,7 +4,6 @@ import {MdEditor, ToolbarNames} from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
 import {nextTick, PropType, ref, watch} from 'vue'
 import axios from 'axios'
-import {Footers, UploadImgCallBack} from "md-editor-v3/lib/types/MdEditor/type";
 
 const props = defineProps({
   // 唯一标识
@@ -51,7 +50,7 @@ const props = defineProps({
   },
   // 页脚
   footers: {
-    type: Array<Footers>,
+    type: Array<any>,
     required: false,
     default: () => []
   },
@@ -149,7 +148,7 @@ const onChange = () => {
   emits('onChange', _text.value)
 }
 
-const onUploadImg = async (files: Array<File>, callback: UploadImgCallBack) => {
+const onUploadImg = async (files: Array<File>, callback: any) => {
   const res = await Promise.all(
       files.map((file) => {
         return new Promise((rev, rej) => {
