@@ -3,9 +3,18 @@ import VePage from "@/components/ve-page/index.vue";
 import {ElMessage} from "element-plus";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import * as SvgList from '@/components/ve-icon/components'
+import {onMounted, ref} from "vue";
+
+const _icons = ref([])
+
+onMounted(() => {
+  Object.keys(SvgList).forEach((key) => {
+    _icons.value.push(key)
+  })
+})
 
 const handleClick = (item: any) => {
-  const textToCopy = `<el-icon><${item.__file.split('ve-icon/')[1].split('/')[0]}/></el-icon>`
+  const textToCopy = `<el-icon><${item}/></el-icon>`
   if (!navigator.clipboard) {
     // 如果浏览器不支持 Clipboard API，则回退到 document.execCommand
     const textarea = document.createElement('textarea');
@@ -57,13 +66,10 @@ const stats = [
   <ve-page id="ve-icon" title="ve-icon Icon 图标">
     <template #default>
       <ul class="icon-list">
-        <li v-for="(item, index1) of SvgList" :key="index1" class="icon-item" @click="handleClick(item)">
+        <li v-for="(item, index1) in _icons" :key="index1" class="icon-item" @click="handleClick(item)">
           <el-space direction="vertical">
             <component :is="item" class="el-icon"/>
-            <el-text class="text-flow-ellipsis-multiple_1">{{
-                item.__file.split('ve-icon/')[1].split('/')[0]
-              }}
-            </el-text>
+            <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
           </el-space>
         </li>
       </ul>
