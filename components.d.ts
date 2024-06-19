@@ -52,6 +52,7 @@ declare module 'vue' {
     Seconds: typeof import('./src/components/ve-cron-select/seconds/index.vue')['default']
     VeAnchor: typeof import('./src/components/ve-anchor/index.vue')['default']
     VeAside: typeof import('./src/components/ve-aside/index.vue')['default']
+    VeBaselineAttachEmail: typeof import('./src/components/ve-icon/ve-baseline-attach-email/index.vue')['default']
     VeBatchUploadFile: typeof import('./src/components/ve-upload/ve-batch-upload-file/index.vue')['default']
     VeBatchUploadPicture: typeof import('./src/components/ve-upload/ve-batch-upload-picture/index.vue')['default']
     VeBusinessCard: typeof import('./src/components/ve-business-card/index.vue')['default']
