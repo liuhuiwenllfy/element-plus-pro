@@ -3,13 +3,13 @@ import VePage from "@/components/ve-page/index.vue";
 import {ElMessage} from "element-plus";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import * as SvgList from '@/components/ve-icon/components'
-import {onMounted, ref} from "vue";
+import {onMounted, reactive} from "vue";
 
-const _icons = ref([])
+const _icons = reactive<string[]>([])
 
 onMounted(() => {
   Object.keys(SvgList).forEach((key) => {
-    _icons.value.push(key)
+    _icons.push(key)
   })
 })
 
