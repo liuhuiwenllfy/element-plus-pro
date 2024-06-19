@@ -55,6 +55,7 @@ declare module 'vue' {
     VeBatchUploadFile: typeof import('./src/components/ve-upload/ve-batch-upload-file/index.vue')['default']
     VeBatchUploadPicture: typeof import('./src/components/ve-upload/ve-batch-upload-picture/index.vue')['default']
     VeBusinessCard: typeof import('./src/components/ve-business-card/index.vue')['default']
+    VeCommentVerify: typeof import('./src/components/ve-icon/ve-comment-verify/index.vue')['default']
     VeCronSelect: typeof import('./src/components/ve-cron-select/index.vue')['default']
     VeDefaultFooter: typeof import('./src/components/ve-footer/ve-default-footer/index.vue')['default']
     VeDefaultLogin: typeof import('./src/components/ve-login/ve-default-login/index.vue')['default']
@@ -143,6 +144,7 @@ declare module 'vue' {
     VeOfficialWebsiteFooter: typeof import('./src/components/ve-footer/ve-official-website-footer/index.vue')['default']
     VePage: typeof import('./src/components/ve-page/index.vue')['default']
     VePagination: typeof import('./src/components/ve-pagination/index.vue')['default']
+    VePasswordSolid: typeof import('./src/components/ve-icon/ve-password-solid/index.vue')['default']
     VePlugin: typeof import('./src/components/ve-plugin/index.vue')['default']
     VePreview: typeof import('./src/components/ve-preview/index.vue')['default']
     VeRecursiveMenu: typeof import('./src/components/ve-recursive-menu/index.vue')['default']
@@ -156,6 +158,7 @@ declare module 'vue' {
     VeUploadAvatar: typeof import('./src/components/ve-upload/ve-upload-avatar/index.vue')['default']
     VeUploadPicture: typeof import('./src/components/ve-upload/ve-upload-picture/index.vue')['default']
     VeUserInfo: typeof import('./src/components/ve-login/ve-user-info/index.vue')['default']
+    VeUserSolid: typeof import('./src/components/ve-icon/ve-user-solid/index.vue')['default']
     Weeks: typeof import('./src/components/ve-cron-select/weeks/index.vue')['default']
     Years: typeof import('./src/components/ve-cron-select/years/index.vue')['default']
   }
