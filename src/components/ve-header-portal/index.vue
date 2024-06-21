@@ -1,15 +1,18 @@
 <script lang="ts" setup>
 import {PropType, reactive, ref} from 'vue'
 import {
+  ElCard,
+  ElCol,
   ElDropdown,
   ElDropdownItem,
   ElDropdownMenu,
   ElIcon,
   ElImage,
   ElPopover,
+  ElRow,
   ElSpace,
   ElSwitch,
-  ElText,
+  ElText
 } from "element-plus";
 import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/components'
 import 'element-plus/es/components/icon/style/css'
@@ -23,6 +26,9 @@ import 'element-plus/es/components/image/style/css'
 import 'element-plus/es/components/switch/style/css'
 import 'element-plus/es/components/badge/style/css'
 import 'element-plus/es/components/popover/style/css'
+import 'element-plus/es/components/card/style/css'
+import 'element-plus/es/components/row/style/css'
+import 'element-plus/es/components/col/style/css'
 import {DropdownItem} from "./DropdownItem";
 import VeDefaultLogin from 've-login/ve-default-login/index.vue'
 import VeUserInfo from 've-login/ve-user-info/index.vue'

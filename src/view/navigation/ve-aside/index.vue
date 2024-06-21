@@ -179,7 +179,7 @@ const incident = [
 
 <style lang="scss" scoped>
 .aside-body {
-  width: 260px;
+  width: 264px;
   height: 100%;
   border: 1px solid var(--el-border-color);
 }
