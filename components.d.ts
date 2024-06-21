@@ -68,6 +68,7 @@ declare module 'vue' {
     VeFastNav: typeof import('./src/components/ve-fast-nav/index.vue')['default']
     VeFullScreen: typeof import('./src/components/ve-header/ve-full-screen/index.vue')['default']
     VeHeader: typeof import('./src/components/ve-header/index.vue')['default']
+    VeHeaderPortal: typeof import('./src/components/ve-header-portal/index.vue')['default']
     VeIconAdd: typeof import('./src/components/ve-icon/ve-icon-add/index.vue')['default']
     VeIconAnchor: typeof import('./src/components/ve-icon/ve-icon-anchor/index.vue')['default']
     VeIconAside: typeof import('./src/components/ve-icon/ve-icon-aside/index.vue')['default']

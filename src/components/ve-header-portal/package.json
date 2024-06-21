@@ -1,15 +1,16 @@
 {
-  "name": "ve-aside",
-  "version": "1.0.2",
+  "name": "ve-header-portal",
+  "version": "1.0.1",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
     "url": "https://blog.csdn.net/qq_38036909?type=blog"
   },
-  "description": "侧边导航",
+  "description": "头部导航（门户版本）",
   "keywords": [
-    "ve-aside",
-    "aside",
+    "ve-header-portal",
+    "ve-header",
+    "header",
     "ve"
   ],
   "homepage": "https://epp.liulingfengyu.cn/",

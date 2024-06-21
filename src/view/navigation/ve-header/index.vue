@@ -295,7 +295,7 @@ const incident = [
           :dark="false"
           :drawerNews="false"
           :fullScreen="false"
-          :layout="7"
+          :layout="1"
           :list="[{
               code:'userInfo',
               name:'个人中心',

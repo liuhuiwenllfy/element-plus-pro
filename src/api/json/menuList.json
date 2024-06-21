@@ -258,6 +258,19 @@
         "children": []
       },
       {
+        "id": "a3e53b9be71c4f98a825ec3eb4da0c97",
+        "menuCode": "ve-header-portal",
+        "menuName": "ve-header-portal 头部导航（官网）",
+        "menuNameEn": "ve-header-portal Head navigation（portal）",
+        "parentId": "83994ed054e84686a634ff56676eed4b",
+        "menuLevel": 1,
+        "menuSort": 2,
+        "menuIcon": "VeIconHeader",
+        "menuPath": "/ve-header-portal",
+        "menuComponent": "navigation/ve-header-portal",
+        "children": []
+      },
+      {
         "id": "17b33ef6e3f24e65983db7536c0c0464",
         "menuCode": "ve-login",
         "menuName": "ve-login 登录",

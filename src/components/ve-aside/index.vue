@@ -173,7 +173,7 @@ const handleShow = () => {
   }
 
   .el-menu-vertical:not(.el-menu--collapse) {
-    width: 260px;
+    width: 264px;
   }
 
   .horizontal-collapse-transition {
