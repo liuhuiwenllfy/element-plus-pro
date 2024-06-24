@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-  slots: {
+  _slots: {
     type: Array<any>,
     required: false,
     default: () => []
@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <h4>Slots</h4>
-  <el-table :data="slots">
+  <el-table :data="_slots">
     <el-table-column label="名称" prop="name"/>
     <el-table-column label="详情" prop="details"/>
   </el-table>

@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VePlugin from '@/components/ve-plugin/index.vue'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -72,7 +70,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-plugin" title="ve-plugin 插件">
+  <ve-page id="ve-plugin" :_slots="slots" :code="code" :incident="incident" :stats="stats" title="ve-plugin 插件">
     <template #default>
       <ve-plugin id="123456" @handle-click="console.log($event)">
         <template #preview>
@@ -97,14 +95,6 @@ const slots = [
         <template #comment>99+</template>
         <template #collect>99+</template>
       </ve-plugin>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-      <ve-slots :slots="slots"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

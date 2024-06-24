@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeLogo from '@/components/ve-logo/index.vue'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -22,15 +22,9 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-logo" title="ve-logo Logo">
+  <ve-page id="ve-logo" :code="code" :stats="stats" title="ve-logo Logo">
     <template #default>
       <ve-logo logo="logo.png" name="CodeEase"/>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

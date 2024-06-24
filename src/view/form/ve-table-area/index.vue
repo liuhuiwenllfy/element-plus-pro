@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
 import VeTableArea from '@/components/ve-table-area/index.vue'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import code from './index.md?raw'
 
 const tableData = [
   {
@@ -50,7 +49,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-table-area" title="ve-table-area 表格区域">
+  <ve-page id="ve-table-area" :_slots="slots" :code="code" :stats="stats" title="ve-table-area 表格区域">
     <template #default>
       <ve-table-area language="zhCn">
         <template #header>
@@ -64,13 +63,6 @@ const slots = [
           </el-table>
         </template>
       </ve-table-area>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-slots :slots="slots"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

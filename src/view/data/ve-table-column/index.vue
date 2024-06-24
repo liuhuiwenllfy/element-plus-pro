@@ -2,10 +2,8 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeTableColumn from '@/components/ve-table-column/index.vue'
 import {computed, ref} from 'vue'
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 import {Delete, Document, Edit} from "@element-plus/icons-vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -206,7 +204,8 @@ const _data = ref([
 </script>
 
 <template>
-  <ve-page id="ve-table-column" title="ve-table-column 表格区域">
+  <ve-page id="ve-table-column" :_slots="slots" :code="code" :incident="incident" :stats="stats"
+           title="ve-table-column 表格区域">
     <template #default>
       <el-table ref="ve-table" :data="_data">
         <ve-table-column :column-list="columnList">
@@ -234,14 +233,6 @@ const _data = ref([
           </template>
         </ve-table-column>
       </el-table>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-      <ve-slots :slots="slots"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

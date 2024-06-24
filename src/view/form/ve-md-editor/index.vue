@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VePage from '@/components/ve-page/index.vue'
 import VeMdEditor from '@/components/ve-md-editor/ve-md-editor/index.vue'
 import VeMdPreview from '@/components/ve-md-editor/ve-md-preview/index.vue'
 import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import code from './index.md?raw'
 
 const _value = ref('CodeEase是一个致力于为用户提供便捷、高效、有趣的在线平台，它是一个标准化的低代码平台')
 const stats = [
@@ -136,19 +135,12 @@ const commonStore = useCommonStore();
 </script>
 
 <template>
-  <ve-page id="ve-md-editor" title="ve-md-editor md文档">
+  <ve-page id="ve-md-editor" :code="code" :incident="incident" :stats="stats" title="ve-md-editor md文档">
     <template #default>
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>
       <h3>预览区域</h3>
       <ve-md-preview :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-preview>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

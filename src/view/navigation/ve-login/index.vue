@@ -2,8 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeDefaultLogin from '@/components/ve-login/ve-default-login/index.vue'
 import VeUserInfo from '@/components/ve-login/ve-user-info/index.vue'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -82,7 +81,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-login" title="ve-login 登录">
+  <ve-page id="ve-login" :code="code" :incident="incident" :stats="stats" title="ve-login 登录">
     <template #default>
       <ve-default-login avatar="avatar.png" @handle-login="console.log('登录')"
                         @handle-register="console.log('注册')"></ve-default-login>
@@ -97,13 +96,6 @@ const incident = [
           username="sysadmin"
           @handle-click="console.log($event)"
           @handle-sign-out="console.log('登出')"></ve-user-info>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

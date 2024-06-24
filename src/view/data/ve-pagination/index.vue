@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VePagination from '@/components/ve-pagination/index.vue'
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -43,7 +42,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-pagination" title="ve-pagination 分页">
+  <ve-page id="ve-pagination" :code="code" :incident="incident" :stats="stats" title="ve-pagination 分页">
     <template #default>
       <ve-pagination
           :current="2"
@@ -51,13 +50,6 @@ const incident = [
           :total="100"
           @handle-current-change="console.log($event)"
           @handle-size-change="console.log($event)"/>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import {ElMessage} from "element-plus";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import * as SvgList from '@/components/ve-icon/components'
 import {onMounted, reactive} from "vue";
+import code from './index.md?raw'
 
 const _icons = reactive<string[]>([])
 
@@ -63,7 +63,7 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-icon" title="ve-icon Icon 图标">
+  <ve-page id="ve-icon" :code="code" :stats="stats" title="ve-icon Icon 图标">
     <template #default>
       <ul class="icon-list">
         <li v-for="(item, index1) in _icons" :key="index1" class="icon-item" @click="handleClick(item)">
@@ -73,12 +73,6 @@ const stats = [
           </el-space>
         </li>
       </ul>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-    </template>
-    <template #warn>
-      <p>上面是我们收集的一些好看的图标。</p>
     </template>
   </ve-page>
 </template>

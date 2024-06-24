@@ -3,8 +3,7 @@ import VeLoadMore from '@/components/ve-load-more/index.vue'
 import VePage from "@/components/ve-page/index.vue";
 import VeList from "@/components/ve-list/index.vue";
 import {ref} from "vue";
-import VeSlots from "@/components/ve-page/ve-slots/index.vue";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import code from './index.md?raw'
 
 const _list = ref([
   {
@@ -82,7 +81,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-list" title="ve-list 列表">
+  <ve-page id="ve-list" :_slots="slots" :code="code" :stats="stats" title="ve-list 列表">
     <template #default>
       <el-divider content-position="left">list1</el-divider>
       <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list1">
@@ -111,13 +110,6 @@ const slots = [
         </template>
       </ve-list>
       <ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-slots :slots="slots"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

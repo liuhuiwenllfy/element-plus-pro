@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import VeIncident from '@/components/ve-page/ve-incident/index.vue'
 import VePage from '@/components/ve-page/index.vue'
 import VeSearchArea from '@/components/ve-search-area/index.vue'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import {ref} from "vue";
+import code from './index.md?raw'
 
 const _open = ref(true)
 
@@ -41,7 +40,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-search-area" title="ve-search-area 搜索区域">
+  <ve-page id="ve-search-area" :code="code" :incident="incident" :stats="stats" title="ve-search-area 搜索区域">
     <template #default>
       <ve-search-area
           :open="_open"
@@ -78,13 +77,6 @@ const incident = [
           </el-form-item>
         </el-form>
       </ve-search-area>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

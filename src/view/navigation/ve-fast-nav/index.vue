@@ -2,8 +2,7 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -69,16 +68,9 @@ const commonStore = useCommonStore();
 </script>
 
 <template>
-  <ve-page id="ve-fast-nav" title="ve-fast-nav 快速导航">
+  <ve-page id="ve-fast-nav" :code="code" :incident="incident" :stats="stats" title="ve-fast-nav 快速导航">
     <template #default>
       <ve-fast-nav :tab-list="commonStore.getTabList" activeName="overview"/>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

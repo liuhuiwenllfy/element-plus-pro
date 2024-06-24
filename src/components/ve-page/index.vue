@@ -1,4 +1,10 @@
 <script lang="ts" setup>
+import VeMdPreview from "@/components/ve-md-editor/ve-md-preview/index.vue";
+import {useCommonStore} from "@/pinia/common.ts";
+import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import VeStats from "@/components/ve-page/ve-stats/index.vue";
+
 defineProps({
   title: {
     type: String,
@@ -9,12 +15,34 @@ defineProps({
     type: String,
     required: true,
     default: () => ""
+  },
+  code: {
+    type: String,
+    required: false,
+    default: () => null
+  },
+  stats: {
+    type: Array<any>,
+    required: false,
+    default: () => null
+  },
+  incident: {
+    type: Array<any>,
+    required: false,
+    default: () => null
+  },
+  _slots: {
+    type: Array<any>,
+    required: false,
+    default: () => null
   }
 })
 
 const openUrl = (url: string) => {
   window.open(url)
 }
+
+const commonStore = useCommonStore();
 </script>
 
 <template>
@@ -24,8 +52,21 @@ const openUrl = (url: string) => {
     <h3>Example</h3>
     <slot></slot>
     <el-divider/>
-    <h2>Api</h2>
-    <slot name="api"></slot>
+    <template v-if="code">
+      <h3>Code</h3>
+      <ve-md-preview :modelValue="code" :theme="commonStore.getDark? 'dark':'light'"/>
+    </template>
+    <el-divider/>
+    <h2 v-if="stats || incident || _slots">Api</h2>
+    <template v-if="stats">
+      <ve-stats :stats="stats"/>
+    </template>
+    <template v-if="incident">
+      <ve-incident :incident="incident"/>
+    </template>
+    <template v-if="_slots">
+      <ve-slots :_slots="_slots"/>
+    </template>
     <h2>Assets</h2>
     <el-space size="large">
       <el-link type="primary" @click="openUrl(`https://www.npmjs.com/package/${id}`)">
@@ -55,8 +96,6 @@ const openUrl = (url: string) => {
         </el-space>
       </el-link>
     </el-space>
-    <h2>Warn</h2>
-    <slot name="warn"></slot>
   </div>
 </template>
 

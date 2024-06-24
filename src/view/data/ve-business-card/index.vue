@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeBusinessCard from '@/components/ve-business-card/index.vue'
-import VeSlots from "@/components/ve-page/ve-slots/index.vue";
+import code from './index.md?raw'
 
 const slots = [
   {
@@ -20,7 +20,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-business-card" title="ve-business-card 名片">
+  <ve-page id="ve-business-card" :_slots="slots" :code="code" title="ve-business-card 名片">
     <template #default>
       <ve-business-card style="width: 400px">
         <template #avatar>
@@ -31,12 +31,6 @@ const slots = [
           <el-button size="small">操作</el-button>
         </template>
       </ve-business-card>
-    </template>
-    <template #api>
-      <ve-slots :slots="slots"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

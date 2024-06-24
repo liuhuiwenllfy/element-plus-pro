@@ -4,8 +4,7 @@ import VeBatchUploadFile from '@/components/ve-upload/ve-batch-upload-file/index
 import VeBatchUploadPicture from '@/components/ve-upload/ve-batch-upload-picture/index.vue'
 import VeUploadAvatar from '@/components/ve-upload/ve-upload-avatar/index.vue'
 import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -67,7 +66,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-upload" title="ve-upload 上传">
+  <ve-page id="ve-upload" :code="code" :incident="incident" :stats="stats" title="ve-upload 上传">
     <template #default>
       <h3>批量上传文件</h3>
       <ve-batch-upload-file api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
@@ -77,13 +76,6 @@ const incident = [
       <ve-upload-avatar api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
       <h3>上传图片</h3>
       <ve-upload-picture api="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"/>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>

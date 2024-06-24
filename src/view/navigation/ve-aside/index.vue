@@ -2,8 +2,7 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeAside from '@/components/ve-aside/index.vue'
 import menuList from '@/api/json/menuList.json'
-import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeIncident from "@/components/ve-page/ve-incident/index.vue";
+import code from './index.md?raw'
 
 const stats = [
   {
@@ -151,7 +150,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-aside" title="ve-aside 侧边导航">
+  <ve-page id="ve-aside" :code="code" :incident="incident" :stats="stats" title="ve-aside 侧边导航">
     <template #default>
       <div class="aside-body">
         <ve-aside
@@ -166,13 +165,6 @@ const incident = [
         >
         </ve-aside>
       </div>
-    </template>
-    <template #api>
-      <ve-stats :stats="stats"/>
-      <ve-incident :incident="incident"/>
-    </template>
-    <template #warn>
-      <p>该组件是基于element-plus开发，需要在此基础上使用。</p>
     </template>
   </ve-page>
 </template>
