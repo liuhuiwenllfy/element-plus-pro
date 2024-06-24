@@ -24,6 +24,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .ve-preview {
+  height: 100%;
+  width: 100%;
+
   .el-image {
     height: 100%;
     border-radius: 6px;

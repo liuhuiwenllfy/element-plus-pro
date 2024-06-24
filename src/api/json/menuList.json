@@ -375,5 +375,83 @@
         "children": []
       }
     ]
+  },
+  {
+    "id": "e0ed0a89e3724efe9aba3dc1a977785a",
+    "menuCode": "error",
+    "menuName": "Error 状态页面",
+    "menuNameEn": "Error Status page",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 4,
+    "menuIcon": "VeWarn",
+    "menuPath": "/error",
+    "children": [
+      {
+        "id": "6935a6c7a94948b19b6b70e3dbd11fef",
+        "menuCode": "200",
+        "menuName": "200",
+        "menuNameEn": "200",
+        "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "VeWarn",
+        "menuPath": "/200",
+        "menuComponent": "error/200",
+        "children": []
+      },
+      {
+        "id": "b19569a214344420b0d764a1ad4b9519",
+        "menuCode": "401",
+        "menuName": "401",
+        "menuNameEn": "401",
+        "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "VeWarn",
+        "menuPath": "/401",
+        "menuComponent": "error/401",
+        "children": []
+      },
+      {
+        "id": "a8597f287e3f4ad7ad49d7c7bd91c3fc",
+        "menuCode": "403",
+        "menuName": "403",
+        "menuNameEn": "403",
+        "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "VeWarn",
+        "menuPath": "/403",
+        "menuComponent": "error/403",
+        "children": []
+      },
+      {
+        "id": "96ee153bed7b4f65a555c882454a2932",
+        "menuCode": "404",
+        "menuName": "404",
+        "menuNameEn": "404",
+        "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "VeWarn",
+        "menuPath": "/404",
+        "menuComponent": "error/404",
+        "children": []
+      },
+      {
+        "id": "0d9cee8dfa064e89ae5251e31d5f59db",
+        "menuCode": "500",
+        "menuName": "500",
+        "menuNameEn": "500",
+        "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "VeWarn",
+        "menuPath": "/500",
+        "menuComponent": "error/500",
+        "children": []
+      }
+    ]
   }
 ]

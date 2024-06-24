@@ -1,30 +1,18 @@
 <script lang="ts" setup>
 import router from '@/router'
+import {useCommonStore} from "@/pinia/common.ts";
+import VeError404 from "ve-error/404/index.vue";
 
 const back = () => {
   router.go(-1)
 }
+
+const commonStore = useCommonStore();
 </script>
 
 <template>
-  <div class="not-found">
-    <el-result
-        :sub-title="$t('message.404')"
-        icon="warning"
-        title="404">
-      <template #extra>
-        <el-button type="primary" @click="back">
-          {{ $t('message.back') }}
-        </el-button>
-      </template>
-    </el-result>
-  </div>
+  <ve-error404 :language="commonStore.getLocale" @handle-back="back"/>
 </template>
 
 <style lang="scss" scoped>
-.not-found {
-  .el-result {
-    height: 100%;
-  }
-}
 </style>

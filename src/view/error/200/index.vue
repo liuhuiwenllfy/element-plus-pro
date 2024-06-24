@@ -1,30 +1,19 @@
 <script lang="ts" setup>
+import VeError200 from 've-error/200/index.vue'
 import router from '@/router'
+import {useCommonStore} from "@/pinia/common.ts";
 
 const back = () => {
   router.go(-1)
 }
+
+const commonStore = useCommonStore();
 </script>
 
 <template>
-  <div class="no-permission">
-    <el-result
-        :sub-title="$t('message.200')"
-        icon="success"
-        title="200">
-      <template #extra>
-        <el-button type="primary" @click="back">
-          {{ $t('message.back') }}
-        </el-button>
-      </template>
-    </el-result>
-  </div>
+  <ve-error200 :language="commonStore.getLocale" @handle-back="back"/>
 </template>
 
 <style lang="scss" scoped>
-.no-permission {
-  .el-result {
-    height: 100%;
-  }
-}
+
 </style>

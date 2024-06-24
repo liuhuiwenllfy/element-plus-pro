@@ -1,30 +1,18 @@
 <script lang="ts" setup>
 import router from '@/router'
+import {useCommonStore} from "@/pinia/common.ts";
+import VeError500 from "ve-error/500/index.vue";
 
 const back = () => {
   router.go(-1)
 }
+
+const commonStore = useCommonStore();
 </script>
 
 <template>
-  <div class="error">
-    <el-result
-        :sub-title="$t('message.500')"
-        icon="warning"
-        title="500">
-      <template #extra>
-        <el-button type="primary" @click="back">
-          {{ $t('message.back') }}
-        </el-button>
-      </template>
-    </el-result>
-  </div>
+  <ve-error500 :language="commonStore.getLocale" @handle-back="back"/>
 </template>
 
 <style lang="scss" scoped>
-.error {
-  .el-result {
-    height: 100%;
-  }
-}
 </style>
