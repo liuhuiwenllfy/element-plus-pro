@@ -2,15 +2,12 @@
 import {Refresh, Tools} from '@element-plus/icons-vue'
 import {VeFullscreenExitLine, VeFullscreenFill} from 've-icon/components'
 import {PropType, reactive, ref} from 'vue'
-import mitt from 'mitt'
 import {ElCheckbox, ElCheckboxGroup, ElLink, ElPopover, ElTableColumn} from 'element-plus'
 import 'element-plus/es/components/table-column/style/css'
 import 'element-plus/es/components/link/style/css'
 import 'element-plus/es/components/popover/style/css'
 import 'element-plus/es/components/checkbox/style/css'
 import 'element-plus/es/components/checkbox-group/style/css'
-
-const emitter = mitt()
 
 const props = defineProps({
   tableHeight: {
@@ -53,6 +50,11 @@ const props = defineProps({
     required: false,
     default: () => 'zhCn'
   },
+  regionClass: {
+    type: String,
+    required: true,
+    default: () => 've-table'
+  }
 })
 
 const _tableHeight = ref(props.tableHeight)
@@ -80,20 +82,20 @@ const hasColumn = (item: any) => {
   return checkedColumn.value.includes(item)
 }
 
-const handleRefresh = () => {
-  emitter.emit('refresh')
-}
+const emits = defineEmits(['handleFullScreen', 'handleRefresh'])
 
-const emits = defineEmits(['handleFullScreen'])
+const handleRefresh = () => {
+  emits('handleRefresh')
+}
 
 const tableFullScreen = ref(false)
 const handleFullScreen = () => {
   if (!tableFullScreen.value) {
-    document.getElementsByClassName('ve-table')[0].classList.add('ve-tableFullScreen')
+    document.getElementsByClassName(props.regionClass)[0].classList.add('ve-tableFullScreen')
     const barHeight = document.getElementsByClassName('ve-table')[0].getElementsByClassName('el-card__header')[0].clientHeight
     _tableHeight.value = document.body.clientHeight - barHeight - 78
   } else {
-    document.getElementsByClassName('ve-table')[0].classList.remove('ve-tableFullScreen')
+    document.getElementsByClassName(props.regionClass)[0].classList.remove('ve-tableFullScreen')
     emits('handleFullScreen')
   }
   tableFullScreen.value = !tableFullScreen.value
@@ -221,4 +223,24 @@ const content = reactive<any>({
   }
 }
 
+//表格列显隐复选框样式
+.ve-column-checkbox {
+  width: 100%;
+  margin-right: 0;
+}
+</style>
+<style lang="scss">
+//全屏样式
+.ve-tableFullScreen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  z-index: 999;
+
+  .el-table {
+    height: 100%;
+  }
+}
 </style>

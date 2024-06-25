@@ -16,21 +16,6 @@
 //滚动条
 @import "global-scrollbar";
 
-//模板页面样式
-@import "global-table-template";
-
-//element样式修改
-@import "global-element";
-
-//禁止选中
-.noSelect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 //一行省略
 .text-flow-ellipsis-multiple_1 {
   /* 多余内容省略号处理-多行 */
@@ -42,77 +27,7 @@
   overflow: hidden;
 }
 
-//两行行省略
-.text-flow-ellipsis-multiple_2 {
-  /* 多余内容省略号处理-多行 */
-  word-break: break-all;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-
-//四行行省略
-.text-flow-ellipsis-multiple_4 {
-  /* 多余内容省略号处理-多行 */
-  word-break: break-all;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-}
-
 //去掉浏览器 :focus 黑边
 :focus-visible {
   outline: none;
-}
-
-.my-awesome-json-theme {
-  background-color: $base-background;
-
-  :deep(.jv-button) {
-    color: $brand;
-  }
-
-  :deep(.copied) {
-    color: $success;
-    opacity: 1;
-  }
-
-  :deep(.jv-toggle) {
-    background-size: 25px;
-    margin-right: 5px;
-  }
-
-  :deep(.jv-object) {
-    font-weight: bold;
-    color: $regular-text;
-  }
-
-  :deep(.jv-array) {
-    font-weight: bold;
-    color: $regular-text;
-  }
-
-  :deep(.jv-key) {
-    font-weight: bold;
-    margin-right: 5px;
-    color: $danger;
-  }
-
-  :deep(.jv-string) {
-    color: $success;
-  }
-
-  :deep(.jv-boolean) {
-    color: $success
-  }
-}
-
-.icon-image {
-  cursor: pointer;
-  width: 16px;
-  height: 16px
 }

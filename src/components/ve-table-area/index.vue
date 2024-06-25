@@ -42,10 +42,21 @@ const content = reactive<any>({
 </template>
 
 <style lang="scss" scoped>
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 32px;
+//表格通用样式
+.ve-table {
+  ::v-deep(.el-card__header) {
+    padding: 10px 20px;
+  }
+
+  ::v-deep(.el-card__body) {
+    padding: 10px 15px;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+  }
 }
 </style>

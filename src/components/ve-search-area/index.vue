@@ -79,10 +79,35 @@ const content = reactive<any>({
 </template>
 
 <style lang="scss" scoped>
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 32px;
+//表格搜索通用样式
+.ve-table-search {
+  .search-btn {
+    float: right;
+  }
+
+  .el-form-item {
+    margin-bottom: 18px;
+  }
+
+  .el-input {
+    width: 200px
+  }
+
+  ::v-deep(.el-card__header) {
+    padding: 10px 20px;
+  }
+
+  ::v-deep(.el-card__body) {
+    padding: 20px 20px 2px 20px;
+  }
+
+  margin-bottom: 10px;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 32px;
+  }
 }
 </style>

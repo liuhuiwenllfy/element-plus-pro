@@ -4,6 +4,7 @@ import VeTableColumn from '@/components/ve-table-column/index.vue'
 import {computed, ref} from 'vue'
 import {Delete, Document, Edit} from "@element-plus/icons-vue";
 import code from './index.md?raw'
+import VeTableArea from "@/components/ve-table-area/index.vue";
 
 const stats = [
   {
@@ -124,8 +125,8 @@ const incident = [
     callback: '-',
   },
   {
-    name: 'refresh',
-    instructions: '总线监听刷新回调',
+    name: 'handle-refresh',
+    instructions: '刷新回调',
     callback: '-',
   }
 ]
@@ -207,32 +208,40 @@ const _data = ref([
   <ve-page id="ve-table-column" :_slots="slots" :code="code" :incident="incident" :stats="stats"
            title="ve-table-column 表格区域">
     <template #default>
-      <el-table ref="ve-table" :data="_data">
-        <ve-table-column :column-list="columnList">
-          <template #default>
-            <el-button
-                :icon="Document"
-                plain
-                size="small">
-              详情
-            </el-button>
-            <el-button
-                :icon="Edit"
-                plain
-                size="small"
-                type="primary">
-              编辑
-            </el-button>
-            <el-button
-                :icon="Delete"
-                plain
-                size="small"
-                type="danger">
-              删除
-            </el-button>
-          </template>
-        </ve-table-column>
-      </el-table>
+      <ve-table-area class="ve-table" language="zhCn">
+        <template #header>
+          <el-button>新增</el-button>
+        </template>
+        <template #main>
+          <el-table :data="_data">
+            <ve-table-column :column-list="columnList" region-class="ve-table">
+              <template #default>
+                <el-button
+                    :icon="Document"
+                    plain
+                    size="small">
+                  详情
+                </el-button>
+                <el-button
+                    :icon="Edit"
+                    plain
+                    size="small"
+                    type="primary">
+                  编辑
+                </el-button>
+                <el-button
+                    :icon="Delete"
+                    plain
+                    size="small"
+                    type="danger">
+                  删除
+                </el-button>
+              </template>
+            </ve-table-column>
+          </el-table>
+        </template>
+      </ve-table-area>
+
     </template>
   </ve-page>
 </template>

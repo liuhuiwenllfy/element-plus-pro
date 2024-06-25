@@ -19,12 +19,10 @@ const routes: any[] = [
         children: []
     }
 ]
+
 const router = createRouter({
     history: createWebHistory(),
-    routes,
-    scrollBehavior() {
-        return {left: 0, top: 0}
-    }
+    routes
 })
 router.beforeEach((to, _from) => {
     NProgress.start()

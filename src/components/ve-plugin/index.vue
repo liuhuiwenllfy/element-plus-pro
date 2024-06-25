@@ -159,4 +159,26 @@ const content = reactive<any>({
     border-color: var(--el-border-color);
   }
 }
+
+//一行省略
+.text-flow-ellipsis-multiple_1 {
+  /* 多余内容省略号处理-多行 */
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+//一行省略
+.text-flow-ellipsis-multiple_2 {
+  /* 多余内容省略号处理-多行 */
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
 </style>
