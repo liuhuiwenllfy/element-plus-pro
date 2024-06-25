@@ -26,7 +26,7 @@ const getChildLength = (item: MenuInfoShowVo) => {
 
 <template>
   <h2>Overview 组件总览</h2>
-  <el-text>以下是 Element Plus 提供的所有组件。</el-text>
+  <el-text>以下是 Element plus pro 提供的所有组件。</el-text>
   <div style="margin-top: 20px">
     <el-input
         v-model="search"
