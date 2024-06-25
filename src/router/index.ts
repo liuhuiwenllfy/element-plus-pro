@@ -22,7 +22,10 @@ const routes: any[] = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    scrollBehavior() {
+        return {left: 0, top: 0}
+    }
 })
 router.beforeEach((to, _from) => {
     NProgress.start()
