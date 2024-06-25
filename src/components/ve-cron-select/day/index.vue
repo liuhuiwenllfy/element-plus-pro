@@ -150,6 +150,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>-</el-text>
         <el-input-number
@@ -158,6 +159,7 @@ const handleChange = (value: any) => {
             :min="2"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>日</el-text>
       </el-space>
@@ -171,6 +173,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>日开始,每</el-text>
         <el-input-number
@@ -179,6 +182,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>天执行一次</el-text>
       </el-space>
@@ -192,6 +196,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>号最近的那个工作日</el-text>
       </el-space>

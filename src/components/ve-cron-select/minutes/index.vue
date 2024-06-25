@@ -113,6 +113,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>-</el-text>
         <el-input-number
@@ -121,6 +122,7 @@ const handleChange = (value: any) => {
             :min="2"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>分钟</el-text>
       </el-space>
@@ -134,6 +136,7 @@ const handleChange = (value: any) => {
             :min="0"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>分钟开始,每</el-text>
         <el-input-number
@@ -142,6 +145,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>分钟执行一次</el-text>
       </el-space>

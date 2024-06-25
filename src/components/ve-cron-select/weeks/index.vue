@@ -141,6 +141,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>-</el-text>
         <el-input-number
@@ -149,6 +150,7 @@ const handleChange = (value: any) => {
             :min="2"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
       </el-space>
     </el-radio>
@@ -161,6 +163,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
         <el-text>的星期</el-text>
         <el-input-number
@@ -169,6 +172,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
       </el-space>
     </el-radio>
@@ -181,6 +185,7 @@ const handleChange = (value: any) => {
             :min="1"
             controls-position="right"
             size="small"
+            @change="handleChange(radio)"
         />
       </el-space>
     </el-radio>
