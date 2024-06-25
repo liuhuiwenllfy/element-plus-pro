@@ -4,7 +4,7 @@ import 'element-plus/es/components/result/style/css'
 import 'element-plus/es/components/button/style/css'
 import {PropType, reactive} from "vue";
 
-const props = defineProps({
+defineProps({
   language: {
     type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
@@ -20,8 +20,8 @@ const handleBack = () => {
 
 const content = reactive<any>({
   title: {
-    zhCn: '无权限访问，请重新登陆',
-    en: 'No right to restrict access, please log in again'
+    zhCn: '凭证无效，请重新登陆',
+    en: 'Certificate invalid, please log in again'
   },
   back: {
     zhCn: '返回',
@@ -33,7 +33,7 @@ const content = reactive<any>({
 <template>
   <div class="no-permission">
     <el-result
-        :title="content.title[language]"
+        :sub-title="content.title[language]"
         icon="warning"
         title="401">
       <template #extra>

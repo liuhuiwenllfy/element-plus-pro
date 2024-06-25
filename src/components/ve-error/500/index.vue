@@ -4,7 +4,7 @@ import 'element-plus/es/components/result/style/css'
 import 'element-plus/es/components/button/style/css'
 import {PropType, reactive} from "vue";
 
-const props = defineProps({
+defineProps({
   language: {
     type: String as PropType<'zhCn' | 'en' | string>,
     required: false,
@@ -33,11 +33,11 @@ const content = reactive<any>({
 <template>
   <div class="error">
     <el-result
-        :title="content.title[language]"
+        :sub-title="content.title[language]"
         icon="error"
         title="500">
       <template #extra>
-        <el-button type="primary" @click="back">
+        <el-button type="primary" @click="handleBack">
           {{ content.back[language] }}
         </el-button>
       </template>
