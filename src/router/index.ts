@@ -17,37 +17,7 @@ const routes: any[] = [
         redirect: 'overview',
         component: () => import('@/view/index/index.vue'),
         children: []
-    },
-    // {
-    //     path: '/200',
-    //     name: '200',
-    //     component: () => import('@/components/ve-error/200/index.vue')
-    // },
-    // {
-    //     path: '/401',
-    //     name: '401',
-    //     component: () => import('@/components/ve-error/401/index.vue')
-    // },
-    // {
-    //     path: '/403',
-    //     name: '403',
-    //     component: () => import('@/components/ve-error/403/index.vue')
-    // },
-    // {
-    //     path: '/404',
-    //     name: '404',
-    //     component: () => import('@/components/ve-error/404/index.vue')
-    // },
-    // {
-    //     path: '/500',
-    //     name: '500',
-    //     component: () => import('@/components/ve-error/500/index.vue')
-    // },
-    // {
-    //     path: '/in-full-development',
-    //     name: 'in-full-development',
-    //     component: () => import('@/components/ve-error/in-full-development/index.vue')
-    // }
+    }
 ]
 const router = createRouter({
     history: createWebHistory(),
