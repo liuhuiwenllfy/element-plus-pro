@@ -125,8 +125,8 @@ const stats = [
 
 const incident = [
   {
-    name: 'onChange',
-    instructions: '内容变更回调',
+    name: 'getText',
+    instructions: '通过ref主动获取文本',
     callback: 'modelValue',
   },
 ]

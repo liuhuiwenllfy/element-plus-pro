@@ -142,11 +142,13 @@ const toolbars = ref<ToolbarNames[]>([
   'catalog',
 ])
 
-const emits = defineEmits(['onChange'])
-
-const onChange = () => {
-  emits('onChange', _text.value)
+const getText = () => {
+  return _text.value
 }
+
+defineExpose({
+  getText
+})
 
 const onUploadImg = async (files: Array<File>, callback: any) => {
   const res = await Promise.all(
@@ -187,7 +189,6 @@ const onUploadImg = async (files: Array<File>, callback: any) => {
       :showToolbarName="showToolbarName"
       :theme="theme"
       :toolbars="toolbars"
-      @onChange="onChange"
       @onUploadImg="onUploadImg"
   >
   </MdEditor>
