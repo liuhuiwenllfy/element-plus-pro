@@ -102,8 +102,8 @@ const stats = [
     name: 'language',
     instructions: '国际化',
     type: 'string',
-    optional: 'zh-CN | en-US',
-    default: 'zh-CN',
+    optional: 'zhCn | en',
+    default: 'zhCn',
   },
 ]
 
