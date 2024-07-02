@@ -77,9 +77,9 @@ const content = reactive<any>({
 
     .search-input {
       margin: 3px 20px;
-      height: 30px;
+      height: 20px;
       border: none;
-      width: 300px;
+      max-width: 300px;
       background-color: var(--el-color-info-light-9);
     }
   }
@@ -93,8 +93,8 @@ const content = reactive<any>({
 
     .search-button {
       border: none;
-      height: 40px;
-      width: 100px;
+      height: 30px;
+      width: 80px;
       border-radius: 0 30px 30px 0;
       background-color: var(--el-color-primary);
       color: white;

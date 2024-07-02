@@ -48,7 +48,7 @@ const getChildLength = (item: MenuInfoShowVo) => {
         </el-space>
         <el-row :gutter="20">
           <template v-for="(item1, index1) in item.children" :key="index1">
-            <el-col v-if="!search || getMenuName(item1).includes(search)" :span="6">
+            <el-col v-if="!search || getMenuName(item1).includes(search)" :lg="12" :md="12" :sm="24" :xl="6">
               <el-card shadow="hover" style="margin: 10px 0"
                        @click="router.push(item1.menuCode)">
                 <template #header>

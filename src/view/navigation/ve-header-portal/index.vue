@@ -4,6 +4,7 @@ import VeHeaderPortal from '@/components/ve-header-portal/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import {computed, reactive} from 'vue'
 import code from './index.md?raw'
+import VeSearch from '@/components/ve-search/index.vue'
 
 const stats = [
 
@@ -200,7 +201,11 @@ const menu = computed(() => {
           @handle-sign-out="console.log('登出')"
           @handle-user-click="console.log($event)"
           @handle-login="console.log('登录')"
-          @handle-register="console.log('注册')"/>
+          @handle-register="console.log('注册')">
+        <template #search>
+          <ve-search language="zhCn" val="标题党" @handle-click="console.log($event)"/>
+        </template>
+      </ve-header-portal>
     </template>
   </ve-page>
 </template>

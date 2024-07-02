@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {ElButton, ElInput, ElPopover, ElScrollbar, ElTabPane, ElTabs, ElText} from 'element-plus'
+import {ElPopover, ElScrollbar, ElTabPane, ElTabs, ElText} from 'element-plus'
 import 'element-plus/es/components/tabs/style/css'
 import 'element-plus/es/components/tab-pane/style/css'
 import 'element-plus/es/components/scrollbar/style/css'
@@ -182,17 +182,11 @@ const activeName = ref('emote')
 const emits = defineEmits(['change'])
 
 const handleClick = (val: string) => {
-  _comment.value = _comment.value + val
   emits('change', val)
 }
-
-const _comment = ref('')
-
 </script>
 
 <template>
-  <el-input v-model="_comment" placeholder="请输入内容" style="width: 300px; vertical-align: top"
-            type="textarea"></el-input>
   <el-popover
       :width="476"
       placement="bottom"
@@ -209,9 +203,7 @@ const _comment = ref('')
       </el-tab-pane>
     </el-tabs>
     <template #reference>
-      <div style="margin-left: 2px; display: inline-block;">
-        <el-button>选择</el-button>
-      </div>
+      <slot name="default"></slot>
     </template>
   </el-popover>
 </template>

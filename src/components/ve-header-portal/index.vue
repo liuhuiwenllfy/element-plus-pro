@@ -230,6 +230,9 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </template>
+      <li class="text menu3" style="padding: 0">
+        <slot name="search"></slot>
+      </li>
       <li class="menu3" style="padding: 0">
         <el-dropdown trigger="hover" @command="handleLanguageChange">
           <el-icon class="dropdown-icon" size="20" style="padding: 20px">
