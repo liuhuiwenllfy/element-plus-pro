@@ -62,8 +62,8 @@ const content = reactive<any>({
         <div class="plugin-preview">
           <slot name="preview"/>
         </div>
-        <div class="plugin-main">
-          <p class="text-flow-ellipsis-multiple_1" @click="handleClick">
+        <div class="plugin-main" @click="handleClick">
+          <p class="text-flow-ellipsis-multiple_1">
             <strong>
               <slot name="title"/>
             </strong>
