@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-import {onMounted, PropType, reactive, ref, watch} from 'vue'
+import {PropType, reactive, ref, watch} from 'vue'
+import type {UploadInstance} from 'element-plus'
 import {ElAvatar, ElIcon, ElMessage, ElUpload, UploadRawFile} from 'element-plus'
 import {Plus} from '@element-plus/icons-vue'
 import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/upload/style/css'
 import 'element-plus/es/components/avatar/style/css'
 import 'element-plus/es/components/icon/style/css'
+import VeCropper from '@/components/ve-cropper/index.vue'
+import axios from 'axios'
 
 const props = defineProps({
   // 服务器地址
@@ -35,19 +38,13 @@ const props = defineProps({
     type: String,
     required: false,
     default: () => ''
+  },
+  isCropper: {
+    type: Boolean,
+    required: false,
+    default: () => false
   }
 })
-
-// 初始化获取上传地址
-onMounted(() => {
-  getApi()
-})
-
-const api = ref('#')
-const getApi = () => {
-  //@ts-ignore
-  api.value = import.meta.env.VITE_UPLOAD_GRIDFS_URL
-}
 
 const _file = ref('')
 
@@ -63,15 +60,45 @@ const emits = defineEmits(['handleSuccess'])
 const handleSuccess = (response: any) => {
   emits('handleSuccess', response)
 }
+const showCropper = ref(false)
+const cropperImg = ref()
+const cropperImgBlob = ref()
+const cropper = ref()
+const uploadRef = ref<UploadInstance>()
 
 // 上传之前校验文件
 // 文件大小不能超过2MB
-const beforeAvatarUpload = (rawFile: UploadRawFile) => {
-  if (rawFile.size / 1024 / 1024 > props.uploadSize) {
-    ElMessage.error(content.imageMax2MB[props.language])
+const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
+  if (rawFile) {
+    if (rawFile.size / 1024 / 1024 > props.uploadSize) {
+      ElMessage.error(content.imageMax2MB[props.language])
+      return false
+    }
+    if (props.isCropper) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        cropperImg.value = e.target.result
+      };
+      reader.readAsDataURL(rawFile);
+      showCropper.value = true
+      return false
+    }
+    return true
+  } else {
+    cropper.value.getCropBlob()
+    showCropper.value = false
+    const file = new File([cropperImgBlob], 'image.png', {type: 'image/png'});
+    const form = new FormData()
+    form.append('file', file)
+    //@ts-ignore
+    axios.post(props.api, form, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        authorization: props.authorization
+      }
+    }).then((res) => console.log(res)).catch((error) => console.log(error))
     return false
   }
-  return true
 }
 
 const content = reactive<any>({
@@ -84,6 +111,7 @@ const content = reactive<any>({
 
 <template>
   <el-upload
+      ref="uploadRef"
       :action="api"
       :before-upload="beforeAvatarUpload"
       :headers="{
@@ -98,6 +126,18 @@ const content = reactive<any>({
       <Plus/>
     </el-icon>
   </el-upload>
+
+  <el-dialog v-model="showCropper" width="750">
+    <ve-cropper ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event"/>
+    <template #footer>
+      <span>
+        <el-button @click="showCropper = false">{{ $t('message.reset') }}</el-button>
+        <el-button type="primary" @click="beforeAvatarUpload(null)">{{
+            $t('message.confirm')
+          }}</el-button>
+      </span>
+    </template>
+  </el-dialog>
 </template>
 
 <style lang="scss" scoped>
