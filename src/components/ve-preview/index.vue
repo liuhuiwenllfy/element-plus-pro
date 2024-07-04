@@ -11,25 +11,18 @@ defineProps({
 </script>
 
 <template>
-  <div class="ve-preview">
-    <el-image
-        :initial-index="1"
-        :preview-src-list="list"
-        :src="list[0]"
-        :zoom-rate="1.2"
-        class="customize-img"
-        fit="contain"/>
-  </div>
+  <el-image
+      :initial-index="1"
+      :preview-src-list="list"
+      :src="list[0]"
+      :zoom-rate="1.2"
+      fit="contain"/>
 </template>
 
 <style lang="scss" scoped>
-.ve-preview {
-  height: 100%;
-  width: 100%;
-
-  .el-image {
-    height: 100%;
-    border-radius: 6px;
-  }
+.el-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
 }
 </style>
