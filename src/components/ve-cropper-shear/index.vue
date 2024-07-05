@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import 'vue-cropper/dist/index.css'
-import {VueCropper} from "vue-cropper";
+//@ts-ignore
+import VueCropper from "vue-cropper/lib/vue-cropper.vue";
 import {nextTick, ref} from "vue";
 import {ElButton, ElRadio, ElRadioGroup} from 'element-plus'
 import 'element-plus/es/components/radio-group/style/css'
@@ -52,12 +53,12 @@ const rotateLeft = () => {
 
 const emits = defineEmits(['getCropData', 'getCropBlob'])
 const getCropData = () => {
-  cropper.value.getCropData(data => {
+  cropper.value.getCropData((data: string) => {
     emits("getCropData", data);
   });
 }
 const getCropBlob = () => {
-  cropper.value.getCropBlob(data => {
+  cropper.value.getCropBlob((data: string) => {
     emits("getCropBlob", data);
   });
 }

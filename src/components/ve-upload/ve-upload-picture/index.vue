@@ -62,7 +62,7 @@ const handleSuccess = (response: any) => {
 
 const showCropper = ref(false)
 const cropperImg = ref()
-const cropperImgBlob = ref()
+const cropperImgBlob = ref<BlobPart>()
 const cropper = ref()
 
 // 上传之前校验文件
@@ -76,6 +76,7 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
     if (props.isCropper) {
       const reader = new FileReader();
       reader.onload = (e) => {
+        //@ts-ignore
         cropperImg.value = e.target.result
       };
       reader.readAsDataURL(rawFile);
@@ -86,7 +87,8 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
   } else {
     cropper.value.getCropBlob()
     showCropper.value = false
-    const file = new File([cropperImgBlob], 'image.png', {type: 'image/png'});
+    //@ts-ignore
+    const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
     const form = new FormData()
     form.append('file', file)
     //@ts-ignore

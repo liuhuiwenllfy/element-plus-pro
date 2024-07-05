@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeCropperShear from 've-cropper-shear/index.vue'
+import VeCropperShear from '@/components/ve-cropper-shear/index.vue'
 import VePage from '@/components/ve-page/index.vue'
 import code from './index.md?raw'
 import {reactive} from "vue";
