@@ -20,6 +20,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "screenfull": "^6.0.2",
     "ve-aside": "^1.0.2",
+    "ve-cropper-shear": "^1.0.1",
     "ve-error": "^1.0.2",
     "ve-icon": "^1.0.0",
     "ve-login": "^1.0.0",

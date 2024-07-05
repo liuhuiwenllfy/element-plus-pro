@@ -1,14 +1,15 @@
 <script lang="ts" setup>
 import {PropType, reactive, ref, watch} from 'vue'
-import type {UploadInstance} from 'element-plus'
-import {ElAvatar, ElIcon, ElMessage, ElUpload, UploadRawFile} from 'element-plus'
+import {ElAvatar, ElButton, ElDialog, ElIcon, ElMessage, ElUpload, UploadRawFile} from 'element-plus'
 import {Plus} from '@element-plus/icons-vue'
 import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/upload/style/css'
 import 'element-plus/es/components/avatar/style/css'
 import 'element-plus/es/components/icon/style/css'
-import VeCropper from '@/components/ve-cropper/index.vue'
+import VeCropperShear from 've-cropper-shear/index.vue'
 import axios from 'axios'
+import 'element-plus/es/components/dialog/style/css'
+import 'element-plus/es/components/button/style/css'
 
 const props = defineProps({
   // 服务器地址
@@ -64,7 +65,6 @@ const showCropper = ref(false)
 const cropperImg = ref()
 const cropperImgBlob = ref()
 const cropper = ref()
-const uploadRef = ref<UploadInstance>()
 
 // 上传之前校验文件
 // 文件大小不能超过2MB
@@ -106,12 +106,19 @@ const content = reactive<any>({
     zhCn: `图片大小不能超过 ${props.uploadSize}MB`,
     en: `Image size cannot exceed ${props.uploadSize}mb`
   },
+  reset: {
+    zhCn: '清空',
+    en: `reset`
+  },
+  reset: {
+    zhCn: '确认',
+    en: `confirm`
+  },
 })
 </script>
 
 <template>
   <el-upload
-      ref="uploadRef"
       :action="api"
       :before-upload="beforeAvatarUpload"
       :headers="{
@@ -128,13 +135,11 @@ const content = reactive<any>({
   </el-upload>
 
   <el-dialog v-model="showCropper" width="750">
-    <ve-cropper ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event"/>
+    <ve-cropper-shear ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event"/>
     <template #footer>
       <span>
-        <el-button @click="showCropper = false">{{ $t('message.reset') }}</el-button>
-        <el-button type="primary" @click="beforeAvatarUpload(null)">{{
-            $t('message.confirm')
-          }}</el-button>
+        <el-button @click="showCropper = false">{{ content.reset[language] }}</el-button>
+        <el-button type="primary" @click="beforeAvatarUpload(null)">{{ content.confirm[language] }}</el-button>
       </span>
     </template>
   </el-dialog>

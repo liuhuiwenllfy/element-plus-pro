@@ -191,6 +191,19 @@
         "menuPath": "/ve-upload",
         "menuComponent": "form/ve-upload",
         "children": []
+      },
+      {
+        "id": "0930c25f52984162bdd1d8cf8f1b9448",
+        "menuCode": "ve-cropper-shear",
+        "menuName": "ve-cropper-shear Picture cropping",
+        "menuNameEn": "ve-cropper-shear ",
+        "parentId": "b1a47b93238243838856929a6b2ea711",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Upload",
+        "menuPath": "/ve-cropper-shear",
+        "menuComponent": "form/ve-cropper-shear",
+        "children": []
       }
     ]
   },

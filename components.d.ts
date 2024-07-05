@@ -69,6 +69,7 @@ declare module 'vue' {
     VeContactPhoneRounded: typeof import('./src/components/ve-icon/ve-contact-phone-rounded/index.vue')['default']
     VeCronSelect: typeof import('./src/components/ve-cron-select/index.vue')['default']
     VeCropper: typeof import('./src/components/ve-cropper/index.vue')['default']
+    VeCropperShear: typeof import('./src/components/ve-cropper-shear/index.vue')['default']
     VeDefaultFooter: typeof import('./src/components/ve-footer/ve-default-footer/index.vue')['default']
     VeDefaultLogin: typeof import('./src/components/ve-login/ve-default-login/index.vue')['default']
     VeEmojiSelect: typeof import('./src/components/ve-emoji-select/index.vue')['default']

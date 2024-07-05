@@ -49,6 +49,13 @@ const stats = [
     optional: '-',
     default: '-',
   },
+  {
+    name: 'is-cropper',
+    instructions: '是否开启裁剪功能，该功能暂时仅支持单文件上传组件',
+    type: 'boolean',
+    optional: 'true：开启；false：关闭',
+    default: 'false',
+  },
 ]
 
 const incident = [
@@ -75,7 +82,7 @@ const incident = [
       <h3>上传头像</h3>
       <ve-upload-avatar api="#" is-cropper/>
       <h3>上传图片</h3>
-      <ve-upload-picture api="#"/>
+      <ve-upload-picture api="#" is-cropper/>
     </template>
   </ve-page>
 </template>

@@ -2,6 +2,10 @@
 import 'vue-cropper/dist/index.css'
 import {VueCropper} from "vue-cropper";
 import {nextTick, ref} from "vue";
+import {ElButton, ElRadio, ElRadioGroup} from 'element-plus'
+import 'element-plus/es/components/radio-group/style/css'
+import 'element-plus/es/components/radio/style/css'
+import 'element-plus/es/components/button/style/css'
 
 const props = defineProps({
   img: {
@@ -75,7 +79,7 @@ const _radio = ref(0)
           :canMove="false"
           :canScale="false"
           :fixed="fixed"
-          :fixedNumber="fixedNumber"
+          :fixedNumber="_fixedNumber"
           :full="true"
           :img="img"
           :info="false"

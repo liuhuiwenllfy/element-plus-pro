@@ -1,15 +1,15 @@
 {
-  "name": "ve-upload",
-  "version": "1.0.2",
+  "name": "ve-cropper-shear",
+  "version": "1.0.1",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
     "url": "https://blog.csdn.net/qq_38036909?type=blog"
   },
-  "description": "上传",
+  "description": "图片裁剪",
   "keywords": [
-    "ve-upload",
-    "upload",
+    "ve-cropper-shear",
+    "cropper-shear",
     "ve"
   ],
   "homepage": "https://epp.liulingfengyu.cn/",
