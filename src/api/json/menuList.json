@@ -200,7 +200,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Upload",
+        "menuIcon": "Crop",
         "menuPath": "/ve-cropper-shear",
         "menuComponent": "form/ve-cropper-shear",
         "children": []
