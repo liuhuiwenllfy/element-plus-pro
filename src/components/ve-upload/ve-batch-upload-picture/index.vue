@@ -118,10 +118,9 @@ const beforeUpload = (rawFile: UploadRawFile | null) => {
             size: file.size,
             status: 'success',
             uid: new Date().getTime(),
-            //@ts-ignore
-            url: URL.createObjectURL(cropperImgBlob.value)
           }
           //@ts-ignore
+          uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
           _fileList.value?.push(uploadFile)
           handleSuccess(res.data, uploadFile, _fileList.value)
         }

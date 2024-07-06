@@ -104,9 +104,9 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
         size: file.size,
         status: 'success',
         uid: new Date().getTime(),
-        //@ts-ignore
-        url: URL.createObjectURL(cropperImgBlob.value)
       }
+      //@ts-ignore
+      uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
       handleSuccess(res.data, uploadFile)
     }).catch((error) => console.log(error))
     return false
