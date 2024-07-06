@@ -3,11 +3,14 @@ import {PropType, reactive, ref, watch} from 'vue'
 import {Delete, Plus, ZoomIn} from '@element-plus/icons-vue'
 
 import type {UploadFile, UploadFiles, UploadRawFile} from 'element-plus'
-import {ElDialog, ElIcon, ElMessage, ElUpload} from "element-plus";
+import {ElButton, ElDialog, ElIcon, ElMessage, ElUpload} from "element-plus";
 import 'element-plus/es/components/upload/style/css'
 import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/dialog/style/css'
 import 'element-plus/es/components/icon/style/css'
+import VeCropperShear from 've-cropper-shear/index.vue'
+import axios from 'axios'
+import 'element-plus/es/components/button/style/css'
 
 const props = defineProps({
   // 服务器地址
@@ -37,6 +40,11 @@ const props = defineProps({
     type: Array as () => Array<UploadFile>,
     required: false,
     default: () => []
+  },
+  isCropper: {
+    type: Boolean,
+    required: false,
+    default: () => false
   }
 })
 
@@ -68,10 +76,50 @@ const handlePictureCardPreview = (file: UploadFile) => {
   dialogVisible.value = true
 }
 
-const beforeUpload = (file: UploadRawFile) => {
-  //@ts-ignore
-  if (file.size > 1024 * 1024 * props.uploadSize) {
-    ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
+const showCropper = ref(false)
+const cropperImg = ref()
+const cropperImgBlob = ref<BlobPart>()
+const cropper = ref()
+
+const beforeUpload = (rawFile: UploadRawFile) => {
+  if (rawFile) {
+    if (rawFile.size > 1024 * 1024 * props.uploadSize) {
+      ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
+      return false
+    }
+    if (props.isCropper) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        //@ts-ignore
+        cropperImg.value = e.target.result
+      };
+      reader.readAsDataURL(rawFile);
+      showCropper.value = true
+      return false
+    }
+    return true
+  } else {
+    cropper.value.getCropBlob()
+    showCropper.value = false
+    //@ts-ignore
+    const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
+    const form = new FormData()
+    form.append('file', file)
+    //@ts-ignore
+    axios.post(props.api, form, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        authorization: props.authorization
+      }
+    }).then((res) => {
+          const uploadFile: UploadFile = file;
+          uploadFile.uid = new Date().getTime()
+          uploadFile.response = res.data
+          uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
+          _fileList.value?.push(uploadFile)
+          handleSuccess(res.data, uploadFile, _fileList.value)
+        }
+    ).catch((error) => console.log(error))
     return false
   }
 }
@@ -80,6 +128,14 @@ const content = reactive<any>({
   onlyFilesSmallerThanNumMbCanBeUploaded: {
     zhCn: `只能上传小于 ${props.uploadSize}MB 的文件`,
     en: `Only files smaller than ${props.uploadSize}mb can be uploaded`
+  },
+  reset: {
+    zhCn: '清空',
+    en: `reset`
+  },
+  confirm: {
+    zhCn: '确认',
+    en: `confirm`
   },
 })
 </script>
@@ -121,6 +177,16 @@ const content = reactive<any>({
 
   <el-dialog v-model="dialogVisible" :title="dialogTitle" draggable top="10vh">
     <img :src="dialogImageUrl" alt="Preview Image" style="width: 100%"/>
+  </el-dialog>
+
+  <el-dialog v-model="showCropper" width="750">
+    <ve-cropper-shear ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event"/>
+    <template #footer>
+      <span>
+        <el-button @click="showCropper = false">{{ content.reset[language] }}</el-button>
+        <el-button type="primary" @click="beforeUpload(null)">{{ content.confirm[language] }}</el-button>
+      </span>
+    </template>
   </el-dialog>
 </template>
 

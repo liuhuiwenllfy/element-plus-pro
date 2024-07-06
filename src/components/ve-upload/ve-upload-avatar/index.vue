@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {PropType, reactive, ref, watch} from 'vue'
-import {ElAvatar, ElButton, ElDialog, ElIcon, ElMessage, ElUpload, UploadRawFile} from 'element-plus'
+import {ElAvatar, ElButton, ElDialog, ElIcon, ElMessage, ElUpload, type UploadFile, UploadRawFile} from 'element-plus'
 import {Plus} from '@element-plus/icons-vue'
 import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/upload/style/css'
@@ -58,8 +58,8 @@ watch(() => props.file, async () => {
 const emits = defineEmits(['handleSuccess'])
 
 // 上传成功回调
-const handleSuccess = (response: any) => {
-  emits('handleSuccess', response)
+const handleSuccess = (response: any, uploadFile: UploadFile) => {
+  emits('handleSuccess', response, uploadFile)
 }
 const showCropper = ref(false)
 const cropperImg = ref()
@@ -98,7 +98,14 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
         'Content-Type': 'multipart/form-data',
         authorization: props.authorization
       }
-    }).then((res) => console.log(res)).catch((error) => console.log(error))
+    }).then((res) => {
+      const uploadFile: UploadFile = file;
+      uploadFile.uid = new Date().getTime()
+      uploadFile.response = res.data
+      uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
+      _file.value = uploadFile
+      handleSuccess(res.data, uploadFile)
+    }).catch((error) => console.log(error))
     return false
   }
 }

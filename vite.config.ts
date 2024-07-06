@@ -33,4 +33,13 @@ export default defineConfig({
             }
         }
     },
+    server: {
+        proxy: {
+            "/single-upload": {
+                target: "http://127.0.0.1:8011",
+                // target: "https://www.liulingfengyu.cn",
+                changeOrigin: true,
+            },
+        },
+    }
 })

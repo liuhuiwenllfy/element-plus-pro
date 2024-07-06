@@ -11,6 +11,8 @@
 ```shell
 npm install axios
 
+npm install vue-cropper@next
+
 npm install ve-cropper-shear
 
 npm install ve-upload
@@ -20,6 +22,8 @@ npm install ve-upload
 
 ```shell
 npm uninstall axios
+
+npm uninstall vue-cropper@next
 
 npm uninstall ve-cropper-shear
 
