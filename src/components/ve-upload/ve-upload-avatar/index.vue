@@ -47,7 +47,7 @@ const props = defineProps({
   }
 })
 
-const _file = ref('')
+const _file = ref()
 
 // 监听 file变化，同步预览图变化
 watch(() => props.file, async () => {
@@ -99,11 +99,15 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
         authorization: props.authorization
       }
     }).then((res) => {
-      const uploadFile: UploadFile = file;
-      uploadFile.uid = new Date().getTime()
-      uploadFile.response = res.data
-      uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
-      _file.value = uploadFile
+      const uploadFile: UploadFile = {
+        name: file.name,
+        response: res.data,
+        size: file.size,
+        status: 'success',
+        uid: new Date().getTime(),
+        //@ts-ignore
+        url: URL.createObjectURL(cropperImgBlob.value)
+      }
       handleSuccess(res.data, uploadFile)
     }).catch((error) => console.log(error))
     return false

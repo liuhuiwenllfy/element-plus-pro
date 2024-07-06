@@ -61,7 +61,7 @@ const disabled = ref(false)
 
 const emits = defineEmits(['handleSuccess', 'handleRemove'])
 
-const handleSuccess = (response: any, uploadFile: UploadFile, uploadFiles: UploadFiles) => {
+const handleSuccess = (response: any, uploadFile: UploadFile, uploadFiles: UploadFiles | undefined) => {
   emits('handleSuccess', uploadFile, uploadFiles, response)
 }
 
@@ -81,7 +81,7 @@ const cropperImg = ref()
 const cropperImgBlob = ref<BlobPart>()
 const cropper = ref()
 
-const beforeUpload = (rawFile: UploadRawFile) => {
+const beforeUpload = (rawFile: UploadRawFile | null) => {
   if (rawFile) {
     if (rawFile.size > 1024 * 1024 * props.uploadSize) {
       ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
@@ -112,10 +112,16 @@ const beforeUpload = (rawFile: UploadRawFile) => {
         authorization: props.authorization
       }
     }).then((res) => {
-          const uploadFile: UploadFile = file;
-          uploadFile.uid = new Date().getTime()
-          uploadFile.response = res.data
-          uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
+          const uploadFile: UploadFile = {
+            name: file.name,
+            response: res.data,
+            size: file.size,
+            status: 'success',
+            uid: new Date().getTime(),
+            //@ts-ignore
+            url: URL.createObjectURL(cropperImgBlob.value)
+          }
+          //@ts-ignore
           _fileList.value?.push(uploadFile)
           handleSuccess(res.data, uploadFile, _fileList.value)
         }
