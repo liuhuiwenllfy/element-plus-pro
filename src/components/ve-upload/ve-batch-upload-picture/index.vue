@@ -48,11 +48,7 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>()
-
-watch(() => props.fileList, () => {
-  _fileList.value = props.fileList
-})
+let _fileList = ref<UploadFile[]>(props.fileList)
 
 const dialogImageUrl = ref('')
 const dialogTitle = ref('')
@@ -66,6 +62,7 @@ const handleSuccess = (response: any, uploadFile: UploadFile, uploadFiles: Uploa
 }
 
 const handleRemove = (file: UploadFile) => {
+  _fileList.value = _fileList.value.filter(item => item.uid !== file.uid)
   emits('handleRemove', file)
 }
 
@@ -120,7 +117,7 @@ const beforeUpload = (rawFile: UploadRawFile | null) => {
             uid: new Date().getTime(),
           }
           //@ts-ignore
-          uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
+          uploadFile.url = cropperImg.value
           _fileList.value?.push(uploadFile)
           handleSuccess(res.data, uploadFile, _fileList.value)
         }

@@ -46,11 +46,7 @@ const props = defineProps({
   }
 })
 
-const _file = ref()
-
-watch(() => props.file, async () => {
-  _file.value = props.file
-})
+const _file = ref(props.file)
 
 // 回调函数声明
 const emits = defineEmits(['handleSuccess'])
@@ -105,8 +101,7 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
         status: 'success',
         uid: new Date().getTime(),
       }
-      //@ts-ignore
-      uploadFile.url = URL.createObjectURL(cropperImgBlob.value)
+      _file.value = cropperImg.value
       handleSuccess(res.data, uploadFile)
     }).catch((error) => console.log(error))
     return false

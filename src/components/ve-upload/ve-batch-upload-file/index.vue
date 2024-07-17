@@ -39,11 +39,7 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>()
-
-watch(() => props.fileList, () => {
-  _fileList.value = props.fileList
-})
+let _fileList = ref<UploadFile[]>(props.fileList)
 
 const emits = defineEmits(['handleSuccess', 'handleRemove'])
 
@@ -59,6 +55,7 @@ const beforeUpload = (rawFile: UploadRawFile) => {
 }
 
 const handleRemove = (file: UploadFile) => {
+  _fileList.value = _fileList.value.filter(item => item.uid !== file.uid)
   //@ts-ignore
   emits('handleRemove', file)
 }
