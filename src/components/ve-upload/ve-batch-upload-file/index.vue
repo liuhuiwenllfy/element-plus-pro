@@ -39,7 +39,11 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>(props.fileList)
+let _fileList = ref<UploadFile[]>()
+
+watch(()=>props.fileList, ()=>{
+  _fileList.value = props.fileList
+}, {deep: true})
 
 const emits = defineEmits(['handleSuccess', 'handleRemove'])
 

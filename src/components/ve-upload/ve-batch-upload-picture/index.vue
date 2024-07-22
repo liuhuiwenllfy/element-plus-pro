@@ -48,7 +48,11 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>(props.fileList)
+let _fileList = ref<UploadFile[]>()
+
+watch(()=>props.fileList, ()=>{
+  _fileList.value = props.fileList
+}, {deep: true})
 
 const dialogImageUrl = ref('')
 const dialogTitle = ref('')
@@ -75,7 +79,8 @@ const handlePictureCardPreview = (file: UploadFile) => {
 
 const showCropper = ref(false)
 const cropperImg = ref()
-const cropperImgBlob = ref<BlobPart>()
+const cropperImgData = ref()
+const cropperImgBlob = ref()
 const cropper = ref()
 
 const beforeUpload = (rawFile: UploadRawFile | null) => {
@@ -96,35 +101,38 @@ const beforeUpload = (rawFile: UploadRawFile | null) => {
     }
     return true
   } else {
+    cropper.value.getCropData()
     cropper.value.getCropBlob()
     showCropper.value = false
-    //@ts-ignore
-    const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
-    const form = new FormData()
-    form.append('file', file)
-    //@ts-ignore
-    axios.post(props.api, form, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-        authorization: props.authorization
-      }
-    }).then((res) => {
-          const uploadFile: UploadFile = {
-            name: file.name,
-            response: res.data,
-            size: file.size,
-            status: 'success',
-            uid: new Date().getTime(),
-          }
-          //@ts-ignore
-          uploadFile.url = cropperImg.value
-          _fileList.value?.push(uploadFile)
-          handleSuccess(res.data, uploadFile, _fileList.value)
-        }
-    ).catch((error) => console.log(error))
     return false
   }
 }
+
+watch(()=>cropperImgBlob.value, ()=>{
+  const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
+  const form = new FormData()
+  form.append('file', file)
+  //@ts-ignore
+  axios.post(props.api, form, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      authorization: props.authorization
+    }
+  }).then((res) => {
+        const uploadFile: UploadFile = {
+          name: file.name,
+          response: res.data,
+          size: file.size,
+          status: 'success',
+          uid: new Date().getTime(),
+        }
+        //@ts-ignore
+        uploadFile.url = cropperImgData.value
+        _fileList.value?.push(uploadFile)
+        handleSuccess(res.data, uploadFile, _fileList.value)
+      }
+  ).catch((error) => console.log(error))
+})
 
 const content = reactive<any>({
   onlyFilesSmallerThanNumMbCanBeUploaded: {
@@ -182,7 +190,7 @@ const content = reactive<any>({
   </el-dialog>
 
   <el-dialog v-model="showCropper" width="750">
-    <ve-cropper-shear ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event"/>
+    <ve-cropper-shear ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event" @get-crop-data="cropperImgData = $event"/>
     <template #footer>
       <span>
         <el-button @click="showCropper = false">{{ content.reset[language] }}</el-button>
