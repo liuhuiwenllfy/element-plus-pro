@@ -58,7 +58,7 @@ const beforeUpload = (rawFile: UploadRawFile) => {
   }
 }
 
-const handleRemove = (file: UploadFile) => {
+const onRemove = (file: UploadFile) => {
   _fileList.value = _fileList.value.filter(item => item.uid !== file.uid)
   //@ts-ignore
   emits('handleRemove', file)
@@ -86,11 +86,11 @@ const content = reactive<any>({
       v-model:file-list="_fileList"
       :action="api"
       :before-upload="beforeUpload"
-      :handle-remove="handleRemove"
       :headers="{
         authorization: authorization
       }"
       :on-success="onSuccess"
+      :on-remove="onRemove"
       class="ve-batch-upload-file"
       drag
       multiple>
