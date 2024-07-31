@@ -48,7 +48,7 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>()
+let _fileList = ref<UploadFile[]>([])
 
 watch(()=>props.fileList, ()=>{
   _fileList.value = props.fileList

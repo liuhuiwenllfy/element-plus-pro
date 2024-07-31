@@ -39,7 +39,7 @@ const props = defineProps({
   }
 })
 
-let _fileList = ref<UploadFile[]>()
+let _fileList = ref<UploadFile[]>([])
 
 watch(()=>props.fileList, ()=>{
   _fileList.value = props.fileList
@@ -60,7 +60,6 @@ const beforeUpload = (rawFile: UploadRawFile) => {
 
 const onRemove = (file: UploadFile) => {
   _fileList.value = _fileList.value.filter(item => item.uid !== file.uid)
-  //@ts-ignore
   emits('handleRemove', file)
 }
 

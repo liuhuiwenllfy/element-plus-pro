@@ -5,7 +5,6 @@ import VeBatchUploadPicture from '@/components/ve-upload/ve-batch-upload-picture
 import VeUploadAvatar from '@/components/ve-upload/ve-upload-avatar/index.vue'
 import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
 import code from './index.md?raw'
-import {ref} from "vue";
 
 const stats = [
   {
