@@ -25,12 +25,12 @@ const content = reactive<any>([
       {
         zhCn: '前端框架',
         en: 'Front-end frame',
-        link: 'front-framework',
+        link: 'https://www.liulingfengyu.cn/front-framework',
       },
       {
         zhCn: '后端框架',
         en: 'Back-end frame',
-        link: 'backend-framework',
+        link: 'https://www.liulingfengyu.cn/backend-framework',
       }
     ]
   },
@@ -41,7 +41,7 @@ const content = reactive<any>([
       {
         zhCn: '多租户运维平台',
         en: 'Multi-tenant O&M platform',
-        link: 'solution',
+        link: 'https://www.liulingfengyu.cn/solution',
       }
     ]
   },
@@ -52,12 +52,12 @@ const content = reactive<any>([
       {
         zhCn: 'API支持',
         en: 'API support',
-        link: 'tutorial',
+        link: 'https://www.liulingfengyu.cn/tutorial',
       },
       {
         zhCn: '使用说明',
         en: 'Instructions for use',
-        link: 'tutorial',
+        link: 'https://www.liulingfengyu.cn/tutorial',
       },
       {
         zhCn: '社区',
@@ -67,7 +67,7 @@ const content = reactive<any>([
       {
         zhCn: '产品更新日志',
         en: 'Product update log',
-        link: 'update-log',
+        link: 'https://www.liulingfengyu.cn/update-log',
       }
     ]
   },
@@ -78,7 +78,7 @@ const content = reactive<any>([
       {
         zhCn: '插件市场',
         en: 'Plug-in market',
-        link: 'search',
+        link: 'https://pm.liulingfengyu.cn/search',
       },
       {
         zhCn: 'element-plus-pro',
