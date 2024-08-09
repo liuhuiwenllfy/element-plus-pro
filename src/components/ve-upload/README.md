@@ -47,3 +47,7 @@ Blog：[刘凌枫羽博客](https://blog.csdn.net/qq_38036909?type=blog)
 ---
 
 官网地址：https://www.liulingfengyu.cn/
+
+插件市场：https://pm.liulingfengyu.cn/
+
+Element Plus pro：https://epp.liulingfengyu.cn/
