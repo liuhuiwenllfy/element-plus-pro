@@ -2,6 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VePlugin from '@/components/ve-plugin/index.vue'
 import code from './index.md?raw'
+import {Money} from "@element-plus/icons-vue";
 
 const stats = [
   {
@@ -94,6 +95,11 @@ const slots = [
         <template #download>99+</template>
         <template #comment>99+</template>
         <template #collect>99+</template>
+        <template #price>￥9.9</template>
+        <template #salesVolume>1024</template>
+        <template #buy>
+          <el-button :icon="Money" type="danger" size="small">购买</el-button>
+        </template>
       </ve-plugin>
     </template>
   </ve-page>
