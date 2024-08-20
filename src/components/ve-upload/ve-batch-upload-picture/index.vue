@@ -45,6 +45,15 @@ const props = defineProps({
     type: Boolean,
     required: false,
     default: () => false
+  },
+  fixedNumber: {
+    type: Array<any>,
+    required: false,
+    default: () => [1, 1]
+  },
+  fixedNumberList: {
+    type: Array<any>,
+    default: () => [[1, 1]]
   }
 })
 
@@ -190,7 +199,8 @@ const content = reactive<any>({
   </el-dialog>
 
   <el-dialog v-model="showCropper" width="750">
-    <ve-cropper-shear ref="cropper" :img="cropperImg" @get-crop-blob="cropperImgBlob = $event" @get-crop-data="cropperImgData = $event"/>
+    <ve-cropper-shear ref="cropper" :fixed-number="fixedNumber" :fixed-number-list="fixedNumberList" :img="cropperImg"
+                      @get-crop-blob="cropperImgBlob = $event" @get-crop-data="cropperImgData = $event"/>
     <template #footer>
       <span>
         <el-button @click="showCropper = false">{{ content.reset[language] }}</el-button>
