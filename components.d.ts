@@ -74,6 +74,7 @@ declare module 'vue' {
       VeCursorHandClickLine: typeof import('./src/components/ve-icon/ve-cursor-hand-click-line/index.vue')['default']
     VeDefaultFooter: typeof import('./src/components/ve-footer/ve-default-footer/index.vue')['default']
     VeDefaultLogin: typeof import('./src/components/ve-login/ve-default-login/index.vue')['default']
+      VeDownloads: typeof import('./src/components/ve-page/ve-downloads/index.vue')['default']
     VeEmojiSelect: typeof import('./src/components/ve-emoji-select/index.vue')['default']
       VeEqualizer: typeof import('./src/components/ve-icon/ve-equalizer/index.vue')['default']
     VeFastNav: typeof import('./src/components/ve-fast-nav/index.vue')['default']
