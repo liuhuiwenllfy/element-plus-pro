@@ -11,12 +11,12 @@ instance.interceptors.request.use(config => {
     commonStore = useCommonStore()
     // 开启按钮loading
     commonStore.changeLoading(true)
-    // @ts-ignore
-    config.headers = {
-        // @ts-ignore
-        locale: commonStore.locale === 'zhCn' ? 'zh_CN' : 'en_US',
+    return {
+        ...config,
+        headers: {
+            locale: commonStore.locale === 'zhCn' ? 'zh_CN' : 'en_US'
+        }
     }
-    return config
 }, error => {
     // 关闭全局loading
     commonStore.changeFullscreenLoading(false)
@@ -102,11 +102,6 @@ instance.interceptors.response.use(
 
 export function get(url: any, params = {}) {
     return new Promise((resolve, reject) => {
-        const request = {
-            requestType: 'get',
-            url,
-            params
-        }
         instanceGet(url, params, resolve, reject);
     })
 }
