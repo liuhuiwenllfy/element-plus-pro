@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
-import {useRouter} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
+import {ElScrollbar} from "element-plus";
+import {ref, watch} from "vue";
 
 const commonStore = useCommonStore()
 
@@ -11,6 +13,17 @@ const handleRouter = (name: string) => {
   router.push({name: `${name}`})
 }
 
+const scrollbarRef = ref<InstanceType<typeof ElScrollbar>>()
+
+const route = useRoute()
+
+watch(() => route.name, () => {
+  if (scrollbarRef && scrollbarRef.value) {
+    scrollbarRef.value.setScrollTop(0)
+    scrollbarRef.value.setScrollLeft(0)
+  }
+})
+
 </script>
 
 <template>
@@ -19,13 +32,13 @@ const handleRouter = (name: string) => {
                  :language="commonStore.getLocale"
                  :tab-list="commonStore.tabList"
                  @handle-router="handleRouter"/>
-    <el-scrollbar>
+    <el-scrollbar ref="scrollbarRef">
       <div class="pages">
-        <router-view v-slot="{ Component, route }">
-          <transition name="el-fade-in">
+        <transition name="el-fade-in">
+          <router-view v-slot="{ Component, route }">
             <component :is="Component" :key="route.path"/>
-          </transition>
-        </router-view>
+          </router-view>
+        </transition>
       </div>
     </el-scrollbar>
 

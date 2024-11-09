@@ -12,6 +12,16 @@ const userInfo = [
     code: 'officialWebsite',
     name: '官方网站',
     icon: 'Promotion'
+  },
+  {
+    code: 'gitHub',
+    name: 'GitHub',
+    icon: 'Promotion'
+  },
+  {
+    code: 'gitee',
+    name: 'Gitee',
+    icon: 'Promotion'
   }
 ]
 
@@ -23,6 +33,12 @@ const handleUserClick = (code: string) => {
   switch (code) {
     case 'officialWebsite':
       window.open('https://www.liulingfengyu.cn')
+      break
+    case 'gitHub':
+      window.open('https://github.com/liuhuiwenllfy/element-plus-pro')
+      break
+    case 'gitee':
+      window.open('https://gitee.com/liu-ling-feng-yu/element-plus-pro')
       break
   }
 }
