@@ -6,7 +6,7 @@ import {useCommonStore} from "@/pinia/common.ts";
 const instance = axios.create();
 
 let commonStore = null as any;
-
+//@ts-ignore
 instance.interceptors.request.use(config => {
     commonStore = useCommonStore()
     // 开启按钮loading
