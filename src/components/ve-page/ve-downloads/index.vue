@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import * as echarts from 'echarts';
 import {onMounted, ref, watch} from 'vue'
 import {useCommonStore} from "@/pinia/common.ts";
@@ -74,7 +74,8 @@ const initChartDom = () => {
         name: 'Downloads',
         type: 'line',
         stack: 'Total',
-        data: yData.value
+        data: yData.value,
+        smooth: true
       }
     ]
   });
@@ -110,6 +111,6 @@ const downloads = async () => {
   </el-card>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 
 </style>
