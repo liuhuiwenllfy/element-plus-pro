@@ -74,8 +74,7 @@ const initChartDom = () => {
         name: 'Downloads',
         type: 'line',
         stack: 'Total',
-        data: yData.value,
-        smooth: true
+        data: yData.value
       }
     ]
   });
