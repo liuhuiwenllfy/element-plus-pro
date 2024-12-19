@@ -7,5 +7,5 @@ const api = 'single-admin';
  * @param params
  */
 export const getNpmStat = (params = {}) => {
-    return get(`/${api}/sys/userInfo/getNpmStat`, params)
+    return get(`/${api}/admin/userInfo/getNpmStat`, params)
 }
