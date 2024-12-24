@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import 'vue-cropper/dist/index.css'
-//@ts-ignore
+// @ts-ignore
 import VueCropper from "vue-cropper/lib/vue-cropper.vue";
 import {nextTick, ref} from "vue";
 import {ElButton, ElRadio, ElRadioGroup} from 'element-plus'

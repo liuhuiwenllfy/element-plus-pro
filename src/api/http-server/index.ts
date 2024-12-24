@@ -6,17 +6,14 @@ import {useCommonStore} from "@/pinia/common.ts";
 const instance = axios.create();
 
 let commonStore = null as any;
-//@ts-ignore
+// @ts-ignore
 instance.interceptors.request.use(config => {
     commonStore = useCommonStore()
     // 开启按钮loading
     commonStore.changeLoading(true)
-    return {
-        ...config,
-        headers: {
-            locale: commonStore.locale === 'zhCn' ? 'zh_CN' : 'en_US'
-        }
-    }
+    const _config = config
+    _config.headers.locale = commonStore.locale === 'zhCn' ? 'zh_CN' : 'en_US'
+    return _config
 }, error => {
     // 关闭全局loading
     commonStore.changeFullscreenLoading(false)

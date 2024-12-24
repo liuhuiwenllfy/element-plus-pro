@@ -92,7 +92,7 @@ const downloads = async () => {
     endData: currentDateFormatted
   });
   if (res.ok) {
-    //@ts-ignore
+    // @ts-ignore
     const map = new Map(Object.entries(res.data[props.id]));
     xData.value = Array.from(map.keys())
     yData.value = Array.from(map.values())

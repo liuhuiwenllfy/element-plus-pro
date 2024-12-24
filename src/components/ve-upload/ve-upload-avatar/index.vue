@@ -58,7 +58,7 @@ const props = defineProps({
 
 const _file = ref()
 
-watch(()=>props.file, ()=>{
+watch(() => props.file, () => {
   _file.value = props.file
 })
 
@@ -86,7 +86,7 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
     if (props.isCropper) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        //@ts-ignore
+        // @ts-ignore
         cropperImg.value = e.target.result
       };
       reader.readAsDataURL(rawFile);
@@ -102,11 +102,11 @@ const beforeAvatarUpload = (rawFile: UploadRawFile | null) => {
   }
 }
 
-watch(()=>cropperImgBlob.value, ()=>{
+watch(() => cropperImgBlob.value, () => {
   const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
   const form = new FormData()
   form.append('file', file)
-  //@ts-ignore
+  // @ts-ignore
   axios.post(props.api, form, {
     headers: {
       'Content-Type': 'multipart/form-data',

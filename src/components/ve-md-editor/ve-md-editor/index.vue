@@ -156,7 +156,7 @@ const onUploadImg = async (files: Array<File>, callback: any) => {
         return new Promise((rev, rej) => {
           const form = new FormData()
           form.append('file', file)
-          //@ts-ignore
+          // @ts-ignore
           axios.post(import.meta.env.VITE_UPLOAD_GRIDFS_URL, form, {
             headers: {
               'Content-Type': 'multipart/form-data',

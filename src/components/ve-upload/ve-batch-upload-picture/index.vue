@@ -59,7 +59,7 @@ const props = defineProps({
 
 let _fileList = ref<UploadFile[]>([])
 
-watch(()=>props.fileList, ()=>{
+watch(() => props.fileList, () => {
   _fileList.value = props.fileList
 }, {deep: true})
 
@@ -80,7 +80,7 @@ const handleRemove = (file: UploadFile) => {
 }
 
 const handlePictureCardPreview = (file: UploadFile) => {
-  //@ts-ignore
+  // @ts-ignore
   dialogImageUrl.value = file.url
   dialogTitle.value = file.name
   dialogVisible.value = true
@@ -101,7 +101,7 @@ const beforeUpload = (rawFile: UploadRawFile | null) => {
     if (props.isCropper) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        //@ts-ignore
+        // @ts-ignore
         cropperImg.value = e.target.result
       };
       reader.readAsDataURL(rawFile);
@@ -117,11 +117,11 @@ const beforeUpload = (rawFile: UploadRawFile | null) => {
   }
 }
 
-watch(()=>cropperImgBlob.value, ()=>{
+watch(() => cropperImgBlob.value, () => {
   const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
   const form = new FormData()
   form.append('file', file)
-  //@ts-ignore
+  // @ts-ignore
   axios.post(props.api, form, {
     headers: {
       'Content-Type': 'multipart/form-data',
@@ -135,7 +135,7 @@ watch(()=>cropperImgBlob.value, ()=>{
           status: 'success',
           uid: new Date().getTime(),
         }
-        //@ts-ignore
+        // @ts-ignore
         uploadFile.url = cropperImgData.value
         _fileList.value?.push(uploadFile)
         handleSuccess(res.data, uploadFile, _fileList.value)
