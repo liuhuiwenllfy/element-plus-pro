@@ -11,6 +11,13 @@ const stats = [
     optional: '-',
     default: '-',
   },
+  {
+    name: 'index',
+    instructions: '展示图片索引',
+    type: 'number',
+    optional: '-',
+    default: '0',
+  },
 ]
 </script>
 

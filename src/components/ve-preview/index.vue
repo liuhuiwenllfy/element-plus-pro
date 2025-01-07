@@ -6,6 +6,11 @@ defineProps({
   list: {
     type: Array as () => Array<string>,
     required: true,
+  },
+  index: {
+    type: Number,
+    required: false,
+    default: 0
   }
 })
 </script>
@@ -14,7 +19,7 @@ defineProps({
   <el-image
       :initial-index="1"
       :preview-src-list="list"
-      :src="list[0]"
+      :src="list[index]"
       :zoom-rate="1.2"
       fit="contain"/>
 </template>
