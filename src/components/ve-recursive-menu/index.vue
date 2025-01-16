@@ -30,23 +30,13 @@ const handleClick = (e: any) => {
     <el-sub-menu v-if="item.children.length > 0" :hide-timeout="100" :index="item.menuCode" :show-timeout="100">
       <template #title>
         <component :is="item.menuIcon" class="el-icon"/>
-        <el-tooltip
-            :content="language === 'zhCn' ? item.menuName : item.menuNameEn"
-            effect="dark"
-            placement="bottom">
-          <span class="text-flow-ellipsis-multiple_1">{{ language === 'zhCn' ? item.menuName : item.menuNameEn }}</span>
-        </el-tooltip>
+        <span class="text-flow-ellipsis-multiple_1">{{ language === 'zhCn' ? item.menuName : item.menuNameEn }}</span>
       </template>
       <RecursiveMenu :language="language" :menu-data="item.children"/>
     </el-sub-menu>
     <el-menu-item v-else :index="item.menuCode" @click="handleClick">
       <component :is="item.menuIcon" class="el-icon"/>
-      <el-tooltip
-          :content="language === 'zhCn' ? item.menuName : item.menuNameEn"
-          effect="dark"
-          placement="bottom">
-        <span class="text-flow-ellipsis-multiple_1">{{ language === 'zhCn' ? item.menuName : item.menuNameEn }}</span>
-      </el-tooltip>
+      <span class="text-flow-ellipsis-multiple_1">{{ language === 'zhCn' ? item.menuName : item.menuNameEn }}</span>
     </el-menu-item>
   </template>
 </template>
