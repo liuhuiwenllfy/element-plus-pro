@@ -104,7 +104,7 @@
       {
         "id": "424b71015cdd48abb4f38f8ec0c5b4a0",
         "menuCode": "ve-cron-select",
-        "menuName": "ve-cron-select cron时间选择器",
+        "menuName": "ve-cron-select 时间选择",
         "menuNameEn": "ve-cron-select cron Time selector",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
@@ -117,7 +117,7 @@
       {
         "id": "cd45f8431a1544518337ed33245a431b",
         "menuCode": "ve-emoji-select",
-        "menuName": "ve-emoji-select emoji选择器",
+        "menuName": "ve-emoji-select 表情选择",
         "menuNameEn": "ve-emoji-select emoji selector",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
@@ -195,7 +195,7 @@
       {
         "id": "0930c25f52984162bdd1d8cf8f1b9448",
         "menuCode": "ve-cropper-shear",
-        "menuName": "ve-cropper-shear Picture cropping",
+        "menuName": "ve-cropper-shear 图片裁剪",
         "menuNameEn": "ve-cropper-shear ",
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,

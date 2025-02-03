@@ -52,9 +52,13 @@ const content = reactive<any>({
     zhCn: '收藏',
     en: 'collect'
   },
-  price: {
-    zhCn: '价格',
-    en: 'price'
+  originalPrice: {
+    zhCn: '原价',
+    en: 'originalPrice'
+  },
+  currentPrice: {
+    zhCn: '现价',
+    en: 'currentPrice'
   },
   salesVolume: {
     zhCn: '销量',
@@ -134,9 +138,15 @@ const content = reactive<any>({
               </el-text>
             </el-space>
             <el-space>
-              <el-text truncated type="danger">{{ content.price[language] }}</el-text>
+              <el-text truncated type="info">{{ content.originalPrice[language] }}</el-text>
+              <el-text truncated type="info">
+                <slot name="originalPrice"/>
+              </el-text>
+            </el-space>
+            <el-space>
+              <el-text truncated type="danger">{{ content.currentPrice[language] }}</el-text>
               <el-text truncated type="danger">
-                <slot name="price"/>
+                <slot name="currentPrice"/>
               </el-text>
             </el-space>
             <el-space>

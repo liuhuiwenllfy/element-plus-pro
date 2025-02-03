@@ -65,7 +65,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-upload" :code="code" :incident="incident" :stats="stats" title="ve-upload 上传">
+  <ve-page id="ve-upload" :code="code" :incident="incident" :stats="stats" title="ve-cropper-shear 图片裁剪">
     <template #default>
       <ve-cropper-shear :fixed-number-list="_list" img="avatar.png"/>
     </template>

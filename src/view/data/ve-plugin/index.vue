@@ -95,7 +95,8 @@ const slots = [
         <template #download>99+</template>
         <template #comment>99+</template>
         <template #collect>99+</template>
-        <template #price>￥9.9</template>
+        <template #originalPrice>￥9.9</template>
+        <template #currentPrice>￥9.9</template>
         <template #salesVolume>1024</template>
         <template #buy>
           <el-button :icon="Money" type="danger" size="small">购买</el-button>
