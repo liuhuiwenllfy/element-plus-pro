@@ -2,6 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeBusinessCard from '@/components/ve-business-card/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-business-card/package.json'
 
 const slots = [
   {
@@ -20,7 +21,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-business-card" :_slots="slots" :code="code" title="ve-business-card 名片">
+  <ve-page id="ve-business-card" :_slots="slots" :code="code" :version="json.version" title="ve-business-card 名片">
     <template #default>
       <ve-business-card style="width: 400px">
         <template #avatar>

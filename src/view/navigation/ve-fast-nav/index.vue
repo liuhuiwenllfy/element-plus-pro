@@ -3,6 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeFastNav from '@/components/ve-fast-nav/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import code from './index.md?raw'
+import json from '@/components/ve-fast-nav/package.json'
 
 const stats = [
   {
@@ -68,7 +69,8 @@ const commonStore = useCommonStore();
 </script>
 
 <template>
-  <ve-page id="ve-fast-nav" :code="code" :incident="incident" :stats="stats" title="ve-fast-nav 快速导航">
+  <ve-page id="ve-fast-nav" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-fast-nav 快速导航">
     <template #default>
       <ve-fast-nav :tab-list="commonStore.getTabList" activeName="overview"/>
     </template>

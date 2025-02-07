@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-back-top/package.json'
 
 const stats = [
   {
@@ -21,7 +22,8 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-back-top" :_slots="slots" :code="code" :stats="stats" title="ve-back-top 回到顶部">
+  <ve-page id="ve-back-top" :_slots="slots" :code="code" :stats="stats" :version="json.version"
+           title="ve-back-top 回到顶部">
     <template #default>
     </template>
   </ve-page>

@@ -4,6 +4,7 @@ import VeAnchor from '@/components/ve-anchor/index.vue'
 import {ref} from "vue";
 import {Anchor} from "@/components/ve-anchor/Anchor.ts";
 import code from './index.md?raw'
+import json from '@/components/ve-anchor/package.json'
 
 const items = ref<Anchor[]>([
   {
@@ -70,7 +71,7 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-anchor" :code="code" :stats="stats" title="ve-anchor 锚点">
+  <ve-page id="ve-anchor" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
     <template #default>
       <el-card shadow="never">
         <el-row id="parent-scroll" style="height: 300px; overflow: auto">

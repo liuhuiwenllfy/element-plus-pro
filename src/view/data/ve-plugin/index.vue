@@ -3,6 +3,7 @@ import VePage from "@/components/ve-page/index.vue";
 import VePlugin from '@/components/ve-plugin/index.vue'
 import code from './index.md?raw'
 import {Money} from "@element-plus/icons-vue";
+import json from '@/components/ve-plugin/package.json'
 
 const stats = [
   {
@@ -71,7 +72,8 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-plugin" :_slots="slots" :code="code" :incident="incident" :stats="stats" title="ve-plugin 插件">
+  <ve-page id="ve-plugin" :_slots="slots" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-plugin 插件">
     <template #default>
       <ve-plugin id="123456" @handle-click="console.log($event)">
         <template #preview>
@@ -99,7 +101,7 @@ const slots = [
         <template #currentPrice>￥9.9</template>
         <template #salesVolume>1024</template>
         <template #buy>
-          <el-button :icon="Money" type="danger" size="small">购买</el-button>
+          <el-button :icon="Money" size="small" type="danger">购买</el-button>
         </template>
       </ve-plugin>
     </template>

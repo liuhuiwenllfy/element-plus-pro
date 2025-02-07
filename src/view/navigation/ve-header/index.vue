@@ -3,6 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeHeader from '@/components/ve-header/index.vue'
 import menuList from '@/api/json/menuList.json'
 import code from './index.md?raw'
+import json from '@/components/ve-header/package.json'
 
 const stats = [
 
@@ -288,7 +289,8 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" title="ve-header 头部导航">
+  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-header 头部导航">
     <template #default>
       <ve-header
           :dark="false"

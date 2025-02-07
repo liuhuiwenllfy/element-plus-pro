@@ -4,6 +4,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeEmojiSelect from '@/components/ve-emoji-select/index.vue'
 import code from './index.md?raw'
 import {ElInput} from "element-plus";
+import json from '@/components/ve-emoji-select/package.json'
 
 const _comment = ref('')
 const handleEmoteClick = (val: string) => {
@@ -27,7 +28,8 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-emoji-select" :_slots="slots" :code="code" :incident="incident" title="ve-emoji-select emoji选择器">
+  <ve-page id="ve-emoji-select" :_slots="slots" :code="code" :incident="incident" :version="json.version"
+           title="ve-emoji-select emoji选择器">
     <template #default>
       <el-input v-model="_comment" placeholder="请输入内容"
                 style="width: 300px; vertical-align: top; margin-right: 10px"

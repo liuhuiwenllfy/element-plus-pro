@@ -3,6 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeAside from '@/components/ve-aside/index.vue'
 import menuList from '@/api/json/menuList.json'
 import code from './index.md?raw'
+import json from '@/components/ve-aside/package.json'
 
 const stats = [
   {
@@ -150,7 +151,8 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-aside" :code="code" :incident="incident" :stats="stats" title="ve-aside 侧边导航">
+  <ve-page id="ve-aside" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-aside 侧边导航">
     <template #default>
       <div class="aside-body">
         <ve-aside

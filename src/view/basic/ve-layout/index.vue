@@ -2,6 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import LayoutMini from '@/components/ve-layout/mini/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-layout/package.json'
 
 const slots = [
   {
@@ -24,7 +25,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-layout" :_slots="slots" :code="code" title="ve-layout 布局">
+  <ve-page id="ve-layout" :_slots="slots" :code="code" :version="json.version" title="ve-layout 布局">
     <template #default>
       <LayoutMini/>
     </template>

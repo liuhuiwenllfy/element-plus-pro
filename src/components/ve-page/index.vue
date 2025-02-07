@@ -22,6 +22,11 @@ defineProps({
     required: false,
     default: () => null
   },
+  version: {
+    type: String,
+    required: false,
+    default: () => null
+  },
   stats: {
     type: Array<any>,
     required: false,
@@ -48,7 +53,10 @@ const commonStore = useCommonStore();
 
 <template>
   <div>
-    <h2>{{ title }}</h2>
+    <el-space>
+      <h2>{{ title }}</h2>
+      <el-tag v-if="version" round size="small" type="primary">{{ version }}</el-tag>
+    </el-space>
     <el-divider/>
     <h3>Example</h3>
     <slot></slot>

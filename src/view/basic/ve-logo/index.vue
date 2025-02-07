@@ -2,6 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeLogo from '@/components/ve-logo/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-logo/package.json'
 
 const stats = [
   {
@@ -22,7 +23,7 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-logo" :code="code" :stats="stats" title="ve-logo Logo">
+  <ve-page id="ve-logo" :code="code" :stats="stats" :version="json.version" title="ve-logo Logo">
     <template #default>
       <ve-logo logo="logo.png" name="CodeEase"/>
     </template>

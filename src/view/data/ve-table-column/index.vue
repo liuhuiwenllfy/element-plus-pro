@@ -5,6 +5,7 @@ import {computed, ref} from 'vue'
 import {Delete, Document, Edit} from "@element-plus/icons-vue";
 import code from './index.md?raw'
 import VeTableArea from "@/components/ve-table-area/index.vue";
+import json from '@/components/ve-table-column/package.json'
 
 const stats = [
   {
@@ -206,7 +207,7 @@ const _data = ref([
 
 <template>
   <ve-page id="ve-table-column" :_slots="slots" :code="code" :incident="incident" :stats="stats"
-           title="ve-table-column 表格区域">
+           :version="json.version" title="ve-table-column 表格区域">
     <template #default>
       <ve-table-area class="ve-table" language="zhCn">
         <template #header>

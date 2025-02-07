@@ -2,6 +2,7 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeTableArea from '@/components/ve-table-area/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-table-area/package.json'
 
 const tableData = [
   {
@@ -49,7 +50,8 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-table-area" :_slots="slots" :code="code" :stats="stats" title="ve-table-area 表格区域">
+  <ve-page id="ve-table-area" :_slots="slots" :code="code" :stats="stats" :version="json.version"
+           title="ve-table-area 表格区域">
     <template #default>
       <ve-table-area language="zhCn">
         <template #header>

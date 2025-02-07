@@ -4,6 +4,7 @@ import {ref} from "vue";
 import VePage from '@/components/ve-page/index.vue'
 import VeCronSelect from '@/components/ve-cron-select/index.vue'
 import code from './index.md?raw'
+import json from '@/components/ve-cron-select/package.json'
 
 const _cron = ref("* * * * * ? *")
 
@@ -27,7 +28,8 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-cron-select" :code="code" :incident="incident" :stats="stats" title="ve-cron-select cron时间选择器">
+  <ve-page id="ve-cron-select" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-cron-select cron时间选择器">
     <template #default>
       <ve-cron-select :cron="_cron" style="margin: 20px" @change="(e)=> {console.log(e)}"/>
     </template>

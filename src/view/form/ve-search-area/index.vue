@@ -3,6 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeSearchArea from '@/components/ve-search-area/index.vue'
 import {ref} from "vue";
 import code from './index.md?raw'
+import json from '@/components/ve-search-area/package.json'
 
 const _open = ref(true)
 
@@ -40,7 +41,8 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-search-area" :code="code" :incident="incident" :stats="stats" title="ve-search-area 搜索区域">
+  <ve-page id="ve-search-area" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-search-area 搜索区域">
     <template #default>
       <ve-search-area
           :open="_open"

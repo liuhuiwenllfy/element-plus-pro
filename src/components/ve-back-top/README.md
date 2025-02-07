@@ -1,4 +1,4 @@
-# ve-aside 侧边导航
+# ve-back-top 回到顶部
 
 ## 功能描述
 
@@ -9,15 +9,13 @@
 ### 安装
 
 ```shell
-npm install ve-recursive-menu
-npm install ve-aside
+npm install ve-back-top
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-recursive-menu
-npm uninstall ve-aside
+npm uninstall ve-back-top
 ```
 
 ---

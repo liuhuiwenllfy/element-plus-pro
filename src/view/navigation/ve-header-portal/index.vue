@@ -5,6 +5,7 @@ import {useCommonStore} from "@/pinia/common.ts";
 import {computed, reactive} from 'vue'
 import code from './index.md?raw'
 import VeSearch from '@/components/ve-search/index.vue'
+import json from '@/components/ve-header-portal/package.json'
 
 const stats = [
 
@@ -183,7 +184,8 @@ const menu = computed(() => {
 </script>
 
 <template>
-  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" title="ve-header 头部导航">
+  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" :version="json.version"
+           title="ve-header 头部导航">
     <template #default>
       <ve-header-portal
           :dark="commonStore.getDark"
