@@ -15,7 +15,7 @@
   ],
   "homepage": "https://epp.liulingfengyu.cn/",
   "bugs": {
-    "url": "https://github.com/liuhuiwenllfy/element-plus-pro/issues"
+    "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
   },
   "dependencies": {
     "vue": "^3.2.25"

@@ -295,6 +295,19 @@
         "menuPath": "/ve-login",
         "menuComponent": "navigation/ve-login",
         "children": []
+      },
+      {
+        "id": "b3e27329fe534e219d415d746082b101",
+        "menuCode": "ve-back-top",
+        "menuName": "ve-back-top 回到顶部",
+        "menuNameEn": "ve-back-top Back Top",
+        "parentId": "83994ed054e84686a634ff56676eed4b",
+        "menuLevel": 1,
+        "menuSort": 2,
+        "menuIcon": "VeIconLogin",
+        "menuPath": "/ve-back-top",
+        "menuComponent": "navigation/ve-back-top",
+        "children": []
       }
     ]
   },

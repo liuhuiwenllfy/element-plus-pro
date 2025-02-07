@@ -38,7 +38,6 @@ watch(() => router.currentRoute.value.name, () => {
     <div v-loading.fullscreen.lock="commonStore.fullscreenLoading" class="page">
       <router-view/>
     </div>
-    <el-backtop :bottom="100" :right="50"/>
   </el-config-provider>
 </template>
 

@@ -1,16 +1,16 @@
 {
-  "name": "ve-upload",
-  "version": "1.0.19",
+  "name": "ve-back-top",
+  "version": "1.0.0",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
     "url": "https://blog.csdn.net/qq_38036909?type=blog"
   },
-  "description": "上传",
+  "description": "回到顶部",
   "keywords": [
-    "ve-upload",
-    "upload",
-    "ve"
+    "ve-back-top",
+    "back-top",
+    "back"
   ],
   "homepage": "https://epp.liulingfengyu.cn/",
   "bugs": {
