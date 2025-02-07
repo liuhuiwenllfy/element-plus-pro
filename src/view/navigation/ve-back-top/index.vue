@@ -10,7 +10,21 @@ const stats = [
     type: 'boolean',
     optional: 'true-是；false-否',
     default: 'false',
-  }
+  },
+  {
+    name: 'bottom',
+    instructions: '距离底部的距离',
+    type: 'String',
+    optional: '-',
+    default: '100px',
+  },
+  {
+    name: 'right',
+    instructions: '距离右侧的距离',
+    type: 'String',
+    optional: '-',
+    default: '50px',
+  },
 ]
 
 const slots = [

@@ -23,7 +23,7 @@ const backTop = () => {
               @scroll="scroll">
   <router-view/>
 </el-scrollbar>
-<ve-back-top :is-extend="true" :is-show-back="_isShowBack" class="back-top" @back-top="backTop">
+<ve-back-top :is-show-back="_isShowBack" class="back-top" @back-top="backTop">
   <template #default>
     <el-popover
         :width="200"

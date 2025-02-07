@@ -9,6 +9,16 @@ defineProps({
     type: Boolean,
     required: false,
     default: () => false
+  },
+  bottom: {
+    type: String,
+    required: false,
+    default: () => '100px'
+  },
+  right: {
+    type: String,
+    required: false,
+    default: () => '50px'
   }
 })
 const emits = defineEmits(['backTop'])
@@ -18,7 +28,7 @@ const backTop = () => {
 </script>
 
 <template>
-  <div class="back-top">
+  <div class="back-top" :style="{bottom: bottom, right: right}">
     <el-space :size="[0,0]" direction="vertical">
       <slot name="default"/>
       <el-button v-show="isShowBack" :icon="CaretTop"
@@ -32,8 +42,6 @@ const backTop = () => {
 .back-top {
   z-index: 999;
   position: absolute;
-  right: 50px;
-  bottom: 100px;
   border-radius: 4px;
   background-color: var(--el-bg-color);
   border: 1px solid var(--el-border-color);
