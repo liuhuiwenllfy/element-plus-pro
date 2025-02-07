@@ -14,7 +14,6 @@ declare module 'vue' {
     500: typeof import('./src/components/ve-error/500/index.vue')['default']
     Day: typeof import('./src/components/ve-cron-select/day/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
-    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
