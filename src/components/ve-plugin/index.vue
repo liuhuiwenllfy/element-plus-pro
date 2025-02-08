@@ -52,6 +52,10 @@ const content = reactive<any>({
     zhCn: '收藏',
     en: 'collect'
   },
+  rating: {
+    zhCn: '评分',
+    en: 'rating'
+  },
   originalPrice: {
     zhCn: '原价',
     en: 'originalPrice'
@@ -74,38 +78,30 @@ const content = reactive<any>({
         <div class="plugin-preview">
           <slot name="preview"/>
         </div>
-        <div class="plugin-main" @click="handleClick">
-          <p class="text-flow-ellipsis-multiple_1">
-            <strong>
-              <slot name="title"/>
-            </strong>
-          </p>
-          <p>
+        <el-space direction="vertical" alignment="stretch" class="plugin-main" @click="handleClick">
+          <strong class="text-flow-ellipsis-multiple_1">
+            <slot name="title"/>
+          </strong>
+          <el-space>
+            <slot name="tag"/>
+          </el-space>
+          <el-text type="info" class="text-flow-ellipsis-multiple_2" style="height: 39px">
+            <slot name="description"/>
+          </el-text>
+          <el-space size="large">
             <el-space>
-              <slot name="tag"/>
+              <el-text type="info">{{ content.author[language] }}</el-text>
+              <el-text type="info">
+                <slot name="author"/>
+              </el-text>
             </el-space>
-          </p>
-          <p class="text-flow-ellipsis-multiple_2" style="height: 39px">
-            <el-text type="info">
-              <slot name="description"/>
-            </el-text>
-          </p>
-          <p>
-            <el-space size="large">
-              <el-space>
-                <el-text type="info">{{ content.author[language] }}</el-text>
-                <el-text type="info">
-                  <slot name="author"/>
-                </el-text>
-              </el-space>
-              <el-space>
-                <el-text truncated type="info">{{ content.releaseTime[language] }}</el-text>
-                <el-text truncated type="info">
-                  <slot name="releaseTime"/>
-                </el-text>
-              </el-space>
+            <el-space>
+              <el-text truncated type="info">{{ content.releaseTime[language] }}</el-text>
+              <el-text truncated type="info">
+                <slot name="releaseTime"/>
+              </el-text>
             </el-space>
-          </p>
+          </el-space>
           <el-space>
             <el-space>
               <el-text truncated type="info">{{ content.clickVolume[language] }}</el-text>
@@ -138,6 +134,12 @@ const content = reactive<any>({
               </el-text>
             </el-space>
             <el-space>
+              <el-text truncated type="info">{{ content.rating[language] }}</el-text>
+              <el-text truncated type="info">
+                <slot name="rating"/>
+              </el-text>
+            </el-space>
+            <el-space>
               <el-text truncated type="info">{{ content.originalPrice[language] }}</el-text>
               <el-text truncated type="info">
                 <slot name="originalPrice"/>
@@ -159,7 +161,7 @@ const content = reactive<any>({
               <slot name="buy"></slot>
             </el-space>
           </el-space>
-        </div>
+        </el-space>
       </el-space>
 
     </div>
@@ -174,8 +176,8 @@ const content = reactive<any>({
     padding: 10px;
 
     .plugin-preview {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
     }
 
     .plugin-main {

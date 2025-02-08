@@ -1,5 +1,4 @@
 ```vue
-
 <ve-plugin id="123456" @handle-click="console.log($event)">
   <template #preview>
     <el-image src="avatar.png"></el-image>
@@ -22,10 +21,19 @@
   <template #download>99+</template>
   <template #comment>99+</template>
   <template #collect>99+</template>
-  <template #price>￥9.9</template>
+  <template #originalPrice>￥9.9</template>
+  <template #currentPrice>￥9.9</template>
   <template #salesVolume>1024</template>
+  <template #rating>
+    <el-rate
+        v-model="rating"
+        :score-template="`${rating} 分`"
+        disabled
+        show-score
+        text-color="#ff9900"/>
+  </template>
   <template #buy>
-    <el-button :icon="Money" type="danger" size="small">购买</el-button>
+    <el-button :icon="Money" size="small" type="danger">购买</el-button>
   </template>
 </ve-plugin>
 ```

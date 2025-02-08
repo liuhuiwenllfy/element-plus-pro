@@ -4,6 +4,7 @@ import VePlugin from '@/components/ve-plugin/index.vue'
 import code from './index.md?raw'
 import {Money} from "@element-plus/icons-vue";
 import json from '@/components/ve-plugin/package.json'
+import {ref} from "vue";
 
 const stats = [
   {
@@ -69,6 +70,8 @@ const slots = [
     details: '收藏数量'
   },
 ]
+
+const rating = ref(4)
 </script>
 
 <template>
@@ -100,6 +103,14 @@ const slots = [
         <template #originalPrice>￥9.9</template>
         <template #currentPrice>￥9.9</template>
         <template #salesVolume>1024</template>
+        <template #rating>
+          <el-rate
+              v-model="rating"
+              :score-template="`${rating} 分`"
+              disabled
+              show-score
+              text-color="#ff9900"/>
+        </template>
         <template #buy>
           <el-button :icon="Money" size="small" type="danger">购买</el-button>
         </template>
