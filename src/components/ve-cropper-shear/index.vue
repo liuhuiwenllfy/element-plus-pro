@@ -122,6 +122,7 @@ const _radio = ref(0)
     display: inline-block;
     vertical-align: top;
     padding: 10px;
+    width: 198px;
   }
 }
 </style>
