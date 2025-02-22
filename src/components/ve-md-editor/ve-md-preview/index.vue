@@ -34,6 +34,7 @@ defineProps({
 
 <template>
   <MdPreview
+      class="md"
       :editorId="editorId"
       :modelValue="modelValue"
       :previewTheme="previewTheme"
@@ -44,5 +45,10 @@ defineProps({
 <style lang="scss" scoped>
 .md-editor-dark, .md-editor-modal-container[data-theme='dark'] {
   --md-bk-color: #1D1E1F !important;
+}
+
+.md {
+  padding: 10px 20px;
+  border-radius: 4px;
 }
 </style>
