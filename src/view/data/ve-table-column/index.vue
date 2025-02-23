@@ -6,6 +6,7 @@ import {Delete, Document, Edit} from "@element-plus/icons-vue";
 import code from './index.md?raw'
 import VeTableArea from "@/components/ve-table-area/index.vue";
 import json from '@/components/ve-table-column/package.json'
+import {ElMessage} from "element-plus";
 
 const stats = [
   {
@@ -128,7 +129,7 @@ const incident = [
   {
     name: 'handle-refresh',
     instructions: '刷新回调',
-    callback: '-',
+    callback: 'fullScreen: boolean, tableHeight: number',
   }
 ]
 
@@ -203,6 +204,19 @@ const _data = ref([
     column5: 'column5',
   },
 ])
+
+const handleRefresh = () => {
+  ElMessage.success("refresh")
+}
+
+const _fullScreen = ref(false)
+
+const _tableHeight = ref(400)
+
+const handleFullScreen = (fullScreen: boolean, tableHeight: number) => {
+  _fullScreen.value = fullScreen
+  _tableHeight.value = tableHeight
+}
 </script>
 
 <template>
@@ -214,8 +228,12 @@ const _data = ref([
           <el-button>新增</el-button>
         </template>
         <template #main>
-          <el-table :data="_data">
-            <ve-table-column :column-list="columnList" region-class="ve-table">
+          <el-table :data="_data" :height="_tableHeight">
+            <ve-table-column :table-height="400"
+                             :column-list="columnList"
+                             region-class="ve-table"
+                             @handle-full-screen="handleFullScreen"
+                             @handle-refresh="handleRefresh">
               <template #default>
                 <el-button
                     :icon="Document"

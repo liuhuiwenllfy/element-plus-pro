@@ -57,7 +57,7 @@ const props = defineProps({
   }
 })
 
-const _tableHeight = ref(props.tableHeight)
+const _tableHeight = ref()
 
 const checkAll = ref(true)
 const isIndeterminate = ref(false)
@@ -94,9 +94,10 @@ const handleFullScreen = () => {
     document.getElementsByClassName(props.regionClass)[0].classList.add('ve-tableFullScreen')
     const barHeight = document.getElementsByClassName('ve-table')[0].getElementsByClassName('el-card__header')[0].clientHeight
     _tableHeight.value = document.body.clientHeight - barHeight - 78
+    emits('handleFullScreen', true, _tableHeight.value)
   } else {
     document.getElementsByClassName(props.regionClass)[0].classList.remove('ve-tableFullScreen')
-    emits('handleFullScreen')
+    emits('handleFullScreen', false, props.tableHeight)
   }
   tableFullScreen.value = !tableFullScreen.value
 }
