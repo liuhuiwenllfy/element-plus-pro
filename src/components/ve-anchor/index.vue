@@ -71,6 +71,7 @@ onMounted(() => {
     top: 4px;
     position: absolute;
     transition: top .25s ease-in-out, opacity .25s;
+    margin-top: 4px;
   }
 }
 </style>
