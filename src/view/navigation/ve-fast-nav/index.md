@@ -10,6 +10,5 @@ const tabList = [
 ```
 
 ```vue
-
 <ve-fast-nav :tab-list="commonStore.getTabList" activeName="overview"/>
 ```

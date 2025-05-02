@@ -1,5 +1,4 @@
 ```vue
-
 <ve-business-card style="width: 400px">
   <template #avatar>
     <el-image src="avatar.png" style="width: 40px; height: 40px"/>

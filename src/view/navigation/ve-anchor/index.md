@@ -26,7 +26,6 @@ const items = ref<Anchor[]>([
 ```
 
 ```vue
-
 <el-card shadow="never">
   <el-row id="parent-scroll" style="height: 300px; overflow: auto">
     <el-col :span="18">

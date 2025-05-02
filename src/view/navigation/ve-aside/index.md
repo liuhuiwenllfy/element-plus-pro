@@ -30,7 +30,6 @@ const menuList = [
 ```
 
 ```vue
-
 <ve-aside
     :layout="7"
     :menu="menuList"

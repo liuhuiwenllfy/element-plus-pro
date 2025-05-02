@@ -35,7 +35,6 @@ const menu = computed(() => {
 ```
 
 ```vue
-
 <ve-header-portal
     :dark="commonStore.getDark"
     :language="commonStore.getLocale"

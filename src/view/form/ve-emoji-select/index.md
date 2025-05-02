@@ -6,7 +6,6 @@ const handleEmoteClick = (val: string) => {
 ```
 
 ```vue
-
 <el-input v-model="_comment" placeholder="请输入内容"
           style="width: 300px; vertical-align: top; margin-right: 10px"
           type="textarea"></el-input>

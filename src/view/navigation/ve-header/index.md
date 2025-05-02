@@ -30,7 +30,6 @@ const menuList = [
 ```
 
 ```vue
-
 <ve-header
     :dark="false"
     :drawerNews="false"

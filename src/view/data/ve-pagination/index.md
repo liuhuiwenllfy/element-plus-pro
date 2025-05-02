@@ -1,5 +1,4 @@
 ```vue
-
 <ve-pagination
     :current="2"
     :page-size="10"

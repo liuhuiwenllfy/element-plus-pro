@@ -1,5 +1,4 @@
 ```vue
-
 <ve-default-login avatar="avatar.png" @handle-login="console.log('登录')"
                   @handle-register="console.log('注册')"></ve-default-login>
 <el-divider/>

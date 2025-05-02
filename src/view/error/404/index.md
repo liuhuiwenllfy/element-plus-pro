@@ -9,6 +9,5 @@ const back = () => {
 ```
 
 ```vue
-
 <ve-error404 :language="commonStore.getLocale" @handle-back="back"/>
 ```

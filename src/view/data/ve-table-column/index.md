@@ -14,7 +14,6 @@ const handleFullScreen = (fullScreen: boolean, tableHeight: number) => {
 ```
 
 ```vue
-
 <ve-table-area class="ve-table" language="zhCn">
   <template #header>
     <el-button>新增</el-button>

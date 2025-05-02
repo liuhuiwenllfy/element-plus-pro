@@ -1,5 +1,4 @@
 ```vue
-
 <ve-search-area
     :open="_open"
     :show="true"

@@ -9,6 +9,5 @@ const back = () => {
 ```
 
 ```vue
-
 <in-full-development :language="commonStore.getLocale" @handle-back="back"/>
 ```

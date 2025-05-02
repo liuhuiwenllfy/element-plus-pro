@@ -18,7 +18,6 @@ const backTop = () => {
 ```
 
 ```vue
-
 <el-scrollbar ref="scrollbarRef"
               @scroll="scroll">
   <router-view/>

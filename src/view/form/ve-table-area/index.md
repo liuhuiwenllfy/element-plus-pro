@@ -24,7 +24,6 @@ const tableData = [
 ```
 
 ```vue
-
 <ve-table-area language="zhCn">
   <template #header>
     <el-button>新增</el-button>
