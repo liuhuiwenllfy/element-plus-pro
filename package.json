@@ -25,6 +25,7 @@
     "ve-cropper-shear": "^1.0.6",
     "ve-error": "^1.0.4",
     "ve-icon": "^1.0.5",
+    "ve-load-more": "^1.0.1",
     "ve-login": "^1.0.1",
     "ve-recursive-menu": "^1.0.6",
     "vue": "^3.5.13",

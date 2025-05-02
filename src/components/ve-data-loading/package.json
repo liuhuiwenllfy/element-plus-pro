@@ -1,0 +1,19 @@
+{
+  "name": "ve-data-loading",
+  "version": "1.0.0",
+  "author": {
+    "email": "1305156911@qq.com",
+    "name": "liuhuiwen",
+    "url": "https://blog.csdn.net/qq_38036909?type=blog"
+  },
+  "description": "数据加载组件",
+  "keywords": [
+    "ve-data-loading",
+    "data-loading",
+    "ve"
+  ],
+  "homepage": "https://www.liulingfengyu.cn/",
+  "bugs": {
+    "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
+  }
+}

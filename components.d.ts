@@ -75,6 +75,7 @@ declare module 'vue' {
     VeCronSelect: typeof import('./src/components/ve-cron-select/index.vue')['default']
     VeCropperShear: typeof import('./src/components/ve-cropper-shear/index.vue')['default']
     VeCursorHandClickLine: typeof import('./src/components/ve-icon/ve-cursor-hand-click-line/index.vue')['default']
+    VeDataLoading: typeof import('./src/components/ve-data-loading/index.vue')['default']
     VeDefaultFooter: typeof import('./src/components/ve-footer/ve-default-footer/index.vue')['default']
     VeDefaultLogin: typeof import('./src/components/ve-login/ve-default-login/index.vue')['default']
     VeDownloads: typeof import('./src/components/ve-page/ve-downloads/index.vue')['default']

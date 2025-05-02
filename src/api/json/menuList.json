@@ -403,13 +403,39 @@
     ]
   },
   {
+    "id": "32a8a4ab66744482b72ea0882ece37a4",
+    "menuCode": "feedback",
+    "menuName": "Feedback 反馈组件",
+    "menuNameEn": "Feedback component",
+    "parentId": "0",
+    "menuLevel": 0,
+    "menuSort": 6,
+    "menuIcon": "InfoFilled",
+    "menuPath": "/feedback",
+    "children": [
+      {
+        "id": "d06637fe10bb4059b6830f52ecea78dc",
+        "menuCode": "ve-data-loading",
+        "menuName": "ve-data-loading 加载更多",
+        "menuNameEn": "ve-data-loading Load more",
+        "parentId": "32a8a4ab66744482b72ea0882ece37a4",
+        "menuLevel": 1,
+        "menuSort": 0,
+        "menuIcon": "Loading",
+        "menuPath": "/ve-data-loading",
+        "menuComponent": "feedback/ve-data-loading",
+        "children": []
+      }
+    ]
+  },
+  {
     "id": "e0ed0a89e3724efe9aba3dc1a977785a",
     "menuCode": "error",
     "menuName": "Error 状态页面",
     "menuNameEn": "Error Status page",
     "parentId": "0",
     "menuLevel": 0,
-    "menuSort": 4,
+    "menuSort": 6,
     "menuIcon": "VeWarn",
     "menuPath": "/error",
     "children": [
