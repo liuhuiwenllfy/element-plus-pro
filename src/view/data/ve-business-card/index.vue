@@ -25,7 +25,7 @@ const slots = [
     <template #default>
       <ve-business-card style="width: 400px">
         <template #avatar>
-          <el-image src="avatar.png" style="width: 40px; height: 40px"/>
+          <el-image src="avatar.png" style="width: 80px; height: 80px"/>
         </template>
         <template #title>Demo</template>
         <template #operate>
@@ -37,9 +37,5 @@ const slots = [
 </template>
 
 <style lang="scss" scoped>
-.custom-image {
-  width: 300px;
-  height: 150px;
-  border-radius: 5px
-}
+
 </style>

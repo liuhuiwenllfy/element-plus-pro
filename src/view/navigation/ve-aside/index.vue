@@ -109,7 +109,7 @@ const stats = [
     instructions: '默认选中项',
     type: 'string',
     optional: '传入menu:menuCode值',
-    default: 'false',
+    default: '',
   },
   {
     name: 'layout',

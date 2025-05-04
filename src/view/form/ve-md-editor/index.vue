@@ -35,7 +35,7 @@ const stats = [
     name: 'previewTheme',
     instructions: '主题',
     type: 'string',
-    optional: 'default | github | vuepress | mk-cute | smart-blue | cyanosis',
+    optional: 'default，github，vuepress，mk-cute，smart-blue，cyanosis',
     default: 'github',
   },
   {
@@ -49,7 +49,7 @@ const stats = [
     name: 'codeTheme',
     instructions: '代码样式',
     type: 'string',
-    optional: 'atom | a11y | github | gradient | kimbie | paraiso | qtcreator | stackoverflow',
+    optional: 'atom，a11y，github，gradient，kimbie，paraiso，qtcreator，stackoverflow',
     default: 'github',
   },
   {
@@ -112,14 +112,14 @@ const stats = [
     name: 'language',
     instructions: '国际化',
     type: 'string',
-    optional: 'zh-CN | en-US',
+    optional: 'zh-CN，en-US',
     default: 'zh-CN',
   },
   {
     name: 'theme',
     instructions: '夜间模式',
     type: 'string',
-    optional: 'dark | light',
+    optional: 'dark，light',
     default: 'dark',
   },
 ]

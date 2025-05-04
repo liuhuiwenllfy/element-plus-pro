@@ -32,7 +32,7 @@ const stats = [
   },
   {
     name: 'language',
-    instructions: '语言',
+    instructions: '国际化',
     type: 'string',
     optional: 'zhCn，en',
     default: 'zhCn',
@@ -41,15 +41,15 @@ const stats = [
     name: 'logo',
     instructions: 'logo地址',
     type: 'string',
-    optional: '',
-    default: '',
+    optional: '-',
+    default: '-',
   },
   {
     name: 'name',
     instructions: '名称',
     type: 'string',
-    optional: '',
-    default: '',
+    optional: '-',
+    default: '-',
   },
   {
     name: 'dark',
@@ -57,13 +57,6 @@ const stats = [
     type: 'boolean',
     optional: 'true-开；false-关',
     default: 'false',
-  },
-  {
-    name: 'language',
-    instructions: '国际化',
-    type: 'string',
-    optional: 'zhCn | en',
-    default: 'zhCn',
   },
   {
     name: 'avatar',
@@ -123,7 +116,7 @@ const incident = [
   {
     name: 'handle-language-change',
     instructions: '语言切换回调',
-    callback: 'language：zhCn | en',
+    callback: 'language：zhCn，en',
   },
   {
     name: 'handle-sign-out',

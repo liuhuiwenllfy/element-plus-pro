@@ -103,7 +103,7 @@ const stats = [
     instructions: '默认选中项',
     type: 'string',
     optional: '传入menu:menuCode值',
-    default: 'false',
+    default: '-',
   },
   {
     name: 'layout',
@@ -114,7 +114,7 @@ const stats = [
   },
   {
     name: 'language',
-    instructions: '语言',
+    instructions: '国际化',
     type: 'string',
     optional: 'zhCn，en',
     default: 'zhCn',
@@ -123,15 +123,15 @@ const stats = [
     name: 'logo',
     instructions: 'logo地址',
     type: 'string',
-    optional: '',
-    default: '',
+    optional: '-',
+    default: '-',
   },
   {
     name: 'name',
     instructions: '名称',
     type: 'string',
-    optional: '',
-    default: '',
+    optional: '-',
+    default: '-',
   },
   {
     name: 'navigation',
@@ -172,7 +172,7 @@ const stats = [
     name: 'globalSize',
     instructions: '全局尺寸',
     type: 'string',
-    optional: 'default | large | small',
+    optional: 'default，large，small',
     default: 'default',
   },
   {
@@ -181,13 +181,6 @@ const stats = [
     type: 'boolean',
     optional: 'true-开；false-关',
     default: 'false',
-  },
-  {
-    name: 'language',
-    instructions: '国际化',
-    type: 'string',
-    optional: 'zhCn | en',
-    default: 'zhCn',
   },
   {
     name: 'avatar',
@@ -257,12 +250,12 @@ const incident = [
   {
     name: 'handle-global-size-change',
     instructions: '全局尺寸变更回调',
-    callback: 'size：default | large | small',
+    callback: 'size：default，large，small',
   },
   {
     name: 'handle-language-change',
     instructions: '语言切换回调',
-    callback: 'language：zhCn | en',
+    callback: 'language：zhCn，en',
   },
   {
     name: 'handle-news-change',

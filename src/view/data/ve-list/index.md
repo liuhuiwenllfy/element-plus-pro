@@ -8,18 +8,9 @@ const _list = ref([
         image: 'avatar.png'
     },
 ]);
-
-const loadMoreShow = ref(true)
-const loadMore = async () => {
-    _list.value = [..._list.value, _list.value[0]]
-    if (_list.value.length >= 5) {
-        loadMoreShow.value = false
-    }
-}
 ```
 
 ```vue
-
 <el-divider content-position="left">list1</el-divider>
 <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list1">
   <template #operation>
@@ -27,7 +18,6 @@ const loadMore = async () => {
     <el-link :underline="false" size="mini" type="primary">更多</el-link>
   </template>
 </ve-list>
-<ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
 <el-divider content-position="left">list2</el-divider>
 <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list2">
   <template #operation>
@@ -35,7 +25,6 @@ const loadMore = async () => {
     <el-link :underline="false" size="mini" type="primary">更多</el-link>
   </template>
 </ve-list>
-<ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
 <el-divider content-position="left">list3</el-divider>
 <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list3">
   <template #operation>
@@ -46,5 +35,12 @@ const loadMore = async () => {
     <el-image :src="item.image || 'default.png'" class="custom-image" fit="cover"></el-image>
   </template>
 </ve-list>
-<ve-load-more v-show="_list.length <= 5" :loading="loadMoreShow" @handle-click="loadMore"></ve-load-more>
+```
+
+```scss
+.custom-image {
+  width: 300px;
+  height: 150px;
+  border-radius: 5px
+}
 ```

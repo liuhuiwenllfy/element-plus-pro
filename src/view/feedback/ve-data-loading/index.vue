@@ -46,7 +46,7 @@ const stats = [
     name: 'language',
     instructions: '国际化',
     type: 'string',
-    optional: 'zhCN | en',
+    optional: 'zhCN，en',
     default: 'zhCN',
   },
 ]
