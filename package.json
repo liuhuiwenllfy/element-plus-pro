@@ -26,7 +26,7 @@
     "ve-error": "^1.0.4",
     "ve-icon": "^1.1.0",
     "ve-load-more": "^1.0.1",
-    "ve-login": "^1.0.1",
+    "ve-login": "^1.0.2",
     "ve-recursive-menu": "^1.0.6",
     "vue": "^3.5.13",
     "vue-cropper": "^1.1.3",
