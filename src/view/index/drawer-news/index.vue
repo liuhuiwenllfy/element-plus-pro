@@ -4,7 +4,7 @@ import {ref, watch} from 'vue'
 import {LatestNewsVo} from '@/entity/vo/LatestNewsVo'
 import {ElMessageBox} from 'element-plus'
 import {useI18n} from 'vue-i18n'
-import {VeClearOutlined} from "@/components/ve-icon/components.ts";
+import {VeClearOutlined} from "@/components/ve-icon/other/components.ts";
 import {useCommonStore} from "@/pinia/common.ts";
 
 const commonStore = useCommonStore();

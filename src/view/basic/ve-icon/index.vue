@@ -1,16 +1,21 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import {ElMessage} from "element-plus";
-import * as SvgList from '@/components/ve-icon/components'
+import * as AnimationSvgList from '@/components/ve-icon/svg-spinners/components'
+import * as OtherSvgList from '@/components/ve-icon/other/components'
 import {onMounted, reactive} from "vue";
 import code from './index.md?raw'
 import json from '@/components/ve-icon/package.json'
 
-const _icons = reactive<string[]>([])
+const _animationIcons = reactive<string[]>([])
+const _otherIcons = reactive<string[]>([])
 
 onMounted(() => {
-  Object.keys(SvgList).forEach((key) => {
-    _icons.push(key)
+  Object.keys(AnimationSvgList).forEach((key) => {
+    _animationIcons.push(key)
+  })
+  Object.keys(OtherSvgList).forEach((key) => {
+    _otherIcons.push(key)
   })
 })
 
@@ -66,8 +71,18 @@ const stats = [
 <template>
   <ve-page id="ve-icon" :code="code" :stats="stats" :version="json.version" title="ve-icon Icon 图标">
     <template #default>
+      <h4>Svg-Spinners</h4>
       <ul class="icon-list">
-        <li v-for="(item, index1) in _icons" :key="index1" class="icon-item" @click="handleClick(item)">
+        <li v-for="(item, index1) in _animationIcons" :key="index1" class="icon-item" @click="handleClick(item)">
+          <el-space direction="vertical">
+            <component :is="item" class="el-icon"/>
+            <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
+          </el-space>
+        </li>
+      </ul>
+      <h4>Other</h4>
+      <ul class="icon-list">
+        <li v-for="(item, index1) in _otherIcons" :key="index1" class="icon-item" @click="handleClick(item)">
           <el-space direction="vertical">
             <component :is="item" class="el-icon"/>
             <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>

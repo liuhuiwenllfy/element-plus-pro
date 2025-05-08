@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import screenFull from 'screenfull'
-import {VeFullscreenAlt, VeFullscreenExitAlt} from 've-icon/components'
+import {VeFullscreenAlt, VeFullscreenExitAlt} from 've-icon/other/components'
 import {onMounted, onUnmounted} from 'vue'
 import {ElIcon} from 'element-plus'
 import 'element-plus/es/components/icon/style/css'

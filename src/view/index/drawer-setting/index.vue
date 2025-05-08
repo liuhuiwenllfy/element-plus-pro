@@ -4,7 +4,7 @@ import {Setting} from '@element-plus/icons-vue'
 import {useI18n} from 'vue-i18n'
 import {useCommonStore} from "@/pinia/common.ts";
 import {ref, watch} from "vue";
-import {VeMdCloudyNight, VeSunny} from '@/components/ve-icon/components'
+import {VeMdCloudyNight, VeSunny} from '@/components/ve-icon/other/components.ts'
 
 const commonStore = useCommonStore();
 

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {ElAvatar, ElDropdown, ElDropdownItem, ElDropdownMenu, ElIcon, ElSpace, ElText} from 'element-plus'
-import {VeLogOut} from 've-icon/components'
+import {VeLogOut} from 've-icon/other/components'
 import {PropType, reactive} from 'vue'
 import 'element-plus/es/components/avatar/style/css'
 import 'element-plus/es/components/dropdown/style/css'

@@ -5,7 +5,7 @@ import {useRoute, useRouter} from "vue-router";
 import {ElScrollbar} from "element-plus";
 import {ref, watch} from "vue";
 import {InfoFilled} from "@element-plus/icons-vue";
-import {VeWeixin} from "ve-icon/components.ts";
+import {VeWeixin} from "ve-icon/other/components.ts";
 import VeBackTop from "@/components/ve-back-top/index.vue";
 
 const commonStore = useCommonStore()

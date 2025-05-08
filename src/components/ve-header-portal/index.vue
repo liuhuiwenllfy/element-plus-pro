@@ -14,7 +14,7 @@ import {
   ElSwitch,
   ElText
 } from "element-plus";
-import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/components'
+import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/other/components'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
 import 'element-plus/es/components/dropdown-menu/style/css'

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {Refresh, Tools} from '@element-plus/icons-vue'
-import {VeFullscreenExitLine, VeFullscreenFill} from 've-icon/components'
+import {VeFullscreenExitLine, VeFullscreenFill} from 've-icon/other/components'
 import {PropType, reactive, ref} from 'vue'
 import {ElCheckbox, ElCheckboxGroup, ElLink, ElPopover, ElTableColumn} from 'element-plus'
 import 'element-plus/es/components/table-column/style/css'

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {VeSearchLocate} from 've-icon/components'
+import {VeSearchLocate} from 've-icon/other/components'
 import {PropType, reactive, ref} from 'vue'
 import {ElButton, ElCard, ElIcon, ElSpace} from 'element-plus'
 import 'element-plus/es/components/card/style/css'

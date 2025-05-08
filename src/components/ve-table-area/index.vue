@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {VeTableShortcut} from 've-icon/components'
+import {VeTableShortcut} from 've-icon/other/components'
 import {ElCard, ElIcon, ElSpace} from 'element-plus'
 import 'element-plus/es/components/space/style/css'
 import 'element-plus/es/components/card/style/css'

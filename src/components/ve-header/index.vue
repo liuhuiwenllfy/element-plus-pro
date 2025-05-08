@@ -31,7 +31,7 @@ import {
   VeMenuUnfoldOutlined,
   VeOutlineFormatSize,
   VeSunny
-} from 've-icon/components'
+} from 've-icon/other/components'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
 import 'element-plus/es/components/dropdown-menu/style/css'
