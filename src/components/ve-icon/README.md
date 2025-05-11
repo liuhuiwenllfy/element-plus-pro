@@ -33,6 +33,12 @@ import * as OtherList from '/ve-icon/other/components'
 Object.keys(OtherList).forEach((key) => {
     app.component(key, OtherList[key as keyof typeof OtherList])
 })
+
+import * as MdiLightList from '/ve-icon/mdi-light/components'
+// 注册全局 ve-icon 组件（mdi-light）
+Object.keys(MdiLightList).forEach((key) => {
+    app.component(key, MdiLightList[key as keyof typeof MdiLightList])
+})
 ```
 
 ---

@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24">
     <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
     <g :stroke="color">
       <circle cx="12" cy="12" r="9.5" fill="none" stroke-linecap="round" stroke-width="3">

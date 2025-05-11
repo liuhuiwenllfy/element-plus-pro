@@ -3,12 +3,14 @@ import VePage from "@/components/ve-page/index.vue";
 import {ElMessage} from "element-plus";
 import * as AnimationSvgList from '@/components/ve-icon/svg-spinners/components'
 import * as OtherSvgList from '@/components/ve-icon/other/components'
+import * as MdiLightSvgList from '@/components/ve-icon/mdi-light/components'
 import {onMounted, reactive} from "vue";
 import code from './index.md?raw'
 import json from '@/components/ve-icon/package.json'
 
 const _animationIcons = reactive<string[]>([])
 const _otherIcons = reactive<string[]>([])
+const _mdiLightIcons = reactive<string[]>([])
 
 onMounted(() => {
   Object.keys(AnimationSvgList).forEach((key) => {
@@ -16,6 +18,9 @@ onMounted(() => {
   })
   Object.keys(OtherSvgList).forEach((key) => {
     _otherIcons.push(key)
+  })
+  Object.keys(MdiLightSvgList).forEach((key) => {
+    _mdiLightIcons.push(key)
   })
 })
 
@@ -74,6 +79,15 @@ const stats = [
       <h4>Svg-Spinners</h4>
       <ul class="icon-list">
         <li v-for="(item, index1) in _animationIcons" :key="index1" class="icon-item" @click="handleClick(item)">
+          <el-space direction="vertical">
+            <component :is="item" class="el-icon"/>
+            <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
+          </el-space>
+        </li>
+      </ul>
+      <h4>Mdi-light</h4>
+      <ul class="icon-list">
+        <li v-for="(item, index1) in _mdiLightIcons" :key="index1" class="icon-item" @click="handleClick(item)">
           <el-space direction="vertical">
             <component :is="item" class="el-icon"/>
             <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
