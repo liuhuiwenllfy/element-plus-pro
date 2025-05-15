@@ -33,7 +33,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 1,
-    "menuIcon": "VeIconBasic",
+    "menuIcon": "Menu",
     "menuPath": "/basic",
     "children": [
       {
@@ -83,7 +83,7 @@
         "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconLayout",
+        "menuIcon": "Eleme",
         "menuPath": "/ve-logo",
         "menuComponent": "basic/ve-logo",
         "children": []
@@ -215,7 +215,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 3,
-    "menuIcon": "VeIconNavigation",
+    "menuIcon": "Guide",
     "menuPath": "/navigation",
     "children": [
       {
@@ -304,7 +304,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "VeIconLogin",
+        "menuIcon": "Top",
         "menuPath": "/ve-back-top",
         "menuComponent": "navigation/ve-back-top",
         "children": []
@@ -395,7 +395,7 @@
         "parentId": "86a7513788374cdb86566769170b5550",
         "menuLevel": 1,
         "menuSort": 1,
-        "menuIcon": "VeIconPreview",
+        "menuIcon": "VeIconTable",
         "menuPath": "/ve-table-column",
         "menuComponent": "data/ve-table-column",
         "children": []
@@ -421,7 +421,7 @@
         "parentId": "32a8a4ab66744482b72ea0882ece37a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Loading",
+        "menuIcon": "VeIcon180RingWithBg",
         "menuPath": "/ve-data-loading",
         "menuComponent": "feedback/ve-data-loading",
         "children": []
@@ -447,7 +447,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeWarn",
+        "menuIcon": "VeIconAlert",
         "menuPath": "/200",
         "menuComponent": "error/200",
         "children": []
@@ -460,7 +460,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeWarn",
+        "menuIcon": "VeIconAlert",
         "menuPath": "/401",
         "menuComponent": "error/401",
         "children": []
@@ -473,7 +473,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeWarn",
+        "menuIcon": "VeIconAlert",
         "menuPath": "/403",
         "menuComponent": "error/403",
         "children": []
@@ -486,7 +486,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeWarn",
+        "menuIcon": "VeIconAlert",
         "menuPath": "/404",
         "menuComponent": "error/404",
         "children": []
@@ -499,7 +499,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeWarn",
+        "menuIcon": "VeIconAlert",
         "menuPath": "/500",
         "menuComponent": "error/500",
         "children": []

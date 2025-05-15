@@ -13,7 +13,6 @@ declare module 'vue' {
     403: typeof import('./src/components/ve-error/403/index.vue')['default']
     404: typeof import('./src/components/ve-error/404/index.vue')['default']
     500: typeof import('./src/components/ve-error/500/index.vue')['default']
-      AccountAlert: typeof import('./src/components/ve-icon/mdi-light/account-alert/index.vue')['default']
     Day: typeof import('./src/components/ve-cron-select/day/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBadge: typeof import('element-plus/es')['ElBadge']
