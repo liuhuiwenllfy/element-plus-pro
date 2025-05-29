@@ -508,7 +508,8 @@ declare module 'vue' {
     Weeks: typeof import('./src/components/ve-cron-select/weeks/index.vue')['default']
     Years: typeof import('./src/components/ve-cron-select/years/index.vue')['default']
   }
-  export interface ComponentCustomProperties {
+
+    export interface GlobalDirectives {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
