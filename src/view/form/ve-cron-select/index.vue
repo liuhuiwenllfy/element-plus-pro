@@ -6,7 +6,7 @@ import VeCronSelect from '@/components/ve-cron-select/index.vue'
 import code from './index.md?raw'
 import json from '@/components/ve-cron-select/package.json'
 
-const _cron = ref("* * * * * ? *")
+const _cron = ref("0/10 10 10 10 3 1 2024-2025")
 
 const stats = [
   {

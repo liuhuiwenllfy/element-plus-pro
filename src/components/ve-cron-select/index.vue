@@ -39,7 +39,7 @@ const handleChange = (index: number, value: string) => {
     _cron.value = [value]
   }
   _cronStr.value = _cron.value.join(' ').trim()
-  emits('change', _cron.value.join(' ').trim())
+  emits('change', _cronStr.value)
 }
 </script>
 

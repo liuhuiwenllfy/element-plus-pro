@@ -101,9 +101,8 @@ const handleChange = (value: any) => {
 }
 
 const handleChangeCheckbox = () => {
-  if (radio.value === 4) {
-    handleChange(4)
-  }
+  radio.value = 4
+  handleChange(4)
 }
 </script>
 
