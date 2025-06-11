@@ -3,7 +3,7 @@ import VeLoadMore from 've-load-more/index.vue'
 import {ElEmpty, ElSkeleton} from 'element-plus'
 import 'element-plus/es/components/skeleton/style/css'
 import 'element-plus/es/components/empty/style/css'
-import {defineEmits, PropType, reactive} from "vue";
+import {PropType, reactive} from "vue";
 
 defineProps({
   size: {
