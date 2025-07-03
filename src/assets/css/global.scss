@@ -1,20 +1,20 @@
 //全局颜色
-@import "global-color";
+@forward "global-color";
 
 //边框线条
-@import "global-border";
+@forward "global-border";
 
 //字体
-@import "global-font-family";
+@forward "global-font-family";
 
 //文字大小
-@import "global-font-size";
+@forward "global-font-size";
 
 //行高
-@import "global-line-height";
+@forward "global-line-height";
 
 //滚动条
-@import "global-scrollbar";
+@forward "global-scrollbar";
 
 //一行省略
 .text-flow-ellipsis-multiple_1 {

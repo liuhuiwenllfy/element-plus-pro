@@ -72,7 +72,6 @@ const handleClick = (id: string, roll: boolean) => {
     }
   }
 }
-
 </script>
 
 <template>
@@ -89,6 +88,7 @@ const handleClick = (id: string, roll: boolean) => {
 <style lang="scss" scoped>
 .node {
   padding: 4px 16px 0;
+  cursor: pointer;
 
   .is-active {
     color: #409EFF;

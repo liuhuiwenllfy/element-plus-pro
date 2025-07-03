@@ -29,7 +29,7 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: '@import "@/assets/css/global.scss";',
+                additionalData: '@use "@/assets/css/global.scss" as *;',
             }
         }
     },

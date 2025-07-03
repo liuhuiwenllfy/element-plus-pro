@@ -1,5 +1,5 @@
 export interface Anchor {
-    id: string
-    title: string
-    children: Anchor[]
+    level: number
+    line: number
+    text: string
 }

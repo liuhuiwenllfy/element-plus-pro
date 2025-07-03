@@ -6,30 +6,13 @@ import {Anchor} from "@/components/ve-anchor/Anchor.ts";
 import code from './index.md?raw'
 import json from '@/components/ve-anchor/package.json'
 
-const items = ref<Anchor[]>([
-  {
-    id: 'part-1',
-    title: 'part-1',
-  },
-  {
-    id: 'part-2',
-    title: 'part-2',
-  },
-  {
-    id: 'part-3',
-    title: 'part-3',
-    children: [
-      {
-        id: 'part-3-1',
-        title: 'part-3-1',
-      },
-      {
-        id: 'part-3-2',
-        title: 'part-3-2',
-      },
-    ],
-  }
-] as Anchor[])
+const nav = ref<Anchor[]>([
+  {level: 0, line: 1, text: "part-1"},
+  {level: 1, line: 2, text: "part-1-1"},
+  {level: 1, line: 3, text: "part-1-2"},
+  {level: 0, line: 4, text: "part-2"},
+  {level: 1, line: 5, text: "part-2-1"},
+])
 const stats = [
   {
     name: 'items',
@@ -67,6 +50,10 @@ const stats = [
     default: '-',
   },
 ]
+const _line = ref<number>(1)
+const enterView = (line: number) => {
+  _line.value = line
+}
 
 </script>
 
@@ -74,26 +61,51 @@ const stats = [
   <ve-page id="ve-anchor" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
     <template #default>
       <el-card shadow="never">
-        <el-row id="parent-scroll" style="height: 300px; overflow: auto">
-          <el-col :span="18">
-            <div id="part-1" class="group" style="height: 300px; background: #C6E2FF"/>
-            <div id="part-2" class="group" style="height: 300px; background: #F8E3C5"/>
-            <div id="part-3" class="group" style="height: 300px; background: #FCD3D3"/>
-            <div id="part-3-1" class="group" style="height: 300px; background: #C6E2FF"/>
-            <div id="part-3-2" class="group" style="height: 300px; background: #F8E3C5"/>
-          </el-col>
-          <el-col :span="6">
-            <ve-anchor :items="items" group="group" parent-scroll="parent-scroll"/>
-          </el-col>
-        </el-row>
+        <ve-anchor :height="300" :items="nav" @enter-view="enterView">
+          <template #default>
+            <div id="1" style="height: 300px; background: #C6E2FF"/>
+            <div id="2" style="height: 300px; background: #F8E3C5"/>
+            <div id="3" style="height: 300px; background: #FCD3D3"/>
+            <div id="4" style="height: 300px; background: #C6E2FF"/>
+            <div id="5" style="height: 300px; background: #F8E3C5"/>
+          </template>
+          <template #navigation>
+            <el-space>
+              <div class="mark" :style="{top: `${(_line - 1) * 24 + 2}px`}"/>
+              <div>
+                <div v-for="item in nav" :key="item.line">
+                  <el-space>
+                    <div class="nav" :style="{paddingLeft: `${16 * item.level + 10}px`}">{{ item.text }}</div>
+                  </el-space>
+                </div>
+              </div>
+            </el-space>
+          </template>
+        </ve-anchor>
       </el-card>
     </template>
   </ve-page>
 </template>
 
 <style lang="scss" scoped>
-#parent-scroll {
-  scroll-behavior: smooth;
-  overflow-y: scroll; /* 确保容器可以滚动 */
+.mark {
+  position: absolute;
+  display: inline-block;
+  border: 2px solid #409EFF;
+  border-radius: 4px;
+  height: 16px;
+  transition: top .25s ease-in-out, opacity .25s;
+}
+
+.is-selected {
+  border-color: #409EFF;
+}
+
+.nav {
+  cursor: pointer;
+
+  &:hover {
+    color: #409EFF;
+  }
 }
 </style>

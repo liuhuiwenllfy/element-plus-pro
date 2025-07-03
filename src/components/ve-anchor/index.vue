@@ -1,77 +1,66 @@
 <script lang="ts" setup>
 
 import {Anchor} from "./Anchor";
-import VeAnchor from './node/index.vue'
-import {onMounted, ref} from "vue";
+import {onMounted} from "vue";
 
 const props = defineProps({
-  parentScroll: {
-    type: String,
-    required: false,
-    default: () => 'parent-scroll'
-  },
-  group: {
-    type: String,
-    required: false,
-    default: () => 'group'
-  },
   items: {
     type: Array<Anchor>,
     required: false,
     default: () => []
-  }
+  },
+  height: {
+    type: Number,
+    required: false,
+    default: () => 300
+  },
 })
-const checked = ref()
+
+const emit = defineEmits(['enterView'])
+
 onMounted(() => {
-  //获取滚动区域dom
-  const parentScrollElement = document.getElementById(props.parentScroll);
-  // 固定锚点区域位置
-  const veAnchor = document.getElementById('ve-anchor');
-  if (parentScrollElement && veAnchor) {
-    parentScrollElement.addEventListener('scroll', () => {
-      veAnchor.style.top = `${parentScrollElement.scrollTop}px`
-    })
-  }
-  //获取区域中所有部分
-  const groupClassList = document.getElementsByClassName(props.group)
-  checked.value = groupClassList[0].id
-  //监听区域滚动
-  if (parentScrollElement) {
-    parentScrollElement.addEventListener('scrollend', () => {
-      //高度差（初始为第一项高度差）
-      let poor = -groupClassList[0].clientHeight
-      for (let i = 0; i < groupClassList.length; i++) {
-        //找到高度差匹配的块
-        if (parentScrollElement.scrollTop - groupClassList[i].clientHeight >= poor) {
-          checked.value = groupClassList[i].id
-        }
-        poor += groupClassList[i].clientHeight
+  const scroll = document.querySelector('#scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        emit('enterView', entry.target.id)
       }
-    })
-  }
+    });
+  }, {
+    root: scroll, // 自定义视口
+    rootMargin: '0px',
+    threshold: 0.5 // 50% 可见时触发
+  });
+  props.items.forEach(item => {
+    const id = document.getElementById(`${item.line}`);
+    if (id) {
+      observer.observe(id);
+    }
+  })
 })
 
 </script>
 
 <template>
-  <div id="ve-anchor" class="ve-anchor">
-    <div id="markers"></div>
-    <ve-anchor :checked="checked" :group="group" :items="items" :parent-scroll="parentScroll"/>
+  <div class="ve-anchor">
+    <el-row>
+      <el-col :span="18">
+        <div :style="{height: `${height}px`}" id="scroll">
+          <slot name="default"/>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <slot name="navigation"/>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .ve-anchor {
-  position: absolute;
-
-  #markers {
-    border-radius: 4px;
-    border-left: 4px solid var(--el-color-primary);
-    height: 16px;
-    top: 4px;
-    position: absolute;
-    transition: top .25s ease-in-out, opacity .25s;
-    margin-top: 4px;
+  #scroll {
+    overflow-y: auto;
   }
+
 }
 </style>
