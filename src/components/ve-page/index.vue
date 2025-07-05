@@ -63,7 +63,7 @@ const commonStore = useCommonStore();
     <el-divider/>
     <template v-if="code">
       <h3>Code</h3>
-      <ve-md-preview :modelValue="code" :theme="commonStore.getDark? 'dark':'light'"/>
+      <ve-md-preview style="z-index: -1" :modelValue="code" :theme="commonStore.getDark? 'dark':'light'"/>
     </template>
     <el-divider/>
     <h2 v-if="stats || incident || _slots">Api</h2>
