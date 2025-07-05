@@ -1,43 +1,18 @@
 ```ts
-const items = ref<Anchor[]>([
-    {
-        id: 'part-1',
-        title: 'part-1',
-    },
-    {
-        id: 'part-2',
-        title: 'part-2',
-    },
-    {
-        id: 'part-3',
-        title: 'part-3',
-        children: [
-            {
-                id: 'part-3-1',
-                title: 'part-3-1',
-            },
-            {
-                id: 'part-3-2',
-                title: 'part-3-2',
-            },
-        ],
-    }
-] as Anchor[])
+const items = ref<MyAnchor[]>([
+    {level: 0, id: "1", title: "part-1", color: '#C6E2FF'},
+    {level: 1, id: "2", title: "part-1-1", color: '#F8E3C5'},
+    {level: 1, id: "3", title: "part-1-2", color: '#FCD3D3'},
+    {level: 0, id: "4", title: "part-2", color: '#C6E2FF'},
+    {level: 1, id: "5", title: "part-2-1", color: '#F8E3C5'},
+])
 ```
 
 ```vue
-<el-card shadow="never">
-  <el-row id="parent-scroll" style="height: 300px; overflow: auto">
-    <el-col :span="18">
-      <div id="part-1" class="group" style="height: 300px; background: #C6E2FF"/>
-      <div id="part-2" class="group" style="height: 300px; background: #F8E3C5"/>
-      <div id="part-3" class="group" style="height: 300px; background: #FCD3D3"/>
-      <div id="part-3-1" class="group" style="height: 300px; background: #C6E2FF"/>
-      <div id="part-3-2" class="group" style="height: 300px; background: #F8E3C5"/>
-    </el-col>
-    <el-col :span="6">
-      <ve-anchor :items="items" group="group" parent-scroll="parent-scroll"/>
-    </el-col>
-  </el-row>
-</el-card>
+
+<ve-anchor :height="400" :items="nav">
+  <template #default>
+    <div v-for="(item, index) in nav" :key="index" :id="item.id" :style="{height: '300px', background: item.color}"/>
+  </template>
+</ve-anchor>
 ```

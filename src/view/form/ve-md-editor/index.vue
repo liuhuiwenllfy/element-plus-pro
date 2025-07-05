@@ -7,8 +7,6 @@ import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
 import code from './index.md?raw'
 import json from '@/components/ve-md-editor/package.json'
-import VeAnchor from "@/components/ve-anchor/index.vue";
-import {Anchor} from "@/components/ve-anchor/Anchor.ts";
 
 const _value = ref('# **1024程序员节：致敬数字世界的创造者**  \n' +
     '\n' +
@@ -196,6 +194,20 @@ const stats = [
     optional: 'dark，light',
     default: 'dark',
   },
+  {
+    name: 'show-anchor',
+    instructions: '是否展示导航，该功能依赖锚点组件，使用时请自行安装ve-anchor组件',
+    type: 'boolean',
+    optional: 'true-是；false-否',
+    default: 'false',
+  },
+  {
+    name: 'height',
+    instructions: '视窗高度',
+    type: 'number',
+    optional: '-',
+    default: '300',
+  }
 ]
 
 const incident = [
@@ -207,59 +219,6 @@ const incident = [
 ]
 
 const commonStore = useCommonStore();
-
-const items = ref<Anchor[]>([])
-
-const onGetCatalog = (catalog: Array<any>) => {
-  console.log(catalog)
-  items.value = buildAnchorTree(catalog)
-
-  function buildAnchorTree(
-      flatData: Array<{ text: string; level: number; line: number }>
-  ): Anchor[] {
-    const stack: Anchor[] = [];
-    ``
-    const root: Anchor[] = [];
-
-    for (let i = 0; i < flatData.length; i++) {
-      const item = flatData[i];
-      const node: { id: string; title: string } = {
-        id: `${item.text}-${i}`,
-        title: item.text
-      };
-
-      if (item.level === 1) {
-        root.push(<Anchor>node);
-        stack.length = 0;
-        stack.push(<Anchor>node);
-      } else {
-        const parentLevel = item.level - 1;
-        while (
-            stack.length &&
-            (stack[stack.length - 1] as any).level !== parentLevel
-            ) {
-          stack.pop();
-        }
-
-        if (stack.length) {
-          const parent = stack[stack.length - 1];
-          if (!parent.children) parent.children = [];
-          parent.children.push(<Anchor>node);
-          stack.push(<Anchor>node);
-        }
-      }
-
-      // 仅用于辅助判断层级关系，不暴露给外部使用
-      (node as any).level = item.level;
-    }
-
-    return root;
-  }
-
-
-}
-
-const mdHeadingId = (_text: string, _level: number, index: number) => `${_text}-${index - 1}`;
 </script>
 
 <template>
@@ -269,18 +228,7 @@ const mdHeadingId = (_text: string, _level: number, index: number) => `${_text}-
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>
       <h3>预览区域</h3>
-      <el-row>
-        <el-col :span="18">
-          <div id="parent-scroll" style="height: 500px; overflow: auto">
-            <ve-md-preview :mdHeadingId="mdHeadingId" @onGetCatalog="onGetCatalog" :model-value="_value"
-                           :theme="commonStore.getDark? 'dark':'light'"></ve-md-preview>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <ve-anchor v-if="items.length > 0" id-parameter="data-line" :items="items" group="group"
-                     parent-scroll="parent-scroll"/>
-        </el-col>
-      </el-row>
+      <ve-md-preview show-anchor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-preview>
     </template>
   </ve-page>
 </template>
