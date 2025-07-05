@@ -204,9 +204,9 @@ const stats = [
   {
     name: 'height',
     instructions: '视窗高度',
-    type: 'number',
+    type: 'string',
     optional: '-',
-    default: '300',
+    default: '300px',
   }
 ]
 

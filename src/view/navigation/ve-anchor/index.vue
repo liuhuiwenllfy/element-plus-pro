@@ -45,9 +45,9 @@ const stats = [
   {
     name: 'height',
     instructions: '视窗高度',
-    type: 'number',
+    type: 'string',
     optional: '-',
-    default: '300',
+    default: '300px',
   }
 ]
 </script>
@@ -56,7 +56,7 @@ const stats = [
   <ve-page id="ve-anchor" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
     <template #default>
       <el-card shadow="never">
-        <ve-anchor :height="400" :items="items">
+        <ve-anchor height="400px" :items="items">
           <template #default>
             <div v-for="(item, index) in items" :key="index" :id="item.id"
                  :style="{height: '300px', background: item.color}"/>

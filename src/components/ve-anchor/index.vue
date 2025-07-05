@@ -1,7 +1,11 @@
 <script lang="ts" setup>
 
 import {Anchor} from "./Anchor";
-import {nextTick, ref} from "vue";
+import {nextTick, ref, watch} from "vue";
+import {ElCol, ElRow, ElSpace,} from "element-plus";
+import 'element-plus/es/components/row/style/css'
+import 'element-plus/es/components/col/style/css'
+import 'element-plus/es/components/space/style/css'
 
 const props = defineProps({
   items: {
@@ -9,57 +13,65 @@ const props = defineProps({
     required: true
   },
   height: {
-    type: Number,
+    type: String,
     required: false,
-    default: () => 300
+    default: () => '300px'
   },
 })
 
 const _id = ref<string>('')
 const _index = ref<number>(0)
 
-nextTick(() => {
-  const scroll = document.querySelector('.scroll');
-  const observer = new IntersectionObserver((entries) => {
-    let topArr = [] as number[];
-    let _scrollTop = scroll?.getBoundingClientRect().top;
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        topArr = []
-        props.items.forEach((item) => {
-          const _idElement = document.getElementById(item.id)
-          if (_idElement) {
-            const itemTop = _idElement.getBoundingClientRect().top;
-            if (_scrollTop) {
-              topArr.push(Math.abs(itemTop - _scrollTop - 50))
+watch(() => props.items, () => {
+  nextTick(() => {
+    const scroll = document.querySelector('.scroll');
+    if (scroll) {
+      scroll.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+    const observer = new IntersectionObserver((entries) => {
+      let topArr = [] as number[];
+      let _scrollTop = scroll?.getBoundingClientRect().top;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          topArr = []
+          props.items.forEach((item) => {
+            const _idElement = document.getElementById(item.id)
+            if (_idElement) {
+              const itemTop = _idElement.getBoundingClientRect().top;
+              if (_scrollTop) {
+                topArr.push(Math.abs(itemTop - _scrollTop))
+              }
             }
-          }
-        })
-      }
+          })
+        }
+      });
+      _id.value = props.items[topArr.indexOf(Math.min(...topArr))].id
+      const nav = document.querySelector(`.nav-${_id.value}`);
+      nav?.classList.add('is-selected')
+      props.items.forEach((item, index) => {
+        if (_id.value !== item.id) {
+          const nav = document.querySelector(`.nav-${item.id}`);
+          nav?.classList.remove('is-selected')
+        } else {
+          _index.value = index
+        }
+      })
+    }, {
+      root: scroll,
+      rootMargin: '0px 0px 0px 0px',
+      threshold: Array.from({length: 100}, (_, i) => i * 0.01)
     });
-    _id.value = props.items[topArr.indexOf(Math.min(...topArr))].id
-    const nav = document.querySelector(`.nav-${_id.value}`);
-    nav?.classList.add('is-selected')
-    props.items.forEach((item, index) => {
-      if (_id.value !== item.id) {
-        const nav = document.querySelector(`.nav-${item.id}`);
-        nav?.classList.remove('is-selected')
-      } else {
-        _index.value = index
+    props.items.forEach((item) => {
+      const id = document.getElementById(item.id);
+      if (id) {
+        observer.observe(id);
       }
     })
-  }, {
-    root: scroll,
-    rootMargin: '-50px 0px 0px 0px',
-    threshold: Array.from({length: 100}, (_, i) => i * 0.01)
-  });
-  props.items.forEach((item) => {
-    const id = document.getElementById(item.id);
-    if (id) {
-      observer.observe(id);
-    }
   })
-})
+}, {deep: true, immediate: true})
 
 
 const handleClick = (item: Anchor) => {
@@ -78,7 +90,7 @@ const handleClick = (item: Anchor) => {
   <div class="ve-anchor">
     <el-row>
       <el-col :span="18">
-        <div :style="{height: `${height}px`}" class="scroll">
+        <div :style="{height: height}" class="scroll">
           <slot name="default"/>
         </div>
       </el-col>

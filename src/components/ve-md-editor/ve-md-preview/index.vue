@@ -3,8 +3,8 @@
 import {MdPreview} from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
 import {PropType, ref} from "vue";
-import {Anchor} from "@/components/ve-anchor/Anchor.ts";
-import VeAnchor from "@/components/ve-anchor/index.vue";
+import {Anchor} from "ve-anchor/Anchor.ts";
+import VeAnchor from "ve-anchor/index.vue";
 
 const props = defineProps({
   // 唯一标识
@@ -42,9 +42,9 @@ const props = defineProps({
     default: () => false
   },
   height: {
-    type: Number,
+    type: String,
     required: false,
-    default: () => 300
+    default: () => '300px'
   },
 })
 
