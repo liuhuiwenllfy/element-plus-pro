@@ -98,5 +98,6 @@ const mdHeadingId = (_text: string, _level: number, index: number) => props.idPr
 .md {
   padding: 10px 20px;
   border-radius: 4px;
+  z-index: 0
 }
 </style>
