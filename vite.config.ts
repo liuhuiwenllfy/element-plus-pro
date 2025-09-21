@@ -35,9 +35,8 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            "/api": {
-                target: "https://npm-stat.com",
-                // target: "https://www.liulingfengyu.cn",
+            "/single-admin": {
+                target: "https://www.liulingfengyu.cn",
                 changeOrigin: true,
             },
         },

@@ -174,6 +174,8 @@ const content = reactive<any>({
 .ve-upload-picture .avatar {
   width: 100%;
   display: block;
+  max-width: 200px;
+  max-height: 200px;
 }
 </style>
 <style lang="scss">
