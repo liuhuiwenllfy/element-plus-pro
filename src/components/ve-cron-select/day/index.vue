@@ -84,15 +84,6 @@ const handleChange = (value: any) => {
       workingDay.value = 1
       checkList.value = []
       break
-    case 2:
-      _value.value = '?'
-      _cycle.start = 1
-      _cycle.end = 2
-      _initiationCycle.initiation = 1
-      _initiationCycle.cycle = 1
-      workingDay.value = 1
-      checkList.value = []
-      break
     case 3:
       _value.value = `${_cycle.start}-${_cycle.end}`
       _initiationCycle.initiation = 1
@@ -140,7 +131,6 @@ const handleChange = (value: any) => {
 <template>
   <el-radio-group v-model="radio" @change="handleChange">
     <el-radio :value="1">每日</el-radio>
-    <el-radio :value="2">不指定</el-radio>
     <el-radio :value="3">
       <el-space>
         <el-text>周期 从</el-text>

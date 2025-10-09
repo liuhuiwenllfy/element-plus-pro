@@ -1,19 +1,6 @@
 <script lang="ts" setup>
 import {PropType, reactive, ref} from 'vue'
-import {
-  ElCard,
-  ElCol,
-  ElDropdown,
-  ElDropdownItem,
-  ElDropdownMenu,
-  ElIcon,
-  ElImage,
-  ElPopover,
-  ElRow,
-  ElSpace,
-  ElSwitch,
-  ElText
-} from "element-plus";
+import {ElDropdown, ElDropdownItem, ElDropdownMenu, ElIcon, ElImage, ElSpace, ElSwitch, ElText} from "element-plus";
 import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/other/components'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
@@ -25,14 +12,10 @@ import 'element-plus/es/components/text/style/css'
 import 'element-plus/es/components/image/style/css'
 import 'element-plus/es/components/switch/style/css'
 import 'element-plus/es/components/badge/style/css'
-import 'element-plus/es/components/popover/style/css'
-import 'element-plus/es/components/card/style/css'
-import 'element-plus/es/components/row/style/css'
-import 'element-plus/es/components/col/style/css'
 import {DropdownItem} from "./DropdownItem";
 import VeDefaultLogin from 've-login/ve-default-login/index.vue'
 import VeUserInfo from 've-login/ve-user-info/index.vue'
-import {Menu} from '@element-plus/icons-vue'
+import {ArrowDown, Menu, TopRight} from '@element-plus/icons-vue'
 
 const props = defineProps({
   language: {
@@ -171,32 +154,29 @@ const content = reactive<any>({
       </li>
       <template v-if="menu.length > 0">
         <template v-for="(item, index) in menu" :key="index">
-          <el-popover
-              v-if="item.children && item.children.length > 0"
-              :width="800"
-              placement="top-start"
-              popper-class="popper-class"
-              trigger="hover">
-            <template #default>
-              <el-row :gutter="20">
-                <el-col v-for="(item1, index1) in item.children" :key="index1" :span="12">
-                  <el-card shadow="never" @click="handleMenuClick(item1.route)">
-                    <div class="title"><strong>{{ item1.name }}</strong></div>
-                    <el-text type="info">{{ item1.describe }}</el-text>
-                  </el-card>
-                </el-col>
-              </el-row>
+          <el-dropdown v-if="item.children && item.children.length > 0">
+            <li class="menu1">
+              <el-text truncated>
+                {{ item.name }}&nbsp;<el-icon size="12">
+                <ArrowDown/>
+              </el-icon>
+              </el-text>
+            </li>
+            <template #dropdown>
+              <el-dropdown-menu style="max-width: 300px">
+                <el-dropdown-item v-for="(item1, index1) in item.children" :key="index1">
+                  <el-space direction="vertical" alignment="normal">
+                    <el-text>{{ item1.name }}
+                      <el-icon>
+                        <TopRight/>
+                      </el-icon>
+                    </el-text>
+                    <el-text style="max-width: 270px" truncated type="info">{{ item1.describe }}</el-text>
+                  </el-space>
+                </el-dropdown-item>
+              </el-dropdown-menu>
             </template>
-            <template #reference>
-              <li class="menu1">
-                <el-text truncated>
-                  <el-link :underline="false">
-                    {{ item.name }}
-                  </el-link>
-                </el-text>
-              </li>
-            </template>
-          </el-popover>
+          </el-dropdown>
           <li v-else class="menu1" @click="handleMenuClick(item.route)">
             <el-text truncated>{{ item.name }}</el-text>
           </li>
@@ -349,7 +329,6 @@ const content = reactive<any>({
     border: none;
     cursor: pointer;
     border-radius: 8px;
-    height: 150px;
 
     .title {
       font-size: 18px;
