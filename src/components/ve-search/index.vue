@@ -76,10 +76,17 @@ const content = reactive<any>({
 
   border-radius: 30px;
   background-color: var(--el-color-info-light-9);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  border-right: none;
 
   &:focus-within {
     border-color: var(--el-color-primary);
+    transition: all 0.3s ease
+  }
+
+  // 失去焦点时的过渡动画
+  &:not(:focus-within) {
+    transition: all 0.3s ease;
   }
 
   .search-input {
@@ -101,10 +108,10 @@ const content = reactive<any>({
   }
 
   .search-button {
-    margin-top: -1px;
-    margin-bottom: -1px;
+    margin-top: -2px;
+    margin-bottom: -2px;
     border: none;
-    height: 30px;
+    height: 32px;
     width: 80px;
     border-radius: 0 30px 30px 0;
     background-color: var(--el-color-primary);
