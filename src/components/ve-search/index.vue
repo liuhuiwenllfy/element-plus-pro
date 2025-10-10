@@ -55,7 +55,7 @@ const content = reactive<any>({
         <Close/>
       </el-icon>
       <button @click="handleClick('search')" class="search-button">
-        <el-text>
+        <el-text style="color: white">
           <el-icon>
             <Search/>
           </el-icon>
