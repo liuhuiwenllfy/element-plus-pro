@@ -68,7 +68,7 @@ const content = reactive<any>({
 
 <style lang="scss" scoped>
 .ve-search {
-  width: 333px;
+  width: 300px;
   //去掉浏览器 :focus 黑边
   :focus-visible {
     outline: none;
@@ -78,12 +78,13 @@ const content = reactive<any>({
   background-color: var(--el-color-info-light-9);
   border: 1px solid transparent;
 
-  &:hover {
+  &:focus-within {
     border-color: var(--el-color-primary);
   }
 
   .search-input {
-    margin: 3px 24px;
+    width: 154px;
+    margin: 3px 15px;
     height: 20px;
     border: none;
     background-color: var(--el-color-info-light-9);
