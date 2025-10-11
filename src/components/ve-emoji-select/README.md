@@ -1,4 +1,4 @@
-# emoji表情
+# ve-emoji-select emoji表情选择器
 
 ## 功能描述
 
