@@ -1,6 +1,6 @@
 {
   "name": "ve-header",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
@@ -15,5 +15,8 @@
   "homepage": "https://epp.liulingfengyu.cn/",
   "bugs": {
     "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
+  },
+  "dependencies": {
+    "ve-recursive-menu": "*"
   }
 }

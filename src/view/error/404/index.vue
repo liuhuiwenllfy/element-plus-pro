@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VeError404 from 've-error/404/index.vue'
+import VeError404 from '@/components/ve-error/404/index.vue'
 import router from '@/router'
 import {useCommonStore} from "@/pinia/common.ts";
 import VePage from "@/components/ve-page/index.vue";

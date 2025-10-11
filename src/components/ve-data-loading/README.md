@@ -9,14 +9,12 @@
 ### 安装
 
 ```shell
-npm install ve-load-more
 npm install ve-data-loading
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-load-more
 npm uninstall ve-data-loading
 ```
 

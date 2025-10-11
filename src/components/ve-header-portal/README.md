@@ -9,14 +9,12 @@
 ### 安装
 
 ```shell
-npm install ve-login
 npm install ve-header-portal
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall ve-login
 npm uninstall ve-header-portal
 ```
 

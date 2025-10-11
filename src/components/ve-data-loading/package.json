@@ -1,6 +1,6 @@
 {
   "name": "ve-data-loading",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
@@ -15,5 +15,8 @@
   "homepage": "https://www.liulingfengyu.cn/",
   "bugs": {
     "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
+  },
+  "dependencies": {
+    "ve-load-more": "*"
   }
 }

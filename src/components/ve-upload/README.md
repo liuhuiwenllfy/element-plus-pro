@@ -9,24 +9,12 @@
 ### 安装
 
 ```shell
-npm install axios
-
-npm install vue-cropper@next
-
-npm install ve-cropper-shear
-
 npm install ve-upload
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall axios
-
-npm uninstall vue-cropper@next
-
-npm uninstall ve-cropper-shear
-
 npm uninstall ve-upload
 ```
 

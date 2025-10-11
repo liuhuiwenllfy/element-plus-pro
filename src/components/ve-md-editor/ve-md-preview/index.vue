@@ -74,7 +74,7 @@ const mdHeadingId = (_text: string, _level: number, index: number) => props.idPr
           :previewTheme="previewTheme"
           :theme="theme"
           @onGetCatalog="onGetCatalog"
-          :mdHeadingId="mdHeadingId"
+          :mdHeadingId="<any>mdHeadingId"
       />
     </template>
   </ve-anchor>
@@ -86,7 +86,7 @@ const mdHeadingId = (_text: string, _level: number, index: number) => props.idPr
       :previewTheme="previewTheme"
       :theme="theme"
       @onGetCatalog="onGetCatalog"
-      :mdHeadingId="mdHeadingId"
+      :mdHeadingId="<any>mdHeadingId"
   />
 </template>
 

@@ -1,6 +1,6 @@
 {
   "name": "ve-upload",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
@@ -15,5 +15,9 @@
   "homepage": "https://epp.liulingfengyu.cn/",
   "bugs": {
     "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
+  },
+  "dependencies": {
+    "axios": "*",
+    "ve-cropper-shear": "*"
   }
 }

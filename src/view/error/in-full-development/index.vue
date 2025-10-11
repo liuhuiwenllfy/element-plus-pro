@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import router from '@/router'
 import {useCommonStore} from "@/pinia/common.ts";
-import InFullDevelopment from "ve-error/in-full-development/index.vue";
+import InFullDevelopment from "@/components/ve-error/in-full-development/index.vue";
 import VePage from "@/components/ve-page/index.vue";
 import code from './index.md?raw'
 import json from '@/components/ve-error/package.json'

@@ -11,20 +11,12 @@ https://imzbf.github.io/md-editor-v3/en-US/index
 ### 安装
 
 ```shell
-npm install axios
-
-npm install md-editor-v3 --save
-
 npm install ve-md-editor
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall axios
-
-npm uninstall md-editor-v3 --save
-
 npm uninstall ve-md-editor
 ```
 

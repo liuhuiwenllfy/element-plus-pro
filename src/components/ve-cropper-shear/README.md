@@ -7,16 +7,12 @@
 ### 安装
 
 ```shell
-npm install vue-cropper@next
-
 npm install ve-cropper-shear
 ```
 
 ### 卸载
 
 ```shell
-npm uninstall vue-cropper@next
-
 npm uninstall ve-cropper-shear
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "ve-md-editor",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
@@ -16,5 +16,10 @@
   "homepage": "https://epp.liulingfengyu.cn/",
   "bugs": {
     "url": "https://gitee.com/liu-ling-feng-yu/element-plus-pro/issues"
+  },
+  "dependencies": {
+    "axios": "*",
+    "ve-anchor": "*",
+    "md-editor-v3": "*"
   }
 }
