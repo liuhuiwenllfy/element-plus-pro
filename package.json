@@ -22,8 +22,8 @@
     "pinia-plugin-persistedstate": "^4.5.0",
     "screenfull": "^6.0.2",
     "ve-anchor": "^2.0.3",
-    "ve-cropper-shear": "^1.0.7",
-    "ve-icon": "^1.2.0",
+    "ve-cropper-shear": "^1.0.8",
+    "ve-icon": "^1.2.1",
     "ve-load-more": "^1.0.1",
     "ve-login": "^1.0.2",
     "ve-recursive-menu": "^1.0.6",
@@ -33,7 +33,7 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@types/node": "^24.7.1",
+    "@types/node": "^24.7.2",
     "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^6.0.1",
     "sass": "^1.93.2",

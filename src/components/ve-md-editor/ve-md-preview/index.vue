@@ -61,7 +61,7 @@ const onGetCatalog = (catalog: Array<any>) => {
   })
 }
 
-const mdHeadingId = (_text: string, _level: number, index: number) => props.idPrefix + (index - 1);
+const mdHeadingId = (options: any) => props.idPrefix + (options.index - 1);
 </script>
 
 <template>
