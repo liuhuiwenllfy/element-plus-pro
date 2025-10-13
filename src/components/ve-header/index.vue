@@ -234,11 +234,11 @@ const content = reactive<any>({
   },
   chinese: {
     zhCn: '中文',
-    en: 'chinese'
+    en: 'Chinese'
   },
   english: {
     zhCn: '英文',
-    en: 'english'
+    en: 'English'
   },
   light: {
     zhCn: '白天',
@@ -250,7 +250,7 @@ const content = reactive<any>({
   },
   logout: {
     zhCn: '登出',
-    en: 'logout'
+    en: 'Log out'
   }
 })
 </script>
