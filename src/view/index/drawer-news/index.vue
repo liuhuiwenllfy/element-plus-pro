@@ -75,18 +75,18 @@ const handleClose = () => {
             <el-icon>
               <ChatLineRound/>
             </el-icon>
-            {{ $t('message.message') }}
+            {{ t('message.message') }}
           </el-text>
         </el-col>
         <el-col v-if="data.length > 0" :span="12" style="text-align: right">
           <el-link :icon="VeClearOutlined" :underline="false" class="close-news" type="primary" @click="onReset">
-            {{ $t('message.reset') }}
+            {{ t('message.reset') }}
           </el-link>
         </el-col>
       </el-row>
       <el-divider style="margin: 10px 0"/>
       <el-scrollbar height="calc(100% - 34px)">
-        <el-empty v-if="data.length === 0" :description="$t('message.noData')"/>
+        <el-empty v-if="data.length === 0" :description="t('message.noData')"/>
         <el-card v-for="(item, index) in data" :key="index" :body-style="{padding:'15px'}" class="news-card"
                  shadow="hover">
           <el-link :icon="Close" :underline="false" class="close-news" type="primary"
@@ -99,7 +99,7 @@ const handleClose = () => {
                   <el-text>{{ item.sender }}</el-text>
                   <el-tag size="small">{{ item.typeCh }}</el-tag>
                   <el-tag :type="item.isRead ?'success':'danger'" size="small">
-                    {{ item.isRead ? $t('message.haveRead') : $t('message.unread') }}
+                    {{ item.isRead ? t('message.haveRead') : t('message.unread') }}
                   </el-tag>
                 </el-space>
               </el-space>

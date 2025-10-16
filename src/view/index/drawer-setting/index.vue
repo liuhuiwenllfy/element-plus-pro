@@ -6,6 +6,8 @@ import {useCommonStore} from "@/pinia/common.ts";
 import {ref, watch} from "vue";
 import {VeMdCloudyNight, VeSunny} from '@/components/ve-icon/other/components.ts'
 
+const {t} = useI18n()
+
 const commonStore = useCommonStore();
 
 const _drawer = ref(commonStore.getDrawer)
@@ -53,22 +55,22 @@ const handleNightChange = (command: any) => {
           <el-icon>
             <Setting/>
           </el-icon>
-          <span>{{ $t('message.setting') }}</span>
+          <span>{{ t('message.setting') }}</span>
         </div>
       </template>
       <el-descriptions :column="1" direction="vertical">
         <el-descriptions-item>
           <template #label>
-            <h2>{{ $t('message.layout') }}</h2>
+            <h2>{{ t('message.layout') }}</h2>
           </template>
           <Layout :layout="commonStore.getLayout" @handle-select="commonStore.changeLayout($event)"/>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label>
-            <h2>{{ $t('message.darkMode') }}</h2>
+            <h2>{{ t('message.darkMode') }}</h2>
           </template>
           <div class="item">
-            <span>{{ $t('message.whetherToTurnOnNightMode') }}</span>
+            <span>{{ t('message.whetherToTurnOnNightMode') }}</span>
             <el-switch
                 v-model="_dark"
                 :active-icon="VeMdCloudyNight"
@@ -81,26 +83,26 @@ const handleNightChange = (command: any) => {
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label>
-            <h2>{{ $t('message.globalSize') }}</h2>
+            <h2>{{ t('message.globalSize') }}</h2>
           </template>
           <div>
-            <div>{{ $t('message.selectGlobalSize') }}</div>
+            <div>{{ t('message.selectGlobalSize') }}</div>
             <el-radio-group v-model="_globalSizeChange" @change="handleGlobalSizeChange">
-              <el-radio label="large">{{ $t('message.large') }}</el-radio>
-              <el-radio label="default">{{ $t('message.default') }}</el-radio>
-              <el-radio label="small">{{ $t('message.small') }}</el-radio>
+              <el-radio label="large">{{ t('message.large') }}</el-radio>
+              <el-radio label="default">{{ t('message.default') }}</el-radio>
+              <el-radio label="small">{{ t('message.small') }}</el-radio>
             </el-radio-group>
           </div>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label>
-            <h2>{{ $t('message.globalization') }}</h2>
+            <h2>{{ t('message.globalization') }}</h2>
           </template>
           <div>
-            <div>{{ $t('message.chooseLanguage') }}</div>
+            <div>{{ t('message.chooseLanguage') }}</div>
             <el-radio-group v-model="_locale" @change="handleInternationalizationChange">
-              <el-radio label="zhCn">{{ $t('message.chinese') }}</el-radio>
-              <el-radio label="en">{{ $t('message.english') }}</el-radio>
+              <el-radio label="zhCn">{{ t('message.chinese') }}</el-radio>
+              <el-radio label="en">{{ t('message.english') }}</el-radio>
             </el-radio-group>
           </div>
         </el-descriptions-item>

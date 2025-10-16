@@ -1,13 +1,30 @@
 <script lang="ts" setup>
 
 import {useCommonStore} from "@/pinia/common.ts";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n()
 
 const commonStore = useCommonStore();
+
+const handleUserClick = (code: string) => {
+  switch (code) {
+    case 'officialWebsite':
+      window.open('https://www.liulingfengyu.cn')
+      break
+    case 'gitHub':
+      window.open('https://github.com/liuhuiwenllfy/element-plus-pro')
+      break
+    case 'gitee':
+      window.open('https://gitee.com/liu-ling-feng-yu/element-plus-pro')
+      break
+  }
+}
 </script>
 
 <template>
   <el-tooltip
-      :content="$t('message.setting')"
+      :content="t('message.setting')"
       effect="dark"
       placement="bottom-end">
     <el-link
@@ -17,48 +34,37 @@ const commonStore = useCommonStore();
         @click="commonStore.changeDrawer(true)"/>
   </el-tooltip>
   <el-tooltip
-      :content="$t('message.personalCenter')"
+      :content="t('message.officialWebsite')"
       effect="dark"
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="User"
-        type="primary"/>
+        icon="Setting"
+        type="primary"
+        @click="handleUserClick('officialWebsite')"/>
   </el-tooltip>
   <el-tooltip
-      :content="$t('message.modifyThePassword')"
+      content="GitHub"
       effect="dark"
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="Lock"
-        type="primary"/>
+        icon="Setting"
+        type="primary"
+        @click="handleUserClick('gitHub')"/>
   </el-tooltip>
   <el-tooltip
-      :content="$t('message.toTenant')"
+      content="Gitee"
       effect="dark"
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="House"
-        type="primary"/>
+        icon="Setting"
+        type="primary"
+        @click="handleUserClick('gitee')"/>
   </el-tooltip>
   <el-tooltip
-      :content="$t('message.informationCenter')"
-      effect="dark"
-      placement="bottom-end">
-    <el-link
-        :underline="false"
-        type="primary">
-      <el-badge :hidden="commonStore.newsNum  === 0" :value="commonStore.newsNum" style="height: 25px">
-        <el-icon>
-          <Bell/>
-        </el-icon>
-      </el-badge>
-    </el-link>
-  </el-tooltip>
-  <el-tooltip
-      :content="$t('message.logout')"
+      :content="t('message.logout')"
       effect="dark"
       placement="bottom-end">
     <el-link

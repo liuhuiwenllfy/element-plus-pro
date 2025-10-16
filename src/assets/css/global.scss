@@ -16,18 +16,5 @@
 //滚动条
 @forward "global-scrollbar";
 
-//一行省略
-.text-flow-ellipsis-multiple_1 {
-  /* 多余内容省略号处理-多行 */
-  word-break: break-all;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-}
-
-//去掉浏览器 :focus 黑边
-:focus-visible {
-  outline: none;
-}
+//自定义
+@forward "custom";

@@ -4,7 +4,7 @@ import {onMounted, ref, watch} from 'vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import moment from 'moment';
 import {getNpmStat} from "@/api/result/npmStat.ts";
-import {resData} from "@/entity/res.ts";
+import {ResData} from "@/entity/ResData.ts";
 
 const props = defineProps({
   id: {
@@ -86,7 +86,7 @@ const downloads = async () => {
 
   const currentDateFormatted = currentDate.format('YYYY-MM-DD');
   const oneMonthAgoDateFormatted = oneMonthAgoDate.format('YYYY-MM-DD');
-  const res = <resData>await getNpmStat({
+  const res = <ResData>await getNpmStat({
     packageName: props.id,
     startData: oneMonthAgoDateFormatted,
     endData: currentDateFormatted
