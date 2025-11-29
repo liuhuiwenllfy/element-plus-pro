@@ -48,15 +48,45 @@ const stats = [
     type: 'string',
     optional: '-',
     default: '300px',
+  },
+  {
+    name: 'anchorHeight',
+    instructions: '导航高度',
+    type: 'number',
+    optional: '-',
+    default: '继承height的数值',
+  }
+]
+
+const slots = [
+  {
+    name: 'default',
+    details: '左侧内容'
+  },
+  {
+    name: 'left-bottom',
+    details: '左侧底部'
+  },
+  {
+    name: 'left-top',
+    details: '左侧顶部'
+  },
+  {
+    name: 'right-top',
+    details: '右侧顶部'
+  },
+  {
+    name: 'right-bottom',
+    details: '右侧顶部'
   }
 ]
 </script>
 
 <template>
-  <ve-page id="ve-anchor" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
+  <ve-page id="ve-anchor" :_slots="slots" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
     <template #default>
       <el-card shadow="never">
-        <ve-anchor height="400px" :items="items">
+        <ve-anchor :height="400" :items="items">
           <template #default>
             <div v-for="(item, index) in items" :key="index" :id="item.id"
                  :style="{height: '300px', background: item.color}"/>

@@ -39,6 +39,13 @@ const slots = [
   <ve-page id="ve-back-top" :_slots="slots" :code="code" :stats="stats" :version="json.version"
            title="ve-back-top 回到顶部">
     <template #default>
+      <el-alert
+          style="width: 300px"
+          title="效果请参照页面右下方回到顶部。"
+          type="primary"
+          show-icon
+          :closable="false"
+      />
     </template>
   </ve-page>
 </template>

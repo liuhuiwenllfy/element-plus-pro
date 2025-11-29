@@ -2,10 +2,11 @@
 
 import {Anchor} from "./Anchor";
 import {nextTick, ref, watch} from "vue";
-import {ElCol, ElRow, ElSpace,} from "element-plus";
+import {ElCol, ElRow, ElScrollbar, ElSpace} from "element-plus";
 import 'element-plus/es/components/row/style/css'
 import 'element-plus/es/components/col/style/css'
 import 'element-plus/es/components/space/style/css'
+import 'element-plus/es/components/scrollbar/style/css'
 
 const props = defineProps({
   items: {
@@ -13,10 +14,15 @@ const props = defineProps({
     required: true
   },
   height: {
-    type: String,
+    type: Number,
     required: false,
-    default: () => '300px'
+    default: () => 300
   },
+  anchorHeight: {
+    type: Number,
+    required: false,
+    default: () => 0
+  }
 })
 
 const _id = ref<string>('')
@@ -90,19 +96,25 @@ const handleClick = (item: Anchor) => {
   <div class="ve-anchor">
     <el-row>
       <el-col :span="18">
-        <div :style="{height: height}" class="scroll">
+        <slot name="left-top"/>
+        <el-scrollbar :style="{height: `${height}px`}" class="scroll">
           <slot name="default"/>
-        </div>
+        </el-scrollbar>
+        <slot name="left-bottom"/>
       </el-col>
       <el-col :span="6">
-        <el-space>
-          <div class="mark" :style="{top: `${_index * 24 + 2}px`}"/>
-          <div>
-            <div @click="handleClick(item)" :class="`nav-${item.id}`" v-for="(item, index) in items" :key="index"
-                 class="nav" :style="{paddingLeft: `${16 * (item.level - 1) + 10}px`}">{{ item.title }}
+        <slot name="right-top"/>
+        <el-scrollbar :style="{height: `${anchorHeight == 0 ? height:anchorHeight}px`}">
+          <el-space>
+            <div class="mark" :style="{top: `${_index * 24 + 2}px`}"/>
+            <div>
+              <div @click="handleClick(item)" :class="`nav-${item.id}`" v-for="(item, index) in items" :key="index"
+                   class="nav" :style="{paddingLeft: `${16 * (item.level - 1) + 10}px`}">{{ item.title }}
+              </div>
             </div>
-          </div>
-        </el-space>
+          </el-space>
+        </el-scrollbar>
+        <slot name="right-bottom"/>
       </el-col>
     </el-row>
   </div>
@@ -110,9 +122,6 @@ const handleClick = (item: Anchor) => {
 
 <style lang="scss" scoped>
 .ve-anchor {
-  .scroll {
-    overflow-y: auto;
-  }
 
   .mark {
     position: absolute;
@@ -129,6 +138,12 @@ const handleClick = (item: Anchor) => {
 
   .nav {
     cursor: pointer;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
   }
 }
 </style>

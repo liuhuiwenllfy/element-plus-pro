@@ -212,11 +212,12 @@ const handleClick = (val: string) => {
 .emoji {
   cursor: pointer;
   font-size: 30px;
+  padding: 1px;
 
   &:hover {
     border-radius: 4px;
     border: 1px solid var(--el-border-color);
-    font-size: 28px;
+    padding: 0;
   }
 }
 </style>

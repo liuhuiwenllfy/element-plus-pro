@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import VeAside from '@/components/ve-aside/index.vue'
-import menuList from '@/api/json/menuList.json'
 import code from './index.md?raw'
 import json from '@/components/ve-aside/package.json'
 
@@ -154,19 +152,13 @@ const incident = [
   <ve-page id="ve-aside" :code="code" :incident="incident" :stats="stats" :version="json.version"
            title="ve-aside 侧边导航">
     <template #default>
-      <div class="aside-body">
-        <ve-aside
-            :layout="7"
-            :menu="<any>menuList"
-            :sidebar="false"
-            default-active="workbench"
-            language="zhCn"
-            logo="logo.png"
-            name="Demo"
-            @handle-active-change="(index)=>{console.log(index)}"
-        >
-        </ve-aside>
-      </div>
+      <el-alert
+          style="width: 300px"
+          title="效果请参照页面左侧侧边导航。"
+          type="primary"
+          show-icon
+          :closable="false"
+      />
     </template>
   </ve-page>
 </template>

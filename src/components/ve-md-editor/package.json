@@ -1,6 +1,6 @@
 {
   "name": "ve-md-editor",
-  "version": "1.1.9",
+  "version": "1.1.11",
   "author": {
     "email": "1305156911@qq.com",
     "name": "liuhuiwen",
@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "axios": "*",
-    "ve-anchor": "*",
     "md-editor-v3": "*"
   }
 }

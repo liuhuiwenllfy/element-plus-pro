@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import VeHeader from '@/components/ve-header/index.vue'
-import menuList from '@/api/json/menuList.json'
 import code from './index.md?raw'
 import json from '@/components/ve-header/package.json'
 
@@ -285,37 +283,12 @@ const incident = [
   <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" :version="json.version"
            title="ve-header 头部导航">
     <template #default>
-      <ve-header
-          :dark="false"
-          :drawerNews="false"
-          :fullScreen="false"
-          :layout="7"
-          :list="[{
-              code:'userInfo',
-              name:'个人中心',
-              icon:'User'
-            }]"
-          :menu="<any>menuList"
-          :newsNum="1"
-          :sidebar="false"
-          avatar="avatar.png"
-          defaultActive="home"
-          globalSize="default"
-          language="en"
-          logo="logo.png"
-          name="CodeEase"
-          navigation="工作台"
-          tenantName="刘凌枫羽工作室" username="sysadmin"
-          @handle-default-active-change="console.log($event)"
-          @handle-night-change="console.log($event)"
-          @handle-collapse-change="console.log($event)"
-          @handle-full-screen-change="console.log($event)"
-          @handle-global-size-change="console.log($event)"
-          @handle-language-change="console.log($event)"
-          @handle-news-change="console.log($event)"
-          @handle-sign-out="console.log('登出')"
-          @handle-user-click="console.log($event)"
-          @handle-global-setting-click="console.log('全局设置')"
+      <el-alert
+          style="width: 300px"
+          title="效果请参照页面头部导航。"
+          type="primary"
+          show-icon
+          :closable="false"
       />
     </template>
   </ve-page>

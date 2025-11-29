@@ -2,9 +2,7 @@
 
 import {MdPreview} from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
-import {PropType, ref} from "vue";
-import {Anchor} from "ve-anchor/Anchor.ts";
-import VeAnchor from "ve-anchor/index.vue";
+import {PropType} from "vue";
 
 const props = defineProps({
   // 唯一标识
@@ -36,50 +34,33 @@ const props = defineProps({
     required: false,
     default: () => 'anchor-'
   },
-  showAnchor: {
-    type: Boolean,
-    required: false,
-    default: () => false
-  },
-  height: {
-    type: String,
-    required: false,
-    default: () => '300px'
-  },
 })
 
-const items = ref<Anchor[]>([])
+const emits = defineEmits(['onGetCatalog'])
 
-const onGetCatalog = (catalog: Array<any>) => {
-  items.value = []
+interface Anchor {
+  level: number
+  id: string
+  title: string
+}
+
+const onGetCatalog = (catalog: any[]) => {
+  const items = [] as Anchor[]
   catalog.forEach((item, index) => {
-    items.value.push({
+    items.push({
       level: item.level,
-      id: props.idPrefix + index,
+      id: 'anchor-' + index,
       title: item.text
     })
-  })
+  });
+  emits('onGetCatalog', items)
 }
 
 const mdHeadingId = (options: any) => props.idPrefix + (options.index - 1);
 </script>
 
 <template>
-  <ve-anchor v-if="items.length > 0 && showAnchor" :height="height" :items="items">
-    <template #default>
-      <MdPreview
-          class="md"
-          :editorId="editorId"
-          :modelValue="modelValue"
-          :previewTheme="previewTheme"
-          :theme="theme"
-          @onGetCatalog="onGetCatalog"
-          :mdHeadingId="<any>mdHeadingId"
-      />
-    </template>
-  </ve-anchor>
   <MdPreview
-      v-else
       class="md"
       :editorId="editorId"
       :modelValue="modelValue"

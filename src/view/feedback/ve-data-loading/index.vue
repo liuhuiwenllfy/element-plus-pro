@@ -68,9 +68,9 @@ const loadMoreShow = ref(true)
 const skeletonShow = ref(false)
 
 const loadMore = async () => {
-  currentTotal.value += 3
   skeletonShow.value = true
   setTimeout(() => {
+    currentTotal.value += 3
     skeletonShow.value = false
     loadMoreShow.value = currentTotal.value < size.value
   }, 500)

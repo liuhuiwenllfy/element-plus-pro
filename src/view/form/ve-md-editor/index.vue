@@ -7,6 +7,8 @@ import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
 import code from './index.md?raw'
 import json from '@/components/ve-md-editor/package.json'
+import {Anchor} from "ve-anchor/Anchor.ts";
+import VeAnchor from '@/components/ve-anchor/index.vue'
 
 const _value = ref('# **1024程序员节：致敬数字世界的创造者**  \n' +
     '\n' +
@@ -195,18 +197,11 @@ const stats = [
     default: 'dark',
   },
   {
-    name: 'show-anchor',
-    instructions: '是否展示导航，该功能依赖锚点组件，使用时请自行安装ve-anchor组件',
-    type: 'boolean',
-    optional: 'true-是；false-否',
-    default: 'false',
-  },
-  {
-    name: 'height',
-    instructions: '视窗高度',
+    name: 'idPrefix',
+    instructions: '锚点前缀',
     type: 'string',
     optional: '-',
-    default: '300px',
+    default: 'anchor-',
   }
 ]
 
@@ -219,6 +214,8 @@ const incident = [
 ]
 
 const commonStore = useCommonStore();
+
+const items = ref<Anchor[]>([])
 </script>
 
 <template>
@@ -228,7 +225,12 @@ const commonStore = useCommonStore();
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>
       <h3>预览区域</h3>
-      <ve-md-preview show-anchor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-preview>
+      <ve-anchor :items="items">
+        <template #default>
+          <ve-md-preview :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"
+                         @on-get-catalog="items = $event"></ve-md-preview>
+        </template>
+      </ve-anchor>
     </template>
   </ve-page>
 </template>
