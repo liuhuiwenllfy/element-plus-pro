@@ -10,9 +10,10 @@ const items = ref<MyAnchor[]>([
 
 ```vue
 
-<ve-anchor :height="400" :items="nav">
+<ve-anchor height="400px" :items="items">
   <template #default>
-    <div v-for="(item, index) in nav" :key="index" :id="item.id" :style="{height: '300px', background: item.color}"/>
+    <div v-for="(item, index) in items" :key="index" :id="item.id"
+         :style="{height: '300px', background: item.color}"/>
   </template>
 </ve-anchor>
 ```

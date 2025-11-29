@@ -4,13 +4,16 @@ import {useCommonStore} from "@/pinia/common.ts";
 import menuList from '@/api/json/menuList.json'
 import router from "@/router";
 import {computed} from "vue";
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n()
 
 const commonStore = useCommonStore()
 
 const userInfo = [
   {
     code: 'officialWebsite',
-    name: '官方网站',
+    name: t('message.officialWebsite'),
     icon: 'Promotion'
   },
   {

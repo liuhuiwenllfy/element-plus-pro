@@ -1,4 +1,4 @@
-export interface resData {
+export interface ResData {
     code: Number   // 状态值
     data: any   // 数据
     msg: any  // 消息
