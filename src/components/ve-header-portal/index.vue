@@ -115,8 +115,8 @@ const handleRegister = async () => {
   emits('handleRegister')
 }
 
-const handleMenuClick = async (url: string) => {
-  emits('handleMenuClick', url)
+const handleMenuClick = async (menuItem: any) => {
+  emits('handleMenuClick', menuItem)
 }
 
 const content = reactive<any>({
@@ -177,7 +177,7 @@ const content = reactive<any>({
               </el-dropdown-menu>
             </template>
           </el-dropdown>
-          <li v-else class="menu1" @click="handleMenuClick(item.route)">
+          <li v-else class="menu1" @click="handleMenuClick(item)">
             <el-text truncated>{{ item.name }}</el-text>
           </li>
         </template>
@@ -197,11 +197,11 @@ const content = reactive<any>({
             <el-dropdown-menu>
               <template v-for="(item, index) in menu" :key="index">
                 <el-dropdown-item v-if="!item.children || item.children.length === 0"
-                                  @click="handleMenuClick(item.route)">
+                                  @click="handleMenuClick(item)">
                   {{ item.name }}
                 </el-dropdown-item>
                 <template v-for="(item1) in item.children" :key="item1.route">
-                  <el-dropdown-item @click="handleMenuClick(item1.route)">
+                  <el-dropdown-item @click="handleMenuClick(item1)">
                     {{ item1.name }}
                   </el-dropdown-item>
                 </template>

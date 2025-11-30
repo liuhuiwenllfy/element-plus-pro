@@ -14,14 +14,14 @@ const props = defineProps({
     required: true
   },
   height: {
-    type: Number,
+    type: String,
     required: false,
-    default: () => 300
+    default: () => '300px'
   },
   anchorHeight: {
-    type: Number,
+    type: String,
     required: false,
-    default: () => 0
+    default: () => ''
   }
 })
 
@@ -97,14 +97,14 @@ const handleClick = (item: Anchor) => {
     <el-row>
       <el-col :span="18">
         <slot name="left-top"/>
-        <el-scrollbar :style="{height: `${height}px`}" class="scroll">
+        <el-scrollbar :style="{height: height}" class="scroll">
           <slot name="default"/>
         </el-scrollbar>
         <slot name="left-bottom"/>
       </el-col>
       <el-col :span="6">
         <slot name="right-top"/>
-        <el-scrollbar :style="{height: `${anchorHeight == 0 ? height:anchorHeight}px`}">
+        <el-scrollbar :style="{height: anchorHeight ? anchorHeight:height}">
           <el-space>
             <div class="mark" :style="{top: `${_index * 24 + 2}px`}"/>
             <div>

@@ -52,7 +52,7 @@ const stats = [
   {
     name: 'anchorHeight',
     instructions: '导航高度',
-    type: 'number',
+    type: 'string',
     optional: '-',
     default: '继承height的数值',
   }
@@ -86,7 +86,7 @@ const slots = [
   <ve-page id="ve-anchor" :_slots="slots" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
     <template #default>
       <el-card shadow="never">
-        <ve-anchor :height="400" :items="items">
+        <ve-anchor height="400px" :items="items">
           <template #default>
             <div v-for="(item, index) in items" :key="index" :id="item.id"
                  :style="{height: '300px', background: item.color}"/>
