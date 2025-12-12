@@ -5,7 +5,7 @@ import * as AnimationSvgList from '@/components/ve-icon/svg-spinners/components'
 import * as OtherSvgList from '@/components/ve-icon/other/components'
 import * as MdiLightSvgList from '@/components/ve-icon/mdi-light/components'
 import {onMounted, reactive} from "vue";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-icon/package.json'
 
 const _animationIcons = reactive<string[]>([])
@@ -74,7 +74,7 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-icon" :code="code" :stats="stats" :version="json.version" title="ve-icon Icon 图标">
+  <ve-page :readme="readme" :stats="stats" :json="json">
     <template #default>
       <h4>Svg-Spinners</h4>
       <ul class="icon-list">

@@ -2,7 +2,7 @@
 
 import json from "@/components/ve-data-loading/package.json";
 import VePage from "@/components/ve-page/index.vue";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import VeDataLoading from '@/components/ve-data-loading/index.vue'
 import {ref} from 'vue'
 
@@ -78,8 +78,7 @@ const loadMore = async () => {
 </script>
 
 <template>
-  <ve-page id="ve-data-loading" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-data-loading 加载更多">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <p v-for="item in currentTotal" :key="item" class="scrollbar-demo-item">{{ item }}</p>
       <ve-data-loading

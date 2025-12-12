@@ -2,7 +2,7 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeAnchor from '@/components/ve-anchor/index.vue'
 import {ref} from "vue";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-anchor/package.json'
 import {MyAnchor} from "@/view/navigation/ve-anchor/MyAnchor.ts";
 
@@ -83,7 +83,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-anchor" :_slots="slots" :code="code" :stats="stats" :version="json.version" title="ve-anchor 锚点">
+  <ve-page :_slots="slots" :readme="readme" :stats="stats" :json="json">
     <template #default>
       <el-card shadow="never">
         <ve-anchor height="400px" :items="items">

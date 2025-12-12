@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VeJustify from '@/components/ve-justify/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-justify/package.json'
 
 const slots = [
@@ -17,7 +17,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-justify" :_slots="slots" :code="code" :version="json.version" title="ve-justify 左右分布">
+  <ve-page :_slots="slots" :readme="readme" :json="json">
     <template #default>
       <ve-justify>
         <template #left>左侧区域</template>

@@ -7,22 +7,12 @@ import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import VeDownloads from "@/components/ve-page/ve-downloads/index.vue";
 
 defineProps({
-  title: {
-    type: String,
-    required: true,
-    default: () => ""
-  },
-  id: {
-    type: String,
-    required: true,
-    default: () => ""
-  },
-  code: {
-    type: String,
+  json: {
+    type: Object as any,
     required: false,
     default: () => null
   },
-  version: {
+  code: {
     type: String,
     required: false,
     default: () => null
@@ -54,8 +44,8 @@ const commonStore = useCommonStore();
 <template>
   <div>
     <el-space>
-      <h2>{{ title }}</h2>
-      <el-tag v-if="version" round size="small" type="primary">{{ version }}</el-tag>
+      <h2>{{ json.name + ' ' + json.description }}</h2>
+      <el-tag v-if="json.version" round size="small" type="primary">{{ json.version }}</el-tag>
     </el-space>
     <el-divider/>
     <h3>Example</h3>
@@ -96,7 +86,7 @@ const commonStore = useCommonStore();
         </el-space>
       </el-link>
       <el-link type="primary"
-               @click="openUrl(`https://gitee.com/liu-ling-feng-yu/element-plus-pro/tree/master/src/components/${id}`)">
+               @click="openUrl(`https://gitee.com/liu-ling-feng-yu/element-plus-pro/tree/master/src/components/${json.name}`)">
         <el-space>
           <span>源码：Gitee</span>
           <el-icon>
@@ -106,7 +96,7 @@ const commonStore = useCommonStore();
       </el-link>
     </el-space>
     <h2>Downloads</h2>
-    <ve-downloads :id="id"/>
+    <ve-downloads :id="json.name"/>
   </div>
 </template>
 

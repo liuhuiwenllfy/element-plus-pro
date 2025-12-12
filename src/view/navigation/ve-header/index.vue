@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-header/package.json'
 
 const stats = [
@@ -280,8 +280,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-header 头部导航">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <el-alert
           style="width: 300px"

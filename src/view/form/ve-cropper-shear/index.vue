@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VeCropperShear from '@/components/ve-cropper-shear/index.vue'
 import VePage from '@/components/ve-page/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import {reactive} from "vue";
 import json from '@/components/ve-cropper-shear/package.json'
 
@@ -66,8 +66,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-upload" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-cropper-shear 图片裁剪">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-cropper-shear :fixed-number-list="_list" img="avatar.png"/>
     </template>

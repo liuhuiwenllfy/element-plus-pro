@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from '@/components/ve-page/index.vue'
 import VeSearch from '@/components/ve-search/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-search/package.json'
 
 const stats = [
@@ -31,8 +31,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-search" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-search 搜索">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-search language="zhCn" val="标题党" @handle-click="console.log($event)"/>
     </template>

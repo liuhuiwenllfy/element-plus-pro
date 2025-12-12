@@ -5,7 +5,7 @@ import VeMdEditor from '@/components/ve-md-editor/ve-md-editor/index.vue'
 import VeMdPreview from '@/components/ve-md-editor/ve-md-preview/index.vue'
 import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-md-editor/package.json'
 import {Anchor} from "ve-anchor/Anchor.ts";
 import VeAnchor from '@/components/ve-anchor/index.vue'
@@ -219,8 +219,7 @@ const items = ref<Anchor[]>([])
 </script>
 
 <template>
-  <ve-page id="ve-md-editor" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-md-editor md文档">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>

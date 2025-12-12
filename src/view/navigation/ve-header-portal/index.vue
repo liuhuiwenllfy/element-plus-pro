@@ -3,7 +3,7 @@ import VePage from '@/components/ve-page/index.vue'
 import VeHeaderPortal from '@/components/ve-header-portal/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import {computed, reactive} from 'vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import VeSearch from '@/components/ve-search/index.vue'
 import json from '@/components/ve-header-portal/package.json'
 
@@ -177,8 +177,7 @@ const menu = computed(() => {
 </script>
 
 <template>
-  <ve-page id="ve-header" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-header 头部导航">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-header-portal
           :dark="commonStore.getDark"

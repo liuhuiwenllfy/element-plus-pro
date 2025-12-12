@@ -3,7 +3,7 @@ import VePage from "@/components/ve-page/index.vue";
 import VeTableColumn from '@/components/ve-table-column/index.vue'
 import {computed, ref} from 'vue'
 import {Delete, Document, Edit} from "@element-plus/icons-vue";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import VeTableArea from "@/components/ve-table-area/index.vue";
 import json from '@/components/ve-table-column/package.json'
 import {ElMessage} from "element-plus";
@@ -206,7 +206,7 @@ const _data = ref([
 ])
 
 const handleRefresh = () => {
-  ElMessage.success("refresh")
+  ElMessage.success("刷新了")
 }
 
 const _fullScreen = ref(false)
@@ -220,8 +220,7 @@ const handleFullScreen = (fullScreen: boolean, tableHeight: number) => {
 </script>
 
 <template>
-  <ve-page id="ve-table-column" :_slots="slots" :code="code" :incident="incident" :stats="stats"
-           :version="json.version" title="ve-table-column 表格区域">
+  <ve-page :_slots="slots" :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-table-area class="ve-table" language="zhCn">
         <template #header>

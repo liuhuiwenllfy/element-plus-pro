@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VePlugin from '@/components/ve-plugin/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import {Money} from "@element-plus/icons-vue";
 import json from '@/components/ve-plugin/package.json'
 import {ref} from "vue";
@@ -75,8 +75,7 @@ const rating = ref(4)
 </script>
 
 <template>
-  <ve-page id="ve-plugin" :_slots="slots" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-plugin 插件">
+  <ve-page :_slots="slots" :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-plugin id="123456" @handle-click="console.log($event)">
         <template #preview>

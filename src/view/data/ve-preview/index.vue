@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VePreview from '@/components/ve-preview/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-preview/package.json'
 
 const stats = [
@@ -23,7 +23,7 @@ const stats = [
 </script>
 
 <template>
-  <ve-page id="ve-preview" :code="code" :stats="stats" :version="json.version" title="ve-preview 预览">
+  <ve-page :readme="readme" :stats="stats" :json="json">
     <template #default>
       <ve-preview
           :list="['avatar.png']"></ve-preview>
