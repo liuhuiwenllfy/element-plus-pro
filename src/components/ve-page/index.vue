@@ -68,7 +68,7 @@ const commonStore = useCommonStore();
     </template>
     <h2>Assets</h2>
     <el-space size="large">
-      <el-link type="primary" @click="openUrl(`https://www.npmjs.com/package/${id}`)">
+      <el-link type="primary" @click="openUrl(`https://www.npmjs.com/package/${json.name}`)">
         <el-space>
           <span>安装：npm</span>
           <el-icon>
@@ -77,7 +77,7 @@ const commonStore = useCommonStore();
         </el-space>
       </el-link>
       <el-link type="primary"
-               @click="openUrl(`https://github.com/liuhuiwenllfy/element-plus-pro/tree/master/src/components/${id}`)">
+               @click="openUrl(`https://github.com/liuhuiwenllfy/element-plus-pro/tree/master/src/components/${json.name}`)">
         <el-space>
           <span>源码：Github</span>
           <el-icon>
