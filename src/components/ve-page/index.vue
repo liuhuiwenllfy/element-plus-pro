@@ -7,13 +7,13 @@ import VeStats from "@/components/ve-page/ve-stats/index.vue";
 import VeDownloads from "@/components/ve-page/ve-downloads/index.vue";
 
 defineProps({
-  json: {
-    type: Object as any,
+  readme: {
+    type: String,
     required: false,
     default: () => null
   },
-  code: {
-    type: String,
+  json: {
+    type: Object as any,
     required: false,
     default: () => null
   },
@@ -51,9 +51,9 @@ const commonStore = useCommonStore();
     <h3>Example</h3>
     <slot></slot>
     <el-divider/>
-    <template v-if="code">
+    <template v-if="readme">
       <h3>Code</h3>
-      <ve-md-preview :modelValue="code" :theme="commonStore.getDark? 'dark':'light'"/>
+      <ve-md-preview :modelValue="readme" :theme="commonStore.getDark? 'dark':'light'"/>
     </template>
     <el-divider/>
     <h2 v-if="stats || incident || _slots">Api</h2>
