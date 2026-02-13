@@ -4,7 +4,6 @@ import {useCommonStore} from "@/pinia/common.ts";
 import VeIncident from "@/components/ve-page/ve-incident/index.vue";
 import VeSlots from "@/components/ve-page/ve-slots/index.vue";
 import VeStats from "@/components/ve-page/ve-stats/index.vue";
-import VeDownloads from "@/components/ve-page/ve-downloads/index.vue";
 
 defineProps({
   title: {
@@ -106,7 +105,7 @@ const commonStore = useCommonStore();
       </el-link>
     </el-space>
     <h2>Downloads</h2>
-    <ve-downloads :id="id"/>
+    <!--    <ve-downloads :id="id"/>-->
   </div>
 </template>
 
