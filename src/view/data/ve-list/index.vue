@@ -2,7 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeList from "@/components/ve-list/index.vue";
 import {ref} from "vue";
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-list/package.json'
 
 const _list = ref([
@@ -73,7 +73,7 @@ const slots = [
 </script>
 
 <template>
-  <ve-page id="ve-list" :_slots="slots" :code="code" :stats="stats" :version="json.version" title="ve-list 列表">
+  <ve-page :json="json" :_slots="slots" :readme="readme" :stats="stats">
     <template #default>
       <el-divider content-position="left">list1</el-divider>
       <ve-list v-for="(item, index) in _list" :key="index" :data="item" type="list1">

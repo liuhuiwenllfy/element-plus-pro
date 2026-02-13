@@ -2,7 +2,7 @@
 import VePage from "@/components/ve-page/index.vue";
 import VeDefaultLogin from '@/components/ve-login/ve-default-login/index.vue'
 import VeUserInfo from '@/components/ve-login/ve-user-info/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-login/package.json'
 
 const stats = [
@@ -82,7 +82,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-login" :code="code" :incident="incident" :stats="stats" :version="json.version" title="ve-login 登录">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-default-login avatar="avatar.png" @handle-login="console.log('登录')"
                         @handle-register="console.log('注册')"></ve-default-login>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import VePage from "@/components/ve-page/index.vue";
 import VePagination from '@/components/ve-pagination/index.vue'
-import code from './index.md?raw'
+import readme from './index.md?raw'
 import json from '@/components/ve-pagination/package.json'
 
 const stats = [
@@ -43,8 +43,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page id="ve-pagination" :code="code" :incident="incident" :stats="stats" :version="json.version"
-           title="ve-pagination 分页">
+  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
     <template #default>
       <ve-pagination
           :current="2"
