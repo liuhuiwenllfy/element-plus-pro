@@ -82,3 +82,4 @@ export {default as VeRateReviewOutline} from './ve-rate-review-outline/index.vue
 export {default as VeIconGitcode} from './ve-icon-gitcode/index.vue'
 export {default as VeIconQQ} from './ve-icon-qq/index.vue'
 export {default as VeIconWeibo} from './ve-icon-weibo/index.vue'
+export {default as VeIconOschina} from './ve-icon-oschina/index.vue'
