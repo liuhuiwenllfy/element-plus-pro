@@ -222,6 +222,34 @@ const stats = [
     optional: '-',
     default: '-',
   },
+  {
+    name: 'isShowGlobalSizeChange',
+    instructions: '是否显示全局尺寸切换',
+    type: 'boolean',
+    optional: 'true-开；false-关',
+    default: 'true',
+  },
+  {
+    name: 'isShowLanguageChange',
+    instructions: '是否显示语言切换',
+    type: 'boolean',
+    optional: 'true-开；false-关',
+    default: 'true',
+  },
+  {
+    name: 'isShowNightChange',
+    instructions: '是否显示夜间模式切换',
+    type: 'boolean',
+    optional: 'true-开；false-关',
+    default: 'true',
+  },
+  {
+    name: 'isShowGlobalSetting',
+    instructions: '是否显示全局设置',
+    type: 'boolean',
+    optional: 'true-开；false-关',
+    default: 'true',
+  },
 ]
 
 const incident = [

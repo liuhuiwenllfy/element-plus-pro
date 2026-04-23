@@ -134,6 +134,26 @@ const props = defineProps({
     required: false,
     default: () => []
   },
+  isShowGlobalSizeChange: {
+    type: Boolean,
+    required: false,
+    default: () => true
+  },
+  isShowLanguageChange: {
+    type: Boolean,
+    required: false,
+    default: () => true
+  },
+  isShowNightChange: {
+    type: Boolean,
+    required: false,
+    default: () => true
+  },
+  isShowGlobalSetting: {
+    type: Boolean,
+    required: false,
+    default: () => true
+  }
 })
 
 const emits = defineEmits([
@@ -306,7 +326,7 @@ const content = reactive<any>({
       <li style="padding: 0">
         <FullScreen :full-screen="_fullScreen" @handle-full-screen="handleFullScreenChange"/>
       </li>
-      <li style="padding: 0">
+      <li style="padding: 0" v-if="isShowGlobalSizeChange">
         <el-dropdown trigger="hover" @command="handleGlobalSizeChange">
           <el-icon size="20" style="padding: 20px">
             <VeOutlineFormatSize/>
@@ -335,7 +355,7 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li style="padding: 0">
+      <li style="padding: 0" v-if="isShowLanguageChange">
         <el-dropdown trigger="hover" @command="handleLanguageChange">
           <el-icon class="dropdown-icon" size="20" style="padding: 20px">
             <VeEnglishToChinese/>
@@ -358,7 +378,7 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li class="text">
+      <li class="text" v-if="isShowNightChange">
         <div class="night">
           <el-switch
               v-model="_dark"
@@ -396,7 +416,7 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li @click="handleGlobalSettingClick">
+      <li @click="handleGlobalSettingClick" v-if="isShowGlobalSetting">
         <el-icon>
           <MoreFilled/>
         </el-icon>
