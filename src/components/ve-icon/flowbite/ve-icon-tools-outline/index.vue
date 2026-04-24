@@ -1,0 +1,18 @@
+<script lang="ts" setup>
+
+defineProps({
+  size: {
+    type: String,
+    required: false,
+    default: () => '16'
+  }
+})
+
+</script>
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24"><!-- Icon from Flowbite Icons by Themesberg - https://github.com/themesberg/flowbite-icons/blob/main/LICENSE --><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="m7.582 8.96l2.232 2.232l-1.618 1.618a3.523 3.523 0 0 0-3.697 5.12a1 1 0 0 0 .936.53a1 1 0 0 0 .53.936a3.522 3.522 0 0 0 5.12-3.697l4.81-4.811a3.523 3.523 0 0 0 3.697-5.12a1 1 0 0 0-.935-.53a1 1 0 0 0-.531-.936a3.523 3.523 0 0 0-5.12 3.697l-1.778 1.778l-2.232-2.231zm1.31-3.14a1 1 0 0 0-.536-.761L6.374 4.046a1 1 0 0 0-1.162.183l-.863.863a1 1 0 0 0-.183 1.162l1.013 1.982a1 1 0 0 0 .762.537l1.112.144a1 1 0 0 0 .836-.285l.863-.863a1 1 0 0 0 .285-.835zm10.553 10.585l-3.119-3.119a2 2 0 0 0-2.828 0l-.172.173a2 2 0 0 0 0 2.828l3.118 3.119a2 2 0 0 0 2.829 0l.172-.172a2 2 0 0 0 0-2.829Z"/></svg></template>
+
+<style lang="scss" scoped>
+
+</style>
