@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {CaretTop} from '@element-plus/icons-vue'
-import {ElButton, ElSpace} from 'element-plus'
+import {ElSpace} from 'element-plus'
 import 'element-plus/es/components/space/style/css'
 import 'element-plus/es/components/button/style/css'
 

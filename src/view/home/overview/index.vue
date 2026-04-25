@@ -22,6 +22,8 @@ const getMenuName = (item: MenuInfoShowVo) => {
 const getChildLength = (item: MenuInfoShowVo) => {
   return item.children.filter(o => getMenuName(o).includes(search.value)).length
 }
+
+const menu = ref<MenuInfoShowVo[]>(<any>menuList)
 </script>
 
 <template>
@@ -37,7 +39,7 @@ const getChildLength = (item: MenuInfoShowVo) => {
       />
     </div>
     <el-divider/>
-    <div v-for="(item, index) in <any>menuList" :key="index">
+    <div v-for="(item, index) in menu" :key="index">
       <div v-if="index > 0">
         <div v-if="!search || getChildLength(item) > 0">
           <el-space size="small">

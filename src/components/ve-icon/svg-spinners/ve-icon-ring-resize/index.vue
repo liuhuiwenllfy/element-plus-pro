@@ -13,7 +13,7 @@ defineProps({
 <template>
   <svg :height="size" :width="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
-    <g :stroke="color">
+    <g stroke="currentColor">
       <circle cx="12" cy="12" fill="none" r="9.5" stroke-linecap="round" stroke-width="3">
         <animate attributeName="stroke-dasharray" calcMode="spline" dur="1.5s"
                  keySplines="0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1" keyTimes="0;0.475;0.95;1"

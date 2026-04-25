@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import {PropType, reactive, ref} from 'vue'
 import {ElDropdown, ElDropdownItem, ElDropdownMenu, ElIcon, ElImage, ElSpace, ElSwitch, ElText} from "element-plus";
-import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/other/components'
+import {VeEnglishInput, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/other/components'
 import {VeIconLanguageOutline} from 've-icon/flowbite/components.ts'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
@@ -13,10 +13,11 @@ import 'element-plus/es/components/text/style/css'
 import 'element-plus/es/components/image/style/css'
 import 'element-plus/es/components/switch/style/css'
 import 'element-plus/es/components/badge/style/css'
-import {DropdownItem} from "./DropdownItem";
 import VeDefaultLogin from 've-login/ve-default-login/index.vue'
 import VeUserInfo from 've-login/ve-user-info/index.vue'
 import {ArrowDown, Menu, TopRight} from '@element-plus/icons-vue'
+import {MenuDropdownItem} from "@/components/ve-header-portal/MenuDropdownItem.ts";
+import {UserDropdownItem} from "@/components/ve-header/UserDropdownItem.ts";
 
 const props = defineProps({
   language: {
@@ -60,12 +61,12 @@ const props = defineProps({
     default: () => ''
   },
   list: {
-    type: Array<DropdownItem>,
+    type: Array<UserDropdownItem>,
     required: false,
     default: () => []
   },
   menu: {
-    type: Array<any>,
+    type: Array<MenuDropdownItem>,
     required: false,
     default: () => []
   }
