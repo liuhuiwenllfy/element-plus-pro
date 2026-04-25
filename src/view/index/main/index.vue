@@ -4,7 +4,6 @@ import {useCommonStore} from "@/pinia/common.ts";
 import {useRoute, useRouter} from "vue-router";
 import {ElScrollbar} from "element-plus";
 import {ref, watch} from "vue";
-import {InfoFilled} from "@element-plus/icons-vue";
 import {VeWeixin} from "@/components/ve-icon/other/components.ts";
 import VeBackTop from "@/components/ve-back-top/index.vue";
 
@@ -69,24 +68,13 @@ const backTop = () => {
           />
           <div style="text-align: center">关注公众号</div>
           <template #reference>
-            <el-button>
+            <div :class="_isShowBack? 'bottom-color':''" class="weixin">
               <el-icon>
                 <VeWeixin/>
               </el-icon>
-            </el-button>
+            </div>
           </template>
         </el-popover>
-        <div class="line"></div>
-        <el-tooltip
-            class="box-item"
-            effect="dark"
-            placement="left">
-          <template #content>
-            反馈
-          </template>
-          <el-button :icon="InfoFilled"></el-button>
-        </el-tooltip>
-        <div v-show="_isShowBack" class="line"></div>
       </template>
     </ve-back-top>
   </div>
@@ -108,24 +96,20 @@ const backTop = () => {
 
   .back-top {
 
-    .el-button {
-      height: 50px;
-      width: 50px;
-      border: none;
-      background-color: var(--el-bg-color);
-      color: var(--el-text-color-placeholder);
-      font-size: 20px;
+    .weixin {
+      font-size: 24px;
+      padding: 8px 13px 7px;
 
       &:hover {
-        color: var(--el-color-primary);
-        background-color: transparent;
+        .el-icon {
+          color: #66b1ff;
+        }
       }
     }
 
-    .line {
-      width: 50px;
-      border-top: 1px solid;
-      border-color: var(--el-border-color-lighter);
+    .bottom-color {
+      border-bottom: 1px solid $light-border;
+
     }
   }
 }

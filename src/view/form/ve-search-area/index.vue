@@ -41,7 +41,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <ve-search-area
           :open="_open"
@@ -49,9 +49,6 @@ const incident = [
           language="zhCn"
           @handle-click="_open = $event">
         <el-form inline>
-          <el-form-item>
-            <el-input placeholder="请输入"/>
-          </el-form-item>
           <el-form-item>
             <el-input placeholder="请输入"/>
           </el-form-item>

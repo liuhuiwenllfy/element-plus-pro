@@ -66,14 +66,13 @@ const incident = [
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <el-alert
-          style="width: 300px"
+          :closable="false"
+          show-icon
           title="效果请参照页面顶部下方快速戴航。"
           type="primary"
-          show-icon
-          :closable="false"
       />
     </template>
   </ve-page>

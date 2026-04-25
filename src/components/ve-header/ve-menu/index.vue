@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import RecursiveMenu from 've-recursive-menu/index.vue'
 import {nextTick, PropType, reactive, watch} from 'vue'
-import {More} from '@element-plus/icons-vue'
+import {MoreFilled} from '@element-plus/icons-vue'
 import {MenuInfoShowVo} from '../MenuInfoShowVo'
 import {ElIcon, ElMenu, ElSubMenu} from 'element-plus'
 import 'element-plus/es/components/menu/style/css'
@@ -81,7 +81,7 @@ const maxMenuSize = () => {
                    index="5962e9dcbb31498a8d7045b5a96605ff">
         <template #title>
           <el-icon>
-            <More/>
+            <MoreFilled/>
           </el-icon>
         </template>
         <recursive-menu :menu-data="menuData.slice(data.maxSize)"/>

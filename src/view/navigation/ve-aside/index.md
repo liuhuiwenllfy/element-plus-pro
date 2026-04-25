@@ -1,5 +1,10 @@
+> 使用方法
+
 ```ts
-const menuList = [
+import VeAside from 've-aside/index.vue'
+import {MenuInfoShowVo} from "ve-aside/MenuInfoShowVo.ts";
+
+const menu = ref<MenuInfoShowVo[]>([
     {
         "id": "e9ffbd2bb49d540d5544ce735522b190",
         "menuCode": "home",
@@ -19,20 +24,20 @@ const menuList = [
                 "parentId": "e9ffbd2bb49d540d5544ce735522b190",
                 "menuLevel": 1,
                 "menuSort": 0,
-                "menuIcon": "Shop",
+                "menuIcon": "VeIconStoreSolid",
                 "menuPath": "/overview",
                 "menuComponent": "home/overview",
                 "children": []
             }
         ]
     }
-]
+])
 ```
 
 ```vue
 <ve-aside
     :layout="7"
-    :menu="menuList"
+    :menu="menu"
     :sidebar="false"
     default-active="workbench"
     language="zhCn"

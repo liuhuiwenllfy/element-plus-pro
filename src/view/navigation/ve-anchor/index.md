@@ -1,4 +1,14 @@
+> 使用方法
+
 ```ts
+import {Anchor} from "ve-anchor/Anchor.ts";
+import VeAnchor from 've-anchor/index.vue'
+
+
+interface MyAnchor extends Anchor {
+    color: string
+}
+
 const items = ref<MyAnchor[]>([
     {level: 0, id: "1", title: "part-1", color: '#C6E2FF'},
     {level: 1, id: "2", title: "part-1-1", color: '#F8E3C5'},
@@ -9,7 +19,6 @@ const items = ref<MyAnchor[]>([
 ```
 
 ```vue
-
 <ve-anchor height="400px" :items="items">
   <template #default>
     <div v-for="(item, index) in items" :key="index" :id="item.id"

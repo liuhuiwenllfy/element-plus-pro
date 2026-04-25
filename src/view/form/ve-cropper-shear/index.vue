@@ -66,7 +66,7 @@ const incident = [
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <ve-cropper-shear :fixed-number-list="_list" img="avatar.png"/>
     </template>

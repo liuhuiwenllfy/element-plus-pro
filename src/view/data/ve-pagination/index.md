@@ -1,3 +1,5 @@
+> 使用方法
+
 ```vue
 <ve-pagination
     :current="2"

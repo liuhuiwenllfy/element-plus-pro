@@ -42,7 +42,7 @@ const commonStore = useCommonStore();
 </script>
 
 <template>
-  <div>
+  <div class="ve-page">
     <el-space>
       <h2>{{ json.name + ' ' + json.description }}</h2>
       <el-tag v-if="json.version" round size="small" type="primary">{{ json.version }}</el-tag>
@@ -101,5 +101,7 @@ const commonStore = useCommonStore();
 </template>
 
 <style lang="scss" scoped>
-
+.ve-page {
+  color: var(--el-text-color-regular);
+}
 </style>

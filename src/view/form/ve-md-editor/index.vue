@@ -7,7 +7,7 @@ import {ref} from "vue";
 import {useCommonStore} from "@/pinia/common.ts";
 import readme from './index.md?raw'
 import json from '@/components/ve-md-editor/package.json'
-import {Anchor} from "ve-anchor/Anchor.ts";
+import {Anchor} from "@/components/ve-anchor/Anchor.ts";
 import VeAnchor from '@/components/ve-anchor/index.vue'
 
 const _value = ref('# **1024程序员节：致敬数字世界的创造者**  \n' +
@@ -219,7 +219,7 @@ const items = ref<Anchor[]>([])
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <h3>编辑区域</h3>
       <ve-md-editor :model-value="_value" :theme="commonStore.getDark? 'dark':'light'"></ve-md-editor>

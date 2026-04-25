@@ -28,43 +28,36 @@ const backTop = () => {
 </script>
 
 <template>
-  <div class="back-top" :style="{bottom: bottom, right: right}">
+  <div :style="{bottom: bottom, right: right}" class="back-top">
     <el-space :size="[0,0]" direction="vertical">
       <slot name="default"/>
-      <el-button v-show="isShowBack" :icon="CaretTop"
-                 @click="backTop">
-      </el-button>
+      <div v-show="isShowBack" class="top" @click="backTop">
+        <el-icon>
+          <CaretTop/>
+        </el-icon>
+      </div>
     </el-space>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .back-top {
+  width: 50px;
   z-index: 999;
   position: absolute;
   border-radius: 4px;
   background-color: var(--el-bg-color);
-  border: 1px solid var(--el-border-color);
-  border-color: var(--el-border-color-lighter);
+  border: 1px solid var(--el-border-color-lighter);
 
-  .el-button {
-    height: 50px;
-    width: 50px;
-    border: none;
-    background-color: var(--el-bg-color);
-    color: var(--el-text-color-placeholder);
-    font-size: 20px;
+  .top {
+    font-size: 24px;
+    padding: 8px 13px 7px;
 
     &:hover {
-      color: var(--el-color-primary);
-      background-color: transparent;
+      .el-icon {
+        color: #66b1ff;
+      }
     }
-  }
-
-  .line {
-    width: 50px;
-    border-top: 1px solid;
-    border-color: var(--el-border-color-lighter);
   }
 }
 </style>

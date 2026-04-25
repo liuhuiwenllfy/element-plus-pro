@@ -17,16 +17,36 @@ const slots = [
 </script>
 
 <template>
-  <ve-page :_slots="slots" :readme="readme" :json="json">
+  <ve-page :_slots="slots" :json="json" :readme="readme" class="ve-justify">
     <template #default>
-      <ve-justify>
-        <template #left>左侧区域</template>
-        <template #right>右侧区域</template>
-      </ve-justify>
+      <div class="content">
+        <ve-justify>
+          <template #left>
+            <div class="region">
+              左侧区域
+            </div>
+          </template>
+          <template #right>
+            <div class="region">
+              右侧区域
+            </div>
+          </template>
+        </ve-justify>
+      </div>
     </template>
   </ve-page>
 </template>
 
 <style lang="scss" scoped>
+.ve-justify {
+  .content {
+    width: 400px;
+    border: $dashed;
 
+    .region {
+      background-color: $brand5;
+      padding: 20px;
+    }
+  }
+}
 </style>

@@ -17,7 +17,7 @@ const props = defineProps({
   cron: {
     type: String,
     required: false,
-    default: () => "* * * * * ? *"
+    default: () => "* * * * * ?"
   }
 })
 const _cron = ref<string[]>([])

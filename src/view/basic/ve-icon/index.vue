@@ -4,6 +4,7 @@ import {ElMessage} from "element-plus";
 import * as AnimationSvgList from '@/components/ve-icon/svg-spinners/components'
 import * as OtherSvgList from '@/components/ve-icon/other/components'
 import * as MdiLightSvgList from '@/components/ve-icon/mdi-light/components'
+import * as FlowbiteSvgList from '@/components/ve-icon/flowbite/components'
 import {onMounted, reactive} from "vue";
 import readme from './index.md?raw'
 import json from '@/components/ve-icon/package.json'
@@ -11,6 +12,7 @@ import json from '@/components/ve-icon/package.json'
 const _animationIcons = reactive<string[]>([])
 const _otherIcons = reactive<string[]>([])
 const _mdiLightIcons = reactive<string[]>([])
+const _flowbiteSvgList = reactive<string[]>([])
 
 onMounted(() => {
   Object.keys(AnimationSvgList).forEach((key) => {
@@ -21,6 +23,9 @@ onMounted(() => {
   })
   Object.keys(MdiLightSvgList).forEach((key) => {
     _mdiLightIcons.push(key)
+  })
+  Object.keys(FlowbiteSvgList).forEach((key) => {
+    _flowbiteSvgList.push(key)
   })
 })
 
@@ -61,21 +66,15 @@ const stats = [
     instructions: 'SVG 图标的大小，size x size',
     type: 'string',
     optional: '-',
-    default: '-',
-  },
-  {
-    name: 'color',
-    instructions: 'svg 的 fill 颜色',
-    type: 'string',
-    optional: '-',
-    default: '-',
-  },
+    default: '16',
+  }
 ]
 </script>
 
 <template>
-  <ve-page :readme="readme" :stats="stats" :json="json">
+  <ve-page :json="json" :readme="readme" :stats="stats" class="ve-icon">
     <template #default>
+      <el-alert :closable="false" show-icon title="点击图标可复制代码。" type="primary"/>
       <h4>Svg-Spinners</h4>
       <ul class="icon-list">
         <li v-for="(item, index1) in _animationIcons" :key="index1" class="icon-item" @click="handleClick(item)">
@@ -88,6 +87,15 @@ const stats = [
       <h4>Mdi-light</h4>
       <ul class="icon-list">
         <li v-for="(item, index1) in _mdiLightIcons" :key="index1" class="icon-item" @click="handleClick(item)">
+          <el-space direction="vertical">
+            <component :is="item" class="el-icon"/>
+            <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
+          </el-space>
+        </li>
+      </ul>
+      <h4>Flowbite</h4>
+      <ul class="icon-list">
+        <li v-for="(item, index1) in _flowbiteSvgList" :key="index1" class="icon-item" @click="handleClick(item)">
           <el-space direction="vertical">
             <component :is="item" class="el-icon"/>
             <el-text class="text-flow-ellipsis-multiple_1">{{ item }}</el-text>
@@ -108,25 +116,30 @@ const stats = [
 </template>
 
 <style lang="scss" scoped>
-.icon-list {
-  list-style: none;
-  padding: 0;
+.ve-icon {
+  .icon-list {
+    list-style: none;
+    padding: 0;
 
-  .icon-item {
-    display: inline-block;
-    border: 1px solid var(--el-border-color);
-    padding: 20px 0;
-    text-align: center;
-    width: 200px;
-    cursor: pointer;
+    .icon-item {
+      display: inline-block;
+      border: 1px solid $base-border;
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+      cursor: pointer;
 
-    &:hover {
-      color: $brand;
-      background-color: var(--el-color-primary-light-8);
-    }
+      &:hover {
+        background-color: var(--el-color-primary-light-8);
+      }
 
-    .el-icon {
-      font-size: 25px;
+      .el-icon {
+        font-size: 25px;
+
+        &:hover {
+          color: var(--el-color-primary);
+        }
+      }
     }
   }
 }

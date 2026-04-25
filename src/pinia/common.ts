@@ -17,7 +17,7 @@ export const useCommonStore = defineStore('common', {
                     title: 'Overview 组件总览',
                     titleEn: 'Overview 组件总览',
                     name: 'overview',
-                    menuIcon: 'Shop'
+                    menuIcon: 'VeIconStoreSolid'
                 }
             ],
             menuData: [] as MenuInfoShowVo[],

@@ -14,7 +14,7 @@ const stats = [
     instructions: '时间',
     type: 'string',
     optional: '-',
-    default: '-',
+    default: '* * * * * ?',
   },
 ]
 
@@ -25,12 +25,16 @@ const incident = [
     callback: 'cron字符串',
   },
 ]
+
+const handleChange = (e: string) => {
+  console.log(e)
+}
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats">
     <template #default>
-      <ve-cron-select :cron="_cron" style="margin: 20px" @change="(e)=> {console.log(e)}"/>
+      <ve-cron-select :cron="_cron" style="margin: 20px" @change="handleChange"/>
     </template>
   </ve-page>
 </template>

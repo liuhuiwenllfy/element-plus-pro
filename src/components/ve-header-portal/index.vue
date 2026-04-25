@@ -2,6 +2,7 @@
 import {PropType, reactive, ref} from 'vue'
 import {ElDropdown, ElDropdownItem, ElDropdownMenu, ElIcon, ElImage, ElSpace, ElSwitch, ElText} from "element-plus";
 import {VeEnglishInput, VeEnglishToChinese, VeLetterChineseA, VeMdCloudyNight, VeSunny} from 've-icon/other/components'
+import {VeIconLanguageOutline} from 've-icon/flowbite/components.ts'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
 import 'element-plus/es/components/dropdown-menu/style/css'
@@ -165,7 +166,7 @@ const content = reactive<any>({
             <template #dropdown>
               <el-dropdown-menu style="max-width: 300px">
                 <el-dropdown-item v-for="(item1, index1) in item.children" :key="index1">
-                  <el-space direction="vertical" alignment="normal">
+                  <el-space alignment="normal" direction="vertical">
                     <el-text>{{ item1.name }}
                       <el-icon>
                         <TopRight/>
@@ -210,13 +211,13 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </template>
-      <li class="text menu3" style="padding: 0">
+      <li class="text menu3" style="padding: 0 20px">
         <slot name="search"></slot>
       </li>
       <li class="menu3" style="padding: 0">
         <el-dropdown trigger="hover" @command="handleLanguageChange">
           <el-icon class="dropdown-icon" size="20" style="padding: 20px">
-            <VeEnglishToChinese/>
+            <VeIconLanguageOutline/>
           </el-icon>
           <template #dropdown>
             <el-dropdown-menu>

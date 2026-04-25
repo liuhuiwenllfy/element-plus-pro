@@ -25,9 +25,9 @@ const slots = [
 </script>
 
 <template>
-  <ve-page :_slots="slots" :readme="readme" :json="json">
+  <ve-page :_slots="slots" :json="json" :readme="readme">
     <template #default>
-      <LayoutMini/>
+      <LayoutMini :layout="0"/>
     </template>
   </ve-page>
 </template>

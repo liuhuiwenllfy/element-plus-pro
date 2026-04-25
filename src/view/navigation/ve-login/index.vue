@@ -82,11 +82,13 @@ const incident = [
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats" class="ve-login">
     <template #default>
+      <h3>未登录</h3>
       <ve-default-login avatar="avatar.png" @handle-login="console.log('登录')"
                         @handle-register="console.log('注册')"></ve-default-login>
       <el-divider/>
+      <h3>已登录</h3>
       <ve-user-info
           :list="[{
                     code:'userInfo',

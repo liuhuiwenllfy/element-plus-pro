@@ -5,30 +5,25 @@ defineProps({
     type: String,
     required: false,
     default: () => '16'
-  },
-  color: {
-    type: String,
-    required: false,
-    default: () => 'currentColor'
   }
 })
 
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24">
+  <svg :height="size" :width="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
-    <rect width="6" height="14" x="1" y="4" :fill="color">
-      <animate id="svgSpinnersBarsFade0" fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsFade1.end-0.25s"
-               dur="0.75s" values="1;.2"/>
+    <rect fill="currentColor" height="14" width="6" x="1" y="4">
+      <animate id="svgSpinnersBarsFade0" attributeName="opacity" begin="0;svgSpinnersBarsFade1.end-0.25s" dur="0.75s"
+               fill="freeze" values="1;.2"/>
     </rect>
-    <rect width="6" height="14" x="9" y="4" :fill="color" opacity=".4">
-      <animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.15s" dur="0.75s"
+    <rect fill="currentColor" height="14" opacity=".4" width="6" x="9" y="4">
+      <animate attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.15s" dur="0.75s" fill="freeze"
                values="1;.2"/>
     </rect>
-    <rect width="6" height="14" x="17" y="4" :fill="color" opacity=".3">
-      <animate id="svgSpinnersBarsFade1" fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.3s"
-               dur="0.75s" values="1;.2"/>
+    <rect fill="currentColor" height="14" opacity=".3" width="6" x="17" y="4">
+      <animate id="svgSpinnersBarsFade1" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.3s" dur="0.75s"
+               fill="freeze" values="1;.2"/>
     </rect>
   </svg>
 </template>

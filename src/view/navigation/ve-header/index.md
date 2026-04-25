@@ -1,5 +1,18 @@
+> 使用方法
+
 ```ts
-const menuList = [
+import {MenuInfoShowVo} from "ve-header/MenuInfoShowVo.ts";
+import {DropdownItem} from "ve-header/DropdownItem.ts";
+
+const userInfo = ref<DropdownItem[]>([
+    {
+        code: 'gitHub',
+        name: 'GitHub',
+        icon: 'VeIconArrowUpRightFromSquareOutline'
+    }
+])
+
+const menuList = ref<MenuInfoShowVo>([
     {
         "id": "e9ffbd2bb49d540d5544ce735522b190",
         "menuCode": "home",
@@ -19,14 +32,14 @@ const menuList = [
                 "parentId": "e9ffbd2bb49d540d5544ce735522b190",
                 "menuLevel": 1,
                 "menuSort": 0,
-                "menuIcon": "Shop",
+                "menuIcon": "VeIconStoreSolid",
                 "menuPath": "/overview",
                 "menuComponent": "home/overview",
                 "children": []
             }
         ]
     }
-]
+]);
 ```
 
 ```vue
@@ -35,11 +48,7 @@ const menuList = [
     :drawerNews="false"
     :fullScreen="false"
     :layout="7"
-    :list="[{
-              code:'userInfo',
-              name:'个人中心',
-              icon:'User'
-            }]"
+    :list="userInfo"
     :menu="menuList"
     :newsNum="1"
     :sidebar="false"

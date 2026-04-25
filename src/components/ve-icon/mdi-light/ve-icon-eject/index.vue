@@ -5,20 +5,15 @@ defineProps({
     type: String,
     required: false,
     default: () => '16'
-  },
-  color: {
-    type: String,
-    required: false,
-    default: () => 'currentColor'
   }
 })
 
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24">
+  <svg :height="size" :width="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <!-- Icon from Material Design Light by Pictogrammers - https://github.com/Templarian/MaterialDesignLight/blob/master/LICENSE.md -->
-    <path :fill="color" d="m5.33 15l6.17-9.25L17.67 15zM5 18h13v1H5zm2-3.97h9l-4.5-6.78z"/>
+    <path d="m5.33 15l6.17-9.25L17.67 15zM5 18h13v1H5zm2-3.97h9l-4.5-6.78z" fill="currentColor"/>
   </svg>
 </template>
 

@@ -43,22 +43,25 @@ const incident = [
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats" class="ve-pagination">
     <template #default>
-      <ve-pagination
-          :current="2"
-          :page-size="10"
-          :total="100"
-          @handle-current-change="console.log($event)"
-          @handle-size-change="console.log($event)"/>
+      <div class="main">
+        <ve-pagination
+            :current="2"
+            :page-size="10"
+            :total="100"
+            @handle-current-change="console.log($event)"
+            @handle-size-change="console.log($event)"/>
+      </div>
     </template>
   </ve-page>
 </template>
 
 <style lang="scss" scoped>
-.custom-image {
-  width: 300px;
-  height: 150px;
-  border-radius: 5px
+.ve-pagination {
+  .main {
+    padding: 20px;
+    border: $dashed;
+  }
 }
 </style>

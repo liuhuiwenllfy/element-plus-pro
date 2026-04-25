@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {VeTableShortcut} from 've-icon/other/components'
+import {VeIconInsertTableOutline} from 've-icon/flowbite/components'
 import {ElCard, ElIcon, ElSpace} from 'element-plus'
 import 'element-plus/es/components/space/style/css'
 import 'element-plus/es/components/card/style/css'
@@ -28,7 +28,7 @@ const content = reactive<any>({
       <div class="card-header">
         <el-space size="small">
           <el-icon style="font-size: 20px">
-            <VeTableShortcut/>
+            <VeIconInsertTableOutline/>
           </el-icon>
           <span>{{ content.tableDataArea[language] }}</span>
         </el-space>

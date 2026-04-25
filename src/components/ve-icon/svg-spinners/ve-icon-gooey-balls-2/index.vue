@@ -5,18 +5,13 @@ defineProps({
     type: String,
     required: false,
     default: () => '16'
-  },
-  color: {
-    type: String,
-    required: false,
-    default: () => 'currentColor'
   }
 })
 
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24">
+  <svg :height="size" :width="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
     <defs>
       <filter id="svgSpinnersGooeyBalls20">
@@ -26,11 +21,11 @@ defineProps({
       </filter>
     </defs>
     <g filter="url(#svgSpinnersGooeyBalls20)">
-      <circle cx="5" cy="12" r="4" :fill="color">
+      <circle cx="5" cy="12" fill="currentColor" r="4">
         <animate attributeName="cx" calcMode="spline" dur="2s" keySplines=".36,.62,.43,.99;.79,0,.58,.57"
                  repeatCount="indefinite" values="5;8;5"/>
       </circle>
-      <circle cx="19" cy="12" r="4" :fill="color">
+      <circle cx="19" cy="12" fill="currentColor" r="4">
         <animate attributeName="cx" calcMode="spline" dur="2s" keySplines=".36,.62,.43,.99;.79,0,.58,.57"
                  repeatCount="indefinite" values="19;16;19"/>
       </circle>

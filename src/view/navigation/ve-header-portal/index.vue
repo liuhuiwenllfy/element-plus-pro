@@ -2,10 +2,12 @@
 import VePage from '@/components/ve-page/index.vue'
 import VeHeaderPortal from '@/components/ve-header-portal/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
-import {computed, reactive} from 'vue'
+import {ref} from 'vue'
 import readme from './index.md?raw'
 import VeSearch from '@/components/ve-search/index.vue'
 import json from '@/components/ve-header-portal/package.json'
+import {MenuDropdownItem} from "@/components/ve-header-portal/MenuDropdownItem.ts";
+import {UserDropdownItem} from "@/components/ve-header-portal/UserDropdownItem.ts";
 
 const stats = [
 
@@ -141,18 +143,15 @@ const incident = [
 ]
 const commonStore = useCommonStore()
 
-const userInfo = computed(() => {
-  return reactive([
-    {
-      code: 'userInfo',
-      name: '个人中心',
-      icon: 'User'
-    }
-  ])
-})
+const userInfo = ref<UserDropdownItem[]>([
+  {
+    code: 'userInfo',
+    name: '个人中心',
+    icon: 'User'
+  }
+])
 
-const menu = computed(() => {
-  return reactive([
+const menu = ref<MenuDropdownItem[]>([
     {
       name: '产品',
       children: [
@@ -171,31 +170,21 @@ const menu = computed(() => {
     {
       name: '解决方案',
       route: '#'
-    },
-  ])
-})
+    }
+])
 </script>
 
 <template>
-  <ve-page :readme="readme" :incident="incident" :stats="stats" :json="json">
+  <ve-page :incident="incident" :json="json" :readme="readme" :stats="stats" class="ve-header-portal">
     <template #default>
       <ve-header-portal
-          :dark="commonStore.getDark"
-          :language="commonStore.getLocale"
           :list="userInfo"
           :menu="menu"
           :name="commonStore.getName"
           :newsNum="commonStore.getNewsNum"
           avatar="avatar.png"
-          logo="logo.png"
-          @handle-menu-click="console.log($event)"
-          @handle-logo-click="console.log('home')"
-          @handle-night-change="commonStore.changeDark($event)"
-          @handle-language-change="commonStore.changeLocale($event)"
-          @handle-sign-out="console.log('登出')"
-          @handle-user-click="console.log($event)"
-          @handle-login="console.log('登录')"
-          @handle-register="console.log('注册')">
+          class="header"
+          logo="logo.png">
         <template #search>
           <ve-search language="zhCn" val="标题党" @handle-click="console.log($event)"/>
         </template>
@@ -205,9 +194,9 @@ const menu = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-.aside-body {
-  width: 260px;
-  height: 100%;
-  border: 1px solid var(--el-border-color);
+.ve-header-portal {
+  .header {
+    border: $dashed;
+  }
 }
 </style>

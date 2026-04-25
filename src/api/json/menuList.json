@@ -7,7 +7,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 0,
-    "menuIcon": "HomeFilled",
+    "menuIcon": "VeIconHomeSolid",
     "menuPath": "/home",
     "children": [
       {
@@ -18,7 +18,7 @@
         "parentId": "e9ffbd2bb49d540d5544ce735522b190",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Shop",
+        "menuIcon": "VeIconStoreSolid",
         "menuPath": "/overview",
         "menuComponent": "home/overview",
         "children": []
@@ -33,7 +33,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 1,
-    "menuIcon": "Menu",
+    "menuIcon": "VeIconGridSolid",
     "menuPath": "/basic",
     "children": [
       {
@@ -44,7 +44,7 @@
         "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconIcon",
+        "menuIcon": "VeIconShapesSolid",
         "menuPath": "/ve-icon",
         "menuComponent": "basic/ve-icon",
         "children": []
@@ -57,7 +57,7 @@
         "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconJustify",
+        "menuIcon": "VeIconSplitCellsOutline",
         "menuPath": "/ve-justify",
         "menuComponent": "basic/ve-justify",
         "children": []
@@ -70,7 +70,7 @@
         "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconLayout",
+        "menuIcon": "VeIconObjectsColumnSolid",
         "menuPath": "/ve-layout",
         "menuComponent": "basic/ve-layout",
         "children": []
@@ -83,7 +83,7 @@
         "parentId": "f04c179ddfe64e7085c7c872a4f395a4",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Eleme",
+        "menuIcon": "VeIconAppleSolid",
         "menuPath": "/ve-logo",
         "menuComponent": "basic/ve-logo",
         "children": []
@@ -98,7 +98,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 2,
-    "menuIcon": "VeIconForm",
+    "menuIcon": "VeIconRectangleListSolid",
     "menuPath": "/form",
     "children": [
       {
@@ -109,7 +109,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconCron",
+        "menuIcon": "VeIconCalendarMonthSolid",
         "menuPath": "/ve-cron-select",
         "menuComponent": "form/ve-cron-select",
         "children": []
@@ -122,7 +122,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconEmoji",
+        "menuIcon": "VeIconFaceLaughSolid",
         "menuPath": "/ve-emoji-select",
         "menuComponent": "form/ve-emoji-select",
         "children": []
@@ -135,7 +135,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "veIconEditor",
+        "menuIcon": "VeIconEditSolid",
         "menuPath": "/ve-md-editor",
         "menuComponent": "form/ve-md-editor",
         "children": []
@@ -148,7 +148,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Search",
+        "menuIcon": "VeIconSearchSolid",
         "menuPath": "/ve-search",
         "menuComponent": "form/ve-search",
         "children": []
@@ -161,7 +161,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeSearchLocate",
+        "menuIcon": "VeIconFileSearchSolid",
         "menuPath": "/ve-search-area",
         "menuComponent": "form/ve-search-area",
         "children": []
@@ -174,7 +174,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeTableShortcut",
+        "menuIcon": "VeIconInsertTableOutline",
         "menuPath": "/ve-table-area",
         "menuComponent": "form/ve-table-area",
         "children": []
@@ -187,7 +187,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Upload",
+        "menuIcon": "VeIconUploadSolid",
         "menuPath": "/ve-upload",
         "menuComponent": "form/ve-upload",
         "children": []
@@ -200,7 +200,7 @@
         "parentId": "b1a47b93238243838856929a6b2ea711",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "Crop",
+        "menuIcon": "VeIconImageSolid",
         "menuPath": "/ve-cropper-shear",
         "menuComponent": "form/ve-cropper-shear",
         "children": []
@@ -215,7 +215,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 3,
-    "menuIcon": "Guide",
+    "menuIcon": "VeIconFlagSolid",
     "menuPath": "/navigation",
     "children": [
       {
@@ -226,7 +226,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAnchor",
+        "menuIcon": "VeIconRectangleListSolid",
         "menuPath": "/ve-anchor",
         "menuComponent": "navigation/ve-anchor",
         "children": []
@@ -239,7 +239,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 1,
-        "menuIcon": "VeIconAside",
+        "menuIcon": "VeIconClipboardOutline",
         "menuPath": "/ve-aside",
         "menuComponent": "navigation/ve-aside",
         "children": []
@@ -252,7 +252,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "VeIconFastNav",
+        "menuIcon": "VeIconShareAllSolid",
         "menuPath": "/ve-fast-nav",
         "menuComponent": "navigation/ve-fast-nav",
         "children": []
@@ -265,7 +265,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "VeIconHeader",
+        "menuIcon": "VeIconAdjustmentsHorizontalSolid",
         "menuPath": "/ve-header",
         "menuComponent": "navigation/ve-header",
         "children": []
@@ -278,7 +278,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "VeIconHeader",
+        "menuIcon": "VeIconAdjustmentsHorizontalSolid",
         "menuPath": "/ve-header-portal",
         "menuComponent": "navigation/ve-header-portal",
         "children": []
@@ -291,7 +291,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "VeIconLogin",
+        "menuIcon": "VeIconArrowRightToBracketSolid",
         "menuPath": "/ve-login",
         "menuComponent": "navigation/ve-login",
         "children": []
@@ -304,7 +304,7 @@
         "parentId": "83994ed054e84686a634ff56676eed4b",
         "menuLevel": 1,
         "menuSort": 2,
-        "menuIcon": "Top",
+        "menuIcon": "VeIconArrowUpFromBracketOutline",
         "menuPath": "/ve-back-top",
         "menuComponent": "navigation/ve-back-top",
         "children": []
@@ -319,22 +319,9 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 4,
-    "menuIcon": "VeIconData",
+    "menuIcon": "VeIconDatabaseSolid",
     "menuPath": "/data",
     "children": [
-      {
-        "id": "37cbd1c5ea3742dfa18b07aa9ecb44e6",
-        "menuCode": "ve-list",
-        "menuName": "ve-list 列表",
-        "menuNameEn": "ve-list List",
-        "parentId": "86a7513788374cdb86566769170b5550",
-        "menuLevel": 1,
-        "menuSort": 0,
-        "menuIcon": "VeIconList",
-        "menuPath": "/ve-list",
-        "menuComponent": "data/ve-list",
-        "children": []
-      },
       {
         "id": "d222566f3eed4f44883c64650dcc3f3f",
         "menuCode": "ve-business-card",
@@ -342,8 +329,8 @@
         "menuNameEn": "ve-business-card Calling card",
         "parentId": "86a7513788374cdb86566769170b5550",
         "menuLevel": 1,
-        "menuSort": 1,
-        "menuIcon": "VeIconCard",
+        "menuSort": 0,
+        "menuIcon": "VeIconCreditCardSolid",
         "menuPath": "/ve-business-card",
         "menuComponent": "data/ve-business-card",
         "children": []
@@ -356,22 +343,9 @@
         "parentId": "86a7513788374cdb86566769170b5550",
         "menuLevel": 1,
         "menuSort": 1,
-        "menuIcon": "VeIconPagination",
+        "menuIcon": "VeIconBookOpenSolid",
         "menuPath": "/ve-pagination",
         "menuComponent": "data/ve-pagination",
-        "children": []
-      },
-      {
-        "id": "1a2facc2e0b34df9ac09e0ea3204e122",
-        "menuCode": "ve-plugin",
-        "menuName": "ve-plugin 插件卡片",
-        "menuNameEn": "ve-plugin Plugin",
-        "parentId": "86a7513788374cdb86566769170b5550",
-        "menuLevel": 1,
-        "menuSort": 1,
-        "menuIcon": "VePlugin",
-        "menuPath": "/ve-plugin",
-        "menuComponent": "data/ve-plugin",
         "children": []
       },
       {
@@ -381,8 +355,8 @@
         "menuNameEn": "ve-preview Preview",
         "parentId": "86a7513788374cdb86566769170b5550",
         "menuLevel": 1,
-        "menuSort": 1,
-        "menuIcon": "VeIconPreview",
+        "menuSort": 2,
+        "menuIcon": "VeIconEyeSolid",
         "menuPath": "/ve-preview",
         "menuComponent": "data/ve-preview",
         "children": []
@@ -394,8 +368,8 @@
         "menuNameEn": "ve-table-column Table column",
         "parentId": "86a7513788374cdb86566769170b5550",
         "menuLevel": 1,
-        "menuSort": 1,
-        "menuIcon": "VeIconTable",
+        "menuSort": 3,
+        "menuIcon": "VeIconInsertTableOutline",
         "menuPath": "/ve-table-column",
         "menuComponent": "data/ve-table-column",
         "children": []
@@ -410,7 +384,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 6,
-    "menuIcon": "InfoFilled",
+    "menuIcon": "VeIconInfoCircleSolid",
     "menuPath": "/feedback",
     "children": [
       {
@@ -436,7 +410,7 @@
     "parentId": "0",
     "menuLevel": 0,
     "menuSort": 6,
-    "menuIcon": "VeWarn",
+    "menuIcon": "VeIconExclamationCircleSolid",
     "menuPath": "/error",
     "children": [
       {
@@ -447,7 +421,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAlert",
+        "menuIcon": "VeIconExclamationCircleOutline",
         "menuPath": "/200",
         "menuComponent": "error/200",
         "children": []
@@ -460,7 +434,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAlert",
+        "menuIcon": "VeIconExclamationCircleOutline",
         "menuPath": "/401",
         "menuComponent": "error/401",
         "children": []
@@ -473,7 +447,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAlert",
+        "menuIcon": "VeIconExclamationCircleOutline",
         "menuPath": "/403",
         "menuComponent": "error/403",
         "children": []
@@ -486,7 +460,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAlert",
+        "menuIcon": "VeIconExclamationCircleOutline",
         "menuPath": "/404",
         "menuComponent": "error/404",
         "children": []
@@ -499,7 +473,7 @@
         "parentId": "e0ed0a89e3724efe9aba3dc1a977785a",
         "menuLevel": 1,
         "menuSort": 0,
-        "menuIcon": "VeIconAlert",
+        "menuIcon": "VeIconExclamationCircleOutline",
         "menuPath": "/500",
         "menuComponent": "error/500",
         "children": []

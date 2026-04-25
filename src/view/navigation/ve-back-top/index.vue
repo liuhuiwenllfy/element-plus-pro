@@ -36,14 +36,13 @@ const slots = [
 </script>
 
 <template>
-  <ve-page :_slots="slots" :readme="readme" :stats="stats" :json="json">
+  <ve-page :_slots="slots" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <el-alert
-          style="width: 300px"
+          :closable="false"
+          show-icon
           title="效果请参照页面右下方回到顶部。"
           type="primary"
-          show-icon
-          :closable="false"
       />
     </template>
   </ve-page>

@@ -4,6 +4,7 @@ import 'vue-cropper/dist/index.css'
 import VueCropper from "vue-cropper/lib/vue-cropper.vue";
 import {nextTick, ref} from "vue";
 import {ElButton, ElRadio, ElRadioGroup} from 'element-plus'
+import {RefreshLeft, RefreshRight} from '@element-plus/icons-vue'
 import 'element-plus/es/components/radio-group/style/css'
 import 'element-plus/es/components/radio/style/css'
 import 'element-plus/es/components/button/style/css'
@@ -73,56 +74,59 @@ const _radio = ref(0)
 
 <template>
   <div class="assembly-vue-cropper">
-    <div class="vue-cropper">
-      <vueCropper
-          v-if="reFresh"
-          ref="cropper"
-          :canMove="false"
-          :canScale="false"
-          :fixed="fixed"
-          :fixedNumber="_fixedNumber"
-          :full="true"
-          :img="img"
-          :info="false"
-          :infoTrue="true"
-          :outputSize="1"
-          autoCrop
-          autoCropHeight="300"
-          autoCropWidth="300"
-          centerBox
-          outputType="png"
-      ></vueCropper>
-    </div>
-    <div class="proportion">
-      <div v-if="fixed">
+    <el-space alignment="normal">
+      <el-space direction="vertical">
+        <div class="vue-cropper">
+          <vueCropper
+              v-if="reFresh"
+              ref="cropper"
+              :canMove="false"
+              :canScale="false"
+              :fixed="fixed"
+              :fixedNumber="_fixedNumber"
+              :full="true"
+              :img="img"
+              :info="false"
+              :infoTrue="true"
+              :outputSize="1"
+              autoCrop
+              autoCropHeight="300"
+              autoCropWidth="300"
+              centerBox
+              outputType="png"
+          ></vueCropper>
+        </div>
+        <div class="operation">
+          <el-button :icon="RefreshLeft" @click="rotateLeft">向左边旋转90度</el-button>
+          <el-button :icon="RefreshRight" @click="rotateRight">向右边旋转90度</el-button>
+        </div>
+      </el-space>
+      <el-scrollbar v-if="fixed" class="proportion">
         <el-radio-group v-model="_radio">
-          <el-radio v-for="(item, index) in fixedNumberList" :key="index" :value="index" @change="handleChange(item)">
-            裁剪比例为<strong>{{ `${item[0]}:${item[1]}` }}</strong></el-radio>
+          <el-space alignment="normal" direction="vertical">
+            <el-radio v-for="(item, index) in fixedNumberList" :key="index" :value="index" @change="handleChange(item)">
+              裁剪比例为<strong>{{ `${item[0]}:${item[1]}` }}</strong></el-radio>
+          </el-space>
         </el-radio-group>
-      </div>
-      <div style="padding-bottom: 10px">
-        <el-button icon="el-icon-refresh-left" @click="rotateLeft">向左边旋转90度</el-button>
-      </div>
-      <div style="padding-bottom: 10px">
-        <el-button icon="el-icon-refresh-right" @click="rotateRight">向右边旋转90度</el-button>
-      </div>
-    </div>
+      </el-scrollbar>
+    </el-space>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .assembly-vue-cropper {
   .vue-cropper {
-    display: inline-block;
     width: 500px;
     height: 500px;
   }
 
+  .operation {
+    margin-top: 10px;
+  }
+
   .proportion {
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px;
-    width: 198px;
+    height: 500px;
+    padding-right: 20px;
   }
 }
 </style>

@@ -1,3 +1,5 @@
+> 使用方法
+
 ```ts
 import VeError401 from 've-error/401/index.vue'
 import router from '@/router'

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {VeSearchLocate} from 've-icon/other/components'
+import {VeIconSearchSolid} from 've-icon/flowbite/components'
 import {PropType, reactive, ref} from 'vue'
 import {ElButton, ElCard, ElIcon, ElSpace} from 'element-plus'
 import 'element-plus/es/components/card/style/css'
@@ -56,7 +56,7 @@ const content = reactive<any>({
       <div class="card-header">
         <el-space size="small">
           <el-icon style="font-size: 20px">
-            <VeSearchLocate/>
+            <VeIconSearchSolid/>
           </el-icon>
           <span>{{ content.searchArea[language] }}</span>
         </el-space>

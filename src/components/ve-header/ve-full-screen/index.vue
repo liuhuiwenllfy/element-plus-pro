@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import screenFull from 'screenfull'
-import {VeFullscreenAlt, VeFullscreenExitAlt} from 've-icon/other/components'
+import {VeIconMinimizeOutline, VeIconExpandOutline} from 've-icon/flowbite/components'
 import {onMounted, onUnmounted} from 'vue'
 import {ElIcon} from 'element-plus'
 import 'element-plus/es/components/icon/style/css'
@@ -36,8 +36,8 @@ const setFullScreen = () => {
 
 <template>
   <el-icon size="20" style="padding: 20px" @click="setFullScreen">
-    <VeFullscreenAlt v-show="!fullScreen"/>
-    <VeFullscreenExitAlt v-show="fullScreen"/>
+    <VeIconExpandOutline v-show="!fullScreen"/>
+    <VeIconMinimizeOutline v-show="fullScreen"/>
   </el-icon>
 </template>
 

@@ -1,4 +1,8 @@
+> 使用方法
+
 ```ts
+import VeTableArea from 've-table-area/index.vue'
+
 const tableData = [
     {
         date: '2016-05-03',

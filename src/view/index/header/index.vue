@@ -3,30 +3,31 @@ import VeHeader from '@/components/ve-header/index.vue'
 import {useCommonStore} from "@/pinia/common.ts";
 import menuList from '@/api/json/menuList.json'
 import router from "@/router";
-import {computed} from "vue";
+import {computed, ref} from "vue";
 import {useI18n} from "vue-i18n";
-
+import {MenuInfoShowVo} from "@/components/ve-header/MenuInfoShowVo.ts";
+import {UserDropdownItem} from "@/components/ve-header/UserDropdownItem.js";
 const {t} = useI18n()
 
 const commonStore = useCommonStore()
 
-const userInfo = [
+const userInfo = ref<UserDropdownItem[]>([
   {
     code: 'officialWebsite',
     name: t('message.officialWebsite'),
-    icon: 'Promotion'
+    icon: 'VeIconArrowUpRightFromSquareOutline'
   },
   {
     code: 'gitHub',
     name: 'GitHub',
-    icon: 'Promotion'
+    icon: 'VeIconArrowUpRightFromSquareOutline'
   },
   {
     code: 'gitee',
     name: 'Gitee',
-    icon: 'Promotion'
+    icon: 'VeIconArrowUpRightFromSquareOutline'
   }
-]
+])
 
 const handleSignOutClick = () => {
   console.log("登出")
@@ -49,6 +50,8 @@ const handleUserClick = (code: string) => {
 const getNavigation = computed(() => {
   return commonStore.getLocale === 'zhCn' ? router.currentRoute.value.meta.name : router.currentRoute.value.meta.nameEn
 })
+
+const menu = ref<MenuInfoShowVo[]>(<any>menuList)
 </script>
 <template>
   <ve-header
@@ -59,7 +62,7 @@ const getNavigation = computed(() => {
       :language="commonStore.getLocale"
       :layout="commonStore.getLayout"
       :list="userInfo"
-      :menu="<any>menuList"
+      :menu="menu"
       :name="commonStore.getName"
       :navigation="<string>getNavigation"
       :newsNum="commonStore.getNewsNum"

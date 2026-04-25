@@ -18,20 +18,23 @@ import {
 } from "element-plus";
 import {MenuInfoShowVo} from "./MenuInfoShowVo";
 import {
-  VeBell,
   VeBoxLarge,
   VeBoxMedium,
   VeBoxSmall,
   VeEnglishInput,
-  VeEnglishToChinese,
   VeLetterChineseA,
-  VeLogOut,
   VeMdCloudyNight,
-  VeMenuFoldOutlined,
-  VeMenuUnfoldOutlined,
-  VeOutlineFormatSize,
   VeSunny
 } from 've-icon/other/components'
+import {
+  VeIconIndentSolid,
+  VeIconOutdentSolid,
+  VeIconBellSolid,
+  VeIconTextSizeOutline,
+  VeIconLanguageOutline,
+  VeIconArrowRightToBracketSolid,
+  VeIconDotsVerticalOutline
+} from 've-icon/flowbite/components.ts'
 import 'element-plus/es/components/icon/style/css'
 import 'element-plus/es/components/dropdown/style/css'
 import 'element-plus/es/components/dropdown-menu/style/css'
@@ -44,9 +47,7 @@ import 'element-plus/es/components/breadcrumb/style/css'
 import 'element-plus/es/components/breadcrumb-item/style/css'
 import 'element-plus/es/components/switch/style/css'
 import 'element-plus/es/components/badge/style/css'
-import {DropdownItem} from "./DropdownItem";
-
-import {MoreFilled} from '@element-plus/icons-vue'
+import {UserDropdownItem} from "./UserDropdownItem";
 
 const props = defineProps({
   menu: {
@@ -130,7 +131,7 @@ const props = defineProps({
     default: () => ''
   },
   list: {
-    type: Array<DropdownItem>,
+    type: Array<UserDropdownItem>,
     required: false,
     default: () => []
   },
@@ -286,8 +287,8 @@ const content = reactive<any>({
       </li>
       <li v-show="[4,5,6,7].includes(layout)" @click="handleCollapseChange">
         <el-icon size="20">
-          <VeMenuFoldOutlined v-show="!_sidebar"/>
-          <VeMenuUnfoldOutlined v-show="_sidebar"/>
+          <VeIconOutdentSolid v-show="!_sidebar"/>
+          <VeIconIndentSolid v-show="_sidebar"/>
         </el-icon>
       </li>
       <li v-show="[4,5,6,7].includes(layout)" class="text">
@@ -317,19 +318,18 @@ const content = reactive<any>({
         </el-text>
       </li>
       <li @click="handleNewsChange">
-        <el-badge :hidden="newsNum === 0" :value="newsNum">
-          <el-icon>
-            <VeBell/>
-          </el-icon>
-        </el-badge>
+        <el-icon>
+          <VeIconBellSolid/>
+        </el-icon>
+        <el-badge :hidden="newsNum === 0" :value="newsNum"/>
       </li>
       <li style="padding: 0">
         <FullScreen :full-screen="_fullScreen" @handle-full-screen="handleFullScreenChange"/>
       </li>
-      <li style="padding: 0" v-if="isShowGlobalSizeChange">
+      <li v-if="isShowGlobalSizeChange" style="padding: 0">
         <el-dropdown trigger="hover" @command="handleGlobalSizeChange">
           <el-icon size="20" style="padding: 20px">
-            <VeOutlineFormatSize/>
+            <VeIconTextSizeOutline/>
           </el-icon>
           <template #dropdown>
             <el-dropdown-menu>
@@ -355,10 +355,10 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li style="padding: 0" v-if="isShowLanguageChange">
+      <li v-if="isShowLanguageChange" style="padding: 0">
         <el-dropdown trigger="hover" @command="handleLanguageChange">
           <el-icon class="dropdown-icon" size="20" style="padding: 20px">
-            <VeEnglishToChinese/>
+            <VeIconLanguageOutline/>
           </el-icon>
           <template #dropdown>
             <el-dropdown-menu>
@@ -378,7 +378,7 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li class="text" v-if="isShowNightChange">
+      <li v-if="isShowNightChange" class="text">
         <div class="night">
           <el-switch
               v-model="_dark"
@@ -408,7 +408,7 @@ const content = reactive<any>({
               </el-dropdown-item>
               <el-dropdown-item divided @click="signOut">
                 <el-icon>
-                  <VeLogOut/>
+                  <VeIconArrowRightToBracketSolid/>
                 </el-icon>
                 {{ content.logout[language] }}
               </el-dropdown-item>
@@ -416,9 +416,9 @@ const content = reactive<any>({
           </template>
         </el-dropdown>
       </li>
-      <li @click="handleGlobalSettingClick" v-if="isShowGlobalSetting">
+      <li v-if="isShowGlobalSetting" @click="handleGlobalSettingClick">
         <el-icon>
-          <MoreFilled/>
+          <VeIconDotsVerticalOutline/>
         </el-icon>
       </li>
     </ul>

@@ -4,7 +4,11 @@ import VeAnchor from '@/components/ve-anchor/index.vue'
 import {ref} from "vue";
 import readme from './index.md?raw'
 import json from '@/components/ve-anchor/package.json'
-import {MyAnchor} from "@/view/navigation/ve-anchor/MyAnchor.ts";
+import {Anchor} from "@/components/ve-anchor/Anchor.ts";
+
+interface MyAnchor extends Anchor {
+  color: string
+}
 
 const items = ref<MyAnchor[]>([
   {level: 0, id: "1", title: "part-1", color: '#C6E2FF'},
@@ -83,12 +87,12 @@ const slots = [
 </script>
 
 <template>
-  <ve-page :_slots="slots" :readme="readme" :stats="stats" :json="json">
+  <ve-page :_slots="slots" :json="json" :readme="readme" :stats="stats">
     <template #default>
       <el-card shadow="never">
-        <ve-anchor height="400px" :items="items">
+        <ve-anchor :items="items" height="400px">
           <template #default>
-            <div v-for="(item, index) in items" :key="index" :id="item.id"
+            <div v-for="(item, index) in items" :id="item.id" :key="index"
                  :style="{height: '300px', background: item.color}"/>
           </template>
         </ve-anchor>

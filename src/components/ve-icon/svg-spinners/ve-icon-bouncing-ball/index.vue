@@ -5,22 +5,17 @@ defineProps({
     type: String,
     required: false,
     default: () => '16'
-  },
-  color: {
-    type: String,
-    required: false,
-    default: () => 'currentColor'
   }
 })
 
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :width="size" :height="size" viewBox="0 0 24 24">
+  <svg :height="size" :width="size" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <!-- Icon from SVG Spinners by Utkarsh Verma - https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE -->
-    <ellipse cx="12" cy="5" :fill="color" rx="4" ry="4">
-      <animate id="svgSpinnersBouncingBall0" fill="freeze" attributeName="cy" begin="0;svgSpinnersBouncingBall2.end"
-               calcMode="spline" dur="0.375s" keySplines=".33,0,.66,.33" values="5;20"/>
+    <ellipse cx="12" cy="5" fill="currentColor" rx="4" ry="4">
+      <animate id="svgSpinnersBouncingBall0" attributeName="cy" begin="0;svgSpinnersBouncingBall2.end" calcMode="spline"
+               dur="0.375s" fill="freeze" keySplines=".33,0,.66,.33" values="5;20"/>
       <animate attributeName="rx" begin="svgSpinnersBouncingBall0.end" calcMode="spline" dur="0.05s"
                keySplines=".33,0,.66,.33;.33,.66,.66,1" values="4;4.8;4"/>
       <animate attributeName="ry" begin="svgSpinnersBouncingBall0.end" calcMode="spline" dur="0.05s"
