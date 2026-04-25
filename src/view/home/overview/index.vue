@@ -86,5 +86,11 @@ const menu = ref<MenuInfoShowVo[]>(<any>menuList)
   text-align: center;
   font-size: 40px;
   background-color: $light-fill;
+
+  &:hover {
+    .el-icon {
+      color: $brand;
+    }
+  }
 }
 </style>
