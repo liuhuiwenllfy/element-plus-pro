@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {Close, Search} from '@element-plus/icons-vue'
-import {PropType, reactive, ref, watch} from 'vue'
+import {PropType, reactive, ref} from 'vue'
 import {ElIcon, ElSpace, ElText} from 'element-plus'
 import 'element-plus/es/components/space/style/css'
 import 'element-plus/es/components/icon/style/css'
@@ -21,21 +21,17 @@ const props = defineProps({
 
 const _val = ref(props.val)
 
-watch(() => props.val, (newVal) => {
-  _val.value = newVal
-})
-
 const emits = defineEmits(['handleClick'])
 
 const handleClick = (type: string) => {
   switch (type) {
     case 'clear':
-      emits('handleClick', '')
+      _val.value = ''
       break
     case 'search':
-      emits('handleClick', _val.value)
       break
   }
+  emits('handleClick', _val.value)
 }
 
 const content = reactive<any>({

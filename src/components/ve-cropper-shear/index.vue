@@ -2,7 +2,7 @@
 import 'vue-cropper/dist/index.css'
 // @ts-ignore
 import VueCropper from "vue-cropper/lib/vue-cropper.vue";
-import {nextTick, ref, watch} from "vue";
+import {nextTick, ref} from "vue";
 import {ElButton, ElRadio, ElRadioGroup} from 'element-plus'
 import {RefreshLeft, RefreshRight} from '@element-plus/icons-vue'
 import 'element-plus/es/components/radio-group/style/css'
@@ -30,15 +30,8 @@ const props = defineProps({
   }
 })
 const _fixedNumber = ref(props.fixedNumber)
-
-watch(() => props.fixedNumber, (newVal) => {
-  _fixedNumber.value = newVal
-})
-
-const emits = defineEmits(['getCropData', 'getCropBlob', 'update:fixedNumber'])
-
 const handleChange = (fixedNumber: any) => {
-  emits('update:fixedNumber', fixedNumber)
+  _fixedNumber.value = fixedNumber
   reload()
 }
 
@@ -59,6 +52,7 @@ const rotateLeft = () => {
   cropper.value.rotateLeft();
 }
 
+const emits = defineEmits(['getCropData', 'getCropBlob'])
 const getCropData = () => {
   cropper.value.getCropData((data: string) => {
     emits("getCropData", data);
