@@ -52,21 +52,30 @@ const getNavigation = computed(() => {
 })
 
 const menu = ref<MenuInfoShowVo[]>(<any>menuList)
+
+const darkMode = computed(() => commonStore.getDark)
+const fullScreen = computed(() => commonStore.getFullScreen)
+const globalSize = computed(() => commonStore.getGlobalSize)
+const locale = computed(() => commonStore.getLocale)
+const layout = computed(() => commonStore.getLayout)
+const name = computed(() => commonStore.getName)
+const newsNum = computed(() => commonStore.getNewsNum)
+const sidebar = computed(() => commonStore.getSidebar)
 </script>
 <template>
   <ve-header
-      :dark="commonStore.getDark"
+      :dark="darkMode"
       :defaultActive="<string>router.currentRoute.value.name"
-      :fullScreen="commonStore.getFullScreen"
-      :globalSize="commonStore.getGlobalSize"
-      :language="commonStore.getLocale"
-      :layout="commonStore.getLayout"
+      :fullScreen="fullScreen"
+      :globalSize="globalSize"
+      :language="locale"
+      :layout="layout"
       :list="userInfo"
       :menu="menu"
-      :name="commonStore.getName"
+      :name="name"
       :navigation="<string>getNavigation"
-      :newsNum="commonStore.getNewsNum"
-      :sidebar="commonStore.getSidebar"
+      :newsNum="newsNum"
+      :sidebar="sidebar"
       avatar="avatar.png"
       logo="logo.png"
       tenantName="刘凌枫羽工作室" username="element-plus-pro"

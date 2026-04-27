@@ -172,8 +172,8 @@ const emits = defineEmits([
 
 const _sidebar = ref(props.sidebar)
 
-watch(() => props.sidebar, () => {
-  _sidebar.value = props.sidebar
+watch(() => props.sidebar, (newVal) => {
+  _sidebar.value = newVal
 })
 
 const handleCollapseChange = () => {
@@ -183,43 +183,61 @@ const handleCollapseChange = () => {
 
 const _defaultActive = ref(props.defaultActive)
 
+watch(() => props.defaultActive, (newVal) => {
+  _defaultActive.value = newVal
+})
+
 const handleDefaultActiveChange = (defaultActive: string) => {
-  _defaultActive.value = defaultActive
-  emits('handleDefaultActiveChange', _defaultActive.value)
+  emits('handleDefaultActiveChange', defaultActive)
 }
 
 const _drawerNews = ref(props.drawerNews)
 
+watch(() => props.drawerNews, (newVal) => {
+  _drawerNews.value = newVal
+})
+
 const handleNewsChange = () => {
-  _drawerNews.value = !_drawerNews.value
-  emits('handleNewsChange', _drawerNews.value)
+  emits('handleNewsChange', !_drawerNews.value)
 }
 
 const _fullScreen = ref(props.fullScreen)
 
+watch(() => props.fullScreen, (newVal) => {
+  _fullScreen.value = newVal
+})
+
 const handleFullScreenChange = (fullScreen: boolean) => {
-  _fullScreen.value = fullScreen
-  emits('handleFullScreenChange', _fullScreen.value)
+  emits('handleFullScreenChange', fullScreen)
 }
 
 const _globalSize = ref(props.globalSize)
 
+watch(() => props.globalSize, (newVal) => {
+  _globalSize.value = newVal
+})
+
 const handleGlobalSizeChange = (command: string) => {
-  _globalSize.value = command
   emits('handleGlobalSizeChange', command)
 }
 
 const _language = ref<string>(props.language)
 
+watch(() => props.language, (newVal) => {
+  _language.value = newVal
+})
+
 const handleLanguageChange = (command: string) => {
-  _language.value = command
   emits('handleLanguageChange', command)
 }
 
 const _dark = ref<boolean>(props.dark)
 
+watch(() => props.dark, (newVal) => {
+  _dark.value = newVal
+})
+
 const handleNightChange = (command: any) => {
-  _dark.value = command
   emits('handleNightChange', command)
 }
 

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {ChatLineRound, Close} from '@element-plus/icons-vue'
-import {ref, watch} from 'vue'
+import {computed, ref} from 'vue'
 import {LatestNewsVo} from '@/entity/vo/LatestNewsVo'
 import {ElMessageBox} from 'element-plus'
 import {useI18n} from 'vue-i18n'
@@ -50,10 +50,9 @@ const onReset = () => {
   })
 }
 
-const _drawer = ref(commonStore.getDrawerNews)
-
-watch(() => commonStore.getDrawerNews, () => {
-  _drawer.value = commonStore.getDrawerNews
+const _drawer = computed({
+  get: () => commonStore.getDrawerNews,
+  set: (value) => commonStore.changeDrawerNews(value)
 })
 
 const handleClose = () => {

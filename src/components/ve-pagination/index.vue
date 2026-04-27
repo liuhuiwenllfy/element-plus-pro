@@ -2,7 +2,7 @@
 
 import {ElPagination} from 'element-plus'
 import 'element-plus/es/components/pagination/style/css'
-import {ref} from "vue";
+import {ref, watch} from 'vue'
 
 const props = defineProps({
   current: {
@@ -25,13 +25,19 @@ const props = defineProps({
 const _pageSize = ref(props.pageSize)
 const _current = ref(props.current)
 
+watch(() => props.pageSize, (newVal) => {
+  _pageSize.value = newVal
+})
+
+watch(() => props.current, (newVal) => {
+  _current.value = newVal
+})
+
 const emits = defineEmits(['handleSizeChange', 'handleCurrentChange'])
 const handleSizeChange = (val: number) => {
-  _pageSize.value = val
   emits('handleSizeChange', val)
 }
 const handleCurrentChange = (val: number) => {
-  _current.value = val
   emits('handleCurrentChange', val)
 }
 </script>

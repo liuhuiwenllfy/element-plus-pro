@@ -76,12 +76,11 @@ const emits = defineEmits(['handleActiveChange', 'handleShow'])
 
 const _defaultActive = ref(props.defaultActive)
 
-watch(() => props.defaultActive, () => {
-  _defaultActive.value = props.defaultActive
+watch(() => props.defaultActive, (newVal) => {
+  _defaultActive.value = newVal
 })
 
 const handleActiveChange = (index: string) => {
-  _defaultActive.value = index
   emits('handleActiveChange', index)
 }
 

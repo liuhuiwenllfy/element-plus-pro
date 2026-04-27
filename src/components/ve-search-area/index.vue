@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {VeIconSearchSolid} from 've-icon/flowbite/components'
-import {PropType, reactive, ref} from 'vue'
+import {PropType, reactive, ref, watch} from 'vue'
 import {ElButton, ElCard, ElIcon, ElSpace} from 'element-plus'
 import 'element-plus/es/components/card/style/css'
 import 'element-plus/es/components/icon/style/css'
@@ -28,10 +28,13 @@ const props = defineProps({
 
 const _open = ref(props.open)
 
+watch(() => props.open, (newVal) => {
+  _open.value = newVal
+})
+
 const emits = defineEmits(['handleClick'])
 const handleClick = () => {
-  _open.value = !_open.value
-  emits('handleClick', _open.value)
+  emits('handleClick', !_open.value)
 }
 
 const content = reactive<any>({

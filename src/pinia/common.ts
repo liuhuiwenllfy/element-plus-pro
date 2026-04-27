@@ -25,7 +25,7 @@ export const useCommonStore = defineStore('common', {
             loading: false,
             drawer: false,
             drawerNews: false,
-            newsNum: 0
+            newsNum: 1
         }
     },
     persist: true,

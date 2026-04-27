@@ -3,43 +3,41 @@ import Layout from '@/components/ve-layout/mini/index.vue'
 import {Setting} from '@element-plus/icons-vue'
 import {useI18n} from 'vue-i18n'
 import {useCommonStore} from "@/pinia/common.ts";
-import {ref, watch} from "vue";
+import {computed} from "vue";
 import {VeMdCloudyNight, VeSunny} from '@/components/ve-icon/other/components.ts'
 
 const {t} = useI18n()
 
 const commonStore = useCommonStore();
 
-const _drawer = ref(commonStore.getDrawer)
-
-watch(() => commonStore.getDrawer, () => {
-  _drawer.value = commonStore.getDrawer
+const _drawer = computed({
+  get: () => commonStore.getDrawer,
+  set: (value) => commonStore.changeDrawer(value)
 })
 
-const _globalSizeChange = ref(commonStore.getGlobalSize)
+const _layout = computed({
+  get: () => commonStore.getLayout,
+  set: (value) => commonStore.changeLayout(value)
+})
 
-const handleGlobalSizeChange = (val: string) => {
-  commonStore.changeGlobalSize(val)
-}
+const _globalSizeChange = computed({
+  get: () => commonStore.getGlobalSize,
+  set: (value) => commonStore.changeGlobalSize(value)
+})
 
-const {locale} = useI18n()
-
-const _locale = ref(commonStore.getLocale)
-
-const handleInternationalizationChange = (val: string) => {
-  commonStore.changeLocale(val)
-  locale.value = val
-}
+const _locale = computed({
+  get: () => commonStore.getLocale,
+  set: (value) => commonStore.changeLocale(value)
+})
 
 const handleClose = () => {
   commonStore.changeDrawer(false)
 }
 
-const _dark = ref<boolean>(commonStore.getDark)
-
-const handleNightChange = (command: any) => {
-  commonStore.changeDark(command)
-}
+const _dark = computed({
+  get: () => commonStore.getDark,
+  set: (value) => commonStore.changeDark(value)
+})
 
 </script>
 
@@ -63,7 +61,7 @@ const handleNightChange = (command: any) => {
           <template #label>
             <h2>{{ t('message.layout') }}</h2>
           </template>
-          <Layout :layout="commonStore.getLayout" @handle-select="commonStore.changeLayout($event)"/>
+          <Layout :layout="_layout" @handle-select="_layout = $event"/>
         </el-descriptions-item>
         <el-descriptions-item>
           <template #label>
@@ -77,7 +75,6 @@ const handleNightChange = (command: any) => {
                 :inactive-icon="VeSunny"
                 inline-prompt
                 size="default"
-                @change="handleNightChange"
             />
           </div>
         </el-descriptions-item>
@@ -87,7 +84,7 @@ const handleNightChange = (command: any) => {
           </template>
           <div>
             <div>{{ t('message.selectGlobalSize') }}</div>
-            <el-radio-group v-model="_globalSizeChange" @change="handleGlobalSizeChange">
+            <el-radio-group v-model="_globalSizeChange">
               <el-radio label="large">{{ t('message.large') }}</el-radio>
               <el-radio label="default">{{ t('message.default') }}</el-radio>
               <el-radio label="small">{{ t('message.small') }}</el-radio>
@@ -100,7 +97,7 @@ const handleNightChange = (command: any) => {
           </template>
           <div>
             <div>{{ t('message.chooseLanguage') }}</div>
-            <el-radio-group v-model="_locale" @change="handleInternationalizationChange">
+            <el-radio-group v-model="_locale">
               <el-radio label="zhCn">{{ t('message.chinese') }}</el-radio>
               <el-radio label="en">{{ t('message.english') }}</el-radio>
             </el-radio-group>

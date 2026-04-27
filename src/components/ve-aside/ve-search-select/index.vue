@@ -33,8 +33,8 @@ const props = defineProps({
 
 const _selected = ref(props.selected)
 
-watch(() => props.selected, () => {
-  _selected.value = props.selected
+watch(() => props.selected, (newVal) => {
+  _selected.value = newVal
 })
 const emits = defineEmits(['handleChange', 'handleShow'])
 const handleChange = (value: any) => {
