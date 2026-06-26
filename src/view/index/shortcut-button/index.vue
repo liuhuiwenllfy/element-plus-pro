@@ -39,7 +39,7 @@ const handleUserClick = (code: string) => {
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="Setting"
+        icon="VeHouse"
         type="primary"
         @click="handleUserClick('officialWebsite')"/>
   </el-tooltip>
@@ -49,7 +49,7 @@ const handleUserClick = (code: string) => {
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="Setting"
+        icon="VeGithub"
         type="primary"
         @click="handleUserClick('gitHub')"/>
   </el-tooltip>
@@ -59,7 +59,7 @@ const handleUserClick = (code: string) => {
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="Setting"
+        icon="VeGitee"
         type="primary"
         @click="handleUserClick('gitee')"/>
   </el-tooltip>
@@ -69,7 +69,7 @@ const handleUserClick = (code: string) => {
       placement="bottom-end">
     <el-link
         :underline="false"
-        icon="Back"
+        icon="VeIconArrowRightToBracketSolid"
         type="primary"/>
   </el-tooltip>
 </template>
