@@ -22,6 +22,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: () => ''
+  },
+  scrollClassName: {
+    type: String,
+    required: false,
+    default: () => 'scroll'
   }
 })
 
@@ -30,7 +35,7 @@ const _index = ref<number>(0)
 
 watch(() => props.items, () => {
   nextTick(() => {
-    const scroll = document.querySelector('.scroll');
+    const scroll = document.querySelector(`.${props.scrollClassName}`);
     if (scroll) {
       scroll.scrollTo({
         top: 0,
@@ -81,15 +86,9 @@ watch(() => props.items, () => {
 
 
 const handleClick = (item: Anchor) => {
-  const scrollContainer = document.querySelector('.scroll .el-scrollbar__wrap')
+  const scrollContainer = document.querySelector(`.${props.scrollClassName} .el-scrollbar__wrap`)
   const target = document.getElementById(item.id)
   if (scrollContainer && target) {
-    // 检查容器是否有滚动条
-    const hasScroll = scrollContainer.scrollHeight > scrollContainer.clientHeight
-    if (!hasScroll) {
-      console.warn('容器没有滚动条，无法滚动')
-      return
-    }
     scrollContainer.scrollTo({
       top: target.offsetTop,
       behavior: 'smooth'
@@ -103,7 +102,7 @@ const handleClick = (item: Anchor) => {
     <el-row>
       <el-col :span="18">
         <slot name="left-top"/>
-        <el-scrollbar :style="{height: height}" class="scroll">
+        <el-scrollbar :style="{height: height}" :class="scrollClassName">
           <slot name="default"/>
         </el-scrollbar>
         <slot name="left-bottom"/>
