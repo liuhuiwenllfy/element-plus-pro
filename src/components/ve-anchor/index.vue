@@ -81,9 +81,15 @@ watch(() => props.items, () => {
 
 
 const handleClick = (item: Anchor) => {
-  const scrollContainer = document.querySelector('.scroll')
+  const scrollContainer = document.querySelector('.scroll .el-scrollbar__wrap')
   const target = document.getElementById(item.id)
   if (scrollContainer && target) {
+    // 检查容器是否有滚动条
+    const hasScroll = scrollContainer.scrollHeight > scrollContainer.clientHeight
+    if (!hasScroll) {
+      console.warn('容器没有滚动条，无法滚动')
+      return
+    }
     scrollContainer.scrollTo({
       top: target.offsetTop,
       behavior: 'smooth'
