@@ -9,7 +9,8 @@ import * as path from 'path'
 export default defineConfig({
     base: '/', //指定相对路径
     build: {
-        outDir: 'dist' //指定输出路径
+        outDir: 'dist', //指定输出路径
+        cssMinify: 'esbuild'
     },
     plugins: [
         vue(),
