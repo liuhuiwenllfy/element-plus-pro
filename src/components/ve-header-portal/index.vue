@@ -16,8 +16,8 @@ import 'element-plus/es/components/badge/style/css'
 import VeDefaultLogin from 've-login/ve-default-login/index.vue'
 import VeUserInfo from 've-login/ve-user-info/index.vue'
 import {ArrowDown, Menu, TopRight} from '@element-plus/icons-vue'
-import {MenuDropdownItem} from "@/components/ve-header-portal/MenuDropdownItem.ts";
-import {UserDropdownItem} from "@/components/ve-header/UserDropdownItem.ts";
+import {MenuDropdownItem} from "./MenuDropdownItem.ts";
+import {UserDropdownItem} from "./UserDropdownItem.ts";
 
 const props = defineProps({
   language: {
