@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import {computed, reactive, watch} from 'vue'
+import {useHead} from '@unhead/vue'
 // @ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // @ts-ignore
@@ -30,6 +31,41 @@ watch(() => commonStore.dark, () => {
 
 watch(() => router.currentRoute.value.name, () => {
   commonStore.changeTabList(router.currentRoute.value.meta)
+})
+
+// SEO: dynamic head management based on route meta
+const seoTitle = computed(() => {
+  const meta = router.currentRoute.value.meta as Record<string, string>
+  if (!meta) return 'Element Plus Pro'
+  if (commonStore.locale === 'en') {
+    return (meta.nameEn || meta.name || '') + ' - Element Plus Pro'
+  }
+  return (meta.name || '') + ' - Element Plus Pro'
+})
+
+useHead({
+  title: seoTitle,
+  meta: [
+    {
+      name: 'description',
+      content: computed(() => {
+        const meta = router.currentRoute.value.meta as Record<string, string>
+        if (!meta) return ''
+        if (commonStore.locale === 'en') {
+          return meta.nameEn || meta.name || ''
+        }
+        return meta.name || ''
+      })
+    },
+    {
+      property: 'og:title',
+      content: seoTitle
+    },
+    {
+      property: 'og:url',
+      content: computed(() => `https://epp.liulingfengyu.cn${router.currentRoute.value.fullPath}`)
+    }
+  ]
 })
 </script>
 

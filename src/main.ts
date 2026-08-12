@@ -1,4 +1,5 @@
 import {createApp} from 'vue'
+import {createHead} from '@unhead/vue/client'
 import App from './App.vue'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import {createPinia} from 'pinia'
@@ -41,5 +42,9 @@ Object.keys(OtherSvgList).forEach((key) => {
     app.component(key, OtherSvgList[key as keyof typeof OtherSvgList])
 })
 app.use(i18n)
+
+const head = createHead()
+app.use(head)
+
 app.mount('#app')
 
