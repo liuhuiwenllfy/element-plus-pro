@@ -11,6 +11,7 @@ import 'element-plus/es/components/icon/style/css'
 import VeCropperShear from 've-cropper-shear/index.vue'
 import axios from 'axios'
 import 'element-plus/es/components/button/style/css'
+import VeWatermarkRemove from '../ve-watermark-remove/index.vue'
 
 const props = defineProps({
   // 服务器地址
@@ -42,6 +43,12 @@ const props = defineProps({
     default: () => []
   },
   isCropper: {
+    type: Boolean,
+    required: false,
+    default: () => false
+  },
+  // 是否开启去水印功能
+  isWatermark: {
     type: Boolean,
     required: false,
     default: () => false
@@ -92,33 +99,15 @@ const cropperImgData = ref()
 const cropperImgBlob = ref()
 const cropper = ref()
 
-const beforeUpload = (rawFile: UploadRawFile | null) => {
-  if (rawFile) {
-    if (rawFile.size > 1024 * 1024 * props.uploadSize) {
-      ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
-      return false
-    }
-    if (props.isCropper) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        // @ts-ignore
-        cropperImg.value = e.target.result
-      };
-      reader.readAsDataURL(rawFile);
-      showCropper.value = true
-      return false
-    }
-    return true
-  } else {
-    cropper.value.getCropData()
-    cropper.value.getCropBlob()
-    showCropper.value = false
-    return false
-  }
-}
+const showWatermark = ref(false)
+const watermarkKey = ref(0)
+const watermarkImg = ref()
+const watermarkComp = ref()
+const watermarkApplying = ref(false)
 
-watch(() => cropperImgBlob.value, () => {
-  const file = new File([cropperImgBlob.value], 'image.png', {type: 'image/png'});
+/** 将处理好的 Blob 上传到服务端，成功后追加到文件列表 */
+const appendUpload = (blob: Blob, dataUrl: string) => {
+  const file = new File([blob], 'image.png', {type: 'image/png'});
   const form = new FormData()
   form.append('file', file)
   // @ts-ignore
@@ -136,11 +125,74 @@ watch(() => cropperImgBlob.value, () => {
           uid: new Date().getTime(),
         }
         // @ts-ignore
-        uploadFile.url = cropperImgData.value
+        uploadFile.url = dataUrl
         _fileList.value?.push(uploadFile)
         handleSuccess(res.data, uploadFile, _fileList.value)
       }
   ).catch((error) => console.log(error))
+}
+
+const beforeUpload = (rawFile: UploadRawFile | null) => {
+  if (rawFile) {
+    if (rawFile.size > 1024 * 1024 * props.uploadSize) {
+      ElMessage.warning(content.onlyFilesSmallerThanNumMbCanBeUploaded[props.language])
+      return false
+    }
+    if (props.isWatermark) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        // @ts-ignore
+        watermarkImg.value = e.target.result
+      };
+      reader.readAsDataURL(rawFile);
+      watermarkKey.value++
+      showWatermark.value = true
+      return false
+    }
+    if (props.isCropper) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        // @ts-ignore
+        cropperImg.value = e.target.result
+      };
+      reader.readAsDataURL(rawFile);
+      showCropper.value = true
+      return false
+    }
+    return true
+  }
+  return false
+}
+
+/** 确认裁剪 */
+const confirmCropper = () => {
+  cropper.value?.getCropData()
+  cropper.value?.getCropBlob()
+  showCropper.value = false
+}
+
+/** 确认去水印：框选 → 处理 → 去水印；若同时开启裁剪则衔接到裁剪 */
+const confirmWatermark = async () => {
+  if (watermarkApplying.value) return
+  if (!watermarkComp.value || watermarkComp.value.getRegionCount() === 0) {
+    ElMessage.warning(content.selectWatermarkArea[props.language])
+    return
+  }
+  watermarkApplying.value = true
+  const result = await watermarkComp.value.getResult()
+  watermarkApplying.value = false
+  if (!result) return
+  showWatermark.value = false
+  if (props.isCropper) {
+    cropperImg.value = result.dataURL
+    showCropper.value = true
+    return
+  }
+  appendUpload(result.blob, result.dataURL)
+}
+
+watch(() => cropperImgBlob.value, () => {
+  appendUpload(cropperImgBlob.value, cropperImgData.value)
 })
 
 const content = reactive<any>({
@@ -152,9 +204,21 @@ const content = reactive<any>({
     zhCn: '清空',
     en: `reset`
   },
+  cancel: {
+    zhCn: '取消',
+    en: `cancel`
+  },
   confirm: {
     zhCn: '确认',
     en: `confirm`
+  },
+  watermark: {
+    zhCn: '确认去水印',
+    en: `confirm remove watermark`
+  },
+  selectWatermarkArea: {
+    zhCn: '请先框选需要去除的水印区域',
+    en: `Please select the watermark area first`
   },
 })
 </script>
@@ -194,6 +258,21 @@ const content = reactive<any>({
     </template>
   </el-upload>
 
+  <el-dialog v-model="showWatermark" width="800">
+    <ve-watermark-remove
+        v-if="showWatermark"
+        ref="watermarkComp"
+        :key="watermarkKey"
+        :img="watermarkImg"
+        :language="language"/>
+    <template #footer>
+      <span>
+        <el-button :disabled="watermarkApplying" @click="showWatermark = false">{{ content.cancel[language] }}</el-button>
+        <el-button type="primary" :loading="watermarkApplying" @click="confirmWatermark">{{ content.watermark[language] }}</el-button>
+      </span>
+    </template>
+  </el-dialog>
+
   <el-dialog v-model="dialogVisible" :title="dialogTitle" draggable top="10vh">
     <img :src="dialogImageUrl" alt="Preview Image" style="width: 100%"/>
   </el-dialog>
@@ -204,7 +283,7 @@ const content = reactive<any>({
     <template #footer>
       <span>
         <el-button @click="showCropper = false">{{ content.reset[language] }}</el-button>
-        <el-button type="primary" @click="beforeUpload(null)">{{ content.confirm[language] }}</el-button>
+        <el-button type="primary" @click="confirmCropper">{{ content.confirm[language] }}</el-button>
       </span>
     </template>
   </el-dialog>

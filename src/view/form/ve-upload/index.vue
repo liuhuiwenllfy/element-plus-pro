@@ -57,6 +57,13 @@ const stats = [
     optional: 'true：开启；false：关闭',
     default: 'false',
   },
+  {
+    name: 'is-watermark',
+    instructions: '是否开启去水印功能（选图后框选水印区域，前端自动去除后再上传；与裁剪同时开启时先去水印再裁剪）',
+    type: 'boolean',
+    optional: 'true：开启；false：关闭',
+    default: 'false',
+  },
 ]
 
 const incident = [
@@ -80,11 +87,13 @@ const incident = [
       <h3>批量上传文件</h3>
       <ve-batch-upload-file api="#"/>
       <h3>批量上传图片</h3>
-      <ve-batch-upload-picture api="#" is-cropper/>
+      <ve-batch-upload-picture api="#" is-cropper is-watermark/>
       <h3>上传头像</h3>
       <ve-upload-avatar api="#" is-cropper/>
       <h3>上传图片</h3>
       <ve-upload-picture api="#" is-cropper/>
+      <h3>上传图片（去水印）</h3>
+      <ve-upload-picture api="#" is-watermark/>
     </template>
   </ve-page>
 </template>

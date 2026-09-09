@@ -17,7 +17,7 @@ import VeBatchUploadPicture from '@/components/ve-upload/ve-batch-upload-picture
 ```
 
 ```vue
-<ve-batch-upload-picture api="#" is-cropper/>
+<ve-batch-upload-picture api="#" is-cropper is-watermark/>
 ```
 
 上传头像
@@ -38,4 +38,14 @@ import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
 
 ```vue
 <ve-upload-picture api="#" is-cropper/>
+```
+
+去水印（也可同时开启 `is-cropper` 先去水印再裁剪）
+
+```ts
+import VeUploadPicture from '@/components/ve-upload/ve-upload-picture/index.vue'
+```
+
+```vue
+<ve-upload-picture api="#" is-watermark/>
 ```
